@@ -1,0 +1,14 @@
+﻿.mentor-form-container {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+    .mentor-form-container > * {
+        width: 700px;
+    }
+
+.fill-space {
+    flex: 1 1 auto;
+}
+

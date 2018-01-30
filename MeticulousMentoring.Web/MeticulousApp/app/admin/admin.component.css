@@ -1,0 +1,46 @@
+﻿.example-container {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+
+/*.example-sidenav-content {
+    display: flex;
+    height: auto;
+    align-items: center;
+    justify-content: center;
+}*/
+
+.meticulous-container {
+    margin-top: 20px;
+    margin-left: 5px;
+    margin-right: 3px;
+    margin-bottom: 5px;
+}
+
+.dashboard-card {
+   
+}
+
+.data-card {
+    height: 250px;
+}
+
+.data-card-h1 {
+    font-size: 10em;
+    text-align: center;
+    font-weight: lighter !important;
+}
+
+.meticulous-row {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+@media (min-width: 1200px) {
+    .container {
+        max-width: 100%;
+    }
+}

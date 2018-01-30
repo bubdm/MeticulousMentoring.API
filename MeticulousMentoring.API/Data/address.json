@@ -1,0 +1,47 @@
+[
+  {
+    "id": 0,
+    "address_type": 0,
+    "address1": "1234 Petty Dr",
+    "address2": null,
+    "city": "Birmingham",
+    "state": "AL",
+    "zip": "35111",
+    "created_on": null,
+    "modified_on": null
+  },
+  {
+    "id": 0,
+    "address_type": 0,
+    "address1": "766 Ignant Way",
+    "address2": null,
+    "city": "Birmingham",
+    "state": "AL",
+    "zip": "35101",
+    "created_on": null,
+    "modified_on": null
+  },
+  {
+    "id": 0,
+    "address_type": 0,
+    "address1": "3043 Ridiculous St",
+    "address2": null,
+    "city": "Homewood",
+    "state": "AL",
+    "zip": "35121",
+    "created_on": null,
+    "modified_on": null
+  },
+  {
+    "id": 0,
+    "address_type": 0,
+    "address1": "6100 Old Leeds Rd",
+    "address2": null,
+    "city": "Irondale",
+    "state": "AL",
+    "zip": "35210",
+    "created_on": null,
+    "modified_on": null
+  }
+]
+  

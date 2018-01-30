@@ -1,0 +1,42 @@
+﻿<div class="container-fluid meticulous-container">
+    <div class="row">
+        <div class="col-xl-6">
+            <div class="row">
+                {{mentee.menteeFirstName}} {{mentee.menteeLastName}}
+            </div>
+            <div class="row">
+                {{mentee.menteeDOB | date}}
+            </div>
+            <div class="row">
+                {{mentee.menteeClassification.description}}
+            </div>
+            <div class="row">
+                {{mentee.menteeSchool.school_name}}
+            </div>
+            <div class="row">
+                Principal: {{mentee.menteeSchool.principal}}
+            </div>
+            <div class="row">
+                {{mentee.menteeAddress.address1}}
+            </div>
+            <div class="row">
+                {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}
+            </div>
+            <div class="row">
+                {{mentee.menteeEmail}}
+            </div>
+        </div>
+        <div class="col-xl-6">
+            <div class="row">
+                {{mentor.mentorFirstName}} {{mentor.mentorLastName}}
+            </div>
+            <div class="row">
+                {{mentor.mentorAddress.address1}}
+            </div>
+            <div class="row">
+                {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}
+            </div>
+        </div>        
+        
+    </div>
+</div>

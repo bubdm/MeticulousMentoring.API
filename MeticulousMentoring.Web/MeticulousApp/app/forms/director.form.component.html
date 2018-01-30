@@ -1,0 +1,25 @@
+﻿<mat-toolbar>
+    <span>Director Registration</span>
+</mat-toolbar>
+<div class="director-form-container">
+    <form [formGroup]="firstFormGroup">
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="First Name" formControlName="first_name" />
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName="last_name" />
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Email" formControlName="email"/>
+            </mat-form-field>
+        </div>
+        <div>
+            <div mat-dialog-actions>
+                <button mat-button (click)="submitDirector()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+            </div>
+        </div>
+    </form>
+</div>

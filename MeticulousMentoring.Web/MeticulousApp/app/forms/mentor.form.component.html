@@ -1,0 +1,54 @@
+﻿<mat-toolbar>
+    <span>Mentor Registration</span>
+</mat-toolbar>
+<div class="mentor-form-container">
+    <form [formGroup]="firstFormGroup">
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="First Name" formControlName="first_name"/>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Last Name" formControlName="last_name"/>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="Address 1" formControlName="address1"/>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Address 2" formControlName="address2"/>
+            </mat-form-field>
+        </div>
+
+        <div class="form-group">
+            <mat-form-field>
+                <input matInput placeholder="City" formControlName="city"/>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput placeholder="Zip" formControlName="zip"/>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-select placeholder="Select Gender" formControlName="mentorGender">
+                    <mat-option value="M">M</mat-option>
+                    <mat-option value="F">F</mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div class="form-group">
+            <mat-form-field>
+                <mat-select placeholder="Mentee List" formControlName="mentees" multiple>
+                    <mat-option *ngFor="let mentee of mentees" [value]="mentee">
+                        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}
+                    </mat-option>
+                </mat-select>
+            </mat-form-field>
+        </div>
+        <div>
+            <div mat-dialog-actions>
+                <button mat-button (click)="submitMentor()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
+            </div>
+        </div>
+    </form>
+</div>
