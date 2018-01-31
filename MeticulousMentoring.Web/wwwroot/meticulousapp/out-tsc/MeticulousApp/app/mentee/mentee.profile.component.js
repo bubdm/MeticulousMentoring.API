@@ -22,6 +22,7 @@ var MenteeProfileComponent = (function () {
         this.router = router;
         this.mentee = {};
         this.mentor = {};
+        this.guardian = {};
     }
     MenteeProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -38,6 +39,10 @@ var MenteeProfileComponent = (function () {
             this.menteeService.get_mentor_by_mentee_id(this.menteeId)
                 .subscribe(function (data) {
                 _this.mentor = data;
+            }, function (error) { return console.log(error); });
+            this.menteeService.get_guardian_by_mentee_id(this.menteeId)
+                .subscribe(function (data) {
+                _this.guardian = data;
             }, function (error) { return console.log(error); });
         }
     };

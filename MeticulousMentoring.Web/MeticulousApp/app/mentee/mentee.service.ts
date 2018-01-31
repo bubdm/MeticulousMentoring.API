@@ -49,4 +49,12 @@ export class MenteeService {
                 })
             .map((res: Response) => res.json());
     }
+
+    public get_guardian_by_mentee_id(menteeId) {
+        return this.http.get("http://localhost:52373/api/mentees/GetGuardian/" + menteeId,
+                {
+                    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+                })
+            .map((res: Response) => res.json());
+    }
 }

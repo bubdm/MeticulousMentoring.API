@@ -9,6 +9,7 @@ namespace MeticulousMentoring.API.Data.Repositories
         IEnumerable<Mentee> GetTotalMentees(); 
         Mentee GetMenteeById(int id);
         Mentor GetMentorByMenteeId(int id);
+        Guardian GetGuardianByMenteeId(int id);
         bool SaveAll();
 
         void AddMentee(object model);

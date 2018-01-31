@@ -11,9 +11,10 @@ using System;
 namespace MeticulousMentoring.API.Migrations
 {
     [DbContext(typeof(MeticulousContext))]
-    partial class MeticulousContextModelSnapshot : ModelSnapshot
+    [Migration("20180130180148_periodDescription")]
+    partial class periodDescription
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -142,11 +143,19 @@ namespace MeticulousMentoring.API.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<int?>("courseid");
+
                     b.Property<string>("description");
 
                     b.Property<int>("period");
 
+                    b.Property<int?>("systemid");
+
                     b.HasKey("id");
+
+                    b.HasIndex("courseid");
+
+                    b.HasIndex("systemid");
 
                     b.ToTable("GradingPeriods");
                 });
@@ -451,6 +460,17 @@ namespace MeticulousMentoring.API.Migrations
                     b.HasOne("MeticulousMentoring.API.Data.Entities.Course", "grade_course")
                         .WithMany()
                         .HasForeignKey("grade_courseid");
+                });
+
+            modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.GradePeriod", b =>
+                {
+                    b.HasOne("MeticulousMentoring.API.Data.Entities.Course", "course")
+                        .WithMany()
+                        .HasForeignKey("courseid");
+
+                    b.HasOne("MeticulousMentoring.API.Data.Entities.EducationSystem", "system")
+                        .WithMany()
+                        .HasForeignKey("systemid");
                 });
 
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Guardian", b =>

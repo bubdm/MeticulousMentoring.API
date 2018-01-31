@@ -117,6 +117,21 @@ namespace MeticulousMentoring.API.Data.Repositories
 
         }
 
+        public Guardian GetGuardianByMenteeId(int id)
+        {
+            try
+            {
+                return this.ctx.Guardians
+                    .Include(g => g.address)
+                    .FirstOrDefault(g => g.children.Select(x => x.id).Contains(id));
+            }
+            catch (Exception e)
+            {
+                this.logger.LogError($"Failed to get Guardian: {e}");
+                return null;
+            }
+        }
+
 
         public bool SaveAll()
         {

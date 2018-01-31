@@ -16,6 +16,7 @@ export class MenteeProfileComponent implements OnInit {
     public mentee = {};
     public menteeId;
     public mentor = {};
+    public guardian = {};
 
     constructor(private menteeService: MenteeService,
         private mentorService: MentorService,
@@ -38,6 +39,12 @@ export class MenteeProfileComponent implements OnInit {
             this.menteeService.get_mentor_by_mentee_id(this.menteeId)
                 .subscribe(data => {
                         this.mentor = data;
+                    },
+                error => console.log(error));
+
+            this.menteeService.get_guardian_by_mentee_id(this.menteeId)
+                .subscribe(data => {
+                        this.guardian = data;
                     },
                     error => console.log(error));
         }

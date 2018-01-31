@@ -11,9 +11,10 @@ using System;
 namespace MeticulousMentoring.API.Migrations
 {
     [DbContext(typeof(MeticulousContext))]
-    partial class MeticulousContextModelSnapshot : ModelSnapshot
+    [Migration("20180130180441_removeSystem")]
+    partial class removeSystem
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

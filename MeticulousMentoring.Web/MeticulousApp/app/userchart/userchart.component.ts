@@ -50,6 +50,6 @@ export class UserchartComponent implements OnInit, AfterViewInit{
         setTimeout(() => {
             this.chartData.push(this.cDataMentees);
             this.chartData.push(this.cDataMentors);
-        },5);
+        },30);
     }
 }

@@ -48,7 +48,7 @@ var UserchartComponent = (function () {
         setTimeout(function () {
             _this.chartData.push(_this.cDataMentees);
             _this.chartData.push(_this.cDataMentors);
-        }, 5);
+        }, 30);
     };
     return UserchartComponent;
 }());

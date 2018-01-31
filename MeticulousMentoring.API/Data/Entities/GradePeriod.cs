@@ -10,8 +10,7 @@ namespace MeticulousMentoring.API.Data.Entities
     {
         public int id { get; set; }
         public int period { get; set; }
-        public Course course { get; set; }
-        public EducationSystem system { get; set; }
+        public string description { get; set; }
         
     }
 }

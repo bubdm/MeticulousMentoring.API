@@ -1,42 +1,157 @@
 ﻿<div class="container-fluid meticulous-container">
     <div class="row">
-        <div class="col-xl-6">
-            <div class="row">
+        <div class="col-xl-3">
+            <div class="row"><img src="http://via.placeholder.com/300X300" class="rounded mx-auto d-block"/></div>
+            <mat-divider></mat-divider>
+            <div class="row"></div>
+        </div>
+        <div class="col-xl-9">
+            
+            <div class="row first-name">
                 {{mentee.menteeFirstName}} {{mentee.menteeLastName}}
             </div>
             <div class="row">
-                {{mentee.menteeDOB | date}}
+                 Classification: {{mentee.menteeClassification.description}}
             </div>
+                <div class="row">
+                 Birthdate:  {{mentee.menteeDOB | date}}
+                </div>
+               
+                       
+           
+            <mat-divider></mat-divider>
             <div class="row">
-                {{mentee.menteeClassification.description}}
-            </div>
-            <div class="row">
-                {{mentee.menteeSchool.school_name}}
-            </div>
-            <div class="row">
-                Principal: {{mentee.menteeSchool.principal}}
-            </div>
-            <div class="row">
-                {{mentee.menteeAddress.address1}}
-            </div>
-            <div class="row">
-                {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}
-            </div>
-            <div class="row">
-                {{mentee.menteeEmail}}
+                <mat-tab-group>
+                    <mat-tab label="Info">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-info-circle"></i>Info</span>
+                        </ng-template>
+                        <div style="margin: 15px; font-style: normal;">
+                            <div class="row" style="margin-bottom: 20px;">Contact Information</div>
+                            <div class="row">
+                                <div class="col-sm-3">Address:</div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        {{mentee.menteeAddress.address1}}
+                                    </div>
+                                    <div class="row">
+                                        {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">Email:</div>
+                                <div class="col-sm-9">
+                                    <div class="row"> {{mentee.menteeEmail}}</div>
+                                </div>
+                            </div>
+                            <div class="row" style="margin-top: 20px; margin-bottom: 20px;">School Information</div>
+                            <div class="row">
+                                <div class="col-sm-3">School:</div>
+                                <div class="col-sm-9">{{mentee.menteeSchool.school_name}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">Principal:</div>
+                                <div class="col-sm-9">{{mentee.menteeSchool.principal}}</div>
+                            </div>
+                        </div>
+                       
+                    </mat-tab>
+                    <mat-tab label="Timeline">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-clock-o"></i>Timeline</span>
+                        </ng-template>
+                        <div style="margin: 15px; font-style: normal;">
+                            <div class="row">
+                                <div class="col-md-12 col-sm-12 col-xs-12">
+                                    <section class="main-timeline-section">
+                                        <div class="timeline-start"></div>
+                                        <div class="conference-center-line"></div>
+                                        <div class="conference-timeline-content">
+                                            <div class="timeline-article timeline-article-top">
+                                                <div class="content-date">
+                                                    <span>10-09-2017</span>
+                                                </div>
+                                                <div class="meta-date"></div>
+                                                <div class="content-box">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="timeline-article timeline-article-bottom">
+                                                <div class="content-date">
+                                                    <span>10-09-2017</span>
+                                                </div>
+                                                <div class="meta-date"></div>
+                                                <div class="content-box">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                </div>
+                                            </div>
+                                            <div class="timeline-article timeline-article-top">
+                                                <div class="content-date">
+                                                    <span>10-09-2017</span>
+                                                </div>
+                                                <div class="meta-date"></div>
+                                                <div class="content-box">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                </div>
+                                            </div>
+
+                                            <div class="timeline-article timeline-article-bottom">
+                                                <div class="content-date">
+                                                    <span>10-09-2017</span>
+                                                </div>
+                                                <div class="meta-date"></div>
+                                                <div class="content-box">
+                                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
+                                                </div>
+                                            </div> 
+                                        </div>
+                                        <div class="timeline-end"></div>
+                                    </section>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Guardian Info">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-shield"></i>Guardian Info</span>
+                        </ng-template>
+                        <div style="margin: 15px; font-style: normal;">
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    Guardian:
+                                </div>
+                                <div class="col-sm-9">
+                                    {{guardian.guardianFirstName}} {{guardian.guardianLastName}}
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-sm-3">
+                                    Address:
+                                </div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        {{guardian.guardianAddress.address1}}
+                                    </div>
+                                    <div class="row">
+                                        {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}
+                                    </div>
+                                </div>
+                                <div class="col-sm-3">Email:</div>
+                                <div class="col-sm-9">
+                                    <div class="row"> {{guardian.guardianEmail}}</div>
+                                </div>
+                            </div>
+                            </div>
+                    </mat-tab>
+                    <mat-tab label="Mentee Grades">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-graduation-cap"></i>Grades</span>
+                        </ng-template>
+                        Mentee Grades
+                    </mat-tab>
+                </mat-tab-group>
             </div>
         </div>
-        <div class="col-xl-6">
-            <div class="row">
-                {{mentor.mentorFirstName}} {{mentor.mentorLastName}}
-            </div>
-            <div class="row">
-                {{mentor.mentorAddress.address1}}
-            </div>
-            <div class="row">
-                {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}
-            </div>
-        </div>        
-        
     </div>
 </div>

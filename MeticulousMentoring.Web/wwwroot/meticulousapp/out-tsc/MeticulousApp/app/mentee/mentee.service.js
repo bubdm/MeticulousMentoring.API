@@ -47,6 +47,12 @@ var MenteeService = (function () {
         })
             .map(function (res) { return res.json(); });
     };
+    MenteeService.prototype.get_guardian_by_mentee_id = function (menteeId) {
+        return this.http.get("http://localhost:52373/api/mentees/GetGuardian/" + menteeId, {
+            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .map(function (res) { return res.json(); });
+    };
     return MenteeService;
 }());
 MenteeService = __decorate([

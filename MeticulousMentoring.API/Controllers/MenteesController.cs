@@ -83,6 +83,29 @@ namespace MeticulousMentoring.API.Controllers
         }
 
         [HttpGet]
+        [Route("/api/mentees/GetGuardian/{id}")]
+        public IActionResult GetGuardian(int id)
+        {
+            try
+            {
+                var guardian = this.menteeRepository.GetGuardianByMenteeId(id);
+                if (guardian != null)
+                {
+                    return this.Ok(this.mapper.Map<Guardian, GuardianViewModel>(guardian));
+                }
+                else
+                {
+                    return this.NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        [HttpGet]
         [Route("/api/mentees/GetMentor/{id}")]
         public IActionResult GetMentor(int id)
         {
