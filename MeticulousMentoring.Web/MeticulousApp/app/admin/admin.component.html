@@ -58,12 +58,12 @@
                     <br />
                     <div class="text-left"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="((total_mentees - total_male)/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_male)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{((total_mentees - total_male)/total_mentees * 100 | round)}}%</div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(total_male/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_male)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{(total_male/total_mentees * 100 | round)}}%</div>
                     </div>
                     <br />
                     <div class="text-left"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>
                     <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="((total_mentees - total_female)/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_female)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{((total_mentees - total_female)/total_mentees * 100 | round)}}%</div>
+                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(total_female/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_female)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{(total_female/total_mentees * 100 | round)}}%</div>
                     </div>
                 </mat-card-content>
                 <mat-card-footer>

@@ -73,17 +73,17 @@ namespace MeticulousMentoring.API.Migrations
 
                     b.Property<string>("course_name");
 
-                    b.Property<int?>("course_schoolid");
-
                     b.Property<DateTime?>("created_on");
 
                     b.Property<DateTime?>("modified_on");
+
+                    b.Property<int?>("systemid");
 
                     b.HasKey("id");
 
                     b.HasIndex("course_classificationid");
 
-                    b.HasIndex("course_schoolid");
+                    b.HasIndex("systemid");
 
                     b.ToTable("Courses");
                 });
@@ -126,13 +126,25 @@ namespace MeticulousMentoring.API.Migrations
                     b.Property<int>("id")
                         .ValueGeneratedOnAdd();
 
+                    b.Property<DateTime?>("created_on");
+
                     b.Property<int?>("grade_courseid");
 
+                    b.Property<decimal>("grade_value");
+
                     b.Property<int>("mentee_id");
+
+                    b.Property<DateTime?>("modified_on");
+
+                    b.Property<int?>("periodid");
+
+                    b.Property<string>("school_year");
 
                     b.HasKey("id");
 
                     b.HasIndex("grade_courseid");
+
+                    b.HasIndex("periodid");
 
                     b.ToTable("Grades");
                 });
@@ -441,9 +453,9 @@ namespace MeticulousMentoring.API.Migrations
                         .WithMany()
                         .HasForeignKey("course_classificationid");
 
-                    b.HasOne("MeticulousMentoring.API.Data.Entities.School", "course_school")
+                    b.HasOne("MeticulousMentoring.API.Data.Entities.EducationSystem", "system")
                         .WithMany()
-                        .HasForeignKey("course_schoolid");
+                        .HasForeignKey("systemid");
                 });
 
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Grade", b =>
@@ -451,6 +463,10 @@ namespace MeticulousMentoring.API.Migrations
                     b.HasOne("MeticulousMentoring.API.Data.Entities.Course", "grade_course")
                         .WithMany()
                         .HasForeignKey("grade_courseid");
+
+                    b.HasOne("MeticulousMentoring.API.Data.Entities.GradePeriod", "period")
+                        .WithMany()
+                        .HasForeignKey("periodid");
                 });
 
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Guardian", b =>
