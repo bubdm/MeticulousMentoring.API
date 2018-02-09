@@ -11,8 +11,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
-var user_service_1 = require("../shared/user.service");
+require("rxjs/add/operator/startWith");
+require("rxjs/add/observable/merge");
 require("rxjs/add/operator/map");
+var user_service_1 = require("../shared/user.service");
 var MenteeService = (function () {
     function MenteeService(http, userService) {
         this.http = http;
@@ -49,6 +51,12 @@ var MenteeService = (function () {
     };
     MenteeService.prototype.get_guardian_by_mentee_id = function (menteeId) {
         return this.http.get("http://localhost:52373/api/mentees/GetGuardian/" + menteeId, {
+            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .map(function (res) { return res.json(); });
+    };
+    MenteeService.prototype.get_mentee_grades = function (menteeId) {
+        return this.http.get("http://localhost:52373/api/mentees/MenteeGrades/" + menteeId, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

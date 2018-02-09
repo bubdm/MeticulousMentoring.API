@@ -142,5 +142,22 @@ namespace MeticulousMentoring.API.Data.Repositories
         {
             this.ctx.Add(model);
         }
+
+        public IEnumerable<Grade> GetMenteeGrades(int id)
+        {
+            try
+            {
+                return this.ctx.Grades
+                    .Include(g => g.grade_course)
+                    .Include(g => g.period)
+                    .Where(g => g.mentee_id == id);
+
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
     }
 }

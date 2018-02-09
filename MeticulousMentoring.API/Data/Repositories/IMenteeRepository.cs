@@ -12,6 +12,8 @@ namespace MeticulousMentoring.API.Data.Repositories
         Guardian GetGuardianByMenteeId(int id);
         bool SaveAll();
 
+        IEnumerable<Grade> GetMenteeGrades(int id);
+
         void AddMentee(object model);
     }
 }

@@ -5,6 +5,9 @@ import { Router } from "@angular/router";
 import { IUser } from '../interfaces/iuser';
 import { MenteeService } from '../mentee/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
+import { Observable } from 'rxjs/Observable';
+import 'rxjs/Rx';
+import * as _ from 'lodash';
 
 @Component({
     selector: "mentee-profile",
@@ -17,6 +20,9 @@ export class MenteeProfileComponent implements OnInit {
     public menteeId;
     public mentor = {};
     public guardian = {};
+    public grades = {};
+    public gradeGroup = {};
+    public messages: number = 1;
 
     constructor(private menteeService: MenteeService,
         private mentorService: MentorService,
@@ -46,7 +52,15 @@ export class MenteeProfileComponent implements OnInit {
                 .subscribe(data => {
                         this.guardian = data;
                     },
-                    error => console.log(error));
+                error => console.log(error));
+
+            this.menteeService.get_mentee_grades(this.menteeId)
+                .subscribe(data => {
+                    this.grades = data;
+
+                    
+                    },
+                error => console.log(error));
         }
 
     }

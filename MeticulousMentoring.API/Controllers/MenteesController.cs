@@ -253,6 +253,30 @@ namespace MeticulousMentoring.API.Controllers
                 return Json("Bad request");
             }
         }
+
+        [HttpGet]
+        [Route("/api/mentees/MenteeGrades/{id}")]
+        public async Task<IActionResult> MenteeGrades(int id)
+        {
+            try
+            {
+                var grades = this.menteeRepository.GetMenteeGrades(id);
+                if (grades != null)
+                {
+                    return this.Ok(this.mapper.Map<IEnumerable<Grade>, IEnumerable<GradeViewModel>>(grades));
+                }
+                else
+                {
+                    return this.NotFound();
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
         
     }
 }
+

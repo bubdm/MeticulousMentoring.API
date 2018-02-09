@@ -14,6 +14,7 @@ var user_service_1 = require("../shared/user.service");
 var router_1 = require("@angular/router");
 var mentee_service_1 = require("../mentee/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
+require("rxjs/Rx");
 var MenteeProfileComponent = (function () {
     function MenteeProfileComponent(menteeService, mentorService, userService, router) {
         this.menteeService = menteeService;
@@ -23,6 +24,9 @@ var MenteeProfileComponent = (function () {
         this.mentee = {};
         this.mentor = {};
         this.guardian = {};
+        this.grades = {};
+        this.gradeGroup = {};
+        this.messages = 1;
     }
     MenteeProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -43,6 +47,10 @@ var MenteeProfileComponent = (function () {
             this.menteeService.get_guardian_by_mentee_id(this.menteeId)
                 .subscribe(function (data) {
                 _this.guardian = data;
+            }, function (error) { return console.log(error); });
+            this.menteeService.get_mentee_grades(this.menteeId)
+                .subscribe(function (data) {
+                _this.grades = data;
             }, function (error) { return console.log(error); });
         }
     };

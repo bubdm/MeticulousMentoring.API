@@ -12,6 +12,7 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var ng2_charts_1 = require("ng2-charts/ng2-charts");
 var common_1 = require("@angular/common");
+var ngx_pipes_1 = require("ngx-pipes");
 var app_component_1 = require("./app.component");
 var app_header_component_1 = require("./app-header.component");
 var login_component_1 = require("./login/login.component");
@@ -109,7 +110,8 @@ AppModule = __decorate([
             material_1.MatTooltipModule,
             material_1.MatStepperModule,
             table_1.CdkTableModule,
-            common_1.CommonModule
+            common_1.CommonModule,
+            ngx_pipes_1.NgPipesModule
         ],
         exports: [mentee_form_component_1.MenteeFormComponent],
         entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent],

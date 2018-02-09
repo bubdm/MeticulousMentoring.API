@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from "@angular/http";
 import { ChartsModule } from "ng2-charts/ng2-charts";
 import { CommonModule } from "@angular/common";
+import { NgPipesModule } from "ngx-pipes";
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './app-header.component';
@@ -27,6 +28,7 @@ import { MenteeProfileComponent } from './mentee/mentee.profile.component';
 import { MentorFormComponent } from './forms/mentor.form.component';
 import { DirectorFormComponent} from './forms/director.form.component';
 import { RoundPipe } from './shared/round.pipe';
+
 
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -88,6 +90,7 @@ export const routes = [
         MentorFormComponent,
         DirectorFormComponent,
         RoundPipe
+        
 
     ],
     imports: [
@@ -135,7 +138,8 @@ export const routes = [
         MatTooltipModule,
         MatStepperModule,
         CdkTableModule,
-        CommonModule
+        CommonModule,
+        NgPipesModule
 
     ],
     exports: [MenteeFormComponent],
