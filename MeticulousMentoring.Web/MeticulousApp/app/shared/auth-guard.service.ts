@@ -5,7 +5,6 @@ import { AccountService } from './accountservice';
 
 @Injectable()
 export class AuthGuard implements CanActivate {
-
     constructor(private auth: AccountService, private router: Router) { }
 
     canActivate() {
@@ -15,5 +14,5 @@ export class AuthGuard implements CanActivate {
             this.router.navigateByUrl('');
             return false;
         }
-    }   
+    }
 }

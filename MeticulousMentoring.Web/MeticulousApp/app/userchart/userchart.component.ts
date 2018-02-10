@@ -14,22 +14,21 @@ import { DirectorService } from '../director/director.service';
     templateUrl: './userchart.component.html',
     styleUrls: ['./userchart.component.css']
 })
-export class UserchartComponent implements OnInit, AfterViewInit{
+export class UserchartComponent implements OnInit, AfterViewInit {
     ngAfterViewInit(): void {
-       
     }
 
     public chartLabels: string[] = ['Mentees', 'Mentors'];
-    public chartData: number[]= [];
+    public chartData: number[] = [];
     public chartType: string = 'pie';
     public chartColors: any[] =
     [
         {
-            backgroundColor: ['#f20d0d','#ff00ff']
+            backgroundColor: ['#f20d0d', '#ff00ff']
         }
     ];
-    public cDataMentees:number = 0;
-    public cDataMentors:number = 0;
+    public cDataMentees: number = 0;
+    public cDataMentors: number = 0;
 
     constructor(private menteeService: MenteeService, private mentorService: MentorService, private directorService: DirectorService) {
         this.menteeService.get_total_mentees()
@@ -41,15 +40,14 @@ export class UserchartComponent implements OnInit, AfterViewInit{
             .subscribe(data => {
                 this.cDataMentors = data.length;
             });
-       
     }
 
-    ngOnInit(): void {}
+    ngOnInit(): void { }
 
     setChartData(): void {
         setTimeout(() => {
             this.chartData.push(this.cDataMentees);
             this.chartData.push(this.cDataMentors);
-        },30);
+        }, 30);
     }
 }

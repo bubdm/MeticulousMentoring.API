@@ -2,8 +2,6 @@
 
 @Pipe({ name: 'round' })
 export class RoundPipe implements PipeTransform {
-
-
     transform(value: number): number {
         return Math.round(value);
     }

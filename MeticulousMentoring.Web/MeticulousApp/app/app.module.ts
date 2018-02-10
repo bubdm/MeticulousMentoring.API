@@ -26,9 +26,8 @@ import { MeticulousChartComponent } from './chart/chart.component';
 import { MenteeFormComponent } from './forms/mentee.form.component';
 import { MenteeProfileComponent } from './mentee/mentee.profile.component';
 import { MentorFormComponent } from './forms/mentor.form.component';
-import { DirectorFormComponent} from './forms/director.form.component';
+import { DirectorFormComponent } from './forms/director.form.component';
 import { RoundPipe } from './shared/round.pipe';
-
 
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
@@ -65,15 +64,14 @@ import {
     MatToolbarModule,
     MatTooltipModule,
     MatStepperModule
-    } from '@angular/material';
+} from '@angular/material';
 
 import { CdkTableModule } from '@angular/cdk/table';
 
 export const routes = [
     { path: "", component: LoginComponent },
-    { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard]}
-    ];
-
+    { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] }
+];
 
 @NgModule({
     declarations: [
@@ -90,7 +88,6 @@ export const routes = [
         MentorFormComponent,
         DirectorFormComponent,
         RoundPipe
-        
 
     ],
     imports: [
@@ -154,6 +151,6 @@ export const routes = [
         SchoolService,
         MentorService,
         DirectorService],
-  bootstrap: [AppComponent]
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

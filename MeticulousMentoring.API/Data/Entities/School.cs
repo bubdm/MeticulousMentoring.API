@@ -1,13 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MeticulousMentoring.API.Data.Entities
 {
-    using System.Net.Sockets;
-
     public class School
     {
         public int id { get; set; }
@@ -17,6 +11,5 @@ namespace MeticulousMentoring.API.Data.Entities
         public EducationSystem system { get; set; }
         public DateTime? created_on { get; set; }
         public DateTime? modified_on { get; set; }
-       
     }
 }

@@ -11,19 +11,18 @@ export class MentorService {
 
     public get_mentors() {
         return this.http.get("http://localhost:52373/api/mentors",
-                {
-                    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-                })
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
             .map((res: Response) => res.json());
     }
 
     public add_mentor(mentor) {
         return this.http.post("http://localhost:52373/api/mentors",
-                mentor,
-                {
-                    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-                })
+            mentor,
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
             .map((res: Response) => res.json());
     }
-    
 }

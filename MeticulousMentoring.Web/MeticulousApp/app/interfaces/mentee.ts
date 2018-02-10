@@ -1,5 +1,5 @@
 ﻿import { School } from "./school"
-import { Classification} from "./classification"
+import { Classification } from "./classification"
 import { Address } from "./address"
 
 export interface Mentee {
@@ -10,7 +10,6 @@ export interface Mentee {
     dob: string;
     school: School;
     classification: Classification;
-    email: string ;
+    email: string;
     address: Address;
-
 }

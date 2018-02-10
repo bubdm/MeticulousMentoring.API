@@ -1,23 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using AutoMapper;
+using MeticulousMentoring.API.Data.Entities;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Logging;
-using Microsoft.Extensions.Options;
-using NETCore.DapperKit.Extensions;
-using MeticulousMentoring.API.Data.Entities;
-using NETCore.DapperKit;
-using AutoMapper;
-
 
 namespace MeticulousMentoring.API
 {
-    using System.Text;
-
     using MeticulousMentoring.API.Data;
     using MeticulousMentoring.API.Data.Repositories;
     using Microsoft.AspNetCore.Identity;
@@ -25,6 +14,7 @@ namespace MeticulousMentoring.API
     using Microsoft.EntityFrameworkCore;
     using Microsoft.IdentityModel.Tokens;
     using Newtonsoft.Json;
+    using System.Text;
 
     public class Startup
     {
@@ -40,7 +30,6 @@ namespace MeticulousMentoring.API
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
             services.AddIdentity<MeticulousUser, IdentityRole<int>>(
                 cfg => { cfg.User.RequireUniqueEmail = true; }).AddEntityFrameworkStores<MeticulousContext>();
 
@@ -49,12 +38,11 @@ namespace MeticulousMentoring.API
                 .AddJwtBearer(cfg =>
                     {
                         cfg.TokenValidationParameters = new TokenValidationParameters()
-                                                            {
-                                                                ValidIssuer = config["Tokens:Issuer"],
-                                                                ValidAudience = config["Tokens:Audience"],
-                                                                IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Tokens:Key"]))
-                                                            };
-
+                        {
+                            ValidIssuer = config["Tokens:Issuer"],
+                            ValidAudience = config["Tokens:Audience"],
+                            IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(config["Tokens:Key"]))
+                        };
                     });
 
             services.AddDbContext<MeticulousContext>(
@@ -79,7 +67,6 @@ namespace MeticulousMentoring.API
                             bldr => { bldr.AllowAnyHeader().WithMethods("GET").AllowAnyOrigin(); });
                     });
 
-
             //services.AddMvcCore().AddAuthorization().AddJsonFormatters();
 
             services.AddMvc(opt =>
@@ -90,7 +77,6 @@ namespace MeticulousMentoring.API
                         }
                     })
                 .AddJsonOptions(opt => opt.SerializerSettings.ReferenceLoopHandling = ReferenceLoopHandling.Ignore);
-           
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

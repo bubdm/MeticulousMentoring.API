@@ -1,7 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore.Metadata;
 using Microsoft.EntityFrameworkCore.Migrations;
 using System;
-using System.Collections.Generic;
 
 namespace MeticulousMentoring.API.Migrations
 {
@@ -166,12 +165,12 @@ namespace MeticulousMentoring.API.Migrations
                 },
                 constraints: table =>
                 {
-                   //table.ForeignKey(
-                   //     name: "FK_Mentees_Users_Id",
-                   //     column: x => x.id,
-                   //     principalTable: "Users",
-                   //     principalColumn: "id",
-                   //     onDelete: ReferentialAction.Cascade);
+                    //table.ForeignKey(
+                    //     name: "FK_Mentees_Users_Id",
+                    //     column: x => x.id,
+                    //     principalTable: "Users",
+                    //     principalColumn: "id",
+                    //     onDelete: ReferentialAction.Cascade);
                     table.ForeignKey(
                         name: "FK_Mentees_Guardians_Guardianid",
                         column: x => x.Guardianid,

@@ -26,10 +26,10 @@ var LoginComponent = (function () {
         var _this = this;
         this.data.login(this.creds)
             .subscribe(function (success) {
-            if (success) {
-                _this.router.navigate(["dashboard"]);
-            }
-        }, function (err) { return _this.errorMessage = "Failed to login"; });
+                if (success) {
+                    _this.router.navigate(["dashboard"]);
+                }
+            }, function (err) { return _this.errorMessage = "Failed to login"; });
     };
     return LoginComponent;
 }());

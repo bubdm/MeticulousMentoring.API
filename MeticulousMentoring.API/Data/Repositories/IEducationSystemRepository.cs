@@ -1,5 +1,5 @@
-﻿using System.Collections.Generic;
-using MeticulousMentoring.API.Data.Entities;
+﻿using MeticulousMentoring.API.Data.Entities;
+using System.Collections.Generic;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {

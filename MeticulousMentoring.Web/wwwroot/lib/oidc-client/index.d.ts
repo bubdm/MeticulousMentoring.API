@@ -9,7 +9,6 @@ export interface Logger {
 }
 
 export interface AccessTokenEvents {
-
   load(container: User): void;
 
   unload(): void;
@@ -167,7 +166,7 @@ export class UserManager extends OidcClient {
 
   startSilentRenew(): void;
   stopSilentRenew(): void;
-  
+
   events: UserManagerEvents;
 }
 

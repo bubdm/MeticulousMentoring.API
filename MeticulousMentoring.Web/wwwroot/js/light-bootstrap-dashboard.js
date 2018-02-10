@@ -90,7 +90,6 @@ lbd = {
         $sidebar_wrapper = $('.sidebar-wrapper');
 
         if (!mobile_menu_initialized) {
-
             $navbar = $('nav').find('.navbar-collapse').first().clone(true);
 
             nav_content = '';
@@ -98,7 +97,6 @@ lbd = {
 
             //add the content from the regular header to the mobile menu
             $navbar.children('ul').each(function() {
-
                 content_buff = $(this).html();
                 nav_content = nav_content + content_buff;
             });
@@ -116,7 +114,6 @@ lbd = {
 
             $(".sidebar-wrapper .dropdown .dropdown-menu > li > a").click(function(event) {
                 event.stopPropagation();
-
             });
 
             mobile_menu_initialized = true;
@@ -135,7 +132,6 @@ lbd = {
             $toggle = $('.navbar-toggler');
 
             $toggle.click(function() {
-
                 if (mobile_menu_visible == 1) {
                     $('html').removeClass('nav-open');
 
@@ -149,7 +145,6 @@ lbd = {
                     setTimeout(function() {
                         $toggle.addClass('toggled');
                     }, 430);
-
 
                     main_panel_height = $('.main-panel')[0].scrollHeight;
                     $layer = $('<div class="close-layer"></div>');
@@ -169,13 +164,11 @@ lbd = {
                         setTimeout(function() {
                             $layer.remove();
                             $toggle.removeClass('toggled');
-
                         }, 400);
                     });
 
                     $('html').addClass('nav-open');
                     mobile_menu_visible = 1;
-
                 }
             });
 
@@ -183,8 +176,6 @@ lbd = {
         }
     }
 }
-
-
 
 // Returns a function, that, as long as it continues to be invoked, will not
 // be triggered. The function will be called after it stops being called for

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MeticulousMentoring.API.Data.Entities;
 using MeticulousMentoring.API.Data.Repositories;
 using MeticulousMentoring.API.ViewModels;
@@ -11,13 +6,14 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
 
 namespace MeticulousMentoring.API.Controllers
 {
-
     [Route("api/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
-    public class ClassificationController : Controller  
+    public class ClassificationController : Controller
     {
         private readonly IClassificationRepository _classificationRepository;
         private readonly ILogger<ClassificationController> _logger;

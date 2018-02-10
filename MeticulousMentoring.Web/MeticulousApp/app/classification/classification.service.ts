@@ -23,9 +23,9 @@ export class ClassificationService {
 
     public get_classifications() {
         return this.http.get("http://localhost:52373/api/classification",
-                {
-                    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-                })
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
             .map((res: Response) => res.json());
     }
 }

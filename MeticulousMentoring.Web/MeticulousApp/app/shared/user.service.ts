@@ -6,7 +6,6 @@ export class UserService {
     private user: IUser;
 
     constructor() {
-
     }
 
     set(user: IUser): void {

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel.DataAnnotations;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.ComponentModel.DataAnnotations;
 
 namespace MeticulousMentoring.Web.ViewModels
 {
@@ -11,6 +6,7 @@ namespace MeticulousMentoring.Web.ViewModels
     {
         [Required]
         public string Username { get; set; }
+
         [Required]
         public string Password { get; set; }
 

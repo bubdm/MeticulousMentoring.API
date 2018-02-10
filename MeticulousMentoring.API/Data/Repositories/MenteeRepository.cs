@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
@@ -57,7 +55,6 @@ namespace MeticulousMentoring.API.Data.Repositories
                 this.logger.LogError($"Failed to get all mentees: {e}");
                 return null;
             }
-            
         }
 
         public IEnumerable<Mentee> GetTotalMentees()
@@ -112,9 +109,6 @@ namespace MeticulousMentoring.API.Data.Repositories
                 this.logger.LogError($"Failed to get Mentor: {e}");
                 return null;
             }
-           
-
-
         }
 
         public Guardian GetGuardianByMenteeId(int id)
@@ -131,7 +125,6 @@ namespace MeticulousMentoring.API.Data.Repositories
                 return null;
             }
         }
-
 
         public bool SaveAll()
         {
@@ -151,7 +144,6 @@ namespace MeticulousMentoring.API.Data.Repositories
                     .Include(g => g.grade_course)
                     .Include(g => g.period)
                     .Where(g => g.mentee_id == id);
-
             }
             catch (Exception e)
             {

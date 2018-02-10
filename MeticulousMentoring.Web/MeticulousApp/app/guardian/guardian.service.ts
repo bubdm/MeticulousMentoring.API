@@ -11,10 +11,10 @@ export class GuardianService {
 
     public add_guardian(guardian) {
         return this.http.post("http://localhost:52373/api/mentees/AddGuardian",
-                guardian,
-                {
-                    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-                })
+            guardian,
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
             .map((res: Response) => res.json());
     }
 }

@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MeticulousMentoring.API.Data.Entities;
 using MeticulousMentoring.API.ViewModels;
 
@@ -19,7 +14,6 @@ namespace MeticulousMentoring.API.Data
                 .ForMember(d => d.DirectorLastName, dv => dv.MapFrom(d => d.last_name))
                 .ForMember(d => d.DirectorEmail, dv => dv.MapFrom(d => d.email))
                 .ReverseMap();
-
         }
     }
 }

@@ -1,26 +1,24 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Cors;
+using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Cors;
-using Microsoft.EntityFrameworkCore;
 
 namespace MeticulousMentoring.API.Controllers
 {
-    using System.IdentityModel.Tokens.Jwt;
-    using System.Security.Claims;
-
     using MeticulousMentoring.API.Data.Entities;
     using MeticulousMentoring.API.ViewModels;
-
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Configuration;
     using Microsoft.Extensions.Logging;
     using Microsoft.IdentityModel.Tokens;
+    using System.IdentityModel.Tokens.Jwt;
+    using System.Security.Claims;
 
     [EnableCors("Meticulous")]
     public class AccountController : Controller
@@ -47,7 +45,6 @@ namespace MeticulousMentoring.API.Controllers
 
         public IActionResult Login()
         {
-
             if (User.Identity.IsAuthenticated)
             {
                 return RedirectToAction("Index", "Values");
@@ -57,7 +54,7 @@ namespace MeticulousMentoring.API.Controllers
         }
 
         [HttpPost]
-        public async  Task<IActionResult> Login(LoginViewModel model)
+        public async Task<IActionResult> Login(LoginViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -114,7 +111,6 @@ namespace MeticulousMentoring.API.Controllers
                                              new Claim(JwtRegisteredClaimNames.Iat, user.Id.ToString())
                                          });
 
-
                         claims.AddRange(await this.userManager.GetClaimsAsync(user));
 
                         var roleNames = await this.userManager.GetRolesAsync(user);
@@ -132,7 +128,6 @@ namespace MeticulousMentoring.API.Controllers
                             }
                         }
 
-
                         var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(this.config["Tokens:Key"]));
                         var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
@@ -142,12 +137,11 @@ namespace MeticulousMentoring.API.Controllers
                             expires: DateTime.UtcNow.AddMinutes(20),
                             signingCredentials: creds);
 
-
                         var results = new
-                                          {
-                                              token = new JwtSecurityTokenHandler().WriteToken(token),
-                                              expiration = token.ValidTo
-                                          };
+                        {
+                            token = new JwtSecurityTokenHandler().WriteToken(token),
+                            expiration = token.ValidTo
+                        };
 
                         return Created("", results);
                     }
@@ -166,6 +160,5 @@ namespace MeticulousMentoring.API.Controllers
                 return await userManager.Users.ToListAsync();
             }
         }
-
     }
 }

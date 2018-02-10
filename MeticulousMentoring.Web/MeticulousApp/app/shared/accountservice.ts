@@ -30,14 +30,13 @@ export class AccountService {
         this.userService.delete();
         localStorage.removeItem('user');
         localStorage.removeItem('token');
-        
     }
 
     public get_users() {
         return this.http.get("http://localhost:52373/api/account/getusers",
-                {
-                    headers: new Headers({"Authorization": "Bearer " + localStorage.getItem('token').toString()})
-                })
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
             .map((res: Response) => res.json());
     }
 }

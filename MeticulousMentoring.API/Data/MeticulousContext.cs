@@ -1,18 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace MeticulousMentoring.API.Data
+﻿namespace MeticulousMentoring.API.Data
 {
-    using System.Text.RegularExpressions;
-
     using MeticulousMentoring.API.Data.Entities;
-
     using Microsoft.AspNetCore.Identity;
     using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
     using Microsoft.EntityFrameworkCore;
+    using System.Text.RegularExpressions;
 
     /// <summary>
     /// The meticulous context.

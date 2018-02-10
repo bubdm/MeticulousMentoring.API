@@ -8,27 +8,27 @@
                 <ng-template matStepLabel>Mentee</ng-template>
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput placeholder="First Name" formControlName="first_name"/>
+                        <input matInput placeholder="First Name" formControlName="first_name" />
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Last Name" formControlName="last_name"/>
+                        <input matInput placeholder="Last Name" formControlName="last_name" />
                     </mat-form-field>
                 </div>
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput placeholder="Address 1" formControlName="address1"/>
+                        <input matInput placeholder="Address 1" formControlName="address1" />
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Address 2" formControlName="address2"/>
+                        <input matInput placeholder="Address 2" formControlName="address2" />
                     </mat-form-field>
                 </div>
 
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput placeholder="City" formControlName="city"/>
+                        <input matInput placeholder="City" formControlName="city" />
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Zip" formControlName="zip"/>
+                        <input matInput placeholder="Zip" formControlName="zip" />
                     </mat-form-field>
                 </div>
                 <div class="form-group">
@@ -41,14 +41,14 @@
                 </div>
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput [matDatepicker]="picker" placeholder="DOB" formControlName="dob"/>
+                        <input matInput [matDatepicker]="picker" placeholder="DOB" formControlName="dob" />
                         <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker startView="year" [startAt]="startDate"></mat-datepicker>
                     </mat-form-field>
                 </div>
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput placeholder="Email" formControlName="email"/>
+                        <input matInput placeholder="Email" formControlName="email" />
                     </mat-form-field>
                 </div>
 
@@ -90,10 +90,10 @@
 
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput placeholder="First Name" formControlName="guardianFirstName"/>
+                        <input matInput placeholder="First Name" formControlName="guardianFirstName" />
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Last Name" formControlName="guardianLastName"/>
+                        <input matInput placeholder="Last Name" formControlName="guardianLastName" />
                     </mat-form-field>
                 </div>
                 <div class="form-group">
@@ -104,29 +104,29 @@
                         </mat-select>
                     </mat-form-field>
                 </div>
-               
+
                 <div class="form-group">
                     <div class="form-group">
                         <mat-checkbox [ngClass]="'guardian-checkbox'" color="primary" (change)="isChildAddressShared = !isChildAddressShared;copyAddress()">Check if address is the same as mentee.</mat-checkbox>
                     </div>
                     <mat-form-field>
-                        <input matInput placeholder="Address 1" formControlName="guardianAddress1"/>
+                        <input matInput placeholder="Address 1" formControlName="guardianAddress1" />
                     </mat-form-field>
                     <mat-form-field>
-                        <input matInput placeholder="Address 2" formControlName="guardianAddress2"/>
-                    </mat-form-field>
-                </div>
-                <div class="form-group">
-                    <mat-form-field>
-                        <input matInput placeholder="City" formControlName="guardianCity"/>
-                    </mat-form-field>
-                    <mat-form-field>
-                        <input matInput placeholder="Zip" formControlName="guardianZip"/>
+                        <input matInput placeholder="Address 2" formControlName="guardianAddress2" />
                     </mat-form-field>
                 </div>
                 <div class="form-group">
                     <mat-form-field>
-                        <input matInput placeholder="Email" formControlName="guardianEmail"/>
+                        <input matInput placeholder="City" formControlName="guardianCity" />
+                    </mat-form-field>
+                    <mat-form-field>
+                        <input matInput placeholder="Zip" formControlName="guardianZip" />
+                    </mat-form-field>
+                </div>
+                <div class="form-group">
+                    <mat-form-field>
+                        <input matInput placeholder="Email" formControlName="guardianEmail" />
                     </mat-form-field>
                 </div>
                 <div>
@@ -142,9 +142,7 @@
                 <div mat-dialog-actions>
                     <button mat-button (click)="submitMentee()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
                 </div>
-                
             </div>
         </mat-step>
     </mat-horizontal-stepper>
-
 </div>

@@ -28,7 +28,6 @@ var Util = function () {
     MozTransition: 'transitionend',
     OTransition: 'oTransitionEnd otransitionend',
     transition: 'transitionend' // shoutout AngusCroll (https://goo.gl/pxwQGp)
-
   };
 
   function toType(obj) {
@@ -95,7 +94,6 @@ var Util = function () {
    * Public Util Api
    * --------------------------------------------------------------------------
    */
-
 
   var Util = {
     TRANSITION_END: 'bsTransitionEnd',
@@ -214,7 +212,6 @@ var Alert = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Alert =
@@ -223,7 +220,6 @@ var Alert = function () {
     function Alert(element) {
       this._element = element;
     } // getters
-
 
     var _proto = Alert.prototype;
 
@@ -246,7 +242,6 @@ var Alert = function () {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
     }; // private
-
 
     _proto._getRootElement = function _getRootElement(element) {
       var selector = Util.getSelectorFromElement(element);
@@ -289,7 +284,6 @@ var Alert = function () {
       $(element).detach().trigger(Event.CLOSED).remove();
     }; // static
 
-
     Alert._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $element = $(this);
@@ -329,7 +323,6 @@ var Alert = function () {
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   $(document).on(Event.CLICK_DATA_API, Selector.DISMISS, Alert._handleDismiss(new Alert()));
   /**
@@ -388,7 +381,6 @@ var Button = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Button =
@@ -397,7 +389,6 @@ var Button = function () {
     function Button(element) {
       this._element = element;
     } // getters
-
 
     var _proto = Button.prototype;
 
@@ -451,7 +442,6 @@ var Button = function () {
       this._element = null;
     }; // static
 
-
     Button._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
@@ -480,7 +470,6 @@ var Button = function () {
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE_CARROT, function (event) {
     event.preventDefault();
@@ -591,7 +580,6 @@ var Carousel = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Carousel =
@@ -610,7 +598,6 @@ var Carousel = function () {
 
       this._addEventListeners();
     } // getters
-
 
     var _proto = Carousel.prototype;
 
@@ -705,7 +692,6 @@ var Carousel = function () {
       this._activeElement = null;
       this._indicatorsElement = null;
     }; // private
-
 
     _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
@@ -905,7 +891,6 @@ var Carousel = function () {
       }
     }; // static
 
-
     Carousel._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
@@ -986,7 +971,6 @@ var Carousel = function () {
    * ------------------------------------------------------------------------
    */
 
-
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_SLIDE, Carousel._dataApiClickHandler);
   $(window).on(Event.LOAD_DATA_API, function () {
     $(Selector.DATA_RIDE).each(function () {
@@ -1065,7 +1049,6 @@ var Collapse = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Collapse =
@@ -1097,7 +1080,6 @@ var Collapse = function () {
         this.toggle();
       }
     } // getters
-
 
     var _proto = Collapse.prototype;
 
@@ -1248,7 +1230,6 @@ var Collapse = function () {
       this._isTransitioning = null;
     }; // private
 
-
     _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
       config.toggle = Boolean(config.toggle); // coerce string values
@@ -1293,7 +1274,6 @@ var Collapse = function () {
         }
       }
     }; // static
-
 
     Collapse._getTargetFromElement = function _getTargetFromElement(element) {
       var selector = Util.getSelectorFromElement(element);
@@ -1344,7 +1324,6 @@ var Collapse = function () {
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     // preventDefault only for <a> elements (which change the URL) not inside the collapsible element
@@ -1759,10 +1738,6 @@ var createClass$1 = function () {
     return Constructor;
   };
 }();
-
-
-
-
 
 var defineProperty = function (obj, key, value) {
   if (key in obj) {
@@ -3742,7 +3717,6 @@ var Popper = function () {
   // We can't use class properties because they don't get listed in the
   // class prototype and break stuff like Sinon stubs
 
-
   createClass$1(Popper, [{
     key: 'update',
     value: function update$$1() {
@@ -3770,7 +3744,6 @@ var Popper = function () {
      * @memberof Popper
      */
 
-
     /**
      * Collection of utilities useful when writing custom modifiers.
      * Starting from version 1.7, this method is available only if you
@@ -3787,7 +3760,6 @@ var Popper = function () {
      * @member Utils
      * @memberof Popper
      */
-
   }]);
   return Popper;
 }();
@@ -3811,7 +3783,6 @@ var Popper = function () {
  * @property {number} data.clientHeight
  * An ES6 getter that will return the height of the virtual reference element.
  */
-
 
 Popper.Utils = (typeof window !== 'undefined' ? window : global).PopperUtils;
 Popper.placements = placements;
@@ -3837,7 +3808,6 @@ var Dropdown = function () {
    * Constants
    * ------------------------------------------------------------------------
    */
-
 
   var NAME = 'dropdown';
   var VERSION = '4.0.0-beta.2';
@@ -3900,7 +3870,6 @@ var Dropdown = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Dropdown =
@@ -3915,7 +3884,6 @@ var Dropdown = function () {
 
       this._addEventListeners();
     } // getters
-
 
     var _proto = Dropdown.prototype;
 
@@ -3991,7 +3959,6 @@ var Dropdown = function () {
       }
     }; // private
 
-
     _proto._addEventListeners = function _addEventListeners() {
       var _this = this;
 
@@ -4062,7 +4029,6 @@ var Dropdown = function () {
             enabled: this._config.flip
           }
         } // Disable Popper.js for Dropdown in Navbar
-
       };
 
       if (this._inNavbar) {
@@ -4073,7 +4039,6 @@ var Dropdown = function () {
 
       return popperConfig;
     }; // static
-
 
     Dropdown._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -4132,7 +4097,6 @@ var Dropdown = function () {
           continue;
         } // if this is a touch-enabled device we remove the extra
         // empty mouseover listeners we added for iOS support
-
 
         if ('ontouchstart' in document.documentElement) {
           $('body').children().off('mouseover', null, $.noop);
@@ -4230,7 +4194,6 @@ var Dropdown = function () {
    * ------------------------------------------------------------------------
    */
 
-
   $(document).on(Event.KEYDOWN_DATA_API, Selector.DATA_TOGGLE, Dropdown._dataApiKeydownHandler).on(Event.KEYDOWN_DATA_API, Selector.MENU, Dropdown._dataApiKeydownHandler).on(Event.CLICK_DATA_API + " " + Event.KEYUP_DATA_API, Dropdown._clearMenus).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     event.preventDefault();
     event.stopPropagation();
@@ -4323,7 +4286,6 @@ var Modal = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Modal =
@@ -4340,7 +4302,6 @@ var Modal = function () {
       this._originalBodyPadding = 0;
       this._scrollbarWidth = 0;
     } // getters
-
 
     var _proto = Modal.prototype;
 
@@ -4458,7 +4419,6 @@ var Modal = function () {
     _proto.handleUpdate = function handleUpdate() {
       this._adjustDialog();
     }; // private
-
 
     _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
@@ -4650,7 +4610,6 @@ var Modal = function () {
     // todo (fat): these should probably be refactored out of modal.js
     // ----------------------------------------------------------------------
 
-
     _proto._adjustDialog = function _adjustDialog() {
       var isModalOverflowing = this._element.scrollHeight > document.documentElement.clientHeight;
 
@@ -4740,7 +4699,6 @@ var Modal = function () {
       return scrollbarWidth;
     }; // static
 
-
     Modal._jQueryInterface = function _jQueryInterface(config, relatedTarget) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
@@ -4782,7 +4740,6 @@ var Modal = function () {
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     var _this10 = this;
@@ -4852,7 +4809,6 @@ var Tooltip = function () {
    * Constants
    * ------------------------------------------------------------------------
    */
-
 
   var NAME = 'tooltip';
   var VERSION = '4.0.0-beta.2';
@@ -4930,7 +4886,6 @@ var Tooltip = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Tooltip =
@@ -4950,7 +4905,6 @@ var Tooltip = function () {
 
       this._setListeners();
     } // getters
-
 
     var _proto = Tooltip.prototype;
 
@@ -5175,7 +5129,6 @@ var Tooltip = function () {
       }
     }; // protected
 
-
     _proto.isWithContent = function isWithContent() {
       return Boolean(this.getTitle());
     };
@@ -5221,7 +5174,6 @@ var Tooltip = function () {
 
       return title;
     }; // private
-
 
     _proto._getAttachment = function _getAttachment(placement) {
       return AttachmentMap[placement.toUpperCase()];
@@ -5411,7 +5363,6 @@ var Tooltip = function () {
       this.config.animation = initConfigAnimation;
     }; // static
 
-
     Tooltip._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var data = $(this).data(DATA_KEY);
@@ -5481,7 +5432,6 @@ var Tooltip = function () {
    * ------------------------------------------------------------------------
    */
 
-
   $.fn[NAME] = Tooltip._jQueryInterface;
   $.fn[NAME].Constructor = Tooltip;
 
@@ -5546,7 +5496,6 @@ var Popover = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Popover =
@@ -5582,7 +5531,6 @@ var Popover = function () {
       $tip.removeClass(ClassName.FADE + " " + ClassName.SHOW);
     }; // private
 
-
     _proto._getContent = function _getContent() {
       return this.element.getAttribute('data-content') || (typeof this.config.content === 'function' ? this.config.content.call(this.element) : this.config.content);
     };
@@ -5595,7 +5543,6 @@ var Popover = function () {
         $tip.removeClass(tabClass.join(''));
       }
     }; // static
-
 
     Popover._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -5667,7 +5614,6 @@ var Popover = function () {
    * ------------------------------------------------------------------------
    */
 
-
   $.fn[NAME] = Popover._jQueryInterface;
   $.fn[NAME].Constructor = Popover;
 
@@ -5737,7 +5683,6 @@ var ScrollSpy = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var ScrollSpy =
@@ -5761,7 +5706,6 @@ var ScrollSpy = function () {
 
       this._process();
     } // getters
-
 
     var _proto = ScrollSpy.prototype;
 
@@ -5817,7 +5761,6 @@ var ScrollSpy = function () {
       this._activeTarget = null;
       this._scrollHeight = null;
     }; // private
-
 
     _proto._getConfig = function _getConfig(config) {
       config = $.extend({}, Default, config);
@@ -5894,7 +5837,6 @@ var ScrollSpy = function () {
 
       var queries = this._selector.split(','); // eslint-disable-next-line arrow-body-style
 
-
       queries = queries.map(function (selector) {
         return selector + "[data-target=\"" + target + "\"]," + (selector + "[href=\"" + target + "\"]");
       });
@@ -5921,7 +5863,6 @@ var ScrollSpy = function () {
     _proto._clear = function _clear() {
       $(this._selector).filter(Selector.ACTIVE).removeClass(ClassName.ACTIVE);
     }; // static
-
 
     ScrollSpy._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
@@ -5962,7 +5903,6 @@ var ScrollSpy = function () {
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   $(window).on(Event.LOAD_DATA_API, function () {
     var scrollSpys = $.makeArray($(Selector.DATA_SPY));
@@ -6037,7 +5977,6 @@ var Tab = function () {
      * Class Definition
      * ------------------------------------------------------------------------
      */
-
   };
 
   var Tab =
@@ -6046,7 +5985,6 @@ var Tab = function () {
     function Tab(element) {
       this._element = element;
     } // getters
-
 
     var _proto = Tab.prototype;
 
@@ -6114,7 +6052,6 @@ var Tab = function () {
       $.removeData(this._element, DATA_KEY);
       this._element = null;
     }; // private
-
 
     _proto._activate = function _activate(element, container, callback) {
       var _this2 = this;
@@ -6187,7 +6124,6 @@ var Tab = function () {
       }
     }; // static
 
-
     Tab._jQueryInterface = function _jQueryInterface(config) {
       return this.each(function () {
         var $this = $(this);
@@ -6221,7 +6157,6 @@ var Tab = function () {
    * Data Api implementation
    * ------------------------------------------------------------------------
    */
-
 
   $(document).on(Event.CLICK_DATA_API, Selector.DATA_TOGGLE, function (event) {
     event.preventDefault();
@@ -6282,6 +6217,5 @@ exports.Tab = Tab;
 exports.Tooltip = Tooltip;
 
 return exports;
-
 }({},$));
 //# sourceMappingURL=bootstrap.bundle.js.map

@@ -8,14 +8,12 @@ import { GuardianService } from '../guardian/guardian.service';
 import { SchoolService } from '../school/school.service';
 import { Mentee } from '../interfaces/mentee';
 
-
-
 @Component({
     selector: 'mentee-form',
     templateUrl: 'mentee.form.component.html',
     styleUrls: ['mentee.form.component.css']
 })
-export class MenteeFormComponent implements OnInit{
+export class MenteeFormComponent implements OnInit {
     startDate = new Date(1999, 0, 1);
     firstFormGroup: FormGroup;
     secondFormGroup: FormGroup;
@@ -26,7 +24,6 @@ export class MenteeFormComponent implements OnInit{
     public schools;
     public menteeId: string;
     isChildAddressShared = false;
-  
 
     constructor(public dialogRef: MatDialogRef<MenteeFormComponent>,
         @Inject(MAT_DIALOG_DATA) private data: any,
@@ -36,7 +33,6 @@ export class MenteeFormComponent implements OnInit{
         private menteeService: MenteeService,
         private guardianService: GuardianService,
         private schoolService: SchoolService) {
-
     }
 
     ngOnInit(): void {
@@ -53,8 +49,7 @@ export class MenteeFormComponent implements OnInit{
             email: ["", [Validators.required, Validators.email]],
             menteeGender: ["", Validators.required],
             dob: ["", Validators.required]
-           
-    });
+        });
         this.secondFormGroup = this.formBuilder.group({
             school: ["", Validators.required],
             classification: ["", Validators.required]
@@ -78,32 +73,31 @@ export class MenteeFormComponent implements OnInit{
     public getClassifications() {
         let response = this.classificationService.get_classifications()
             .subscribe(
-                data => {
-                    this.classifications = data;
-                },
-                error => console.log(error));
+            data => {
+                this.classifications = data;
+            },
+            error => console.log(error));
     }
 
     public getEducationSystems() {
         let response = this.educationSystemService.get_education_systems()
             .subscribe(
-                data => {
-                    this.educationSystems = data;
-                },
-                error => console.log(error));
+            data => {
+                this.educationSystems = data;
+            },
+            error => console.log(error));
     }
 
     public getSchools() {
         let response = this.schoolService.get_schools()
             .subscribe(
-                data => {
-                    this.schools = data;
-                },
-                error => console.log(error));
+            data => {
+                this.schools = data;
+            },
+            error => console.log(error));
     }
 
     copyAddress(): void {
-
         if (this.isChildAddressShared) {
             this.thirdFormGroup.controls['guardianAddress1'].setValue(this.firstFormGroup.get('address1').value);
             this.thirdFormGroup.controls['guardianAddress2'].setValue(this.firstFormGroup.get('address2').value);
@@ -115,7 +109,6 @@ export class MenteeFormComponent implements OnInit{
             this.thirdFormGroup.controls['guardianCity'].setValue('');
             this.thirdFormGroup.controls['guardianZip'].setValue('');
         }
-        
     }
 
     submitMentee(): void {
@@ -127,11 +120,11 @@ export class MenteeFormComponent implements OnInit{
             MenteeFirstName: test.first_name,
             MenteeLastName: test.last_name,
             MenteeAddress: {
-            address1: test.address1,
-            address2: test.address2,
-            city: test.city,
-            zip: test.zip,
-        },
+                address1: test.address1,
+                address2: test.address2,
+                city: test.city,
+                zip: test.zip,
+            },
             MenteeDOB: test.dob,
             MenteeEmail: test.email,
             MenteeGender: test.menteeGender,
@@ -139,40 +132,36 @@ export class MenteeFormComponent implements OnInit{
                 id: test2.classification.classificationId,
                 classification_id: test2.classification.classificationClassId,
                 description: test2.classification.classificationDescription
-
             },
             MenteeSchool: {
                 id: test2.school.schoolId
             },
-
         }
 
         let response = this.menteeService.add_mentee(newMentee)
             .subscribe(
-                data => {
-                    this.menteeId = data.menteeId;
+            data => {
+                this.menteeId = data.menteeId;
 
-                    var newGuardian = {
-                        GuardianFirstName: test3.guardianFirstName,
-                        GuardianLastName: test3.guardianLastName,
-                        GuardianGender: test3.guardianGender,
-                        GuardianAddress: {
-                            address1: test3.guardianAddress1,
-                            address2: test3.guardianAddress2,
-                            city: test3.guardianCity,
-                            zip: test3.guardianZip
-                        },
-                        GuardianEmail: test3.guardianEmail,
-                        GuardianChildren: [{
-                            id: this.menteeId
-                        }]
-                    }
+                var newGuardian = {
+                    GuardianFirstName: test3.guardianFirstName,
+                    GuardianLastName: test3.guardianLastName,
+                    GuardianGender: test3.guardianGender,
+                    GuardianAddress: {
+                        address1: test3.guardianAddress1,
+                        address2: test3.guardianAddress2,
+                        city: test3.guardianCity,
+                        zip: test3.guardianZip
+                    },
+                    GuardianEmail: test3.guardianEmail,
+                    GuardianChildren: [{
+                        id: this.menteeId
+                    }]
+                }
 
-                    this.guardianService.add_guardian(newGuardian)
-                        .subscribe(r => {});
-
-                },
-                error => console.log(error));
-
+                this.guardianService.add_guardian(newGuardian)
+                    .subscribe(r => { });
+            },
+            error => console.log(error));
     }
 }

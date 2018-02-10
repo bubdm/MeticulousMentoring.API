@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MeticulousMentoring.API.Data.Entities;
+﻿using MeticulousMentoring.API.Data.Entities;
 
 namespace MeticulousMentoring.API.ViewModels
 {
@@ -14,6 +9,5 @@ namespace MeticulousMentoring.API.ViewModels
         public Address SchoolAddress { get; set; }
         public string SchoolPrincipal { get; set; }
         public EducationSystem SchoolSystem { get; set; }
-        
     }
 }

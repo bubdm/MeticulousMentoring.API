@@ -38,30 +38,27 @@ export class MenteeProfileComponent implements OnInit {
 
             this.menteeService.get_mentee_by_id(this.menteeId)
                 .subscribe(data => {
-                        this.mentee = data;
-                    },
+                    this.mentee = data;
+                },
                 error => console.log(error));
 
             this.menteeService.get_mentor_by_mentee_id(this.menteeId)
                 .subscribe(data => {
-                        this.mentor = data;
-                    },
+                    this.mentor = data;
+                },
                 error => console.log(error));
 
             this.menteeService.get_guardian_by_mentee_id(this.menteeId)
                 .subscribe(data => {
-                        this.guardian = data;
-                    },
+                    this.guardian = data;
+                },
                 error => console.log(error));
 
             this.menteeService.get_mentee_grades(this.menteeId)
                 .subscribe(data => {
                     this.grades = data;
-
-                    
-                    },
+                },
                 error => console.log(error));
         }
-
     }
 }

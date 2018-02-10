@@ -83,7 +83,6 @@
     };
 
     return Util;
-
   })();
 
   WeakMap = this.WeakMap || this.MozWeakMap || (WeakMap = (function() {
@@ -118,7 +117,6 @@
     };
 
     return WeakMap;
-
   })());
 
   MutationObserver = this.MutationObserver || this.WebkitMutationObserver || this.MozMutationObserver || (MutationObserver = (function() {
@@ -136,7 +134,6 @@
     MutationObserver.prototype.observe = function() {};
 
     return MutationObserver;
-
   })());
 
   getComputedStyle = this.getComputedStyle || function(el, pseudo) {
@@ -503,7 +500,5 @@
     };
 
     return WOW;
-
   })();
-
 }).call(this);

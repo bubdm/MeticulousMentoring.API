@@ -1,10 +1,9 @@
-﻿using System;
+﻿using MeticulousMentoring.API.Data;
+using Microsoft.AspNetCore.Identity;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
-using MeticulousMentoring.API.Data;
-using Microsoft.AspNetCore.Identity;
 
 namespace MeticulousMentoring.API.Controllers
 {
@@ -18,7 +17,7 @@ namespace MeticulousMentoring.API.Controllers
     using Microsoft.AspNetCore.Authorization;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
-    
+
     [Route("api/[Controller]")]
     [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class MentorsController : Controller
@@ -49,7 +48,7 @@ namespace MeticulousMentoring.API.Controllers
             {
                 var results = this.mentorRepository.GetAllMentors(includeMentees);
 
-                return this.Ok(this.mapper.Map<IEnumerable<Mentor>,IEnumerable<MentorViewModel>>(results));
+                return this.Ok(this.mapper.Map<IEnumerable<Mentor>, IEnumerable<MentorViewModel>>(results));
             }
             catch (Exception e)
             {
@@ -127,10 +126,8 @@ namespace MeticulousMentoring.API.Controllers
                                     $"/api/mentors/{newMentor.id}",
                                     this.mapper.Map<Mentor, MentorViewModel>(newMentor));
                             }
-
                         }
                     }
-                   
                 }
                 else
                 {
@@ -139,7 +136,7 @@ namespace MeticulousMentoring.API.Controllers
             }
             catch (Exception e)
             {
-               this.logger.LogError($"Could not save Mentor data: {e}");
+                this.logger.LogError($"Could not save Mentor data: {e}");
             }
             return this.BadRequest("Failed to save new Mentor data");
         }

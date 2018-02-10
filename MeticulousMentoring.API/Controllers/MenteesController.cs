@@ -1,11 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MeticulousMentoring.API.Data;
+﻿using MeticulousMentoring.API.Data;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Threading.Tasks;
 
 namespace MeticulousMentoring.API.Controllers
 {
@@ -17,7 +16,6 @@ namespace MeticulousMentoring.API.Controllers
 
     using Microsoft.AspNetCore.Authentication.JwtBearer;
     using Microsoft.AspNetCore.Authorization;
-    using Microsoft.AspNetCore.Cors;
     using Microsoft.AspNetCore.Mvc;
     using Microsoft.Extensions.Logging;
 
@@ -73,7 +71,6 @@ namespace MeticulousMentoring.API.Controllers
                 {
                     return this.NotFound();
                 }
-                
             }
             catch (Exception e)
             {
@@ -167,15 +164,10 @@ namespace MeticulousMentoring.API.Controllers
                             this.menteeRepository.AddMentee(newMentee);
                             if (this.menteeRepository.SaveAll())
                             {
-                              
                                 return Created($"/api/mentees/{newMentee.id}", this.mapper.Map<Mentee, MenteeViewModel>(newMentee));
-
                             }
-
                         }
                     }
-
-                    
                 }
                 else
                 {
@@ -190,7 +182,6 @@ namespace MeticulousMentoring.API.Controllers
             return this.BadRequest("Failed to save new Mentee data");
         }
 
-        
         [HttpPost]
         [Route("/api/mentees/AddGuardian")]
         public async Task<IActionResult> AddGuardian([FromBody]GuardianViewModel guardian)
@@ -212,15 +203,12 @@ namespace MeticulousMentoring.API.Controllers
                         newGuardian.address = existingAddress;
                     }
 
-
                     var child = _ctx.Mentees.FirstOrDefault(x => x.id == newGuardian.children.ElementAtOrDefault(0).id);
                     newGuardian.children.Clear();
                     newGuardian.children.Add(child);
                     newGuardian.created_on = DateTime.Now;
                     newGuardian.modified_on = DateTime.Now;
                     _ctx.Guardians.Add(newGuardian);
-
-
 
                     await _ctx.SaveChangesAsync();
 
@@ -276,7 +264,5 @@ namespace MeticulousMentoring.API.Controllers
                 throw;
             }
         }
-        
     }
 }
-

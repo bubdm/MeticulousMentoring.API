@@ -12,8 +12,7 @@ import { EducationalSystem } from "../interfaces/educational_system"
 import { MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MenteeFormComponent } from '../forms/mentee.form.component';
 import { MentorFormComponent } from '../forms/mentor.form.component';
-import { DirectorFormComponent} from '../forms/director.form.component';
-
+import { DirectorFormComponent } from '../forms/director.form.component';
 
 @NgModule({
     imports: [MenteeFormComponent,
@@ -41,12 +40,10 @@ export class DashboardComponent implements OnInit {
     mentor: Mentor;
     school: School;
     educational_system: EducationalSystem;
-    
 
-    constructor(private userService: UserService, private auth: AccountService, private router: Router, public dialog: MatDialog) {}
+    constructor(private userService: UserService, private auth: AccountService, private router: Router, public dialog: MatDialog) { }
 
     ngOnInit(): void {
-        
         //this.user = this.userService.get();
         this.user = JSON.parse(localStorage.getItem('user'));
         if (!this.user) {
@@ -62,14 +59,13 @@ export class DashboardComponent implements OnInit {
     public getUsers() {
         let response = this.auth.get_users()
             .subscribe(
-                data => {
-                    this.users = new MatTableDataSource(data);
-                },
+            data => {
+                this.users = new MatTableDataSource(data);
+            },
             error => console.log(error));
     }
 
     public openMenteeFormDialog() {
-        
         let dialogRef = this.dialog.open(MenteeFormComponent,
             {
                 width: '800px',
@@ -77,11 +73,9 @@ export class DashboardComponent implements OnInit {
                 data: { mentee: this.mentee }
             });
 
-
         dialogRef.afterClosed().subscribe(result => {
             this.mentee = result;
         });
-
     }
 
     public openMentorFormDialog() {
@@ -89,7 +83,6 @@ export class DashboardComponent implements OnInit {
             {
                 width: '800px',
                 height: '780px'
-    
             });
 
         dialogRef.afterClosed().subscribe(result => {
@@ -104,12 +97,11 @@ export class DashboardComponent implements OnInit {
                 height: '400px'
             });
 
-        diaglogRef.afterClosed().subscribe(result => {});
+        diaglogRef.afterClosed().subscribe(result => { });
     }
 
     public logout() {
         this.auth.logout();
         this.router.navigate([""]);
     }
-
 }

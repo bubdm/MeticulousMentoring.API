@@ -1,4 +1,4 @@
-﻿import { Component, OnInit} from "@angular/core";
+﻿import { Component, OnInit } from "@angular/core";
 import { AccountService } from "../shared/accountservice";
 import { UserService } from "../shared/user.service";
 import { Router } from "@angular/router";
@@ -20,7 +20,7 @@ export class AdminComponent implements OnInit {
     public total_mentors: number = 0;
     public total_male = 0;
     public total_female = 0;
-    math:any;
+    math: any;
 
     constructor(private userService: UserService,
         private auth: AccountService,
@@ -46,7 +46,5 @@ export class AdminComponent implements OnInit {
             .subscribe(data => {
                 this.total_unmatched_mentees = data.length;
             });
-
-
     }
 }

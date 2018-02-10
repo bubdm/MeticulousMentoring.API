@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MeticulousMentoring.API.Data.Entities;
 using MeticulousMentoring.API.Data.Repositories;
 using MeticulousMentoring.API.ViewModels;
@@ -13,6 +8,8 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Routing;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Threading.Tasks;
 
 namespace MeticulousMentoring.API.Controllers
 {
@@ -68,7 +65,6 @@ namespace MeticulousMentoring.API.Controllers
                                 return Created($"/api/directors/{newDirector.id}",
                                     _mapper.Map<Director, DirectorViewModel>(newDirector));
                             }
-
                         }
                     }
                 }
@@ -79,12 +75,10 @@ namespace MeticulousMentoring.API.Controllers
             }
             catch (Exception e)
             {
-               this._logger.LogError($"Could not save Director data: {e}");
-
+                this._logger.LogError($"Could not save Director data: {e}");
             }
 
             return BadRequest("Failed to save Director data");
         }
-
     }
 }

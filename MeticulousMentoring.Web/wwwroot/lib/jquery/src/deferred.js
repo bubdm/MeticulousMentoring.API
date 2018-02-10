@@ -3,7 +3,6 @@ define( [
 	"./var/slice",
 	"./callbacks"
 ], function( jQuery, slice ) {
-
 "use strict";
 
 function Identity( v ) {
@@ -17,7 +16,6 @@ function adoptValue( value, resolve, reject, noValue ) {
 	var method;
 
 	try {
-
 		// Check for promise aspect first to privilege synchronous behavior
 		if ( value && jQuery.isFunction( ( method = value.promise ) ) ) {
 			method.call( value ).done( resolve ).fail( reject );
@@ -28,7 +26,6 @@ function adoptValue( value, resolve, reject, noValue ) {
 
 		// Other non-thenables
 		} else {
-
 			// Control `resolve` arguments by letting Array#slice cast boolean `noValue` to integer:
 			// * false: [ value ].slice( 0 ) => resolve( value )
 			// * true: [ value ].slice( 1 ) => resolve()
@@ -39,7 +36,6 @@ function adoptValue( value, resolve, reject, noValue ) {
 	// Since jQuery.when doesn't unwrap thenables, we can skip the extra checks appearing in
 	// Deferred#then to conditionally suppress rejection.
 	} catch ( value ) {
-
 		// Support: Android 4.0 only
 		// Strict mode functions invoked without .call/.apply get global-object context
 		reject.apply( undefined, [ value ] );
@@ -47,7 +43,6 @@ function adoptValue( value, resolve, reject, noValue ) {
 }
 
 jQuery.extend( {
-
 	Deferred: function( func ) {
 		var tuples = [
 
@@ -79,7 +74,6 @@ jQuery.extend( {
 
 					return jQuery.Deferred( function( newDefer ) {
 						jQuery.each( tuples, function( i, tuple ) {
-
 							// Map tuples (progress, done, fail) to arguments (done, fail, progress)
 							var fn = jQuery.isFunction( fns[ tuple[ 4 ] ] ) && fns[ tuple[ 4 ] ];
 
@@ -143,7 +137,6 @@ jQuery.extend( {
 
 									// Handle a returned thenable
 									if ( jQuery.isFunction( then ) ) {
-
 										// Special processors (notify) just wait for resolution
 										if ( special ) {
 											then.call(
@@ -154,7 +147,6 @@ jQuery.extend( {
 
 										// Normal processors (resolve) also hook into progress
 										} else {
-
 											// ...and disregard older resolution values
 											maxDepth++;
 
@@ -169,7 +161,6 @@ jQuery.extend( {
 
 									// Handle all other returned values
 									} else {
-
 										// Only substitute handlers pass on context
 										// and multiple values (non-spec behavior)
 										if ( handler !== Identity ) {
@@ -190,7 +181,6 @@ jQuery.extend( {
 										try {
 											mightThrow();
 										} catch ( e ) {
-
 											if ( jQuery.Deferred.exceptionHook ) {
 												jQuery.Deferred.exceptionHook( e,
 													process.stackTrace );
@@ -200,7 +190,6 @@ jQuery.extend( {
 											// https://promisesaplus.com/#point-61
 											// Ignore post-resolution exceptions
 											if ( depth + 1 >= maxDepth ) {
-
 												// Only substitute handlers pass on context
 												// and multiple values (non-spec behavior)
 												if ( handler !== Thrower ) {
@@ -220,7 +209,6 @@ jQuery.extend( {
 							if ( depth ) {
 								process();
 							} else {
-
 								// Call an optional hook to record the stack, in case of exception
 								// since it's otherwise lost when execution goes async
 								if ( jQuery.Deferred.getStackHook ) {
@@ -232,7 +220,6 @@ jQuery.extend( {
 					}
 
 					return jQuery.Deferred( function( newDefer ) {
-
 						// progress_handlers.add( ... )
 						tuples[ 0 ][ 3 ].add(
 							resolve(
@@ -291,7 +278,6 @@ jQuery.extend( {
 			if ( stateString ) {
 				list.add(
 					function() {
-
 						// state = "resolved" (i.e., fulfilled)
 						// state = "rejected"
 						state = stateString;
@@ -373,7 +359,6 @@ jQuery.extend( {
 			// Use .then() to unwrap secondary thenables (cf. gh-3000)
 			if ( master.state() === "pending" ||
 				jQuery.isFunction( resolveValues[ i ] && resolveValues[ i ].then ) ) {
-
 				return master.then();
 			}
 		}

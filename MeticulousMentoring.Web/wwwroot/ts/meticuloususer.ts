@@ -1,6 +1,5 @@
 ﻿class MeticulousUser {
-    constructor(private userName:string) {
-       
+    constructor(private userName: string) {
     }
 
     public visits: number = 0;
@@ -19,4 +18,3 @@
         return this.userEmail;
     }
 }
-

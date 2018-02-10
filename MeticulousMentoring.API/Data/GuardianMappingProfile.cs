@@ -1,15 +1,10 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using AutoMapper;
+﻿using AutoMapper;
 using MeticulousMentoring.API.Data.Entities;
 using MeticulousMentoring.API.ViewModels;
 
 namespace MeticulousMentoring.API.Data
 {
-    public class GuardianMappingProfile : Profile   
+    public class GuardianMappingProfile : Profile
     {
         public GuardianMappingProfile()
         {

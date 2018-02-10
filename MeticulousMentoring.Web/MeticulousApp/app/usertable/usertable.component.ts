@@ -1,4 +1,4 @@
-﻿import { Component, OnInit, ViewChild, AfterViewInit} from '@angular/core';
+﻿import { Component, OnInit, ViewChild, AfterViewInit } from '@angular/core';
 import { UserService } from '../shared/user.service';
 import { AccountService } from '../shared/accountservice';
 import { Observable } from 'rxjs/Observable';
@@ -12,7 +12,6 @@ import { MatPaginator, MatTableDataSource } from '@angular/material';
 import { startWith } from 'rxjs/operators/startWith';
 import { switchMap } from 'rxjs/operators/switchMap';
 
-
 @Component({
     selector: 'meticulous-usertable',
     templateUrl: './usertable.component.html',
@@ -20,27 +19,22 @@ import { switchMap } from 'rxjs/operators/switchMap';
 })
 export class UsertableComponent implements OnInit {
     dataSource = new MatTableDataSource();
-    @ViewChild(MatPaginator)paginator: MatPaginator;
-    
-    displayedColumns = ['id','userName'];
+    @ViewChild(MatPaginator) paginator: MatPaginator;
 
-    constructor(private accountService: AccountService) {}
+    displayedColumns = ['id', 'userName'];
+
+    constructor(private accountService: AccountService) { }
     ngOnInit() {
         this.accountService.get_users()
             .subscribe(
-                data => {
-                    this.dataSource.data = data;
+            data => {
+                this.dataSource.data = data;
             },
-                error => console.log()
-        );
-
+            error => console.log()
+            );
     }
 
     ngAfterViewInit() {
         this.dataSource.paginator = this.paginator;
     }
 }
-
-
-
-

@@ -3,7 +3,7 @@
     -moz-animation:    shake 4s infinite; /* Fx 5+ */
     -o-animation:      shake 4s infinite; /* Opera 12+ */
     animation:         shake 4s infinite; /* IE 10+, Fx 29+ */
-} 
+}
 
 a{
     text-decoration: none !important;

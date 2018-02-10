@@ -35,8 +35,6 @@ export class MentorFormComponent implements OnInit {
             mentorGender: ["", Validators.required],
             mentees: [""]
         });
-        
-       
     }
 
     onNoClick(): void {
@@ -48,7 +46,7 @@ export class MentorFormComponent implements OnInit {
             .subscribe(data => {
                 this.mentees = data;
             },
-                error => console.log(error));
+            error => console.log(error));
     }
 
     submitMentor(): void {
@@ -69,6 +67,6 @@ export class MentorFormComponent implements OnInit {
 
         let response = this.mentorService.add_mentor(newMentor)
             .subscribe(
-                data => {});
+            data => { });
     }
 }

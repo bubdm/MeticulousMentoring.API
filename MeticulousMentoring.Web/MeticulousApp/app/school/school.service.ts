@@ -11,9 +11,9 @@ export class SchoolService {
 
     public get_schools() {
         return this.http.get("http://localhost:52373/api/schools",
-                {
-                    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-                })
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
             .map((res: Response) => res.json());
     }
 }

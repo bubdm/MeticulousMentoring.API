@@ -1,19 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
 namespace MeticulousMentoring.API.Data
 {
-    using System.IO;
-
     using MeticulousMentoring.API.Data.Entities;
 
     using Microsoft.AspNetCore.Hosting;
     using Microsoft.AspNetCore.Identity;
-
-    using Newtonsoft.Json;
 
     public class MeticulousSeeder
     {
@@ -37,7 +32,7 @@ namespace MeticulousMentoring.API.Data
         {
             this.ctx.Database.EnsureCreated();
 
-            string[] roles = {"Admin", "Director", "Mentor", "Mentee"};
+            string[] roles = { "Admin", "Director", "Mentor", "Mentee" };
 
             foreach (var role in roles)
             {
@@ -49,17 +44,15 @@ namespace MeticulousMentoring.API.Data
                 }
             }
 
-
             //// Add Admin User
             var user = await this.userManager.FindByEmailAsync("admin@meticulous.com");
 
             if (user == null)
             {
-                
                 user = new MeticulousUser()
-                           {
-                               UserName = "admin@meticulous.com",
-                               Email = "admin@meticulous.com"
+                {
+                    UserName = "admin@meticulous.com",
+                    Email = "admin@meticulous.com"
                 };
 
                 var result = await this.userManager.CreateAsync(user, "War3agle!");
@@ -70,12 +63,12 @@ namespace MeticulousMentoring.API.Data
                 }
                 else
                 {
-                     await this.userManager.AddToRoleAsync(user, "Admin");
+                    await this.userManager.AddToRoleAsync(user, "Admin");
                 }
             }
             //// End Add Admin User
 
-            ////Add Director 
+            ////Add Director
             var director = await this.userManager.FindByEmailAsync("director@meticulous.com");
 
             if (director == null)
@@ -118,7 +111,6 @@ namespace MeticulousMentoring.API.Data
                         city = "Irondale",
                         state = "AL",
                         zip = "35210"
-
                     };
 
                     var menteeSchoolAddress = new Address()
@@ -137,7 +129,6 @@ namespace MeticulousMentoring.API.Data
                         system = ctx.Systems.Find(1)
                     };
 
-                    
                     var newMentee = new Mentee()
                     {
                         id = mentee.Id,
@@ -153,10 +144,7 @@ namespace MeticulousMentoring.API.Data
                         address = menteeAddress,
                         school = menteeSchool,
                         classification = ctx.Classifications.Find(4)
-                        
-                        
                     };
-
 
                     this.ctx.Addresses.Add(menteeAddress);
                     this.ctx.Addresses.Add(menteeSchoolAddress);
@@ -189,7 +177,7 @@ namespace MeticulousMentoring.API.Data
                         address1 = "1254 Mentor Way",
                         city = "Birmingham",
                         state = "AL",
-                        zip = "35207" 
+                        zip = "35207"
                     };
 
                     var newMentor = new Mentor()
@@ -203,7 +191,6 @@ namespace MeticulousMentoring.API.Data
                         created_on = Convert.ToDateTime(DateTime.Now),
                         modified_on = Convert.ToDateTime(DateTime.Now),
                         mentees = null
-                        
                     };
 
                     this.ctx.Addresses.Add(mentorAddress);
@@ -226,7 +213,6 @@ namespace MeticulousMentoring.API.Data
                     email = "aqwright@gmail.com",
                     middle = "Q",
                     children = null
-                    
                 };
 
                 this.ctx.Guardians.Add(guardian);
@@ -254,7 +240,6 @@ namespace MeticulousMentoring.API.Data
                 this.ctx.Guardians.Update(addedGuardian);
                 this.ctx.SaveChanges();
             }
-
         }
     }
 }

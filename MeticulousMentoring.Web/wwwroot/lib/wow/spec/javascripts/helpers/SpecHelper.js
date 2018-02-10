@@ -1,4 +1,3 @@
-(function() {
-  beforeEach(function() {});
-
+(function () {
+    beforeEach(function () { });
 }).call(this);

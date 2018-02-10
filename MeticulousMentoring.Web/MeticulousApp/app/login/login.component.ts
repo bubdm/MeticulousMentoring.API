@@ -4,14 +4,12 @@ import { AccountService } from "../shared/accountservice";
 import { UserService } from "../shared/user.service";
 import { Router } from "@angular/router";
 
-
 @Component({
-  selector: 'login',
-  templateUrl: './login.component.html',
-  styleUrls: ["login.component.css"]
+    selector: 'login',
+    templateUrl: './login.component.html',
+    styleUrls: ["login.component.css"]
 })
 export class LoginComponent {
-
     public creds = {
         username: "",
         password: ""
@@ -31,7 +29,5 @@ export class LoginComponent {
                 this.router.navigate(["dashboard"]);
             },
             error => console.log(error));
-           
-        
     }
 }

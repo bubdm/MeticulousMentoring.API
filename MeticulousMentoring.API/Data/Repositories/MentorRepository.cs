@@ -1,8 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
@@ -46,11 +44,10 @@ namespace MeticulousMentoring.API.Data.Repositories
                         .OrderBy(m => m.last_name)
                         .ToList();
                 }
-                
             }
             catch (Exception e)
             {
-               this.logger.LogError($"Failed to get all mentors: {e}");
+                this.logger.LogError($"Failed to get all mentors: {e}");
                 return null;
             }
         }

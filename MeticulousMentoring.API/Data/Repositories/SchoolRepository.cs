@@ -1,11 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MeticulousMentoring.API.Data.Entities;
+﻿using MeticulousMentoring.API.Data.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Logging;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
@@ -19,6 +17,7 @@ namespace MeticulousMentoring.API.Data.Repositories
             _ctx = ctx;
             _logger = logger;
         }
+
         public IEnumerable<School> GetAllSchools()
         {
             try

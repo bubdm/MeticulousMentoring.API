@@ -1,8 +1,5 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
 
 namespace MeticulousMentoring.API.Controllers
 {
@@ -43,7 +40,6 @@ namespace MeticulousMentoring.API.Controllers
 
         public IActionResult Index()
         {
-
             return this.View();
         }
     }

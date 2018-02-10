@@ -1,11 +1,8 @@
 ﻿body {
-    
 }
-
 
 .meticulous-container {
     margin: 20px;
-    
 }
 
 .first-name {
@@ -20,13 +17,14 @@
 .mat-tab-profile {
     height: 200px;
 }
-.mat-tab-body-content { height: 300px !important; }
+
+.mat-tab-body-content {
+    height: 300px !important;
+}
 
 .mat-tab-group {
     font-family: 'Abel', sans-serif !important;
 }
-
-
 
 /* Timeline */
 .timeline,
@@ -47,7 +45,7 @@
         margin-left: -1.5px;
     }
 
-    .timeline::after{
+    .timeline::after {
         width: 0px !important;
     }
 

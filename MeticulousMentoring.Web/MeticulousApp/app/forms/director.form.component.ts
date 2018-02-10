@@ -38,6 +38,6 @@ export class DirectorFormComponent implements OnInit {
         }
 
         let response = this.directorService.add_director(newDirector)
-            .subscribe(data => {});
+            .subscribe(data => { });
     }
 }

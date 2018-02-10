@@ -4,7 +4,6 @@
     bottom: 0;
     left: 0;
     right: 0;
-
 }
 
 /*.example-sidenav-content {
@@ -17,4 +16,3 @@
 .fill-space {
     flex: 1 1 auto;
 }
-

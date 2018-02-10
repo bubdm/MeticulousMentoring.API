@@ -1,11 +1,8 @@
-﻿using System;
+﻿using MeticulousMentoring.API.Data.Entities;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MeticulousMentoring.API.Data.Entities;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Logging;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
@@ -20,7 +17,6 @@ namespace MeticulousMentoring.API.Data.Repositories
             this.logger = logger;
         }
 
-
         public IEnumerable<Classification> GetAllClassifications()
         {
             try
@@ -28,7 +24,6 @@ namespace MeticulousMentoring.API.Data.Repositories
                 return this.ctx.Classifications
                     .OrderBy(c => c.classification_id)
                     .ToList();
-
             }
             catch (Exception e)
             {

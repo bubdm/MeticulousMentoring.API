@@ -1,14 +1,12 @@
-﻿using System;
+﻿using MeticulousMentoring.API.Data.Entities;
+using Microsoft.Extensions.Logging;
+using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using MeticulousMentoring.API.Data.Entities;
-using Microsoft.Extensions.Logging;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
-    public class EducationSystemRepository : IEducationSystemRepository 
+    public class EducationSystemRepository : IEducationSystemRepository
     {
         private readonly MeticulousContext _ctx;
         private readonly ILogger<EducationSystemRepository> _logger;
@@ -33,8 +31,5 @@ namespace MeticulousMentoring.API.Data.Repositories
                 return null;
             }
         }
-
     }
-
-   
 }

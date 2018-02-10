@@ -5,7 +5,6 @@ import { ChartsModule } from "ng2-charts/ng2-charts";
     selector: 'meticulous-chart',
     templateUrl: './chart.component.html',
     styleUrls: ['./chart.component.css']
-
 })
 export class MeticulousChartComponent {
     public labels: string[] = ["October", "November", "December"];
