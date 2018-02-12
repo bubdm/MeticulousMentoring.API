@@ -40,6 +40,8 @@ var forms_1 = require("@angular/forms");
 var auth_guard_service_1 = require("./shared/auth-guard.service");
 var material_1 = require("@angular/material");
 var table_1 = require("@angular/cdk/table");
+var mentor_profile_component_1 = require("./mentor/mentor.profile.component");
+var mentee_dialog_component_1 = require("./mentee-dialog/mentee-dialog.component");
 exports.routes = [
     { path: "", component: login_component_1.LoginComponent },
     { path: "dashboard", component: dashboard_component_1.DashboardComponent, canActivate: [auth_guard_service_1.AuthGuard] }
@@ -64,7 +66,9 @@ AppModule = __decorate([
             mentee_profile_component_1.MenteeProfileComponent,
             mentor_form_component_1.MentorFormComponent,
             director_form_component_1.DirectorFormComponent,
-            round_pipe_1.RoundPipe
+            round_pipe_1.RoundPipe,
+            mentor_profile_component_1.MentorProfileComponent,
+            mentee_dialog_component_1.MenteeDialogComponent
         ],
         imports: [
             platform_browser_1.BrowserModule,
@@ -114,7 +118,7 @@ AppModule = __decorate([
             ngx_pipes_1.NgPipesModule
         ],
         exports: [mentee_form_component_1.MenteeFormComponent],
-        entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent],
+        entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent, mentee_dialog_component_1.MenteeDialogComponent],
         providers: [accountservice_1.AccountService,
             auth_guard_service_1.AuthGuard,
             user_service_1.UserService,

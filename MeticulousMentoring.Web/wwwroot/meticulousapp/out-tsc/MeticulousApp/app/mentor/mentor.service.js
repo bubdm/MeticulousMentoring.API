@@ -30,6 +30,12 @@ var MentorService = (function () {
         })
             .map(function (res) { return res.json(); });
     };
+    MentorService.prototype.get_mentor_by_id = function (mentorId) {
+        return this.http.get("http://localhost:52373/api/mentors/" + mentorId, {
+            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .map(function (res) { return res.json(); });
+    };
     return MentorService;
 }());
 MentorService = __decorate([

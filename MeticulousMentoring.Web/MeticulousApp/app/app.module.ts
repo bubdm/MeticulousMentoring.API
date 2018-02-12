@@ -67,6 +67,8 @@ import {
 } from '@angular/material';
 
 import { CdkTableModule } from '@angular/cdk/table';
+import { MentorProfileComponent } from './mentor/mentor.profile.component';
+import { MenteeDialogComponent } from './mentee-dialog/mentee-dialog.component';
 
 export const routes = [
     { path: "", component: LoginComponent },
@@ -87,7 +89,9 @@ export const routes = [
         MenteeProfileComponent,
         MentorFormComponent,
         DirectorFormComponent,
-        RoundPipe
+        RoundPipe,
+        MentorProfileComponent,
+        MenteeDialogComponent
 
     ],
     imports: [
@@ -140,7 +144,7 @@ export const routes = [
 
     ],
     exports: [MenteeFormComponent],
-    entryComponents: [MenteeFormComponent, MentorFormComponent, DirectorFormComponent],
+    entryComponents: [MenteeFormComponent, MentorFormComponent, DirectorFormComponent, MenteeDialogComponent],
     providers: [AccountService,
         AuthGuard,
         UserService,

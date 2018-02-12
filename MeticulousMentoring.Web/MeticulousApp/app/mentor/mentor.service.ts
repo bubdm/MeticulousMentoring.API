@@ -25,4 +25,12 @@ export class MentorService {
             })
             .map((res: Response) => res.json());
     }
+
+    public get_mentor_by_id(mentorId) {
+        return this.http.get("http://localhost:52373/api/mentors/" + mentorId,
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            })
+            .map((res: Response) => res.json());
+    }
 }

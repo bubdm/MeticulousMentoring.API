@@ -1,0 +1,120 @@
+<div class="container-fluid meticulous-container">
+    <div class="row">
+        <div class="col-xl-3">
+            <div class="row"><img src="http://via.placeholder.com/300X300" class="rounded mx-auto d-block" /></div>
+            <mat-divider></mat-divider>
+            <div class="row"></div>
+        </div>
+        <div class="col-xl-9">
+
+            <div class="row first-name">
+                {{mentor.mentorFirstName}} {{mentor.mentorLastName}}
+            </div>
+
+            <div class="row">
+                <button type="button" class="btn btn-primary">
+                    Messages <span *ngIf="messages > 0" class="badge badge-light">{{messages}}</span>
+                </button>
+            </div>
+
+            <mat-divider></mat-divider>
+            <div class="row">
+                <mat-tab-group>
+                    <mat-tab label="Info">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-info-circle"></i>Info</span>
+                        </ng-template>
+                        <div style="margin: 15px; font-style: normal;">
+                            <div class="row" style="margin-bottom: 20px;">Contact Information</div>
+                            <div class="row">
+                                <div class="col-sm-3">Address:</div>
+                                <div class="col-sm-9">
+                                    <div class="row">
+                                        {{mentor.mentorAddress.address1}}
+                                    </div>
+                                    <div class="row">
+                                        {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Timeline">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-clock-o"></i>Timeline</span>
+                        </ng-template>
+                        <div style="margin: 15px; font-style: normal;">
+                            <div class="row">
+                                <div class="col-md-12">
+
+                                    <div style="display:inline-block;width:100%;overflow-y:auto;">
+                                        <ul class="timeline timeline-horizontal">
+                                            <li class="timeline-item">
+                                                <div class="timeline-badge primary"><i class="glyphicon glyphicon-check"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h4 class="timeline-title">Mussum ipsum cacilds 1</h4>
+                                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="timeline-item">
+                                                <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h4 class="timeline-title">Mussum ipsum cacilds 2</h4>
+                                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                            <li class="timeline-item">
+                                                <div class="timeline-badge info"><i class="glyphicon glyphicon-check"></i></div>
+                                                <div class="timeline-panel">
+                                                    <div class="timeline-heading">
+                                                        <h4 class="timeline-title">Mussum ipsum cacilds 3</h4>
+                                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+                                                    </div>
+                                                    <div class="timeline-body">
+                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. Mé faiz elementum girarzis, nisi eros gostis.</p>
+                                                    </div>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </mat-tab>
+                    <mat-tab label="Mentees">
+                        <ng-template mat-tab-label>
+                            <span><i class="fa fa-user"></i>Mentees</span>
+                        </ng-template>
+                        <div style="margin: 0; font-style: normal;">
+
+                            <table class="table table-sm">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Mentee</th>
+                                        <th>Classification</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr *ngFor="let mentee of mentor.mentorMentees">
+                                        <td><a (click)="openMenteeFormDialog(mentee.menteeId)">{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>
+                                        <td>{{mentee.menteeClassification.description}}</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </mat-tab>
+                </mat-tab-group>
+            </div>
+        </div>
+    </div>
+</div>

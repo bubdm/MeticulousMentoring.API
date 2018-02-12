@@ -1,6 +1,8 @@
 webpackJsonp(["main"],{
+
 /***/ "../../../../../MeticulousApp/$$_lazy_route_resource lazy recursive":
 /***/ (function(module, exports) {
+
 function webpackEmptyAsyncContext(req) {
 	// Here Promise.resolve().then() is used instead of new Promise() to prevent
 	// uncatched exception popping up in devtools
@@ -17,13 +19,16 @@ webpackEmptyAsyncContext.id = "../../../../../MeticulousApp/$$_lazy_route_resour
 
 /***/ "../../../../../MeticulousApp/app/admin/admin.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n/*.example-sidenav-content {\r\n    display: flex;\r\n    height: auto;\r\n    align-items: center;\r\n    justify-content: center;\r\n}*/\r\n\r\n.meticulous-container {\r\n    margin-top: 20px;\r\n    margin-left: 5px;\r\n    margin-right: 3px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.dashboard-card {\r\n   \r\n}\r\n\r\n.data-card {\r\n    height: 250px;\r\n}\r\n\r\n.data-card-h1 {\r\n    font-size: 10em;\r\n    text-align: center;\r\n    font-weight: lighter !important;\r\n}\r\n\r\n.meticulous-row {\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .container {\r\n        max-width: 100%;\r\n    }\r\n}\r\n", ""]);
+exports.push([module.i, ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n/*.example-sidenav-content {\r\n    display: flex;\r\n    height: auto;\r\n    align-items: center;\r\n    justify-content: center;\r\n}*/\r\n\r\n.meticulous-container {\r\n    margin-top: 20px;\r\n    margin-left: 5px;\r\n    margin-right: 3px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n.dashboard-card {\r\n}\r\n\r\n.data-card {\r\n    height: 250px;\r\n}\r\n\r\n.data-card-h1 {\r\n    font-size: 10em;\r\n    text-align: center;\r\n    font-weight: lighter !important;\r\n}\r\n\r\n.meticulous-row {\r\n    margin-top: 5px;\r\n    margin-bottom: 5px;\r\n}\r\n\r\n@media (min-width: 1200px) {\r\n    .container {\r\n        max-width: 100%;\r\n    }\r\n}", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -32,12 +37,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/admin/admin.component.html":
 /***/ (function(module, exports) {
-module.exports = "<div class=\"container container-fluid meticulous-container\">\r\n    <div class=\"row meticulous-row\">\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Mentees</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <p class=\"text-xl-center display-1\">\r\n                        {{total_mentees}}\r\n                    </p>\r\n                    <p class=\"text-xl-center\">\r\n                        <mat-card-subtitle>TOTAL MENTEES</mat-card-subtitle>\r\n                    </p>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                    \r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Mentors</mat-card-subtitle>\r\n                    \r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <p class=\"text-xl-center display-1\">\r\n                        {{total_mentors}}\r\n                    </p>\r\n                    <p class=\"text-xl-center\">\r\n                        <mat-card-subtitle>TOTAL MENTORS</mat-card-subtitle>\r\n                    </p>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                    \r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header></mat-card-header>\r\n                <mat-card-footer>\r\n                    <mat-card-content>\r\n                        <meticulous-userchart></meticulous-userchart>\r\n                    </mat-card-content>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header></mat-card-header>\r\n                <mat-card-content>\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Mentees Matched</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"((total_mentees - total_unmatched_mentees)/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}%</div>\r\n                    </div>\r\n                    <br />\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_male/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_male)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_male/total_mentees * 100 | round)}}%</div>\r\n                    </div>\r\n                    <br />\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_female/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_female)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_female/total_mentees * 100 | round)}}%</div>\r\n                    </div>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12\">\r\n            <mat-card class=\"dashboard-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Users</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <meticulous-usertable></meticulous-usertable>\r\n                </mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n</div>"
+
+module.exports = "<div class=\"container container-fluid meticulous-container\">\r\n    <div class=\"row meticulous-row\">\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Mentees</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <p class=\"text-xl-center display-1\">\r\n                        {{total_mentees}}\r\n                    </p>\r\n                    <p class=\"text-xl-center\">\r\n                        <mat-card-subtitle>TOTAL MENTEES</mat-card-subtitle>\r\n                    </p>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Mentors</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <p class=\"text-xl-center display-1\">\r\n                        {{total_mentors}}\r\n                    </p>\r\n                    <p class=\"text-xl-center\">\r\n                        <mat-card-subtitle>TOTAL MENTORS</mat-card-subtitle>\r\n                    </p>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header></mat-card-header>\r\n                <mat-card-footer>\r\n                    <mat-card-content>\r\n                        <meticulous-userchart></meticulous-userchart>\r\n                    </mat-card-content>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header></mat-card-header>\r\n                <mat-card-content>\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Mentees Matched</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"((total_mentees - total_unmatched_mentees)/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}%</div>\r\n                    </div>\r\n                    <br />\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_male/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_male)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_male/total_mentees * 100 | round)}}%</div>\r\n                    </div>\r\n                    <br />\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_female/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_female)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_female/total_mentees * 100 | round)}}%</div>\r\n                    </div>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12\">\r\n            <mat-card class=\"dashboard-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Users</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <meticulous-usertable></meticulous-usertable>\r\n                </mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/admin/admin.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AdminComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -55,6 +62,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
+
 
 var AdminComponent = (function () {
     function AdminComponent(userService, auth, router, menteeService, mentorService) {
@@ -103,16 +115,20 @@ var AdminComponent = (function () {
     return AdminComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/app-header.component.html":
 /***/ (function(module, exports) {
+
 module.exports = "<div id=\"nav\" class=\"navbar navbar-expand-lg\" role=\"navigation\" style=\"background-color: #990100\">\r\n    <h1>{{title}}</h1>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/app-header.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppHeaderComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -142,16 +158,20 @@ var AppHeaderComponent = (function () {
     return AppHeaderComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/app.component.html":
 /***/ (function(module, exports) {
+
 module.exports = "<router-outlet></router-outlet>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/app.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -175,10 +195,13 @@ var AppComponent = (function () {
     return AppComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/app.module.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* unused harmony export routes */
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AppModule; });
@@ -217,12 +240,49 @@ var AppComponent = (function () {
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_31__shared_auth_guard_service__ = __webpack_require__("../../../../../MeticulousApp/app/shared/auth-guard.service.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_32__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_33__angular_cdk_table__ = __webpack_require__("../../../cdk/esm5/table.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_34__mentor_mentor_profile_component__ = __webpack_require__("../../../../../MeticulousApp/app/mentor/mentor.profile.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_35__mentee_dialog_mentee_dialog_component__ = __webpack_require__("../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.ts");
 var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 var routes = [
     { path: "", component: __WEBPACK_IMPORTED_MODULE_9__login_login_component__["a" /* LoginComponent */] },
@@ -246,7 +306,9 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_25__mentee_mentee_profile_component__["a" /* MenteeProfileComponent */],
                 __WEBPACK_IMPORTED_MODULE_26__forms_mentor_form_component__["a" /* MentorFormComponent */],
                 __WEBPACK_IMPORTED_MODULE_27__forms_director_form_component__["a" /* DirectorFormComponent */],
-                __WEBPACK_IMPORTED_MODULE_28__shared_round_pipe__["a" /* RoundPipe */]
+                __WEBPACK_IMPORTED_MODULE_28__shared_round_pipe__["a" /* RoundPipe */],
+                __WEBPACK_IMPORTED_MODULE_34__mentor_mentor_profile_component__["a" /* MentorProfileComponent */],
+                __WEBPACK_IMPORTED_MODULE_35__mentee_dialog_mentee_dialog_component__["a" /* MenteeDialogComponent */]
             ],
             imports: [
                 __WEBPACK_IMPORTED_MODULE_0__angular_platform_browser__["a" /* BrowserModule */],
@@ -296,7 +358,7 @@ var AppModule = (function () {
                 __WEBPACK_IMPORTED_MODULE_6_ngx_pipes__["a" /* NgPipesModule */]
             ],
             exports: [__WEBPACK_IMPORTED_MODULE_24__forms_mentee_form_component__["a" /* MenteeFormComponent */]],
-            entryComponents: [__WEBPACK_IMPORTED_MODULE_24__forms_mentee_form_component__["a" /* MenteeFormComponent */], __WEBPACK_IMPORTED_MODULE_26__forms_mentor_form_component__["a" /* MentorFormComponent */], __WEBPACK_IMPORTED_MODULE_27__forms_director_form_component__["a" /* DirectorFormComponent */]],
+            entryComponents: [__WEBPACK_IMPORTED_MODULE_24__forms_mentee_form_component__["a" /* MenteeFormComponent */], __WEBPACK_IMPORTED_MODULE_26__forms_mentor_form_component__["a" /* MentorFormComponent */], __WEBPACK_IMPORTED_MODULE_27__forms_director_form_component__["a" /* DirectorFormComponent */], __WEBPACK_IMPORTED_MODULE_35__mentee_dialog_mentee_dialog_component__["a" /* MenteeDialogComponent */]],
             providers: [__WEBPACK_IMPORTED_MODULE_10__shared_accountservice__["a" /* AccountService */],
                 __WEBPACK_IMPORTED_MODULE_31__shared_auth_guard_service__["a" /* AuthGuard */],
                 __WEBPACK_IMPORTED_MODULE_11__shared_user_service__["a" /* UserService */],
@@ -313,17 +375,22 @@ var AppModule = (function () {
     return AppModule;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/chart/chart.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
+
 
 // module
 exports.push([module.i, "", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -332,12 +399,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/chart/chart.component.html":
 /***/ (function(module, exports) {
+
 module.exports = "<!--<div style=\"display: block\">\r\n    <canvas basechart\r\n            [data]=\"chartData\"\r\n            [labels]=\"labels\"\r\n            [chartType]=\"chartType\"\r\n            (chartHover)=\"chartHovered($event)\"\r\n            (chartClick)=\"chartClicked($event)\"></canvas>\r\n</div>-->"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/chart/chart.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MeticulousChartComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -370,10 +439,13 @@ var MeticulousChartComponent = (function () {
     return MeticulousChartComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/classification/classification.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return ClassificationService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -391,6 +463,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
 
 var ClassificationService = (function () {
     function ClassificationService(http, userService) {
@@ -422,17 +498,22 @@ var ClassificationService = (function () {
     return ClassificationService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/dashboard/dashboard.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n\r\n}\r\n\r\n/*.example-sidenav-content {\r\n    display: flex;\r\n    height: auto;\r\n    align-items: center;\r\n    justify-content: center;\r\n}*/\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".example-container {\r\n    position: absolute;\r\n    top: 0;\r\n    bottom: 0;\r\n    left: 0;\r\n    right: 0;\r\n}\r\n\r\n/*.example-sidenav-content {\r\n    display: flex;\r\n    height: auto;\r\n    align-items: center;\r\n    justify-content: center;\r\n}*/\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -441,12 +522,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/dashboard/dashboard.component.html":
 /***/ (function(module, exports) {
-module.exports = "<mat-sidenav-container class=\"example-container\" autosize>\r\n    <mat-sidenav #sidenav class=\"example-sidenav\" mode=\"side\" opened=\"true\">\r\n\r\n        <mat-nav-list>\r\n            <mat-list-item>\r\n                <span style=\"cursor: pointer\" class=\"fa fa-bars fa-2x\" (click)=\"isExpanded = !isExpanded\"></span>\r\n            </mat-list-item>\r\n            <mat-list-item>\r\n                <mat-icon class=\"fa fa-home\" mat-list-icon></mat-icon>\r\n                <p matLine *ngIf=\"isExpanded\">Home</p>\r\n            </mat-list-item>\r\n            <mat-list-item [matMenuTriggerFor]=\"users\" [hidden]=\"role == 'Mentor' || role == 'Mentee'\">\r\n                <mat-icon class=\"fa fa-user\" mat-list-icon></mat-icon>\r\n                <p matLine *ngIf=\"isExpanded\">Users</p>\r\n            </mat-list-item>\r\n            <mat-menu #users=\"matMenu\">\r\n                <button mat-menu-item [hidden]=\"role != 'Admin'\">New Admin</button>\r\n                <button mat-menu-item *ngIf=\"role == 'Director' || role == 'Admin'\" (click)=\"openDirectorFormDialog()\">New Director</button>\r\n                <button mat-menu-item *ngIf=\"role =='Director' || role == 'Admin'\" (click)=\"openMentorFormDialog()\">New Mentor</button>\r\n                <button mat-menu-item *ngIf=\"role =='Director' || role == 'Admin'\" (click)=\"openMenteeFormDialog()\">New Mentee</button>\r\n            </mat-menu>\r\n            <mat-list-item>\r\n                <mat-icon class=\"fa fa-cog\" mat-list-icon></mat-icon>\r\n                <p matLine *ngIf=\"isExpanded\">Settings</p>\r\n            </mat-list-item>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-toolbar>\r\n        <span>Dashboard</span>\r\n        <span class=\"fill-space\"></span>\r\n        <span style=\"cursor: pointer\" (click)=\"logout()\">Logout <mat-icon class=\"fa fa-sign-out\"></mat-icon></span>\r\n    </mat-toolbar>\r\n    <div class=\"example-sidenav-content\" [ngSwitch]=\"role\">\r\n        <admin-dashboard *ngSwitchCase=\"'Admin'\"></admin-dashboard>\r\n        <mentee-profile *ngSwitchCase=\"'Mentee'\"></mentee-profile>\r\n    </div>\r\n\r\n</mat-sidenav-container>\r\n"
+
+module.exports = "<mat-sidenav-container class=\"example-container\" autosize>\r\n    <mat-sidenav #sidenav class=\"example-sidenav\" mode=\"side\" opened=\"true\">\r\n\r\n        <mat-nav-list>\r\n            <mat-list-item>\r\n                <span style=\"cursor: pointer\" class=\"fa fa-bars fa-2x\" (click)=\"isExpanded = !isExpanded\"></span>\r\n            </mat-list-item>\r\n            <mat-list-item>\r\n                <mat-icon class=\"fa fa-home\" mat-list-icon></mat-icon>\r\n                <p matLine *ngIf=\"isExpanded\">Home</p>\r\n            </mat-list-item>\r\n            <mat-list-item [matMenuTriggerFor]=\"users\" [hidden]=\"role == 'Mentor' || role == 'Mentee'\">\r\n                <mat-icon class=\"fa fa-user\" mat-list-icon></mat-icon>\r\n                <p matLine *ngIf=\"isExpanded\">Users</p>\r\n            </mat-list-item>\r\n            <mat-menu #users=\"matMenu\">\r\n                <button mat-menu-item [hidden]=\"role != 'Admin'\">New Admin</button>\r\n                <button mat-menu-item *ngIf=\"role == 'Director' || role == 'Admin'\" (click)=\"openDirectorFormDialog()\">New Director</button>\r\n                <button mat-menu-item *ngIf=\"role =='Director' || role == 'Admin'\" (click)=\"openMentorFormDialog()\">New Mentor</button>\r\n                <button mat-menu-item *ngIf=\"role =='Director' || role == 'Admin'\" (click)=\"openMenteeFormDialog()\">New Mentee</button>\r\n            </mat-menu>\r\n            <mat-list-item>\r\n                <mat-icon class=\"fa fa-cog\" mat-list-icon></mat-icon>\r\n                <p matLine *ngIf=\"isExpanded\">Settings</p>\r\n            </mat-list-item>\r\n        </mat-nav-list>\r\n    </mat-sidenav>\r\n    <mat-toolbar>\r\n        <span>Dashboard</span>\r\n        <span class=\"fill-space\"></span>\r\n        <span style=\"cursor: pointer\" (click)=\"logout()\">Logout <mat-icon class=\"fa fa-sign-out\"></mat-icon></span>\r\n    </mat-toolbar>\r\n    <div class=\"example-sidenav-content\" [ngSwitch]=\"role\">\r\n        <admin-dashboard *ngSwitchCase=\"'Admin'\"></admin-dashboard>\r\n        <mentee-profile *ngSwitchCase=\"'Mentee'\"></mentee-profile>\r\n        <mentor-profile *ngSwitchCase=\"'Mentor'\"></mentor-profile>\r\n    </div>\r\n</mat-sidenav-container>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/dashboard/dashboard.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DashboardComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -466,6 +549,13 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
+
+
+
 
 var DashboardComponent = (function () {
     function DashboardComponent(userService, auth, router, dialog) {
@@ -548,10 +638,13 @@ var DashboardComponent = (function () {
     return DashboardComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/director/director.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectorService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -566,6 +659,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 var DirectorService = (function () {
     function DirectorService(http) {
@@ -584,10 +679,13 @@ var DirectorService = (function () {
     return DirectorService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/educationSystem/educationSystem.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return EducationSystemService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -605,6 +703,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
 
 var EducationSystemService = (function () {
     function EducationSystemService(http, userService) {
@@ -636,17 +738,22 @@ var EducationSystemService = (function () {
     return EducationSystemService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/forms/director.form.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, ".director-form-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding: 20px;\r\n}\r\n\r\n.director-form-container > * {\r\n    width: 700px;\r\n}\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".director-form-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding: 20px;\r\n}\r\n\r\n.director-form-container > * {\r\n    width: 700px;\r\n}\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -655,12 +762,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/forms/director.form.component.html":
 /***/ (function(module, exports) {
-module.exports = "<mat-toolbar>\r\n    <span>Director Registration</span>\r\n</mat-toolbar>\r\n<div class=\"director-form-container\">\r\n    <form [formGroup]=\"firstFormGroup\">\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"First Name\" formControlName=\"first_name\" />\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Last Name\" formControlName=\"last_name\" />\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Email\" formControlName=\"email\"/>\r\n            </mat-form-field>\r\n        </div>\r\n        <div>\r\n            <div mat-dialog-actions>\r\n                <button mat-button (click)=\"submitDirector()\" [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
+
+module.exports = "<mat-toolbar>\r\n    <span>Director Registration</span>\r\n</mat-toolbar>\r\n<div class=\"director-form-container\">\r\n    <form [formGroup]=\"firstFormGroup\">\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"First Name\" formControlName=\"first_name\" />\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Last Name\" formControlName=\"last_name\" />\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Email\" formControlName=\"email\" />\r\n            </mat-form-field>\r\n        </div>\r\n        <div>\r\n            <div mat-dialog-actions>\r\n                <button mat-button (click)=\"submitDirector()\" [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/forms/director.form.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return DirectorFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -679,6 +788,9 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+
+
+
 
 var DirectorFormComponent = (function () {
     function DirectorFormComponent(diaglogRef, data, formBuilder, directorService) {
@@ -720,17 +832,22 @@ var DirectorFormComponent = (function () {
     return DirectorFormComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/forms/mentee.form.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, ".mentee-form-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding: 20px;\r\n}\r\n\r\n.mentee-form-container > * {\r\n    width: 700px;\r\n}\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}\r\n\r\n.guardian-checkbox {\r\n    margin-left: 20px;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".mentee-form-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding: 20px;\r\n}\r\n\r\n.mentee-form-container > * {\r\n    width: 700px;\r\n}\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}\r\n\r\n.guardian-checkbox {\r\n    margin-left: 20px;\r\n}", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -739,12 +856,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/forms/mentee.form.component.html":
 /***/ (function(module, exports) {
-module.exports = "<mat-toolbar>\r\n    <span>Mentee Registration</span>\r\n</mat-toolbar>\r\n<div class=\"mentee-form-container\">\r\n    <mat-horizontal-stepper [linear]=\"false\">\r\n        <mat-step [stepControl]=\"firstFormGroup\">\r\n            <form [formGroup]=\"firstFormGroup\">\r\n                <ng-template matStepLabel>Mentee</ng-template>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"First Name\" formControlName=\"first_name\"/>\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Last Name\" formControlName=\"last_name\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 1\" formControlName=\"address1\"/>\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 2\" formControlName=\"address2\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"City\" formControlName=\"city\"/>\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Zip\" formControlName=\"zip\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"Select Gender\" formControlName=\"menteeGender\">\r\n                            <mat-option value=\"M\">M</mat-option>\r\n                            <mat-option value=\"F\">F</mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput [matDatepicker]=\"picker\" placeholder=\"DOB\" formControlName=\"dob\"/>\r\n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Email\" formControlName=\"email\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n\r\n                <div>\r\n                    <button mat-button matStepperNext>Next</button>\r\n                </div>\r\n            </form>\r\n        </mat-step>\r\n        <mat-step [stepControl]=\"secondFormGroup\">\r\n            <form [formGroup]=\"secondFormGroup\">\r\n                <ng-template matStepLabel>Education</ng-template>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"School\" formControlName=\"school\">\r\n                            <mat-option *ngFor=\"let school of schools\" [value]=\"school\">\r\n                                {{school.schoolName}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"Classification\" formControlName=\"classification\">\r\n                            <mat-option *ngFor=\"let classification of classifications\" [value]=\"classification\">\r\n                                {{classification.classificationDescription}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div>\r\n                    <button mat-button matStepperPrevious>Back</button>\r\n                    <button mat-button matStepperNext>Next</button>\r\n                </div>\r\n            </form>\r\n        </mat-step>\r\n        <mat-step [stepControl]=\"thirdFormGroup\">\r\n            <form [formGroup]=\"thirdFormGroup\">\r\n                <ng-template matStepLabel>Guardian</ng-template>\r\n\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"First Name\" formControlName=\"guardianFirstName\"/>\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Last Name\" formControlName=\"guardianLastName\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"Select Gender\" formControlName=\"guardianGender\">\r\n                            <mat-option value=\"M\">M</mat-option>\r\n                            <mat-option value=\"F\">F</mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n               \r\n                <div class=\"form-group\">\r\n                    <div class=\"form-group\">\r\n                        <mat-checkbox [ngClass]=\"'guardian-checkbox'\" color=\"primary\" (change)=\"isChildAddressShared = !isChildAddressShared;copyAddress()\">Check if address is the same as mentee.</mat-checkbox>\r\n                    </div>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 1\" formControlName=\"guardianAddress1\"/>\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 2\" formControlName=\"guardianAddress2\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"City\" formControlName=\"guardianCity\"/>\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Zip\" formControlName=\"guardianZip\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Email\" formControlName=\"guardianEmail\"/>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div>\r\n                    <button mat-button matStepperPrevious>Back</button>\r\n                    <button mat-button matStepperNext>Next</button>\r\n                </div>\r\n            </form>\r\n        </mat-step>\r\n        <mat-step>\r\n            <ng-template matStepLabel>Done</ng-template>\r\n            <div>\r\n                <button mat-button matStepperPrevious>Back</button>\r\n                <div mat-dialog-actions>\r\n                    <button mat-button (click)=\"submitMentee()\" [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\r\n                </div>\r\n                \r\n            </div>\r\n        </mat-step>\r\n    </mat-horizontal-stepper>\r\n\r\n</div>"
+
+module.exports = "<mat-toolbar>\r\n    <span>Mentee Registration</span>\r\n</mat-toolbar>\r\n<div class=\"mentee-form-container\">\r\n    <mat-horizontal-stepper [linear]=\"false\">\r\n        <mat-step [stepControl]=\"firstFormGroup\">\r\n            <form [formGroup]=\"firstFormGroup\">\r\n                <ng-template matStepLabel>Mentee</ng-template>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"First Name\" formControlName=\"first_name\" />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Last Name\" formControlName=\"last_name\" />\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 1\" formControlName=\"address1\" />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 2\" formControlName=\"address2\" />\r\n                    </mat-form-field>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"City\" formControlName=\"city\" />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Zip\" formControlName=\"zip\" />\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"Select Gender\" formControlName=\"menteeGender\">\r\n                            <mat-option value=\"M\">M</mat-option>\r\n                            <mat-option value=\"F\">F</mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput [matDatepicker]=\"picker\" placeholder=\"DOB\" formControlName=\"dob\" />\r\n                        <mat-datepicker-toggle matSuffix [for]=\"picker\"></mat-datepicker-toggle>\r\n                        <mat-datepicker #picker startView=\"year\" [startAt]=\"startDate\"></mat-datepicker>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Email\" formControlName=\"email\" />\r\n                    </mat-form-field>\r\n                </div>\r\n\r\n                <div>\r\n                    <button mat-button matStepperNext>Next</button>\r\n                </div>\r\n            </form>\r\n        </mat-step>\r\n        <mat-step [stepControl]=\"secondFormGroup\">\r\n            <form [formGroup]=\"secondFormGroup\">\r\n                <ng-template matStepLabel>Education</ng-template>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"School\" formControlName=\"school\">\r\n                            <mat-option *ngFor=\"let school of schools\" [value]=\"school\">\r\n                                {{school.schoolName}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"Classification\" formControlName=\"classification\">\r\n                            <mat-option *ngFor=\"let classification of classifications\" [value]=\"classification\">\r\n                                {{classification.classificationDescription}}\r\n                            </mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n                <div>\r\n                    <button mat-button matStepperPrevious>Back</button>\r\n                    <button mat-button matStepperNext>Next</button>\r\n                </div>\r\n            </form>\r\n        </mat-step>\r\n        <mat-step [stepControl]=\"thirdFormGroup\">\r\n            <form [formGroup]=\"thirdFormGroup\">\r\n                <ng-template matStepLabel>Guardian</ng-template>\r\n\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"First Name\" formControlName=\"guardianFirstName\" />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Last Name\" formControlName=\"guardianLastName\" />\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <mat-select placeholder=\"Select Gender\" formControlName=\"guardianGender\">\r\n                            <mat-option value=\"M\">M</mat-option>\r\n                            <mat-option value=\"F\">F</mat-option>\r\n                        </mat-select>\r\n                    </mat-form-field>\r\n                </div>\r\n\r\n                <div class=\"form-group\">\r\n                    <div class=\"form-group\">\r\n                        <mat-checkbox [ngClass]=\"'guardian-checkbox'\" color=\"primary\" (change)=\"isChildAddressShared = !isChildAddressShared;copyAddress()\">Check if address is the same as mentee.</mat-checkbox>\r\n                    </div>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 1\" formControlName=\"guardianAddress1\" />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Address 2\" formControlName=\"guardianAddress2\" />\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"City\" formControlName=\"guardianCity\" />\r\n                    </mat-form-field>\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Zip\" formControlName=\"guardianZip\" />\r\n                    </mat-form-field>\r\n                </div>\r\n                <div class=\"form-group\">\r\n                    <mat-form-field>\r\n                        <input matInput placeholder=\"Email\" formControlName=\"guardianEmail\" />\r\n                    </mat-form-field>\r\n                </div>\r\n                <div>\r\n                    <button mat-button matStepperPrevious>Back</button>\r\n                    <button mat-button matStepperNext>Next</button>\r\n                </div>\r\n            </form>\r\n        </mat-step>\r\n        <mat-step>\r\n            <ng-template matStepLabel>Done</ng-template>\r\n            <div>\r\n                <button mat-button matStepperPrevious>Back</button>\r\n                <div mat-dialog-actions>\r\n                    <button mat-button (click)=\"submitMentee()\" [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\r\n                </div>\r\n            </div>\r\n        </mat-step>\r\n    </mat-horizontal-stepper>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/forms/mentee.form.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteeFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -767,6 +886,13 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+
+
+
+
+
+
+
 
 var MenteeFormComponent = (function () {
     function MenteeFormComponent(dialogRef, data, formBuilder, classificationService, educationSystemService, menteeService, guardianService, schoolService) {
@@ -914,17 +1040,22 @@ var MenteeFormComponent = (function () {
     return MenteeFormComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/forms/mentor.form.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, ".mentor-form-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding: 20px;\r\n}\r\n\r\n    .mentor-form-container > * {\r\n        width: 700px;\r\n    }\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}\r\n\r\n", ""]);
+exports.push([module.i, ".mentor-form-container {\r\n    display: -webkit-box;\r\n    display: -ms-flexbox;\r\n    display: flex;\r\n    -webkit-box-orient: vertical;\r\n    -webkit-box-direction: normal;\r\n        -ms-flex-direction: column;\r\n            flex-direction: column;\r\n    padding: 20px;\r\n}\r\n\r\n    .mentor-form-container > * {\r\n        width: 700px;\r\n    }\r\n\r\n.fill-space {\r\n    -webkit-box-flex: 1;\r\n        -ms-flex: 1 1 auto;\r\n            flex: 1 1 auto;\r\n}", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -933,12 +1064,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/forms/mentor.form.component.html":
 /***/ (function(module, exports) {
-module.exports = "<mat-toolbar>\r\n    <span>Mentor Registration</span>\r\n</mat-toolbar>\r\n<div class=\"mentor-form-container\">\r\n    <form [formGroup]=\"firstFormGroup\">\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"First Name\" formControlName=\"first_name\"/>\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Last Name\" formControlName=\"last_name\"/>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Address 1\" formControlName=\"address1\"/>\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Address 2\" formControlName=\"address2\"/>\r\n            </mat-form-field>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"City\" formControlName=\"city\"/>\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Zip\" formControlName=\"zip\"/>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <mat-select placeholder=\"Select Gender\" formControlName=\"mentorGender\">\r\n                    <mat-option value=\"M\">M</mat-option>\r\n                    <mat-option value=\"F\">F</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <mat-select placeholder=\"Mentee List\" formControlName=\"mentees\" multiple>\r\n                    <mat-option *ngFor=\"let mentee of mentees\" [value]=\"mentee\">\r\n                        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n        <div>\r\n            <div mat-dialog-actions>\r\n                <button mat-button (click)=\"submitMentor()\" [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
+
+module.exports = "<mat-toolbar>\r\n    <span>Mentor Registration</span>\r\n</mat-toolbar>\r\n<div class=\"mentor-form-container\">\r\n    <form [formGroup]=\"firstFormGroup\">\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"First Name\" formControlName=\"first_name\" />\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Last Name\" formControlName=\"last_name\" />\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Address 1\" formControlName=\"address1\" />\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Address 2\" formControlName=\"address2\" />\r\n            </mat-form-field>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"City\" formControlName=\"city\" />\r\n            </mat-form-field>\r\n            <mat-form-field>\r\n                <input matInput placeholder=\"Zip\" formControlName=\"zip\" />\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <mat-select placeholder=\"Select Gender\" formControlName=\"mentorGender\">\r\n                    <mat-option value=\"M\">M</mat-option>\r\n                    <mat-option value=\"F\">F</mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n        <div class=\"form-group\">\r\n            <mat-form-field>\r\n                <mat-select placeholder=\"Mentee List\" formControlName=\"mentees\" multiple>\r\n                    <mat-option *ngFor=\"let mentee of mentees\" [value]=\"mentee\">\r\n                        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n                    </mat-option>\r\n                </mat-select>\r\n            </mat-form-field>\r\n        </div>\r\n        <div>\r\n            <div mat-dialog-actions>\r\n                <button mat-button (click)=\"submitMentor()\" [mat-dialog-close]=\"true\" cdkFocusInitial>Submit</button>\r\n            </div>\r\n        </div>\r\n    </form>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/forms/mentor.form.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorFormComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -958,6 +1091,10 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 var __param = (this && this.__param) || function (paramIndex, decorator) {
     return function (target, key) { decorator(target, key, paramIndex); }
 };
+
+
+
+
 
 var MentorFormComponent = (function () {
     function MentorFormComponent(dialogRef, data, formBuilder, menteeService, mentorService) {
@@ -1021,10 +1158,13 @@ var MentorFormComponent = (function () {
     return MentorFormComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/guardian/guardian.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return GuardianService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -1040,6 +1180,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 var GuardianService = (function () {
     function GuardianService(http, userService) {
@@ -1059,17 +1202,22 @@ var GuardianService = (function () {
     return GuardianService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/login/login.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, ".shake {\r\n    -webkit-animation: shake 4s infinite; /* Safari 4+ */ /* Fx 5+ */ /* Opera 12+ */\r\n    animation:         shake 4s infinite; /* IE 10+, Fx 29+ */\r\n} \r\n\r\na{\r\n    text-decoration: none !important;\r\n}", ""]);
+exports.push([module.i, ".shake {\r\n    -webkit-animation: shake 4s infinite; /* Safari 4+ */ /* Fx 5+ */ /* Opera 12+ */\r\n    animation:         shake 4s infinite; /* IE 10+, Fx 29+ */\r\n}\r\n\r\na{\r\n    text-decoration: none !important;\r\n}", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -1078,12 +1226,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/login/login.component.html":
 /***/ (function(module, exports) {
-module.exports = "<router-outlet>\r\n    <div class=\"row\">\r\n        <span class=\"fa fa-long-arrow-left fa-2x wow infinite shake\" style=\"margin-left: 22px;\"></span><span style=\"margin-left: 25px; font-size: 1.5rem;\"><a href=\"http://localhost:5003/\" style=\"color: inherit;\">Home Page</a></span>\r\n        <div class=\"Absolute-Center is-Responsive\"> \r\n            <div id=\"logo-container\"></div>\r\n            <div class=\"col-md-12 col-md-offset-1\">\r\n                <div class=\"col-sm-12 col-md-10 col-md-offset-1\">\r\n                    <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n                        <div asp-validation-summary=\"ModelOnly\" ></div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"username\">Username</label>\r\n                            <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required/>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"password\">Password</label>\r\n                            <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" #password=\"ngModel\" required/>\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <input type=\"submit\" value=\"Login\" class=\"btn btn-success\"/>\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</router-outlet>"
+
+module.exports = "<router-outlet>\r\n    <div class=\"row\">\r\n        <span class=\"fa fa-long-arrow-left fa-2x wow infinite shake\" style=\"margin-left: 22px;\"></span><span style=\"margin-left: 25px; font-size: 1.5rem;\"><a href=\"http://localhost:5003/\" style=\"color: inherit;\">Home Page</a></span>\r\n        <div class=\"Absolute-Center is-Responsive\">\r\n            <div id=\"logo-container\"></div>\r\n            <div class=\"col-md-12 col-md-offset-1\">\r\n                <div class=\"col-sm-12 col-md-10 col-md-offset-1\">\r\n                    <form (submit)=\"onLogin()\" #theForm=\"ngForm\" novalidate>\r\n                        <div asp-validation-summary=\"ModelOnly\" ></div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"username\">Username</label>\r\n                            <input type=\"text\" class=\"form-control\" name=\"username\" [(ngModel)]=\"creds.username\" #username=\"ngModel\" required />\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <label for=\"password\">Password</label>\r\n                            <input type=\"password\" class=\"form-control\" name=\"password\" [(ngModel)]=\"creds.password\" #password=\"ngModel\" required />\r\n                        </div>\r\n                        <div class=\"form-group\">\r\n                            <input type=\"submit\" value=\"Login\" class=\"btn btn-success\" />\r\n                        </div>\r\n                    </form>\r\n                </div>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</router-outlet>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/login/login.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return LoginComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1101,6 +1251,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
 
 var LoginComponent = (function () {
     function LoginComponent(auth, userService, router) {
@@ -1134,17 +1288,146 @@ var LoginComponent = (function () {
     return LoginComponent;
 }());
 
+
+
+/***/ }),
+
+/***/ "../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, "body {\r\n}\r\n\r\n.meticulous-container {\r\n    margin: 20px;\r\n}\r\n\r\n.first-name {\r\n    /*font-family: 'Dancing Script', cursive !important;*/\r\n    font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n    margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n    height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n    height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n    font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n.timeline,\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    padding: 20px;\r\n    position: relative;\r\n}\r\n\r\n    .timeline:before {\r\n        top: 40px;\r\n        bottom: 0;\r\n        position: absolute;\r\n        content: \" \";\r\n        width: 3px;\r\n        background-color: #eeeeee;\r\n        left: 50%;\r\n        margin-left: -1.5px;\r\n    }\r\n\r\n    .timeline::after {\r\n        width: 0px !important;\r\n    }\r\n\r\n    .timeline .timeline-item {\r\n        margin-bottom: 20px;\r\n        position: relative;\r\n    }\r\n\r\n        .timeline .timeline-item:before,\r\n        .timeline .timeline-item:after {\r\n            content: \"\";\r\n            display: table;\r\n        }\r\n\r\n        .timeline .timeline-item:after {\r\n            clear: both;\r\n            width: 0px !important;\r\n        }\r\n\r\n        .timeline .timeline-item .timeline-badge {\r\n            color: #fff;\r\n            width: 54px;\r\n            height: 54px;\r\n            line-height: 52px;\r\n            font-size: 22px;\r\n            text-align: center;\r\n            position: absolute;\r\n            top: 18px;\r\n            left: 50%;\r\n            margin-left: -25px;\r\n            background-color: #333;\r\n            border: 3px solid #ffffff;\r\n            z-index: 100;\r\n            border-top-right-radius: 50%;\r\n            border-top-left-radius: 50%;\r\n            border-bottom-right-radius: 50%;\r\n            border-bottom-left-radius: 50%;\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-badge i,\r\n            .timeline .timeline-item .timeline-badge .fa,\r\n            .timeline .timeline-item .timeline-badge .glyphicon {\r\n                top: 2px;\r\n                left: 0px;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.primary {\r\n                background-color: #1f9eba;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.info {\r\n                background-color: #5bc0de;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.success {\r\n                background-color: #59ba1f;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.warning {\r\n                background-color: #d1bd10;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.danger {\r\n                background-color: #ba1f1f;\r\n            }\r\n\r\n        .timeline .timeline-item .timeline-panel {\r\n            position: relative;\r\n            width: 46%;\r\n            float: left;\r\n            right: 16px;\r\n            border: 1px solid #777;\r\n            background: #ffffff;\r\n            border-radius: 2px;\r\n            padding: 20px;\r\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-panel:before {\r\n                position: absolute;\r\n                top: 26px;\r\n                right: -16px;\r\n                display: inline-block;\r\n                border-top: 16px solid transparent;\r\n                border-left: 16px solid #777;\r\n                border-right: 0 solid #777;\r\n                border-bottom: 16px solid transparent;\r\n                content: \" \";\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-title {\r\n                margin-top: 0;\r\n                color: inherit;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-body > p,\r\n            .timeline .timeline-item .timeline-panel .timeline-body > ul {\r\n                margin-bottom: 0;\r\n            }\r\n\r\n                .timeline .timeline-item .timeline-panel .timeline-body > p + p {\r\n                    margin-top: 5px;\r\n                }\r\n\r\n        .timeline .timeline-item:last-child:nth-child(even) {\r\n            float: right;\r\n        }\r\n\r\n        .timeline .timeline-item:nth-child(even) .timeline-panel {\r\n            float: right;\r\n            left: 16px;\r\n        }\r\n\r\n            .timeline .timeline-item:nth-child(even) .timeline-panel:before {\r\n                border-left-width: 0;\r\n                border-right-width: 14px;\r\n                left: -14px;\r\n                right: auto;\r\n            }\r\n\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    position: relative;\r\n    padding: 20px 0px 20px 0px;\r\n    display: inline-block;\r\n}\r\n\r\n    .timeline-horizontal:before {\r\n        height: 3px;\r\n        top: auto;\r\n        bottom: 26px;\r\n        left: 56px;\r\n        right: 0;\r\n        width: 100%;\r\n        margin-bottom: 20px;\r\n    }\r\n\r\n    .timeline-horizontal .timeline-item {\r\n        display: table-cell;\r\n        height: 280px;\r\n        width: 20%;\r\n        min-width: 320px;\r\n        float: none !important;\r\n        padding-left: 0px;\r\n        padding-right: 20px;\r\n        margin: 0 auto;\r\n        vertical-align: bottom;\r\n    }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-panel {\r\n            top: auto;\r\n            bottom: 64px;\r\n            display: inline-block;\r\n            float: none !important;\r\n            left: 0 !important;\r\n            right: 0 !important;\r\n            width: 100%;\r\n            margin-bottom: 20px;\r\n        }\r\n\r\n            .timeline-horizontal .timeline-item .timeline-panel:before {\r\n                top: auto;\r\n                bottom: -16px;\r\n                left: 28px !important;\r\n                right: auto;\r\n                border-right: 16px solid transparent !important;\r\n                border-top: 16px solid #777 !important;\r\n                border-bottom: 0 solid #777 !important;\r\n                border-left: 16px solid transparent !important;\r\n            }\r\n\r\n        .timeline-horizontal .timeline-item:before,\r\n        .timeline-horizontal .timeline-item:after {\r\n            display: none;\r\n        }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-badge {\r\n            top: auto;\r\n            bottom: 0px;\r\n            left: 43px;\r\n        }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-xl-3\">\r\n            <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\"></div>\r\n        </div>\r\n        <div class=\"col-xl-9\">\r\n\r\n            <div class=\"row first-name\">\r\n                {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n            </div>\r\n            <div class=\"row\">\r\n                Classification: {{mentee.menteeClassification.description}}\r\n            </div>\r\n            <div class=\"row\">\r\n                Birthdate:  {{mentee.menteeDOB | date}}\r\n            </div>\r\n            <div class=\"row\">\r\n                <button type=\"button\" class=\"btn btn-primary\">\r\n                    Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n                </button>\r\n            </div>\r\n\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\">\r\n                <mat-tab-group>\r\n                    <mat-tab label=\"Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-info-circle\"></i>Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Address:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\" style=\"margin-top: 20px; margin-bottom: 20px;\">School Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">School:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    {{mentee.menteeSchool.school_name}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Principal:</div>\r\n                                <div class=\"col-sm-9\">{{mentee.menteeSchool.principal}}</div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Timeline\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-clock-o\"></i>Timeline</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n\r\n                                    <div style=\"display:inline-block;width:100%;overflow-y:auto;\">\r\n                                        <ul class=\"timeline timeline-horizontal\">\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge primary\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 1</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge success\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 2</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge info\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 3</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. M� faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                        </ul>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Guardian Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-shield\"></i>Guardian Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin:0; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Guardian:\r\n                                </div>\r\n                                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                                    {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Address:\r\n                                </div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Mentee Grades\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-graduation-cap\"></i>Grades</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 0; font-style: normal;\">\r\n\r\n                            <table class=\"table table-sm\">\r\n                                <thead class=\"thead-dark\">\r\n                                    <tr>\r\n                                        <th>Subject</th>\r\n                                        <th *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs\">\r\n                                            {{group[0]}}\r\n                                        </th>\r\n                                    </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let subjectGroup of grades | groupBy: ['gradeCourse.course_name'] | pairs\">\r\n                                        <th>{{subjectGroup[0]}}</th>\r\n                                        <td *ngFor=\"let s of subjectGroup[1]\">{{s.gradeValue | round: 2}}</td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </mat-tab>\r\n                </mat-tab-group>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteeDialogComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_user_service__ = __webpack_require__("../../../../../MeticulousApp/app/shared/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentee_mentee_service__ = __webpack_require__("../../../../../MeticulousApp/app/mentee/mentee.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__mentor_mentor_service__ = __webpack_require__("../../../../../MeticulousApp/app/mentor/mentor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+var __param = (this && this.__param) || function (paramIndex, decorator) {
+    return function (target, key) { decorator(target, key, paramIndex); }
+};
+
+
+
+
+
+
+
+var MenteeDialogComponent = (function () {
+    function MenteeDialogComponent(menteeService, mentorService, userService, router, data, dialogRef) {
+        this.menteeService = menteeService;
+        this.mentorService = mentorService;
+        this.userService = userService;
+        this.router = router;
+        this.data = data;
+        this.dialogRef = dialogRef;
+        this.mentee = {};
+        this.mentor = {};
+        this.guardian = {};
+        this.grades = {};
+        this.gradeGroup = {};
+        this.messages = 1;
+    }
+    MenteeDialogComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.user = JSON.parse(localStorage.getItem('user'));
+        if (!this.user) {
+            this.router.navigate([""]);
+        }
+        else {
+            if (this.user.role == 'Mentee') {
+                this.menteeId = this.user.iat;
+            }
+            else {
+                this.menteeId = this.data.menteeId;
+            }
+            this.menteeService.get_mentee_by_id(this.menteeId)
+                .subscribe(function (data) {
+                _this.mentee = data;
+            }, function (error) { return console.log(error); });
+            this.menteeService.get_mentor_by_mentee_id(this.menteeId)
+                .subscribe(function (data) {
+                _this.mentor = data;
+            }, function (error) { return console.log(error); });
+            this.menteeService.get_guardian_by_mentee_id(this.menteeId)
+                .subscribe(function (data) {
+                _this.guardian = data;
+            }, function (error) { return console.log(error); });
+            this.menteeService.get_mentee_grades(this.menteeId)
+                .subscribe(function (data) {
+                _this.grades = data;
+            }, function (error) { return console.log(error); });
+        }
+    };
+    MenteeDialogComponent.prototype.onNoClick = function () {
+        this.dialogRef.close();
+    };
+    MenteeDialogComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'app-mentee-dialog',
+            template: __webpack_require__("../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.html"),
+            styles: [__webpack_require__("../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.css")]
+        }),
+        __param(4, Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Inject"])(__WEBPACK_IMPORTED_MODULE_3__angular_material__["a" /* MAT_DIALOG_DATA */])),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_4__mentee_mentee_service__["a" /* MenteeService */],
+            __WEBPACK_IMPORTED_MODULE_5__mentor_mentor_service__["a" /* MentorService */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */], Object, __WEBPACK_IMPORTED_MODULE_3__angular_material__["k" /* MatDialogRef */]])
+    ], MenteeDialogComponent);
+    return MenteeDialogComponent;
+}());
+
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/mentee/mentee.profile.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
 
+
 // module
-exports.push([module.i, "body {\r\n    \r\n}\r\n\r\n\r\n.meticulous-container {\r\n    margin: 20px;\r\n    \r\n}\r\n\r\n.first-name {\r\n    /*font-family: 'Dancing Script', cursive !important;*/\r\n    font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n    margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n    height: 200px;\r\n}\r\n.mat-tab-body-content { height: 300px !important; }\r\n\r\n.mat-tab-group {\r\n    font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n\r\n\r\n/* Timeline */\r\n.timeline,\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    padding: 20px;\r\n    position: relative;\r\n}\r\n\r\n    .timeline:before {\r\n        top: 40px;\r\n        bottom: 0;\r\n        position: absolute;\r\n        content: \" \";\r\n        width: 3px;\r\n        background-color: #eeeeee;\r\n        left: 50%;\r\n        margin-left: -1.5px;\r\n    }\r\n\r\n    .timeline::after{\r\n        width: 0px !important;\r\n    }\r\n\r\n    .timeline .timeline-item {\r\n        margin-bottom: 20px;\r\n        position: relative;\r\n    }\r\n\r\n        .timeline .timeline-item:before,\r\n        .timeline .timeline-item:after {\r\n            content: \"\";\r\n            display: table;\r\n        }\r\n\r\n        .timeline .timeline-item:after {\r\n            clear: both;\r\n            width: 0px !important;\r\n        }\r\n\r\n        .timeline .timeline-item .timeline-badge {\r\n            color: #fff;\r\n            width: 54px;\r\n            height: 54px;\r\n            line-height: 52px;\r\n            font-size: 22px;\r\n            text-align: center;\r\n            position: absolute;\r\n            top: 18px;\r\n            left: 50%;\r\n            margin-left: -25px;\r\n            background-color: #333;\r\n            border: 3px solid #ffffff;\r\n            z-index: 100;\r\n            border-top-right-radius: 50%;\r\n            border-top-left-radius: 50%;\r\n            border-bottom-right-radius: 50%;\r\n            border-bottom-left-radius: 50%;\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-badge i,\r\n            .timeline .timeline-item .timeline-badge .fa,\r\n            .timeline .timeline-item .timeline-badge .glyphicon {\r\n                top: 2px;\r\n                left: 0px;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.primary {\r\n                background-color: #1f9eba;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.info {\r\n                background-color: #5bc0de;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.success {\r\n                background-color: #59ba1f;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.warning {\r\n                background-color: #d1bd10;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.danger {\r\n                background-color: #ba1f1f;\r\n            }\r\n\r\n        .timeline .timeline-item .timeline-panel {\r\n            position: relative;\r\n            width: 46%;\r\n            float: left;\r\n            right: 16px;\r\n            border: 1px solid #777;\r\n            background: #ffffff;\r\n            border-radius: 2px;\r\n            padding: 20px;\r\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-panel:before {\r\n                position: absolute;\r\n                top: 26px;\r\n                right: -16px;\r\n                display: inline-block;\r\n                border-top: 16px solid transparent;\r\n                border-left: 16px solid #777;\r\n                border-right: 0 solid #777;\r\n                border-bottom: 16px solid transparent;\r\n                content: \" \";\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-title {\r\n                margin-top: 0;\r\n                color: inherit;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-body > p,\r\n            .timeline .timeline-item .timeline-panel .timeline-body > ul {\r\n                margin-bottom: 0;\r\n            }\r\n\r\n                .timeline .timeline-item .timeline-panel .timeline-body > p + p {\r\n                    margin-top: 5px;\r\n                }\r\n\r\n        .timeline .timeline-item:last-child:nth-child(even) {\r\n            float: right;\r\n        }\r\n\r\n        .timeline .timeline-item:nth-child(even) .timeline-panel {\r\n            float: right;\r\n            left: 16px;\r\n        }\r\n\r\n            .timeline .timeline-item:nth-child(even) .timeline-panel:before {\r\n                border-left-width: 0;\r\n                border-right-width: 14px;\r\n                left: -14px;\r\n                right: auto;\r\n            }\r\n\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    position: relative;\r\n    padding: 20px 0px 20px 0px;\r\n    display: inline-block;\r\n}\r\n\r\n    .timeline-horizontal:before {\r\n        height: 3px;\r\n        top: auto;\r\n        bottom: 26px;\r\n        left: 56px;\r\n        right: 0;\r\n        width: 100%;\r\n        margin-bottom: 20px;\r\n    }\r\n\r\n    .timeline-horizontal .timeline-item {\r\n        display: table-cell;\r\n        height: 280px;\r\n        width: 20%;\r\n        min-width: 320px;\r\n        float: none !important;\r\n        padding-left: 0px;\r\n        padding-right: 20px;\r\n        margin: 0 auto;\r\n        vertical-align: bottom;\r\n    }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-panel {\r\n            top: auto;\r\n            bottom: 64px;\r\n            display: inline-block;\r\n            float: none !important;\r\n            left: 0 !important;\r\n            right: 0 !important;\r\n            width: 100%;\r\n            margin-bottom: 20px;\r\n        }\r\n\r\n            .timeline-horizontal .timeline-item .timeline-panel:before {\r\n                top: auto;\r\n                bottom: -16px;\r\n                left: 28px !important;\r\n                right: auto;\r\n                border-right: 16px solid transparent !important;\r\n                border-top: 16px solid #777 !important;\r\n                border-bottom: 0 solid #777 !important;\r\n                border-left: 16px solid transparent !important;\r\n            }\r\n\r\n        .timeline-horizontal .timeline-item:before,\r\n        .timeline-horizontal .timeline-item:after {\r\n            display: none;\r\n        }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-badge {\r\n            top: auto;\r\n            bottom: 0px;\r\n            left: 43px;\r\n        }\r\n", ""]);
+exports.push([module.i, "body {\r\n}\r\n\r\n.meticulous-container {\r\n    margin: 20px;\r\n}\r\n\r\n.first-name {\r\n    /*font-family: 'Dancing Script', cursive !important;*/\r\n    font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n    margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n    height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n    height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n    font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n.timeline,\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    padding: 20px;\r\n    position: relative;\r\n}\r\n\r\n    .timeline:before {\r\n        top: 40px;\r\n        bottom: 0;\r\n        position: absolute;\r\n        content: \" \";\r\n        width: 3px;\r\n        background-color: #eeeeee;\r\n        left: 50%;\r\n        margin-left: -1.5px;\r\n    }\r\n\r\n    .timeline::after {\r\n        width: 0px !important;\r\n    }\r\n\r\n    .timeline .timeline-item {\r\n        margin-bottom: 20px;\r\n        position: relative;\r\n    }\r\n\r\n        .timeline .timeline-item:before,\r\n        .timeline .timeline-item:after {\r\n            content: \"\";\r\n            display: table;\r\n        }\r\n\r\n        .timeline .timeline-item:after {\r\n            clear: both;\r\n            width: 0px !important;\r\n        }\r\n\r\n        .timeline .timeline-item .timeline-badge {\r\n            color: #fff;\r\n            width: 54px;\r\n            height: 54px;\r\n            line-height: 52px;\r\n            font-size: 22px;\r\n            text-align: center;\r\n            position: absolute;\r\n            top: 18px;\r\n            left: 50%;\r\n            margin-left: -25px;\r\n            background-color: #333;\r\n            border: 3px solid #ffffff;\r\n            z-index: 100;\r\n            border-top-right-radius: 50%;\r\n            border-top-left-radius: 50%;\r\n            border-bottom-right-radius: 50%;\r\n            border-bottom-left-radius: 50%;\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-badge i,\r\n            .timeline .timeline-item .timeline-badge .fa,\r\n            .timeline .timeline-item .timeline-badge .glyphicon {\r\n                top: 2px;\r\n                left: 0px;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.primary {\r\n                background-color: #1f9eba;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.info {\r\n                background-color: #5bc0de;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.success {\r\n                background-color: #59ba1f;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.warning {\r\n                background-color: #d1bd10;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.danger {\r\n                background-color: #ba1f1f;\r\n            }\r\n\r\n        .timeline .timeline-item .timeline-panel {\r\n            position: relative;\r\n            width: 46%;\r\n            float: left;\r\n            right: 16px;\r\n            border: 1px solid #777;\r\n            background: #ffffff;\r\n            border-radius: 2px;\r\n            padding: 20px;\r\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-panel:before {\r\n                position: absolute;\r\n                top: 26px;\r\n                right: -16px;\r\n                display: inline-block;\r\n                border-top: 16px solid transparent;\r\n                border-left: 16px solid #777;\r\n                border-right: 0 solid #777;\r\n                border-bottom: 16px solid transparent;\r\n                content: \" \";\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-title {\r\n                margin-top: 0;\r\n                color: inherit;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-body > p,\r\n            .timeline .timeline-item .timeline-panel .timeline-body > ul {\r\n                margin-bottom: 0;\r\n            }\r\n\r\n                .timeline .timeline-item .timeline-panel .timeline-body > p + p {\r\n                    margin-top: 5px;\r\n                }\r\n\r\n        .timeline .timeline-item:last-child:nth-child(even) {\r\n            float: right;\r\n        }\r\n\r\n        .timeline .timeline-item:nth-child(even) .timeline-panel {\r\n            float: right;\r\n            left: 16px;\r\n        }\r\n\r\n            .timeline .timeline-item:nth-child(even) .timeline-panel:before {\r\n                border-left-width: 0;\r\n                border-right-width: 14px;\r\n                left: -14px;\r\n                right: auto;\r\n            }\r\n\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    position: relative;\r\n    padding: 20px 0px 20px 0px;\r\n    display: inline-block;\r\n}\r\n\r\n    .timeline-horizontal:before {\r\n        height: 3px;\r\n        top: auto;\r\n        bottom: 26px;\r\n        left: 56px;\r\n        right: 0;\r\n        width: 100%;\r\n        margin-bottom: 20px;\r\n    }\r\n\r\n    .timeline-horizontal .timeline-item {\r\n        display: table-cell;\r\n        height: 280px;\r\n        width: 20%;\r\n        min-width: 320px;\r\n        float: none !important;\r\n        padding-left: 0px;\r\n        padding-right: 20px;\r\n        margin: 0 auto;\r\n        vertical-align: bottom;\r\n    }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-panel {\r\n            top: auto;\r\n            bottom: 64px;\r\n            display: inline-block;\r\n            float: none !important;\r\n            left: 0 !important;\r\n            right: 0 !important;\r\n            width: 100%;\r\n            margin-bottom: 20px;\r\n        }\r\n\r\n            .timeline-horizontal .timeline-item .timeline-panel:before {\r\n                top: auto;\r\n                bottom: -16px;\r\n                left: 28px !important;\r\n                right: auto;\r\n                border-right: 16px solid transparent !important;\r\n                border-top: 16px solid #777 !important;\r\n                border-bottom: 0 solid #777 !important;\r\n                border-left: 16px solid transparent !important;\r\n            }\r\n\r\n        .timeline-horizontal .timeline-item:before,\r\n        .timeline-horizontal .timeline-item:after {\r\n            display: none;\r\n        }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-badge {\r\n            top: auto;\r\n            bottom: 0px;\r\n            left: 43px;\r\n        }", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -1153,12 +1436,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/mentee/mentee.profile.component.html":
 /***/ (function(module, exports) {
-module.exports = "<div class=\"container-fluid meticulous-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-xl-3\">\r\n            <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\"/></div>\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\"></div>\r\n        </div>\r\n        <div class=\"col-xl-9\">\r\n            \r\n            <div class=\"row first-name\">\r\n                {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n            </div>\r\n            <div class=\"row\">\r\n                 Classification: {{mentee.menteeClassification.description}}\r\n            </div>\r\n                <div class=\"row\">\r\n                 Birthdate:  {{mentee.menteeDOB | date}}\r\n                </div>\r\n        <div class=\"row\">\r\n            <button type=\"button\" class=\"btn btn-primary\">\r\n                Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n            </button>\r\n        </div>\r\n                       \r\n           \r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\">\r\n                <mat-tab-group>\r\n                    <mat-tab label=\"Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-info-circle\"></i>Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Address:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\" style=\"margin-top: 20px; margin-bottom: 20px;\">School Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">School:</div>\r\n                                <div class=\"col-sm-9\">{{mentee.menteeSchool.school_name}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Principal:</div>\r\n                                <div class=\"col-sm-9\">{{mentee.menteeSchool.principal}}</div>\r\n                            </div>\r\n                        </div>\r\n                       \r\n                    </mat-tab>\r\n                    <mat-tab label=\"Timeline\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-clock-o\"></i>Timeline</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n                                    \r\n                                    <div style=\"display:inline-block;width:100%;overflow-y:auto;\">\r\n                                        <ul class=\"timeline timeline-horizontal\">\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge primary\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 1</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge success\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 2</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge info\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 3</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. Mé faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                           \r\n                                        </ul>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Guardian Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-shield\"></i>Guardian Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin:0; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Guardian:\r\n                                </div>\r\n                                <div class=\"col-sm-9\">\r\n                                    {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Address:\r\n                                </div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                            </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Mentee Grades\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-graduation-cap\"></i>Grades</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 0; font-style: normal;\">\r\n                           \r\n                            <table class=\"table table-sm\">\r\n                                <thead class=\"thead-dark\">\r\n                                <tr>\r\n                                    <th>Subject</th>\r\n                                    <th *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs\">\r\n                                        {{group[0]}}\r\n                                    </th>\r\n                                </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                <tr *ngFor=\"let subjectGroup of grades | groupBy: ['gradeCourse.course_name'] | pairs\">\r\n                                    <th>{{subjectGroup[0]}}</th>\r\n                                    <td *ngFor=\"let s of subjectGroup[1]\">{{s.gradeValue | round: 2}}</td>\r\n                                </tr>\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </mat-tab>\r\n                </mat-tab-group>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-xl-3\">\r\n            <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\"></div>\r\n        </div>\r\n        <div class=\"col-xl-9\">\r\n\r\n            <div class=\"row first-name\">\r\n                {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n            </div>\r\n            <div class=\"row\">\r\n                Classification: {{mentee.menteeClassification.description}}\r\n            </div>\r\n            <div class=\"row\">\r\n                Birthdate:  {{mentee.menteeDOB | date}}\r\n            </div>\r\n            <div class=\"row\">\r\n                <button type=\"button\" class=\"btn btn-primary\">\r\n                    Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n                </button>\r\n            </div>\r\n\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\">\r\n                <mat-tab-group>\r\n                    <mat-tab label=\"Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-info-circle\"></i>Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Address:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\" style=\"margin-top: 20px; margin-bottom: 20px;\">School Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">School:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    {{mentee.menteeSchool.school_name}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Principal:</div>\r\n                                <div class=\"col-sm-9\">{{mentee.menteeSchool.principal}}</div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Timeline\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-clock-o\"></i>Timeline</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n\r\n                                    <div style=\"display:inline-block;width:100%;overflow-y:auto;\">\r\n                                        <ul class=\"timeline timeline-horizontal\">\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge primary\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 1</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge success\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 2</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge info\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 3</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. Mé faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                        </ul>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Guardian Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-shield\"></i>Guardian Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin:0; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Guardian:\r\n                                </div>\r\n                                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                                    {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Address:\r\n                                </div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Mentee Grades\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-graduation-cap\"></i>Grades</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 0; font-style: normal;\">\r\n\r\n                            <table class=\"table table-sm\">\r\n                                <thead class=\"thead-dark\">\r\n                                    <tr>\r\n                                        <th>Subject</th>\r\n                                        <th *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs\">\r\n                                            {{group[0]}}\r\n                                        </th>\r\n                                    </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let subjectGroup of grades | groupBy: ['gradeCourse.course_name'] | pairs\">\r\n                                        <th>{{subjectGroup[0]}}</th>\r\n                                        <td *ngFor=\"let s of subjectGroup[1]\">{{s.gradeValue | round: 2}}</td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </mat-tab>\r\n                </mat-tab-group>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/mentee/mentee.profile.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteeProfileComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1176,6 +1461,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
+
 
 var MenteeProfileComponent = (function () {
     function MenteeProfileComponent(menteeService, mentorService, userService, router) {
@@ -1230,10 +1520,13 @@ var MenteeProfileComponent = (function () {
     return MenteeProfileComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/mentee/mentee.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MenteeService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -1251,6 +1544,11 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
+
 
 var MenteeService = (function () {
     function MenteeService(http, userService) {
@@ -1305,10 +1603,125 @@ var MenteeService = (function () {
     return MenteeService;
 }());
 
+
+
+/***/ }),
+
+/***/ "../../../../../MeticulousApp/app/mentor/mentor.profile.component.css":
+/***/ (function(module, exports, __webpack_require__) {
+
+exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
+// imports
+
+
+// module
+exports.push([module.i, ".meticulous-container {\r\n    margin: 20px;\r\n}\r\n\r\n.first-name {\r\n    /*font-family: 'Dancing Script', cursive !important;*/\r\n    font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n    margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n    height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n    height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n    font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n.timeline,\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    padding: 20px;\r\n    position: relative;\r\n}\r\n\r\n    .timeline:before {\r\n        top: 40px;\r\n        bottom: 0;\r\n        position: absolute;\r\n        content: \" \";\r\n        width: 3px;\r\n        background-color: #eeeeee;\r\n        left: 50%;\r\n        margin-left: -1.5px;\r\n    }\r\n\r\n    .timeline::after {\r\n        width: 0px !important;\r\n    }\r\n\r\n    .timeline .timeline-item {\r\n        margin-bottom: 20px;\r\n        position: relative;\r\n    }\r\n\r\n        .timeline .timeline-item:before,\r\n        .timeline .timeline-item:after {\r\n            content: \"\";\r\n            display: table;\r\n        }\r\n\r\n        .timeline .timeline-item:after {\r\n            clear: both;\r\n            width: 0px !important;\r\n        }\r\n\r\n        .timeline .timeline-item .timeline-badge {\r\n            color: #fff;\r\n            width: 54px;\r\n            height: 54px;\r\n            line-height: 52px;\r\n            font-size: 22px;\r\n            text-align: center;\r\n            position: absolute;\r\n            top: 18px;\r\n            left: 50%;\r\n            margin-left: -25px;\r\n            background-color: #333;\r\n            border: 3px solid #ffffff;\r\n            z-index: 100;\r\n            border-top-right-radius: 50%;\r\n            border-top-left-radius: 50%;\r\n            border-bottom-right-radius: 50%;\r\n            border-bottom-left-radius: 50%;\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-badge i,\r\n            .timeline .timeline-item .timeline-badge .fa,\r\n            .timeline .timeline-item .timeline-badge .glyphicon {\r\n                top: 2px;\r\n                left: 0px;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.primary {\r\n                background-color: #1f9eba;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.info {\r\n                background-color: #5bc0de;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.success {\r\n                background-color: #59ba1f;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.warning {\r\n                background-color: #d1bd10;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-badge.danger {\r\n                background-color: #ba1f1f;\r\n            }\r\n\r\n        .timeline .timeline-item .timeline-panel {\r\n            position: relative;\r\n            width: 46%;\r\n            float: left;\r\n            right: 16px;\r\n            border: 1px solid #777;\r\n            background: #ffffff;\r\n            border-radius: 2px;\r\n            padding: 20px;\r\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n        }\r\n\r\n            .timeline .timeline-item .timeline-panel:before {\r\n                position: absolute;\r\n                top: 26px;\r\n                right: -16px;\r\n                display: inline-block;\r\n                border-top: 16px solid transparent;\r\n                border-left: 16px solid #777;\r\n                border-right: 0 solid #777;\r\n                border-bottom: 16px solid transparent;\r\n                content: \" \";\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-title {\r\n                margin-top: 0;\r\n                color: inherit;\r\n            }\r\n\r\n            .timeline .timeline-item .timeline-panel .timeline-body > p,\r\n            .timeline .timeline-item .timeline-panel .timeline-body > ul {\r\n                margin-bottom: 0;\r\n            }\r\n\r\n                .timeline .timeline-item .timeline-panel .timeline-body > p + p {\r\n                    margin-top: 5px;\r\n                }\r\n\r\n        .timeline .timeline-item:last-child:nth-child(even) {\r\n            float: right;\r\n        }\r\n\r\n        .timeline .timeline-item:nth-child(even) .timeline-panel {\r\n            float: right;\r\n            left: 16px;\r\n        }\r\n\r\n            .timeline .timeline-item:nth-child(even) .timeline-panel:before {\r\n                border-left-width: 0;\r\n                border-right-width: 14px;\r\n                left: -14px;\r\n                right: auto;\r\n            }\r\n\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    position: relative;\r\n    padding: 20px 0px 20px 0px;\r\n    display: inline-block;\r\n}\r\n\r\n    .timeline-horizontal:before {\r\n        height: 3px;\r\n        top: auto;\r\n        bottom: 26px;\r\n        left: 56px;\r\n        right: 0;\r\n        width: 100%;\r\n        margin-bottom: 20px;\r\n    }\r\n\r\n    .timeline-horizontal .timeline-item {\r\n        display: table-cell;\r\n        height: 280px;\r\n        width: 20%;\r\n        min-width: 320px;\r\n        float: none !important;\r\n        padding-left: 0px;\r\n        padding-right: 20px;\r\n        margin: 0 auto;\r\n        vertical-align: bottom;\r\n    }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-panel {\r\n            top: auto;\r\n            bottom: 64px;\r\n            display: inline-block;\r\n            float: none !important;\r\n            left: 0 !important;\r\n            right: 0 !important;\r\n            width: 100%;\r\n            margin-bottom: 20px;\r\n        }\r\n\r\n            .timeline-horizontal .timeline-item .timeline-panel:before {\r\n                top: auto;\r\n                bottom: -16px;\r\n                left: 28px !important;\r\n                right: auto;\r\n                border-right: 16px solid transparent !important;\r\n                border-top: 16px solid #777 !important;\r\n                border-bottom: 0 solid #777 !important;\r\n                border-left: 16px solid transparent !important;\r\n            }\r\n\r\n        .timeline-horizontal .timeline-item:before,\r\n        .timeline-horizontal .timeline-item:after {\r\n            display: none;\r\n        }\r\n\r\n        .timeline-horizontal .timeline-item .timeline-badge {\r\n            top: auto;\r\n            bottom: 0px;\r\n            left: 43px;\r\n        }", ""]);
+
+// exports
+
+
+/*** EXPORTS FROM exports-loader ***/
+module.exports = module.exports.toString();
+
+/***/ }),
+
+/***/ "../../../../../MeticulousApp/app/mentor/mentor.profile.component.html":
+/***/ (function(module, exports) {
+
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-xl-3\">\r\n            <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\"></div>\r\n        </div>\r\n        <div class=\"col-xl-9\">\r\n\r\n            <div class=\"row first-name\">\r\n                {{mentor.mentorFirstName}} {{mentor.mentorLastName}}\r\n            </div>\r\n\r\n            <div class=\"row\">\r\n                <button type=\"button\" class=\"btn btn-primary\">\r\n                    Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n                </button>\r\n            </div>\r\n\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\">\r\n                <mat-tab-group>\r\n                    <mat-tab label=\"Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-info-circle\"></i>Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Address:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{mentor.mentorAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Timeline\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-clock-o\"></i>Timeline</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n\r\n                                    <div style=\"display:inline-block;width:100%;overflow-y:auto;\">\r\n                                        <ul class=\"timeline timeline-horizontal\">\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge primary\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 1</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge success\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 2</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge info\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 3</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. M� faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                        </ul>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Mentees\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-user\"></i>Mentees</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 0; font-style: normal;\">\r\n\r\n                            <table class=\"table table-sm\">\r\n                                <thead class=\"thead-dark\">\r\n                                    <tr>\r\n                                        <th>Mentee</th>\r\n                                        <th>Classification</th>\r\n                                    </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let mentee of mentor.mentorMentees\">\r\n                                        <td><a (click)=\"openMenteeFormDialog(mentee.menteeId)\">{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>\r\n                                        <td>{{mentee.menteeClassification.description}}</td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </mat-tab>\r\n                </mat-tab-group>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+
+/***/ }),
+
+/***/ "../../../../../MeticulousApp/app/mentor/mentor.profile.component.ts":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorProfileComponent; });
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__shared_user_service__ = __webpack_require__("../../../../../MeticulousApp/app/shared/user.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__angular_router__ = __webpack_require__("../../../router/esm5/router.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__mentee_mentee_service__ = __webpack_require__("../../../../../MeticulousApp/app/mentee/mentee.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4__mentor_mentor_service__ = __webpack_require__("../../../../../MeticulousApp/app/mentor/mentor.service.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5__angular_material__ = __webpack_require__("../../../material/esm5/material.es5.js");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6__mentee_dialog_mentee_dialog_component__ = __webpack_require__("../../../../../MeticulousApp/app/mentee-dialog/mentee-dialog.component.ts");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_rxjs_Rx__ = __webpack_require__("../../../../rxjs/_esm5/Rx.js");
+var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+
+
+
+var MentorProfileComponent = (function () {
+    function MentorProfileComponent(menteeService, mentorService, userService, router, dialog) {
+        this.menteeService = menteeService;
+        this.mentorService = mentorService;
+        this.userService = userService;
+        this.router = router;
+        this.dialog = dialog;
+        this.mentor = {};
+        this.messages = 0;
+    }
+    MentorProfileComponent.prototype.ngOnInit = function () {
+        var _this = this;
+        this.user = JSON.parse(localStorage.getItem('user'));
+        if (!this.user) {
+            this.router.navigate([""]);
+        }
+        else {
+            this.mentorId = this.user.iat;
+            this.mentorService.get_mentor_by_id(this.mentorId)
+                .subscribe(function (data) {
+                _this.mentor = data;
+            }, function (error) { return console.log(error); });
+        }
+    };
+    MentorProfileComponent.prototype.openMenteeFormDialog = function (mId) {
+        var _this = this;
+        var dialogRef = this.dialog.open(__WEBPACK_IMPORTED_MODULE_6__mentee_dialog_mentee_dialog_component__["a" /* MenteeDialogComponent */], {
+            width: '1400px',
+            height: '860px',
+            data: { menteeId: mId }
+        });
+        dialogRef.afterClosed().subscribe(function (result) {
+            _this.mentee = result;
+        });
+    };
+    MentorProfileComponent = __decorate([
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["NgModule"])({
+            imports: [__WEBPACK_IMPORTED_MODULE_6__mentee_dialog_mentee_dialog_component__["a" /* MenteeDialogComponent */]]
+        }),
+        Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["Component"])({
+            selector: 'mentor-profile',
+            template: __webpack_require__("../../../../../MeticulousApp/app/mentor/mentor.profile.component.html"),
+            styles: [__webpack_require__("../../../../../MeticulousApp/app/mentor/mentor.profile.component.css")]
+        }),
+        __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_3__mentee_mentee_service__["a" /* MenteeService */],
+            __WEBPACK_IMPORTED_MODULE_4__mentor_mentor_service__["a" /* MentorService */],
+            __WEBPACK_IMPORTED_MODULE_1__shared_user_service__["a" /* UserService */],
+            __WEBPACK_IMPORTED_MODULE_2__angular_router__["a" /* Router */],
+            __WEBPACK_IMPORTED_MODULE_5__angular_material__["i" /* MatDialog */]])
+    ], MentorProfileComponent);
+    return MentorProfileComponent;
+}());
+
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/mentor/mentor.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return MentorService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -1324,6 +1737,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 var MentorService = (function () {
     function MentorService(http, userService) {
@@ -1342,6 +1758,12 @@ var MentorService = (function () {
         })
             .map(function (res) { return res.json(); });
     };
+    MentorService.prototype.get_mentor_by_id = function (mentorId) {
+        return this.http.get("http://localhost:52373/api/mentors/" + mentorId, {
+            headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .map(function (res) { return res.json(); });
+    };
     MentorService = __decorate([
         Object(__WEBPACK_IMPORTED_MODULE_1__angular_core__["Injectable"])(),
         __metadata("design:paramtypes", [__WEBPACK_IMPORTED_MODULE_0__angular_http__["Http"], __WEBPACK_IMPORTED_MODULE_2__shared_user_service__["a" /* UserService */]])
@@ -1349,10 +1771,13 @@ var MentorService = (function () {
     return MentorService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/school/school.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return SchoolService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -1368,6 +1793,9 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
 
 var SchoolService = (function () {
     function SchoolService(http, userService) {
@@ -1387,10 +1815,13 @@ var SchoolService = (function () {
     return SchoolService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/shared/accountservice.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AccountService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_http__ = __webpack_require__("../../../http/esm5/http.js");
@@ -1408,6 +1839,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
 
 var AccountService = (function () {
     function AccountService(http, userService) {
@@ -1448,10 +1883,13 @@ var AccountService = (function () {
     return AccountService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/shared/auth-guard.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return AuthGuard; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1466,6 +1904,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 var AuthGuard = (function () {
     function AuthGuard(auth, router) {
@@ -1488,10 +1928,13 @@ var AuthGuard = (function () {
     return AuthGuard;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/shared/round.pipe.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return RoundPipe; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1514,10 +1957,13 @@ var RoundPipe = (function () {
     return RoundPipe;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/shared/user.service.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserService; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1550,17 +1996,22 @@ var UserService = (function () {
     return UserService;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/userchart/userchart.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
+
 
 // module
 exports.push([module.i, "", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -1569,12 +2020,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/userchart/userchart.component.html":
 /***/ (function(module, exports) {
-module.exports = "<div style=\"display: block\">\r\n    <canvas baseChart\r\n            [data]=\"chartData\"\r\n            [labels]=\"chartLabels\"\r\n            [chartType]=\"chartType\"\r\n            [colors]=\"chartColors\"></canvas>\r\n</div>\r\n"
+
+module.exports = "<div style=\"display: block\">\r\n    <canvas baseChart\r\n            [data]=\"chartData\"\r\n            [labels]=\"chartLabels\"\r\n            [chartType]=\"chartType\"\r\n            [colors]=\"chartColors\"></canvas>\r\n</div>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/userchart/userchart.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UserchartComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1592,6 +2045,10 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
+
+
 
 var UserchartComponent = (function () {
     function UserchartComponent(menteeService, mentorService, directorService) {
@@ -1643,17 +2100,22 @@ var UserchartComponent = (function () {
     return UserchartComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/usertable/usertable.component.css":
 /***/ (function(module, exports, __webpack_require__) {
+
 exports = module.exports = __webpack_require__("../../../../css-loader/lib/css-base.js")(false);
 // imports
+
 
 // module
 exports.push([module.i, "", ""]);
 
 // exports
+
 
 /*** EXPORTS FROM exports-loader ***/
 module.exports = module.exports.toString();
@@ -1662,12 +2124,14 @@ module.exports = module.exports.toString();
 
 /***/ "../../../../../MeticulousApp/app/usertable/usertable.component.html":
 /***/ (function(module, exports) {
-module.exports = "\r\n<mat-table [dataSource]=\"dataSource\">\r\n    <ng-container matColumnDef=\"id\">\r\n        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>\r\n        <mat-cell *matCellDef=\"let row\">{{row.id}}</mat-cell>\r\n    </ng-container>\r\n    <ng-container matColumnDef=\"userName\">\r\n        <mat-header-cell *matHeaderCellDef>User</mat-header-cell>\r\n        <mat-cell *matCellDef=\"let row\">{{row.userName}}</mat-cell>\r\n    </ng-container>\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\r\n</mat-table>\r\n<mat-paginator #paginator [pageSize]=\"5\" [pageSizeOptions]=\"[5, 10, 20]\">\r\n\r\n</mat-paginator>"
+
+module.exports = "<mat-table [dataSource]=\"dataSource\">\r\n    <ng-container matColumnDef=\"id\">\r\n        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>\r\n        <mat-cell *matCellDef=\"let row\">{{row.id}}</mat-cell>\r\n    </ng-container>\r\n    <ng-container matColumnDef=\"userName\">\r\n        <mat-header-cell *matHeaderCellDef>User</mat-header-cell>\r\n        <mat-cell *matCellDef=\"let row\">{{row.userName}}</mat-cell>\r\n    </ng-container>\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\r\n</mat-table>\r\n<mat-paginator #paginator [pageSize]=\"5\" [pageSizeOptions]=\"[5, 10, 20]\">\r\n</mat-paginator>"
 
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/app/usertable/usertable.component.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return UsertableComponent; });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1682,6 +2146,8 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
+
 
 var UsertableComponent = (function () {
     function UsertableComponent(accountService) {
@@ -1714,10 +2180,13 @@ var UsertableComponent = (function () {
     return UsertableComponent;
 }());
 
+
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/environments/environment.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "a", function() { return environment; });
 // The file contents for the current environment will overwrite these during build.
@@ -1728,10 +2197,12 @@ var environment = {
     production: false
 };
 
+
 /***/ }),
 
 /***/ "../../../../../MeticulousApp/main.ts":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
+
 "use strict";
 Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__angular_core__ = __webpack_require__("../../../core/esm5/core.js");
@@ -1739,16 +2210,21 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_2__app_app_module__ = __webpack_require__("../../../../../MeticulousApp/app/app.module.ts");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3__environments_environment__ = __webpack_require__("../../../../../MeticulousApp/environments/environment.ts");
 
+
+
+
 if (__WEBPACK_IMPORTED_MODULE_3__environments_environment__["a" /* environment */].production) {
     Object(__WEBPACK_IMPORTED_MODULE_0__angular_core__["enableProdMode"])();
 }
 Object(__WEBPACK_IMPORTED_MODULE_1__angular_platform_browser_dynamic__["a" /* platformBrowserDynamic */])().bootstrapModule(__WEBPACK_IMPORTED_MODULE_2__app_app_module__["a" /* AppModule */])
     .catch(function (err) { return console.log(err); });
 
+
 /***/ }),
 
 /***/ "../../../../moment/locale recursive ^\\.\\/.*$":
 /***/ (function(module, exports, __webpack_require__) {
+
 var map = {
 	"./af": "../../../../moment/locale/af.js",
 	"./af.js": "../../../../moment/locale/af.js",
@@ -2001,8 +2477,11 @@ webpackContext.id = "../../../../moment/locale recursive ^\\.\\/.*$";
 
 /***/ 0:
 /***/ (function(module, exports, __webpack_require__) {
+
 module.exports = __webpack_require__("../../../../../MeticulousApp/main.ts");
 
+
 /***/ })
+
 },[0]);
 //# sourceMappingURL=main.bundle.js.map
