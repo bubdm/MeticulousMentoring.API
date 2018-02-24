@@ -22,7 +22,7 @@ export class ClassificationService {
     }
 
     public get_classifications() {
-        return this.http.get("http://localhost:52373/api/classification",
+        return this.http.get("http://localhost:5005/api/classification",
             {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
             })

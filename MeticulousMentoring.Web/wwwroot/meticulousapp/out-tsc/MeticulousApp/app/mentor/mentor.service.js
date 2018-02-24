@@ -19,19 +19,19 @@ var MentorService = (function () {
         this.userService = userService;
     }
     MentorService.prototype.get_mentors = function () {
-        return this.http.get("http://localhost:52373/api/mentors", {
+        return this.http.get("http://localhost:5005/api/mentors", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MentorService.prototype.add_mentor = function (mentor) {
-        return this.http.post("http://localhost:52373/api/mentors", mentor, {
+        return this.http.post("http://localhost:5005/api/mentors", mentor, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MentorService.prototype.get_mentor_by_id = function (mentorId) {
-        return this.http.get("http://localhost:52373/api/mentors/" + mentorId, {
+        return this.http.get("http://localhost:5005/api/mentors/" + mentorId, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

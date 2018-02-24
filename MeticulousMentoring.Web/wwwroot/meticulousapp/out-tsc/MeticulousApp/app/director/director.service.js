@@ -17,7 +17,7 @@ var DirectorService = (function () {
         this.http = http;
     }
     DirectorService.prototype.add_director = function (director) {
-        return this.http.post("http://localhost:52373/api/directors", director, {
+        return this.http.post("http://localhost:5005/api/directors", director, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

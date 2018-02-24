@@ -32,7 +32,7 @@ var EducationSystemService = (function () {
         return angular2_jwt_1.tokenNotExpired();
     };
     EducationSystemService.prototype.get_education_systems = function () {
-        return this.http.get("http://localhost:52373/api/educationSystem", {
+        return this.http.get("http://localhost:5005/api/educationSystem", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

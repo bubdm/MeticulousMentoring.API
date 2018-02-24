@@ -32,7 +32,7 @@ var ClassificationService = (function () {
         return angular2_jwt_1.tokenNotExpired();
     };
     ClassificationService.prototype.get_classifications = function () {
-        return this.http.get("http://localhost:52373/api/classification", {
+        return this.http.get("http://localhost:5005/api/classification", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

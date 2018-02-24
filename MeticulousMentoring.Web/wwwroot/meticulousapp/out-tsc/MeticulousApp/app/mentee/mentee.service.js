@@ -21,42 +21,42 @@ var MenteeService = (function () {
         this.userService = userService;
     }
     MenteeService.prototype.get_mentees = function () {
-        return this.http.get("http://localhost:52373/api/mentees", {
+        return this.http.get("http://localhost:5005/api/mentees", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_total_mentees = function () {
-        return this.http.get("http://localhost:52373/api/mentees/totalmentees", {
+        return this.http.get("http://localhost:5005/api/mentees/totalmentees", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.add_mentee = function (mentee) {
-        return this.http.post("http://localhost:52373/api/mentees", mentee, {
+        return this.http.post("http://localhost:5005/api/mentees", mentee, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         }).map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_mentee_by_id = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/" + menteeId, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_mentor_by_mentee_id = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/GetMentor/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/GetMentor/" + menteeId, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_guardian_by_mentee_id = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/GetGuardian/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/GetGuardian/" + menteeId, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_mentee_grades = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/MenteeGrades/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/MenteeGrades/" + menteeId, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

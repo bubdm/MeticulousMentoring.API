@@ -19,7 +19,7 @@ var GuardianService = (function () {
         this.userService = userService;
     }
     GuardianService.prototype.add_guardian = function (guardian) {
-        return this.http.post("http://localhost:52373/api/mentees/AddGuardian", guardian, {
+        return this.http.post("http://localhost:5005/api/mentees/AddGuardian", guardian, {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

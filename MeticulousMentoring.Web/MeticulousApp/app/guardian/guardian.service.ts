@@ -10,7 +10,7 @@ export class GuardianService {
     constructor(private http: Http, private userService: UserService) { }
 
     public add_guardian(guardian) {
-        return this.http.post("http://localhost:52373/api/mentees/AddGuardian",
+        return this.http.post("http://localhost:5005/api/mentees/AddGuardian",
             guardian,
             {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })

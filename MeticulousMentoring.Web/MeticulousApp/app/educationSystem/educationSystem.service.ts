@@ -22,7 +22,7 @@ export class EducationSystemService {
     }
 
     public get_education_systems() {
-        return this.http.get("http://localhost:52373/api/educationSystem",
+        return this.http.get("http://localhost:5005/api/educationSystem",
             {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
             })

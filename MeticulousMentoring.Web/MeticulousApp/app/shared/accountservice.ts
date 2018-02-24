@@ -22,7 +22,7 @@ export class AccountService {
     }
 
     public login(creds) {
-        return this.http.post("http://localhost:52373/api/account/createtoken", creds)
+        return this.http.post("http://localhost:5005/api/account/createtoken", creds)
             .map((res: Response) => res.json());
     }
 
@@ -33,7 +33,7 @@ export class AccountService {
     }
 
     public get_users() {
-        return this.http.get("http://localhost:52373/api/account/getusers",
+        return this.http.get("http://localhost:5005/api/account/getusers",
             {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
             })

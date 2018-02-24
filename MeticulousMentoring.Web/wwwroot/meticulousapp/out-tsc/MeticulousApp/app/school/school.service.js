@@ -19,7 +19,7 @@ var SchoolService = (function () {
         this.userService = userService;
     }
     SchoolService.prototype.get_schools = function () {
-        return this.http.get("http://localhost:52373/api/schools", {
+        return this.http.get("http://localhost:5005/api/schools", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

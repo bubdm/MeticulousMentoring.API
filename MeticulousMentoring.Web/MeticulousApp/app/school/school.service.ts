@@ -10,7 +10,7 @@ export class SchoolService {
     constructor(private http: Http, private userService: UserService) { }
 
     public get_schools() {
-        return this.http.get("http://localhost:52373/api/schools",
+        return this.http.get("http://localhost:5005/api/schools",
             {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
             })

@@ -486,7 +486,7 @@ var ClassificationService = (function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])();
     };
     ClassificationService.prototype.get_classifications = function () {
-        return this.http.get("http://localhost:52373/api/classification", {
+        return this.http.get("http://localhost:5005/api/classification", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -667,7 +667,7 @@ var DirectorService = (function () {
         this.http = http;
     }
     DirectorService.prototype.add_director = function (director) {
-        return this.http.post("http://localhost:52373/api/directors", director, {
+        return this.http.post("http://localhost:5005/api/directors", director, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -726,7 +726,7 @@ var EducationSystemService = (function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])();
     };
     EducationSystemService.prototype.get_education_systems = function () {
-        return this.http.get("http://localhost:52373/api/educationSystem", {
+        return this.http.get("http://localhost:5005/api/educationSystem", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -1190,7 +1190,7 @@ var GuardianService = (function () {
         this.userService = userService;
     }
     GuardianService.prototype.add_guardian = function (guardian) {
-        return this.http.post("http://localhost:52373/api/mentees/AddGuardian", guardian, {
+        return this.http.post("http://localhost:5005/api/mentees/AddGuardian", guardian, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -1556,42 +1556,42 @@ var MenteeService = (function () {
         this.userService = userService;
     }
     MenteeService.prototype.get_mentees = function () {
-        return this.http.get("http://localhost:52373/api/mentees", {
+        return this.http.get("http://localhost:5005/api/mentees", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_total_mentees = function () {
-        return this.http.get("http://localhost:52373/api/mentees/totalmentees", {
+        return this.http.get("http://localhost:5005/api/mentees/totalmentees", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.add_mentee = function (mentee) {
-        return this.http.post("http://localhost:52373/api/mentees", mentee, {
+        return this.http.post("http://localhost:5005/api/mentees", mentee, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         }).map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_mentee_by_id = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/" + menteeId, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_mentor_by_mentee_id = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/GetMentor/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/GetMentor/" + menteeId, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_guardian_by_mentee_id = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/GetGuardian/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/GetGuardian/" + menteeId, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MenteeService.prototype.get_mentee_grades = function (menteeId) {
-        return this.http.get("http://localhost:52373/api/mentees/MenteeGrades/" + menteeId, {
+        return this.http.get("http://localhost:5005/api/mentees/MenteeGrades/" + menteeId, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -1747,19 +1747,19 @@ var MentorService = (function () {
         this.userService = userService;
     }
     MentorService.prototype.get_mentors = function () {
-        return this.http.get("http://localhost:52373/api/mentors", {
+        return this.http.get("http://localhost:5005/api/mentors", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MentorService.prototype.add_mentor = function (mentor) {
-        return this.http.post("http://localhost:52373/api/mentors", mentor, {
+        return this.http.post("http://localhost:5005/api/mentors", mentor, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
     };
     MentorService.prototype.get_mentor_by_id = function (mentorId) {
-        return this.http.get("http://localhost:52373/api/mentors/" + mentorId, {
+        return this.http.get("http://localhost:5005/api/mentors/" + mentorId, {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -1803,7 +1803,7 @@ var SchoolService = (function () {
         this.userService = userService;
     }
     SchoolService.prototype.get_schools = function () {
-        return this.http.get("http://localhost:52373/api/schools", {
+        return this.http.get("http://localhost:5005/api/schools", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
@@ -1862,7 +1862,7 @@ var AccountService = (function () {
         return Object(__WEBPACK_IMPORTED_MODULE_2_angular2_jwt__["tokenNotExpired"])();
     };
     AccountService.prototype.login = function (creds) {
-        return this.http.post("http://localhost:52373/api/account/createtoken", creds)
+        return this.http.post("http://localhost:5005/api/account/createtoken", creds)
             .map(function (res) { return res.json(); });
     };
     AccountService.prototype.logout = function () {
@@ -1871,7 +1871,7 @@ var AccountService = (function () {
         localStorage.removeItem('token');
     };
     AccountService.prototype.get_users = function () {
-        return this.http.get("http://localhost:52373/api/account/getusers", {
+        return this.http.get("http://localhost:5005/api/account/getusers", {
             headers: new __WEBPACK_IMPORTED_MODULE_0__angular_http__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });

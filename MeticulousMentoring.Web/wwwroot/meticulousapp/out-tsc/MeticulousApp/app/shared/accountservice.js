@@ -32,7 +32,7 @@ var AccountService = (function () {
         return angular2_jwt_1.tokenNotExpired();
     };
     AccountService.prototype.login = function (creds) {
-        return this.http.post("http://localhost:52373/api/account/createtoken", creds)
+        return this.http.post("http://localhost:5005/api/account/createtoken", creds)
             .map(function (res) { return res.json(); });
     };
     AccountService.prototype.logout = function () {
@@ -41,7 +41,7 @@ var AccountService = (function () {
         localStorage.removeItem('token');
     };
     AccountService.prototype.get_users = function () {
-        return this.http.get("http://localhost:52373/api/account/getusers", {
+        return this.http.get("http://localhost:5005/api/account/getusers", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
             .map(function (res) { return res.json(); });
