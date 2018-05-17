@@ -88,6 +88,8 @@ export class MenteeProfileComponent implements OnInit {
             this.menteeService.get_mentee_grades(this.menteeId)
                 .subscribe(data => {
                     this.grades = data;
+
+                    //TODO Modify underscore js sortby
                     this.grades = _.chain(data)
                         .groupBy(data, value => value.gradePeriod.description)
                         .map((group, key) => {

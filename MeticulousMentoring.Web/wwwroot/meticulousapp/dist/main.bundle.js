@@ -1551,6 +1551,7 @@ var MenteeProfileComponent = (function () {
             this.menteeService.get_mentee_grades(this.menteeId)
                 .subscribe(function (data) {
                 _this.grades = data;
+                //TODO Modify underscore js sortby
                 _this.grades = __WEBPACK_IMPORTED_MODULE_9_underscore__["_"].chain(data)
                     .groupBy(data, function (value) { return value.gradePeriod.description; })
                     .map(function (group, key) {
