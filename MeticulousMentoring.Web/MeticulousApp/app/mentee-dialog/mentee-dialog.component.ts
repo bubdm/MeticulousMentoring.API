@@ -6,6 +6,7 @@ import { IUser } from '../interfaces/iuser';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
 import { MenteeService } from '../mentee/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
+import { TimelineService } from '../shared/timeline.service';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/Rx';
 import * as _ from 'lodash';
@@ -24,10 +25,12 @@ export class MenteeDialogComponent implements OnInit {
     public grades = {};
     public gradeGroup = {};
     public messages: number = 1;
+    public timelineData = {};
 
     constructor(private menteeService: MenteeService,
         private mentorService: MentorService,
         private userService: UserService,
+        private timelineService: TimelineService,
         private router: Router,
         @Inject(MAT_DIALOG_DATA) private data: any,
         public dialogRef: MatDialogRef<MenteeDialogComponent>) { }
@@ -64,6 +67,12 @@ export class MenteeDialogComponent implements OnInit {
             this.menteeService.get_mentee_grades(this.menteeId)
                 .subscribe(data => {
                     this.grades = data;
+                },
+                error => console.log(error));
+
+            this.timelineService.get_timeline_data(this.menteeId)
+                .subscribe(data => {
+                    this.timelineData = data;
                 },
                 error => console.log(error));
         }

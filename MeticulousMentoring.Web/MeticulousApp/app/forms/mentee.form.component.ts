@@ -161,6 +161,8 @@ export class MenteeFormComponent implements OnInit {
 
                 this.guardianService.add_guardian(newGuardian)
                     .subscribe(r => { });
+
+                this.menteeService.totalMentees
             },
             error => console.log(error));
     }

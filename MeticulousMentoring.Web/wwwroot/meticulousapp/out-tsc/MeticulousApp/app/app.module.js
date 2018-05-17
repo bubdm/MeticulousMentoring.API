@@ -12,12 +12,14 @@ var core_1 = require("@angular/core");
 var http_1 = require("@angular/http");
 var ng2_charts_1 = require("ng2-charts/ng2-charts");
 var common_1 = require("@angular/common");
+var http_2 = require("@angular/common/http");
 var ngx_pipes_1 = require("ngx-pipes");
 var app_component_1 = require("./app.component");
 var app_header_component_1 = require("./app-header.component");
 var login_component_1 = require("./login/login.component");
 var accountservice_1 = require("./shared/accountservice");
 var user_service_1 = require("./shared/user.service");
+var timeline_service_1 = require("./shared/timeline.service");
 var classification_service_1 = require("./classification/classification.service");
 var educationSystem_service_1 = require("./educationSystem/educationSystem.service");
 var mentee_service_1 = require("./mentee/mentee.service");
@@ -25,6 +27,7 @@ var mentor_service_1 = require("./mentor/mentor.service");
 var guardian_service_1 = require("./guardian/guardian.service");
 var school_service_1 = require("./school/school.service");
 var director_service_1 = require("./director/director.service");
+var grading_service_1 = require("./shared/grading.service");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
 var admin_component_1 = require("./admin/admin.component");
 var usertable_component_1 = require("./usertable/usertable.component");
@@ -115,11 +118,13 @@ AppModule = __decorate([
             material_1.MatStepperModule,
             table_1.CdkTableModule,
             common_1.CommonModule,
-            ngx_pipes_1.NgPipesModule
+            ngx_pipes_1.NgPipesModule,
+            http_2.HttpClientModule
         ],
         exports: [mentee_form_component_1.MenteeFormComponent],
         entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent, mentee_dialog_component_1.MenteeDialogComponent],
-        providers: [accountservice_1.AccountService,
+        providers: [
+            accountservice_1.AccountService,
             auth_guard_service_1.AuthGuard,
             user_service_1.UserService,
             classification_service_1.ClassificationService,
@@ -128,7 +133,10 @@ AppModule = __decorate([
             guardian_service_1.GuardianService,
             school_service_1.SchoolService,
             mentor_service_1.MentorService,
-            director_service_1.DirectorService],
+            director_service_1.DirectorService,
+            timeline_service_1.TimelineService,
+            grading_service_1.GradingService
+        ],
         bootstrap: [app_component_1.AppComponent]
     })
 ], AppModule);

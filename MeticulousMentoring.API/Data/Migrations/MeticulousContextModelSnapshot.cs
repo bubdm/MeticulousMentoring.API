@@ -121,6 +121,24 @@ namespace MeticulousMentoring.API.Migrations
                     b.ToTable("Systems");
                 });
 
+            modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Event", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("description");
+
+                    b.Property<DateTime>("event_date");
+
+                    b.Property<string>("location");
+
+                    b.Property<string>("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Events");
+                });
+
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Grade", b =>
                 {
                     b.Property<int>("id")
@@ -265,6 +283,20 @@ namespace MeticulousMentoring.API.Migrations
                     b.ToTable("Mentors");
                 });
 
+            modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.MentorProgram", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("description");
+
+                    b.Property<string>("name");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Programs");
+                });
+
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.MeticulousUser", b =>
                 {
                     b.Property<int>("Id")
@@ -340,6 +372,22 @@ namespace MeticulousMentoring.API.Migrations
                     b.HasIndex("systemid");
 
                     b.ToTable("Schools");
+                });
+
+            modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Timeline", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("detail");
+
+                    b.Property<DateTime>("timeline_date");
+
+                    b.Property<int>("user_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("TimeLine");
                 });
 
             modelBuilder.Entity("Microsoft.AspNetCore.Identity.IdentityRole<int>", b =>

@@ -10,15 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
+var http_2 = require("@angular/common/http");
 var core_1 = require("@angular/core");
-require("rxjs/add/operator/startWith");
-require("rxjs/add/observable/merge");
+var Subject_1 = require("rxjs/Subject");
 require("rxjs/add/operator/map");
 var user_service_1 = require("../shared/user.service");
 var MenteeService = (function () {
-    function MenteeService(http, userService) {
+    function MenteeService(http, userService, httpClient) {
         this.http = http;
         this.userService = userService;
+        this.httpClient = httpClient;
+        this.totalMentees = new Subject_1.Subject();
     }
     MenteeService.prototype.get_mentees = function () {
         return this.http.get("http://localhost:5005/api/mentees", {
@@ -29,8 +31,7 @@ var MenteeService = (function () {
     MenteeService.prototype.get_total_mentees = function () {
         return this.http.get("http://localhost:5005/api/mentees/totalmentees", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .map(function (res) { return res.json(); });
+        }).map(function (res) { return res.json(); });
     };
     MenteeService.prototype.add_mentee = function (mentee) {
         return this.http.post("http://localhost:5005/api/mentees", mentee, {
@@ -61,11 +62,16 @@ var MenteeService = (function () {
         })
             .map(function (res) { return res.json(); });
     };
+    MenteeService.prototype.add_mentee_grades = function (grades) {
+        return this.http.post("http://localhost:5005/api/mentees/AddGrades", grades, {
+            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        });
+    };
     return MenteeService;
 }());
 MenteeService = __decorate([
     core_1.Injectable(),
-    __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService])
+    __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService, http_2.HttpClient])
 ], MenteeService);
 exports.MenteeService = MenteeService;
 //# sourceMappingURL=mentee.service.js.map

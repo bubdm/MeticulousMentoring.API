@@ -20,5 +20,7 @@ namespace MeticulousMentoring.API.Data.Repositories
         IEnumerable<Grade> GetMenteeGrades(int id);
 
         void AddMentee(object model);
+
+        void SaveMenteeGrades(IEnumerable<GradesDto> grades);
     }
 }

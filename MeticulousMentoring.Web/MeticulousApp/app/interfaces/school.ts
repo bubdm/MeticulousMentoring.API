@@ -2,7 +2,7 @@
 import { EducationalSystem } from './educational_system'
 
 export interface School {
-    id: string;
+    id: number;
     school_name: string;
     principal: string;
     educational_system: EducationalSystem;

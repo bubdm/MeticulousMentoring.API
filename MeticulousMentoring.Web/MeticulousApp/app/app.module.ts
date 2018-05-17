@@ -4,6 +4,7 @@ import { NgModule } from '@angular/core';
 import { HttpModule } from "@angular/http";
 import { ChartsModule } from "ng2-charts/ng2-charts";
 import { CommonModule } from "@angular/common";
+import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from "ngx-pipes";
 
 import { AppComponent } from './app.component';
@@ -11,6 +12,7 @@ import { AppHeaderComponent } from './app-header.component';
 import { LoginComponent } from './login/login.component';
 import { AccountService } from './shared/accountservice';
 import { UserService } from './shared/user.service';
+import { TimelineService } from './shared/timeline.service';
 import { ClassificationService } from './classification/classification.service';
 import { EducationSystemService } from './educationSystem/educationSystem.service';
 import { MenteeService } from './mentee/mentee.service';
@@ -18,6 +20,7 @@ import { MentorService } from './mentor/mentor.service';
 import { GuardianService } from './guardian/guardian.service';
 import { SchoolService } from './school/school.service';
 import { DirectorService } from './director/director.service';
+import { GradingService } from './shared/grading.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
 import { UsertableComponent } from './usertable/usertable.component';
@@ -140,12 +143,14 @@ export const routes = [
         MatStepperModule,
         CdkTableModule,
         CommonModule,
-        NgPipesModule
+        NgPipesModule,
+        HttpClientModule
 
     ],
     exports: [MenteeFormComponent],
     entryComponents: [MenteeFormComponent, MentorFormComponent, DirectorFormComponent, MenteeDialogComponent],
-    providers: [AccountService,
+    providers: [
+        AccountService,
         AuthGuard,
         UserService,
         ClassificationService,
@@ -154,7 +159,9 @@ export const routes = [
         GuardianService,
         SchoolService,
         MentorService,
-        DirectorService],
+        DirectorService,
+        TimelineService,
+        GradingService],
     bootstrap: [AppComponent]
 })
 export class AppModule { }

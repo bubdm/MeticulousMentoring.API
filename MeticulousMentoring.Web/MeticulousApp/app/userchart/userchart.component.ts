@@ -31,11 +31,11 @@ export class UserchartComponent implements OnInit, AfterViewInit {
     public cDataMentors: number = 0;
 
     constructor(private menteeService: MenteeService, private mentorService: MentorService, private directorService: DirectorService) {
-        this.menteeService.get_total_mentees()
-            .subscribe(d => {
-                this.cDataMentees = d.length;
-                this.setChartData();
-            });
+        //this.menteeService.mentees
+        //    .subscribe(d => {
+        //        this.cDataMentees = d.length;
+        //        this.setChartData();
+        //    });
         this.mentorService.get_mentors()
             .subscribe(data => {
                 this.cDataMentors = data.length;

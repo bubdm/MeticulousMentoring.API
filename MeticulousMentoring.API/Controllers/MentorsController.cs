@@ -115,6 +115,12 @@ namespace MeticulousMentoring.API.Controllers
                                 var menteeToAdd = _ctx.Mentees.Single(x => x.id == mentee.MenteeId);
                                 menteeToAdd.modified_on = DateTime.Now;
                                 newMentor.mentees.Add(menteeToAdd);
+                                _ctx.TimeLine.Add(new Timeline
+                                {
+                                    user_id = mentee.MenteeId,
+                                    detail = $"Matched with {model.MentorFirstName} {model.MentorLastName}",
+                                    timeline_date = DateTime.Now
+                                });
                             }
 
                             newMentor.created_on = DateTime.Now;

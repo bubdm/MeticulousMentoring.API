@@ -30,11 +30,11 @@ var UserchartComponent = (function () {
         ];
         this.cDataMentees = 0;
         this.cDataMentors = 0;
-        this.menteeService.get_total_mentees()
-            .subscribe(function (d) {
-            _this.cDataMentees = d.length;
-            _this.setChartData();
-        });
+        //this.menteeService.mentees
+        //    .subscribe(d => {
+        //        this.cDataMentees = d.length;
+        //        this.setChartData();
+        //    });
         this.mentorService.get_mentors()
             .subscribe(function (data) {
             _this.cDataMentors = data.length;

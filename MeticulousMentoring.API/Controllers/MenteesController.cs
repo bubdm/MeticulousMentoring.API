@@ -164,6 +164,14 @@ namespace MeticulousMentoring.API.Controllers
                             this.menteeRepository.AddMentee(newMentee);
                             if (this.menteeRepository.SaveAll())
                             {
+                                _ctx.TimeLine.Add(new Timeline
+                                {
+                                    user_id = model.MenteeId,
+                                    detail = "Started Program",
+                                    timeline_date = DateTime.Now
+                                });
+                                _ctx.SaveChanges();
+
                                 return Created($"/api/mentees/{newMentee.id}", this.mapper.Map<Mentee, MenteeViewModel>(newMentee));
                             }
                         }
@@ -219,6 +227,22 @@ namespace MeticulousMentoring.API.Controllers
                 {
                     return this.BadRequest(ModelState);
                 }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
+        [HttpPost]
+        [Route("/api/mentees/AddGrades")]
+        public async Task<IActionResult> AddGrades([FromBody]IEnumerable<GradesDto> grades)
+        {
+            try
+            {
+                menteeRepository.SaveMenteeGrades(grades);
+                return Ok();
             }
             catch (Exception e)
             {

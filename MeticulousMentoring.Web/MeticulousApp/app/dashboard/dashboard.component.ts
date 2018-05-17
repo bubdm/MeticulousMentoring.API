@@ -29,11 +29,6 @@ export class DashboardComponent implements OnInit {
     public user: IUser;
     public users;
     public role: string;
-    //public mentee: Mentee;
-    //public classifcation: Classification;
-    //public address: Address;
-    //public school: School;
-    //public educational_system: EducationalSystem;
 
     isExpanded = false;
     mentee: Mentee;

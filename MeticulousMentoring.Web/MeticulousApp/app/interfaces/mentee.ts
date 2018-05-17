@@ -3,11 +3,11 @@ import { Classification } from "./classification"
 import { Address } from "./address"
 
 export interface Mentee {
-    id: string;
+    id: number;
     first_name: string;
     last_name: string;
     gender: string;
-    dob: string;
+    dob: Date;
     school: School;
     classification: Classification;
     email: string;

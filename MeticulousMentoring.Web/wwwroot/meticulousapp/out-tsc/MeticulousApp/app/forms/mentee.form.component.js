@@ -147,6 +147,7 @@ var MenteeFormComponent = (function () {
             };
             _this.guardianService.add_guardian(newGuardian)
                 .subscribe(function (r) { });
+            _this.menteeService.totalMentees;
         }, function (error) { return console.log(error); });
     };
     return MenteeFormComponent;

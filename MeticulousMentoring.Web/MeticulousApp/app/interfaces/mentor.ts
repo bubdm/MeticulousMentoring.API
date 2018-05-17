@@ -1,7 +1,7 @@
 ﻿import { Address } from "./address";
 
 export interface Mentor {
-    id: string;
+    id: number;
     first_name: string;
     last_name: string;
     gender: string;

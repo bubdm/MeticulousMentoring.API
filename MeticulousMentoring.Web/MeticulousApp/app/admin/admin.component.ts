@@ -6,6 +6,8 @@ import { IUser } from '../interfaces/iuser';
 import { MenteeService } from '../mentee/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
 import { MatTableDataSource } from '@angular/material';
+import { Mentee } from '../models/mentee';
+import { Observable } from "rxjs/Rx";
 
 @Component({
     selector: "admin-dashboard",
@@ -21,6 +23,7 @@ export class AdminComponent implements OnInit {
     public total_male = 0;
     public total_female = 0;
     math: any;
+    public mentees$: Observable<Mentee[]>;
 
     constructor(private userService: UserService,
         private auth: AccountService,
@@ -32,12 +35,14 @@ export class AdminComponent implements OnInit {
 
     ngOnInit(): void {
         this.user = JSON.parse(localStorage.getItem('user'));
+
         this.menteeService.get_total_mentees()
             .subscribe(data => {
                 this.total_mentees = data.length;
                 this.total_male = data.filter(element => element.menteeGender === 'M').length;
                 this.total_female = data.filter(element => element.menteeGender === 'F').length;
             });
+
         this.mentorService.get_mentors()
             .subscribe(data => {
                 this.total_mentors = data.length;

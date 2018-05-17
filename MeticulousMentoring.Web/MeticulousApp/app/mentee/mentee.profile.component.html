@@ -69,19 +69,19 @@
 
                                     <div style="display:inline-block;width:100%;overflow-y:auto;">
                                         <ul class="timeline timeline-horizontal">
-                                            <li class="timeline-item">
+                                            <li *ngFor="let t of timelineData" class="timeline-item">
                                                 <div class="timeline-badge primary"><i class="glyphicon glyphicon-check"></i></div>
                                                 <div class="timeline-panel">
                                                     <div class="timeline-heading">
-                                                        <h4 class="timeline-title">Mussum ipsum cacilds 1</h4>
-                                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> 11 hours ago via Twitter</small></p>
+                                                        <h4 class="timeline-title"></h4>
+                                                        <p><small class="text-muted"><i class="glyphicon glyphicon-time"></i> {{t.timeline_date | date}}</small></p>
                                                     </div>
                                                     <div class="timeline-body">
-                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>
+                                                        <p>{{t.detail}}</p>
                                                     </div>
                                                 </div>
                                             </li>
-                                            <li class="timeline-item">
+                                            <!--<li class="timeline-item">
                                                 <div class="timeline-badge success"><i class="glyphicon glyphicon-check"></i></div>
                                                 <div class="timeline-panel">
                                                     <div class="timeline-heading">
@@ -104,7 +104,7 @@
                                                         <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. Mé faiz elementum girarzis, nisi eros gostis.</p>
                                                     </div>
                                                 </div>
-                                            </li>
+                                            </li>-->
                                         </ul>
                                     </div>
                                 </div>
@@ -165,6 +165,41 @@
                                     </tr>
                                 </tbody>
                             </table>
+
+                            <form [formGroup]="myForm" novalidate class="form-inline">
+                                <div formArrayName="grades">
+                                    <div *ngFor="let grade of myForm.controls.grades.controls; let i=index" class="panel panel-default">
+                                        <div class="panel-body" [formGroupName]="i">
+                                            <div class="form-row">
+                                                <div class="col-xs-3"></div>
+                                                <div class="col-xs-3">
+                                                    <select class="form-control-sm" formControlName="period">
+                                                        <option [ngValue]="-1" [selected]="true">--- Select Grading Period---</option>
+                                                        <option *ngFor="let period of gradingPeriods" [ngValue]="period.id">{{period.description}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-3">
+                                                    <select class="form-control-sm" formControlName="course">
+                                                        <option [selected]="true">--- Select Course ---</option>
+                                                        <option *ngFor="let course of courses" [ngValue]="course.id">{{course.course_name}}</option>
+                                                    </select>
+                                                </div>
+                                                <div class="col-xs-2">
+                                                    <input type="text" class="form-control-sm" formControlName="value" placeholder="Value" />
+                                                </div>
+                                                <div class="col-xs-1">
+                                                    <span class="fa fa-remove pull-right" (click)="removeGrade(i)"></span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                            <div style="text-align: center; margin: 10px;">
+                                <button class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
+                                <button [disabled]="!myForm.valid" *ngIf="myForm.controls.grades.controls.length > 0" class="btn btn-success" (click)="save_grades(myForm)">Save Grade(s)</button>
+                            </div>
                         </div>
                     </mat-tab>
                 </mat-tab-group>

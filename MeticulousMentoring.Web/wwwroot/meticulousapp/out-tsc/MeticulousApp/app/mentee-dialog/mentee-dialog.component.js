@@ -18,12 +18,14 @@ var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
 var mentee_service_1 = require("../mentee/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
+var timeline_service_1 = require("../shared/timeline.service");
 require("rxjs/Rx");
 var MenteeDialogComponent = (function () {
-    function MenteeDialogComponent(menteeService, mentorService, userService, router, data, dialogRef) {
+    function MenteeDialogComponent(menteeService, mentorService, userService, timelineService, router, data, dialogRef) {
         this.menteeService = menteeService;
         this.mentorService = mentorService;
         this.userService = userService;
+        this.timelineService = timelineService;
         this.router = router;
         this.data = data;
         this.dialogRef = dialogRef;
@@ -33,6 +35,7 @@ var MenteeDialogComponent = (function () {
         this.grades = {};
         this.gradeGroup = {};
         this.messages = 1;
+        this.timelineData = {};
     }
     MenteeDialogComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -63,6 +66,10 @@ var MenteeDialogComponent = (function () {
                 .subscribe(function (data) {
                 _this.grades = data;
             }, function (error) { return console.log(error); });
+            this.timelineService.get_timeline_data(this.menteeId)
+                .subscribe(function (data) {
+                _this.timelineData = data;
+            }, function (error) { return console.log(error); });
         }
     };
     MenteeDialogComponent.prototype.onNoClick = function () {
@@ -76,10 +83,11 @@ MenteeDialogComponent = __decorate([
         templateUrl: './mentee-dialog.component.html',
         styleUrls: ['./mentee-dialog.component.css']
     }),
-    __param(4, core_1.Inject(material_1.MAT_DIALOG_DATA)),
+    __param(5, core_1.Inject(material_1.MAT_DIALOG_DATA)),
     __metadata("design:paramtypes", [mentee_service_1.MenteeService,
         mentor_service_1.MentorService,
         user_service_1.UserService,
+        timeline_service_1.TimelineService,
         router_1.Router, Object, material_1.MatDialogRef])
 ], MenteeDialogComponent);
 exports.MenteeDialogComponent = MenteeDialogComponent;

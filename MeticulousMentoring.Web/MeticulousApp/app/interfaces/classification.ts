@@ -1,5 +1,5 @@
 ﻿export interface Classification {
-    id: string;
-    classification_id: string;
+    id: number;
+    classification_id: number;
     description: string;
 }

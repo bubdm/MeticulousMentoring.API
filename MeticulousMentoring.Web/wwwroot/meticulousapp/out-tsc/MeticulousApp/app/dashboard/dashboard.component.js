@@ -23,11 +23,6 @@ var DashboardComponent = (function () {
         this.auth = auth;
         this.router = router;
         this.dialog = dialog;
-        //public mentee: Mentee;
-        //public classifcation: Classification;
-        //public address: Address;
-        //public school: School;
-        //public educational_system: EducationalSystem;
         this.isExpanded = false;
     }
     DashboardComponent.prototype.ngOnInit = function () {

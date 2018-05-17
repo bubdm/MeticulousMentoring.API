@@ -44,6 +44,9 @@
         public DbSet<Grade> Grades { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<Director> Directors { get; set; }
+        public DbSet<Timeline> TimeLine { get; set; }
+        public DbSet<MentorProgram> Programs { get; set; }
+        public DbSet<Event> Events { get; set; }
     }
 
     public static class StringExtensions

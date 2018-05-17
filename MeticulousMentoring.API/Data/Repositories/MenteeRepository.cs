@@ -1,6 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Data.SqlClient;
 using System.Linq;
+using Dapper;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
@@ -12,13 +15,16 @@ namespace MeticulousMentoring.API.Data.Repositories
     public class MenteeRepository : IMenteeRepository
     {
         private readonly MeticulousContext ctx;
-
+        private readonly string _connectionString;
         private readonly ILogger<MenteeRepository> logger;
+        private IDbConnection _connection { get { return new SqlConnection(_connectionString); } }
 
         public MenteeRepository(MeticulousContext ctx, ILogger<MenteeRepository> logger)
         {
             this.ctx = ctx;
             this.logger = logger;
+            _connectionString =
+                "server=DESKTOP-CV71GOA;Initial Catalog=Meticulous;Integrated Security=True;MultipleActiveResultSets=true;";
         }
 
         public IEnumerable<Mentee> GetAllMentees()
@@ -134,6 +140,28 @@ namespace MeticulousMentoring.API.Data.Repositories
         public void AddMentee(object model)
         {
             this.ctx.Add(model);
+        }
+
+        public void SaveMenteeGrades(IEnumerable<GradesDto> grades)
+        {
+            DynamicParameters param = new DynamicParameters();
+            DateTime currentDate = new DateTime(DateTime.Now.Year, DateTime.Now.Month, DateTime.Now.Day);
+
+            foreach (var grade in grades)
+            {
+                param.Add("@course_id", grade.course_id);
+                param.Add("@mentee_id", grade.mentee_id);
+                param.Add("@period_id", grade.period_id);
+                param.Add("@grade_value", grade.grade_value);
+                param.Add("@created_on", currentDate);
+                param.Add("@modified_on", currentDate);
+                param.Add("@school_year", grade.school_year);
+
+                using (IDbConnection dbConnection = _connection)
+                {
+                    dbConnection.Execute("dbo.AddMenteeGrade", param, commandType: CommandType.StoredProcedure);
+                }
+            }
         }
 
         public IEnumerable<Grade> GetMenteeGrades(int id)

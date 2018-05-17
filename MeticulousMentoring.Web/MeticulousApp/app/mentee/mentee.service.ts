@@ -1,15 +1,17 @@
 ﻿import { Http, Response, Headers } from "@angular/http";
+import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
 import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
 import { Observable } from 'rxjs/Observable';
-import 'rxjs/add/operator/startWith';
-import 'rxjs/add/observable/merge';
+import { Subject } from 'rxjs/Subject';
 import 'rxjs/add/operator/map';
 import { UserService } from "../shared/user.service";
+import { Mentee } from '../models/mentee';
 
 @Injectable()
 export class MenteeService {
-    constructor(private http: Http, private userService: UserService) { }
+    constructor(private http: Http, private userService: UserService, private httpClient: HttpClient) { }
+    public totalMentees = new Subject<Mentee[]>();
 
     public get_mentees() {
         return this.http.get("http://localhost:5005/api/mentees",
@@ -19,12 +21,11 @@ export class MenteeService {
             .map((res: Response) => res.json());
     }
 
-    public get_total_mentees() {
+    public get_total_mentees(): Observable<Mentee[]> {
         return this.http.get("http://localhost:5005/api/mentees/totalmentees",
             {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-            })
-            .map((res: Response) => res.json());
+            }).map((res: Response) => res.json());
     }
 
     public add_mentee(mentee) {
@@ -65,5 +66,13 @@ export class MenteeService {
                 headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
             })
             .map((res: Response) => res.json());
+    }
+
+    public add_mentee_grades(grades) {
+        return this.http.post("http://localhost:5005/api/mentees/AddGrades",
+            grades,
+            {
+                headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+            });
     }
 }
