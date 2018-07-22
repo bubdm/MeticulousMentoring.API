@@ -14,13 +14,13 @@ namespace MeticulousMentoring.API.Migrations
                     id = table.Column<int>(nullable: true),
                     created_on = table.Column<DateTime>(nullable: true),
                     first_name = table.Column<string>(nullable: true),
-                    is_active = table.Column<bool>(nullable: false),
+                    is_active = table.Column<bool>(nullable: true),
                     last_name = table.Column<string>(nullable: true),
                     modified_on = table.Column<DateTime>(nullable: true)
                 },
                 constraints: table =>
                 {
-                    table.PrimaryKey("PK_Directors", x => x.id);
+                    //table.PrimaryKey("PK_Directors", x => x.id);
                 });
         }
 
