@@ -1,83 +1,93 @@
-﻿<div class="container container-fluid meticulous-container">
-    <div class="row meticulous-row">
-        <div class="col">
-            <mat-card class="data-card">
-                <mat-card-header>
-                    <mat-card-subtitle>Mentees</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <p class="text-xl-center display-1">
-                        {{total_mentees}}
-                    </p>
-                    <p class="text-xl-center">
-                        <mat-card-subtitle>TOTAL MENTEES</mat-card-subtitle>
-                    </p>
-                </mat-card-content>
-                <mat-card-footer>
-                </mat-card-footer>
-            </mat-card>
-        </div>
-        <div class="col">
-            <mat-card class="data-card">
-                <mat-card-header>
-                    <mat-card-subtitle>Mentors</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <p class="text-xl-center display-1">
-                        {{total_mentors}}
-                    </p>
-                    <p class="text-xl-center">
-                        <mat-card-subtitle>TOTAL MENTORS</mat-card-subtitle>
-                    </p>
-                </mat-card-content>
-                <mat-card-footer>
-                </mat-card-footer>
-            </mat-card>
-        </div>
-        <div class="col">
-            <mat-card class="data-card">
-                <mat-card-header></mat-card-header>
-                <mat-card-footer>
-                    <mat-card-content>
-                        <meticulous-userchart></meticulous-userchart>
-                    </mat-card-content>
-                </mat-card-footer>
-            </mat-card>
-        </div>
-        <div class="col">
-            <mat-card class="data-card">
-                <mat-card-header></mat-card-header>
-                <mat-card-content>
-                    <div class="text-left"><mat-card-subtitle>% of Mentees Matched</mat-card-subtitle></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="((total_mentees - total_unmatched_mentees)/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}" aria-valuemin="0" aria-valuemax="100">{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}%</div>
-                    </div>
-                    <br />
-                    <div class="text-left"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(total_male/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_male)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{(total_male/total_mentees * 100 | round)}}%</div>
-                    </div>
-                    <br />
-                    <div class="text-left"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>
-                    <div class="progress">
-                        <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(total_female/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_female)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{(total_female/total_mentees * 100 | round)}}%</div>
-                    </div>
-                </mat-card-content>
-                <mat-card-footer>
-                </mat-card-footer>
-            </mat-card>
-        </div>
+<div class="container container-fluid meticulous-container">
+  <div class="row meticulous-row">
+    <div class="col">
+      <mat-card class="data-card">
+        <mat-card-header>
+          <mat-card-subtitle>Mentees</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-xl-center display-1">
+            {{total_mentees}}
+          </p>
+          <p class="text-xl-center">
+            <mat-card-subtitle>TOTAL MENTEES</mat-card-subtitle>
+          </p>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
     </div>
-    <div class="row">
-        <div class="col-sm-12">
-            <mat-card class="dashboard-card">
-                <mat-card-header>
-                    <mat-card-subtitle>Users</mat-card-subtitle>
-                </mat-card-header>
-                <mat-card-content>
-                    <meticulous-usertable></meticulous-usertable>
-                </mat-card-content>
-            </mat-card>
-        </div>
+    <div class="col">
+      <mat-card class="data-card">
+        <mat-card-header>
+          <mat-card-subtitle>Mentors</mat-card-subtitle>
+        </mat-card-header>
+        <mat-card-content>
+          <p class="text-xl-center display-1">
+            {{total_mentors}}
+          </p>
+          <p class="text-xl-center">
+            <mat-card-subtitle>TOTAL MENTORS</mat-card-subtitle>
+          </p>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
     </div>
+    <div class="col">
+      <mat-card class="data-card">
+        <mat-card-header></mat-card-header>
+        <mat-card-footer>
+          <mat-card-content>
+            <meticulous-userchart></meticulous-userchart>
+          </mat-card-content>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+    <div class="col">
+      <mat-card class="data-card">
+        <mat-card-header></mat-card-header>
+        <mat-card-content>
+          <div class="text-left"><mat-card-subtitle>% of Mentees Matched</mat-card-subtitle></div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="((total_mentees - total_unmatched_mentees)/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}" aria-valuemin="0" aria-valuemax="100">{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}%</div>
+          </div>
+          <br />
+          <div class="text-left"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(total_male/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_male)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{(total_male/total_mentees * 100 | round)}}%</div>
+          </div>
+          <br />
+          <div class="text-left"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>
+          <div class="progress">
+            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" [style.width]="(total_female/total_mentees)*100 + '%'" attr.aria-valuenow="{{((total_mentees - total_female)/total_mentees * 100 | round)}}" aria-valuemin="0" aria-valuemax="100">{{(total_female/total_mentees * 100 | round)}}%</div>
+          </div>
+        </mat-card-content>
+        <mat-card-footer>
+        </mat-card-footer>
+      </mat-card>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+      <table class="table table-borderless table-sm" id="usersTable">
+        <thead>
+          <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th></th>
+          </tr>
+        </thead>
+        <tr *ngFor="let user of users">
+          <td>{{user.id}}</td>
+          <td>{{user.firstName}} {{user.lastName}}</td>
+          <td>{{user.userName}}</td>
+          <td>{{user.email}}</td>
+          <td><button type="button" class="btn btn-primary">Delete</button></td>
+        </tr>
+      </table>
+    </div>
+  </div>
 </div>

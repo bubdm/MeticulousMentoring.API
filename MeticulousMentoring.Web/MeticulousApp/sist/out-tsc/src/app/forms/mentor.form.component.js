@@ -8,26 +8,51 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
-var __param = (this && this.__param) || function (paramIndex, decorator) {
-    return function (target, key) { decorator(target, key, paramIndex); }
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var material_1 = require("@angular/material");
 var forms_1 = require("@angular/forms");
 var mentee_service_1 = require("../mentee/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
+var modal_1 = require("ngx-bootstrap/modal");
+var users_service_1 = require("../dashboard/users/users.service");
+var $ = require("jquery/dist/jquery.min.js");
+require("../../assets/script.js");
 var MentorFormComponent = /** @class */ (function () {
-    function MentorFormComponent(dialogRef, data, formBuilder, menteeService, mentorService) {
-        this.dialogRef = dialogRef;
-        this.data = data;
+    function MentorFormComponent(formBuilder, menteeService, mentorService, bsModalRef, usersService) {
         this.formBuilder = formBuilder;
         this.menteeService = menteeService;
         this.mentorService = mentorService;
+        this.bsModalRef = bsModalRef;
+        this.usersService = usersService;
+        this.genders = [{ gender: "M", description: "Male" },
+            { gender: "F", description: "Female" }];
+        // Settings configuration
+        this.mySettings = {
+            enableSearch: true,
+            checkedStyle: 'fontawesome',
+            buttonClasses: 'btn btn-default btn-block',
+            dynamicTitleMaxItems: 3,
+            displayAllSelectedText: true
+        };
+        // Text configuration
+        this.myTexts = {
+            checkAll: 'Select all',
+            uncheckAll: 'Unselect all',
+            checked: 'item selected',
+            checkedPlural: 'items selected',
+            searchPlaceholder: 'Find',
+            searchEmptyResult: 'Nothing found...',
+            searchNoRenderText: 'Type in search box to see results...',
+            defaultTitle: 'Select',
+            allSelected: 'All selected',
+        };
     }
     MentorFormComponent.prototype.ngOnInit = function () {
+        $(document).ready(function () {
+            $('#mentee-multi-options').multiselect();
+        });
         this.getAllMentees();
-        this.firstFormGroup = this.formBuilder.group({
+        this.mentorForm = this.formBuilder.group({
             first_name: ["", forms_1.Validators.required],
             last_name: ["", forms_1.Validators.required],
             address1: ["", forms_1.Validators.required],
@@ -39,7 +64,6 @@ var MentorFormComponent = /** @class */ (function () {
         });
     };
     MentorFormComponent.prototype.onNoClick = function () {
-        this.dialogRef.close();
     };
     MentorFormComponent.prototype.getAllMentees = function () {
         var _this = this;
@@ -49,7 +73,8 @@ var MentorFormComponent = /** @class */ (function () {
         }, function (error) { return console.log(error); });
     };
     MentorFormComponent.prototype.submitMentor = function () {
-        var mentorDto = this.firstFormGroup.value;
+        var _this = this;
+        var mentorDto = this.mentorForm.value;
         var newMentor = {
             MentorFirstName: mentorDto.first_name,
             MentorLastName: mentorDto.last_name,
@@ -63,7 +88,12 @@ var MentorFormComponent = /** @class */ (function () {
             MentorMentees: mentorDto.mentees
         };
         var response = this.mentorService.add_mentor(newMentor)
-            .subscribe(function (data) { });
+            .subscribe(function (data) {
+            _this.usersService.notify_users_with_roles_changed();
+        });
+    };
+    MentorFormComponent.prototype.hide_modal = function () {
+        this.bsModalRef.hide();
     };
     MentorFormComponent = __decorate([
         core_1.Component({
@@ -71,10 +101,11 @@ var MentorFormComponent = /** @class */ (function () {
             templateUrl: 'mentor.form.component.html',
             styleUrls: ['mentor.form.component.css']
         }),
-        __param(1, core_1.Inject(material_1.MAT_DIALOG_DATA)),
-        __metadata("design:paramtypes", [material_1.MatDialogRef, Object, forms_1.FormBuilder,
+        __metadata("design:paramtypes", [forms_1.FormBuilder,
             mentee_service_1.MenteeService,
-            mentor_service_1.MentorService])
+            mentor_service_1.MentorService,
+            modal_1.BsModalRef,
+            users_service_1.UsersService])
     ], MentorFormComponent);
     return MentorFormComponent;
 }());

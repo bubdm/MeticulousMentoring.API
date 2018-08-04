@@ -1,43 +1,51 @@
-﻿import { Component, Inject, NgModule, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material';
+import { Component, Inject, NgModule, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { DirectorService } from '../director/director.service';
+import { BsModalRef } from "ngx-bootstrap/modal";
+import { UsersService } from '../dashboard/users/users.service';
 
 @Component({
-    selector: 'director-form',
-    templateUrl: 'director.form.component.html',
-    styleUrls: ['director.form.component.css']
+  selector: 'director-form',
+  templateUrl: 'director.form.component.html',
+  styleUrls: ['director.form.component.css']
 })
 export class DirectorFormComponent implements OnInit {
-    firstFormGroup: FormGroup;
+  directorForm: FormGroup;
 
-    constructor(public diaglogRef: MatDialogRef<DirectorFormComponent>,
-        @Inject(MAT_DIALOG_DATA) private data: any,
-        private formBuilder: FormBuilder,
-        private directorService: DirectorService) { }
+  constructor(
+    private formBuilder: FormBuilder,
+    private directorService: DirectorService,
+    private bsModalRef: BsModalRef,
+    private userService: UsersService) { }
 
-    ngOnInit(): void {
-        this.firstFormGroup = this.formBuilder.group({
-            first_name: ["", Validators.required],
-            last_name: ["", Validators.required],
-            email: ["", Validators.required]
-        });
+  ngOnInit(): void {
+    this.directorForm = this.formBuilder.group({
+      first_name: ["", Validators.required],
+      last_name: ["", Validators.required],
+      email: ["", Validators.required]
+    });
+  }
+
+  onNoClick(): void {
+  }
+
+  submitDirector(): void {
+    var directorDto = this.directorForm.value;
+
+    var newDirector = {
+      DirectorFirstName: directorDto.first_name,
+      DirectorLastName: directorDto.last_name,
+      DirectorEmail: directorDto.email
     }
 
-    onNoClick(): void {
-        this.diaglogRef.close();
-    }
+    let response = this.directorService.add_director(newDirector)
+      .subscribe(data => {
+        this.hide_modal();
+        this.userService.notify_users_with_roles_changed();
+      });
+  }
 
-    submitDirector(): void {
-        var directorDto = this.firstFormGroup.value;
-
-        var newDirector = {
-            DirectorFirstName: directorDto.first_name,
-            DirectorLastName: directorDto.last_name,
-            DirectorEmail: directorDto.email
-        }
-
-        let response = this.directorService.add_director(newDirector)
-            .subscribe(data => { });
-    }
+  public hide_modal() {
+    this.bsModalRef.hide();
+  }
 }

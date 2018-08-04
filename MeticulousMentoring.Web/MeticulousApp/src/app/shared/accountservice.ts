@@ -1,14 +1,16 @@
 import { Http, Response, Headers } from "@angular/http";
+import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from "@angular/core";
 import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { UserService } from "../shared/user.service";
+import { UserView } from '../models/userview';
 import 'rxjs/add/operator/map';
 
 @Injectable()
 export class AccountService {
-  constructor(private http: Http, private userService: UserService) { }
+  constructor(private http: Http, private userService: UserService, private httpClient: HttpClient) { }
 
   private token: string = "";
   private tokenExpiration: Date;
@@ -39,5 +41,16 @@ export class AccountService {
         headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
       })
       .pipe(map((res: Response) => res.json()));
+  }
+
+  public get_users_with_roles() {
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
+      })
+    };
+
+    return this.httpClient.get<UserView[]>("http://localhost:5005/api/account/GetUserWithRoles", httpOptions);
   }
 }

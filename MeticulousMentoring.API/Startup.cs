@@ -58,6 +58,7 @@ namespace MeticulousMentoring.API
             services.AddScoped<IDirectorRepository, DirectorRepository>();
             services.AddScoped<ITimelineRepository, TimelineRepository>();
             services.AddScoped<IGradingRepository, GradingRepository>();
+            services.AddScoped<IAccountRepository, AccountRepository>();
 
             services.AddCors(
                 cfg =>

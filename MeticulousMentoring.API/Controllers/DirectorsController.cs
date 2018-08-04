@@ -45,7 +45,9 @@ namespace MeticulousMentoring.API.Controllers
                         director = new MeticulousUser()
                         {
                             UserName = model.DirectorEmail,
-                            Email = model.DirectorEmail
+                            Email = model.DirectorEmail,
+                            FirstName = model.DirectorFirstName,
+                            LastName = model.DirectorLastName
                         };
 
                         var directorResult = await _userManager.CreateAsync(director,

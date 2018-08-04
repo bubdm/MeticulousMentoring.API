@@ -14,6 +14,12 @@ var ng2_charts_1 = require("ng2-charts/ng2-charts");
 var common_1 = require("@angular/common");
 var http_2 = require("@angular/common/http");
 var ngx_pipes_1 = require("ngx-pipes");
+var ngx_bootstrap_1 = require("ngx-bootstrap");
+var angular_archwizard_1 = require("angular-archwizard");
+var ng_multiselect_dropdown_1 = require("ng-multiselect-dropdown");
+var ng_select_1 = require("@ng-select/ng-select");
+var angular_2_dropdown_multiselect_1 = require("angular-2-dropdown-multiselect");
+var ngx_select_dropdown_1 = require("ngx-select-dropdown");
 var app_component_1 = require("./app.component");
 var app_header_component_1 = require("./app-header.component");
 var login_component_1 = require("./login/login.component");
@@ -30,7 +36,6 @@ var director_service_1 = require("./director/director.service");
 var grading_service_1 = require("./shared/grading.service");
 var dashboard_component_1 = require("./dashboard/dashboard.component");
 var admin_component_1 = require("./admin/admin.component");
-var usertable_component_1 = require("./usertable/usertable.component");
 var userchart_component_1 = require("./userchart/userchart.component");
 var chart_component_1 = require("./chart/chart.component");
 var mentee_form_component_1 = require("./forms/mentee.form.component");
@@ -38,6 +43,10 @@ var mentee_profile_component_1 = require("./mentee/mentee.profile.component");
 var mentor_form_component_1 = require("./forms/mentor.form.component");
 var director_form_component_1 = require("./forms/director.form.component");
 var round_pipe_1 = require("./shared/round.pipe");
+var admin_service_1 = require("./shared/admin.service");
+var users_component_1 = require("./dashboard/users/users.component");
+var users_service_1 = require("./dashboard/users/users.service");
+var home_component_1 = require("./dashboard/home/home.component");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
 var auth_guard_service_1 = require("./shared/auth-guard.service");
@@ -47,7 +56,13 @@ var mentor_profile_component_1 = require("./mentor/mentor.profile.component");
 var mentee_dialog_component_1 = require("./mentee-dialog/mentee-dialog.component");
 exports.routes = [
     { path: "", component: login_component_1.LoginComponent },
-    { path: "dashboard", component: dashboard_component_1.DashboardComponent, canActivate: [auth_guard_service_1.AuthGuard] }
+    {
+        path: "dashboard", component: dashboard_component_1.DashboardComponent, canActivate: [auth_guard_service_1.AuthGuard],
+        children: [
+            { path: "", component: home_component_1.HomeComponent, canActivate: [auth_guard_service_1.AuthGuard] },
+            { path: "users", component: users_component_1.UsersComponent, canActivate: [auth_guard_service_1.AuthGuard] }
+        ]
+    }
 ];
 var AppModule = /** @class */ (function () {
     function AppModule() {
@@ -60,7 +75,6 @@ var AppModule = /** @class */ (function () {
                 login_component_1.LoginComponent,
                 dashboard_component_1.DashboardComponent,
                 admin_component_1.AdminComponent,
-                usertable_component_1.UsertableComponent,
                 userchart_component_1.UserchartComponent,
                 chart_component_1.MeticulousChartComponent,
                 mentee_form_component_1.MenteeFormComponent,
@@ -69,7 +83,9 @@ var AppModule = /** @class */ (function () {
                 director_form_component_1.DirectorFormComponent,
                 round_pipe_1.RoundPipe,
                 mentor_profile_component_1.MentorProfileComponent,
-                mentee_dialog_component_1.MenteeDialogComponent
+                mentee_dialog_component_1.MenteeDialogComponent,
+                users_component_1.UsersComponent,
+                home_component_1.HomeComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -117,7 +133,15 @@ var AppModule = /** @class */ (function () {
                 table_1.CdkTableModule,
                 common_1.CommonModule,
                 ngx_pipes_1.NgPipesModule,
-                http_2.HttpClientModule
+                http_2.HttpClientModule,
+                ngx_bootstrap_1.BsDatepickerModule.forRoot(),
+                ngx_bootstrap_1.ModalModule.forRoot(),
+                ngx_bootstrap_1.TooltipModule.forRoot(),
+                angular_archwizard_1.ArchwizardModule,
+                ng_multiselect_dropdown_1.NgMultiSelectDropDownModule.forRoot(),
+                ng_select_1.NgSelectModule,
+                angular_2_dropdown_multiselect_1.MultiselectDropdownModule,
+                ngx_select_dropdown_1.SelectDropDownModule
             ],
             exports: [mentee_form_component_1.MenteeFormComponent],
             entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent, mentee_dialog_component_1.MenteeDialogComponent],
@@ -133,7 +157,9 @@ var AppModule = /** @class */ (function () {
                 mentor_service_1.MentorService,
                 director_service_1.DirectorService,
                 timeline_service_1.TimelineService,
-                grading_service_1.GradingService
+                grading_service_1.GradingService,
+                admin_service_1.AdminService,
+                users_service_1.UsersService
             ],
             bootstrap: [app_component_1.AppComponent]
         })

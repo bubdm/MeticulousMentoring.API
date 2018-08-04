@@ -96,7 +96,9 @@ namespace MeticulousMentoring.API.Data
                 mentee = new MeticulousUser()
                 {
                     UserName = "ty.wright@meticulous.com",
-                    Email = "ty.wright@meticulous.com"
+                    Email = "ty.wright@meticulous.com",
+                    FirstName = "Ty",
+                    LastName = "Wright"
                 };
 
                 var menteeResult = await this.userManager.CreateAsync(mentee, "War3agle!");
@@ -163,7 +165,9 @@ namespace MeticulousMentoring.API.Data
                 mentor = new MeticulousUser()
                 {
                     UserName = "joe.mentor@meticulous.com",
-                    Email = "joe.mentor@meticulous.com"
+                    Email = "joe.mentor@meticulous.com",
+                    FirstName = "Joe",
+                    LastName = "Mentor"
                 };
 
                 var mentorResult = await this.userManager.CreateAsync(mentor, "War3agle!");

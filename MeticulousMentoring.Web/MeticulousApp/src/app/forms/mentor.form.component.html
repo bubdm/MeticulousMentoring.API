@@ -1,54 +1,63 @@
-﻿<mat-toolbar>
-    <span>Mentor Registration</span>
-</mat-toolbar>
-<div class="mentor-form-container">
-    <form [formGroup]="firstFormGroup">
-        <div class="form-group">
-            <mat-form-field>
-                <input matInput placeholder="First Name" formControlName="first_name" />
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Last Name" formControlName="last_name" />
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <input matInput placeholder="Address 1" formControlName="address1" />
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Address 2" formControlName="address2" />
-            </mat-form-field>
-        </div>
+<div class="modal-header">
+  <div class="pull-left">
+    <h4 class="modal-title pull-left">REGISTER NEW MENTOR</h4>
+  </div>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="hide_modal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div style="clear: both;"></div>
+</div>
+<div class="modal-body">
+  <form [formGroup]="mentorForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="First Name" formControlName="first_name" required />
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="Last Name" formControlName="last_name" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="Address 1" formControlName="address1" />
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="Address 2" formControlName="address2" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="City" formControlName="city" />
+      </div>
+      <div class="form-group col-md-2">
+        <input class="form-control" placeholder="Zip" formControlName="zip" />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-3">
+        <select class="form-control" formControlName="mentorGender" required>
+          <option disabled selected value>--Select Gender--</option>
+          <option *ngFor="let g of genders" [ngValue]="g.gender">
+            {{g.description}}
+          </option>
+        </select>
+      </div>
+    </div>
 
-        <div class="form-group">
-            <mat-form-field>
-                <input matInput placeholder="City" formControlName="city" />
-            </mat-form-field>
-            <mat-form-field>
-                <input matInput placeholder="Zip" formControlName="zip" />
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-select placeholder="Select Gender" formControlName="mentorGender">
-                    <mat-option value="M">M</mat-option>
-                    <mat-option value="F">F</mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div class="form-group">
-            <mat-form-field>
-                <mat-select placeholder="Mentee List" formControlName="mentees" multiple>
-                    <mat-option *ngFor="let mentee of mentees" [value]="mentee">
-                        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}
-                    </mat-option>
-                </mat-select>
-            </mat-form-field>
-        </div>
-        <div>
-            <div mat-dialog-actions>
-                <button mat-button (click)="submitMentor()" [mat-dialog-close]="true" cdkFocusInitial>Submit</button>
-            </div>
-        </div>
-    </form>
+    <angular2-multiselect [data]="mentees" [(ngModel)]="selectedItems" [settings]="dropdownSettings" formControlName="mentees"
+                          (onSelect)="onItemSelect($event)"
+                          (onDeSelect)="OnItemDeSelect($event)"
+                          (onSelectAll)="onSelectAll($event)"
+                          (onDeSelectAll)="onDeSelectAll($event)">
+      <c-item>
+        <ng-template let-item="item">
+          <label style="color: rgba(0, 0, 0, 1);">{{item.menteeFirstName}} {{item.menteeLastName}}</label>
+        </ng-template>
+      </c-item>
+    </angular2-multiselect>
+  </form>
+</div>
+
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="submitMentor()" [disabled]="!mentorForm.valid">Submit</button>
 </div>

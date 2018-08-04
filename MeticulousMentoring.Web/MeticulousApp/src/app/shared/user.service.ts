@@ -1,22 +1,22 @@
-﻿import { Injectable } from '@angular/core';
-import { IUser } from '../interfaces/iuser';
+import { Injectable } from '@angular/core';
+import { User } from '../models/user';
 
 @Injectable()
 export class UserService {
-    private user: IUser;
+  private user: User;
 
-    constructor() {
-    }
+  constructor() {
+  }
 
-    set(user: IUser): void {
-        this.user = user;
-    }
+  set(user: User): void {
+    this.user = user;
+  }
 
-    get(): IUser {
-        return this.user;
-    }
+  get(): User {
+    return this.user;
+  }
 
-    delete(): void {
-        this.user = null;
-    }
+  delete(): void {
+    this.user = null;
+  }
 }

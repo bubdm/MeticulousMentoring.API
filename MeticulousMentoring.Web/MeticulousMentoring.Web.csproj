@@ -28,6 +28,10 @@
 
   <ItemGroup>
     <None Remove="%2a%2a/%2a" />
+    <None Remove="MeticulousApp\src\assets\bootstrap-multiselect.js" />
+    <None Remove="MeticulousApp\src\assets\script.js" />
+    <None Remove="MeticulousApp\wwwroot\lib\bootstrap-multiselect.css" />
+    <None Remove="MeticulousApp\wwwroot\lib\bootstrap-multiselect.js" />
   </ItemGroup>
 
   <ItemGroup>
@@ -43,6 +47,12 @@
     <Content Include="MeticulousApp\angular.json" />
     <Content Include="MeticulousApp\package-lock.json" />
     <Content Include="MeticulousApp\package.json" />
+    <Content Include="MeticulousApp\src\assets\bootstrap-multiselect.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="MeticulousApp\src\assets\script.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="MeticulousApp\src\tsconfig.app.json" />
     <Content Include="MeticulousApp\tsconfig.json" />
     <Content Include="MeticulousApp\wwwroot\lib\animate.css\.bower.json" />
@@ -51,6 +61,12 @@
     <Content Include="MeticulousApp\wwwroot\lib\animate.css\package.json" />
     <Content Include="MeticulousApp\wwwroot\lib\babel-polyfill\.bower.json" />
     <Content Include="MeticulousApp\wwwroot\lib\babel-polyfill\bower.json" />
+    <Content Include="MeticulousApp\wwwroot\lib\bootstrap-multiselect.css">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
+    <Content Include="MeticulousApp\wwwroot\lib\bootstrap-multiselect.js">
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+    </Content>
     <Content Include="MeticulousApp\wwwroot\lib\bootstrap\.bower.json" />
     <Content Include="MeticulousApp\wwwroot\lib\bootstrap\bower.json" />
     <Content Include="MeticulousApp\wwwroot\lib\bootstrap\grunt\configBridge.json" />
@@ -104,9 +120,123 @@
     <None Include="MeticulousApp\dist\out-tsc\wwwroot\ts\main.js.map" />
     <None Include="MeticulousApp\dist\out-tsc\wwwroot\ts\meticuloususer.js" />
     <None Include="MeticulousApp\dist\out-tsc\wwwroot\ts\meticuloususer.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\admin\admin.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\admin\admin.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\app-header.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\app-header.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\app.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\app.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\app.module.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\app.module.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\chart\chart.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\chart\chart.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\classification\classification.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\classification\classification.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\dashboard\dashboard.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\dashboard\dashboard.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\director\director.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\director\director.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\director\director.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\director\director.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\educationSystem\educationSystem.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\educationSystem\educationSystem.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\forms\director.form.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\forms\director.form.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\forms\mentee.form.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\forms\mentee.form.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\forms\mentor.form.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\forms\mentor.form.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\guardian\guardian.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\guardian\guardian.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\address.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\address.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\classification.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\classification.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\educational_system.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\educational_system.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\iuser.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\iuser.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\mentee.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\mentee.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\mentor.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\mentor.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\school.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\interfaces\school.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\login\login.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\login\login.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentee-dialog\mentee-dialog.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentee-dialog\mentee-dialog.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentee\mentee.profile.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentee\mentee.profile.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentee\mentee.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentee\mentee.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentor\mentor.profile.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentor\mentor.profile.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentor\mentor.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\mentor\mentor.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\address.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\address.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\classification.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\classification.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\educational_system.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\educational_system.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\mentee.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\mentee.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\school.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\school.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\userview.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\models\userview.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\school\school.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\school\school.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\accountservice.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\accountservice.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\admin.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\admin.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\auth-guard.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\auth-guard.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\grading.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\grading.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\round.pipe.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\round.pipe.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\timeline.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\timeline.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\user.service.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\shared\user.service.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\userchart\userchart.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\userchart\userchart.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\usertable\usertable.component.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\app\usertable\usertable.component.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\environments\environment.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\environments\environment.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\environments\environment.prod.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\environments\environment.prod.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\main.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\main.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\src\polyfills.js" />
+    <None Include="MeticulousApp\sist\out-tsc\src\polyfills.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\wwwroot\ts\main.js" />
+    <None Include="MeticulousApp\sist\out-tsc\wwwroot\ts\main.js.map" />
+    <None Include="MeticulousApp\sist\out-tsc\wwwroot\ts\meticuloususer.js" />
+    <None Include="MeticulousApp\sist\out-tsc\wwwroot\ts\meticuloususer.js.map" />
     <None Include="MeticulousApp\src\app\admin\admin.component.css" />
     <None Include="MeticulousApp\src\app\admin\admin.component.html" />
     <None Include="MeticulousApp\src\app\admin\admin.component.ts" />
+    <None Include="MeticulousApp\src\app\dashboard\home\home.component.css" />
+    <None Include="MeticulousApp\src\app\dashboard\home\home.component.html" />
+    <None Include="MeticulousApp\src\app\dashboard\home\home.component.spec.ts" />
+    <None Include="MeticulousApp\src\app\dashboard\home\home.component.ts" />
+    <None Include="MeticulousApp\src\app\dashboard\users\users.component.css" />
+    <None Include="MeticulousApp\src\app\dashboard\users\users.component.html" />
+    <None Include="MeticulousApp\src\app\dashboard\users\users.component.spec.ts" />
+    <None Include="MeticulousApp\src\app\dashboard\users\users.component.ts" />
+    <None Include="MeticulousApp\src\app\dashboard\users\users.service.ts" />
+    <None Include="MeticulousApp\src\app\forms\admin-form.component.css" />
+    <None Include="MeticulousApp\src\app\forms\admin-form.component.html" />
+    <None Include="MeticulousApp\src\app\forms\admin-form.component.spec.ts" />
+    <None Include="MeticulousApp\src\app\forms\admin-form.component.ts" />
+    <None Include="MeticulousApp\src\app\models\WizardStep.ts" />
+    <None Include="MeticulousApp\src\app\models\user.ts" />
+    <None Include="MeticulousApp\src\app\shared\admin.service.ts" />
     <None Include="MeticulousApp\src\app\app-header.component.html" />
     <None Include="MeticulousApp\src\app\app-header.component.ts" />
     <None Include="MeticulousApp\src\app\app.component.html" />
@@ -160,6 +290,7 @@
     <None Include="MeticulousApp\src\app\models\educational_system.ts" />
     <None Include="MeticulousApp\src\app\models\mentee.ts" />
     <None Include="MeticulousApp\src\app\models\school.ts" />
+    <None Include="MeticulousApp\src\app\models\userview.ts" />
     <None Include="MeticulousApp\src\app\school\school.service.ts" />
     <None Include="MeticulousApp\src\app\shared\accountservice.ts" />
     <None Include="MeticulousApp\src\app\shared\auth-guard.service.ts" />
@@ -170,16 +301,14 @@
     <None Include="MeticulousApp\src\app\userchart\userchart.component.css" />
     <None Include="MeticulousApp\src\app\userchart\userchart.component.html" />
     <None Include="MeticulousApp\src\app\userchart\userchart.component.ts" />
-    <None Include="MeticulousApp\src\app\usertable\usertable.component.css" />
-    <None Include="MeticulousApp\src\app\usertable\usertable.component.html" />
-    <None Include="MeticulousApp\src\app\usertable\usertable.component.ts" />
     <None Include="MeticulousApp\src\assets\.gitkeep" />
     <None Include="MeticulousApp\src\environments\environment.prod.ts" />
     <None Include="MeticulousApp\src\environments\environment.ts" />
     <None Include="MeticulousApp\src\index.html" />
     <None Include="MeticulousApp\src\main.ts" />
     <None Include="MeticulousApp\src\polyfills.ts" />
-    <None Include="MeticulousApp\src\styles.css" />
+    <None Include="MeticulousApp\src\assets\styles.css" />
+    <None Include="MeticulousApp\src\assets\styles.scss" />
     <None Include="MeticulousApp\src\typings.d.ts" />
     <None Include="MeticulousApp\wwwroot\css\font-awesome.css" />
     <None Include="MeticulousApp\wwwroot\css\font-awesome.min.css" />
@@ -784,6 +913,21 @@
     <None Include="MeticulousApp\wwwroot\lib\wow\spec\javascripts\libs\jquery.js" />
     <None Include="MeticulousApp\wwwroot\lib\wow\spec\javascripts\wow-spec.js" />
     <None Include="MeticulousApp\wwwroot\lib\wow\src\wow.coffee" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\3rdpartylicenses.txt" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\index.html" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\main.js" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\main.js.map" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\pexels-photo.jpg" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\polyfills.js" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\polyfills.js.map" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\runtime.js" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\runtime.js.map" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\scripts.js" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\scripts.js.map" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\styles.js" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\styles.js.map" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\vendor.js" />
+    <None Include="MeticulousApp\wwwroot\meticulousapp\dist\vendor.js.map" />
     <None Include="MeticulousApp\wwwroot\meticulousapp\out-tsc\MeticulousApp\app\admin\admin.component.js" />
     <None Include="MeticulousApp\wwwroot\meticulousapp\out-tsc\MeticulousApp\app\admin\admin.component.js.map" />
     <None Include="MeticulousApp\wwwroot\meticulousapp\out-tsc\MeticulousApp\app\app-header.component.js" />
@@ -909,8 +1053,28 @@
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Bootstrap.Multiselect" Version="0.9.13" />
     <PackageReference Include="Microsoft.AspNetCore.All" Version="2.0.3" />
     <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\admin\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\chart\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\classification\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\dashboard\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\educationSystem\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\forms\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\guardian\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\login\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\mentee-dialog\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\mentee\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\mentor\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\models\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\school\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\shared\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\userchart\" />
+    <Folder Include="wwwroot\meticulousapp\out-tsc\MeticulousApp\app\usertable\" />
   </ItemGroup>
 
 </Project>

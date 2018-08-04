@@ -1,37 +1,48 @@
-﻿<mat-sidenav-container class="example-container" autosize>
-    <mat-sidenav #sidenav class="example-sidenav" mode="side" opened="true">
-        <mat-nav-list>
-            <mat-list-item>
-                <span style="cursor: pointer" class="fa fa-bars fa-2x" (click)="isExpanded = !isExpanded"></span>
-            </mat-list-item>
-            <mat-list-item>
-                <mat-icon class="fa fa-home" mat-list-icon></mat-icon>
-                <p matLine *ngIf="isExpanded">Home</p>
-            </mat-list-item>
-            <mat-list-item [matMenuTriggerFor]="users" [hidden]="role == 'Mentor' || role == 'Mentee'">
-                <mat-icon class="fa fa-user" mat-list-icon></mat-icon>
-                <p matLine *ngIf="isExpanded">Users</p>
-            </mat-list-item>
-            <mat-menu #users="matMenu">
-                <button mat-menu-item [hidden]="role != 'Admin'">New Admin</button>
-                <button mat-menu-item *ngIf="role == 'Director' || role == 'Admin'" (click)="openDirectorFormDialog()">New Director</button>
-                <button mat-menu-item *ngIf="role =='Director' || role == 'Admin'" (click)="openMentorFormDialog()">New Mentor</button>
-                <button mat-menu-item *ngIf="role =='Director' || role == 'Admin'" (click)="openMenteeFormDialog()">New Mentee</button>
-            </mat-menu>
-            <mat-list-item>
-                <mat-icon class="fa fa-cog" mat-list-icon></mat-icon>
-                <p matLine *ngIf="isExpanded">Settings</p>
-            </mat-list-item>
-        </mat-nav-list>
-    </mat-sidenav>
-    <mat-toolbar>
-        <span>Dashboard</span>
-        <span class="fill-space"></span>
-        <span style="cursor: pointer" (click)="logout()">Logout <mat-icon class="fa fa-sign-out"></mat-icon></span>
-    </mat-toolbar>
-    <div class="example-sidenav-content" [ngSwitch]="role">
-        <admin-dashboard *ngSwitchCase="'Admin'"></admin-dashboard>
-        <mentee-profile *ngSwitchCase="'Mentee'"></mentee-profile>
-        <mentor-profile *ngSwitchCase="'Mentor'"></mentor-profile>
+<div class="wrapper">
+  <!-- Sidebar  -->
+  <nav id="sidebar">
+    <div class="sidebar-header">
+      <div id="sidebarCollapse" style="cursor: pointer">
+        <i class="fas fa-bars fa-2x"></i>
+      </div>
     </div>
-</mat-sidenav-container>
+
+    <ul class="list-unstyled components">
+      <li class="active">
+        <a [routerLink]="['./']">
+          <i class="fas fa-home fa-2x"></i>
+          <span class="text-span">Home</span>
+        </a>
+      </li>
+      <li>
+        <a [routerLink]="['./users']">
+          <i class="fas fa-users fa-2x"></i>
+          <span class="text-span wow fadeIn" data-wow-delay="0.2s">Users</span>
+        </a>
+
+        <a>
+          <i class="fas fa-cog fa-2x"></i>
+          <span class="text-span wow fadeIn" data-wow-delay="0.2s">Settings</span>
+        </a>
+        <a>
+          <i class="fas fa-dollar-sign fa-2x"></i>
+          <span class="text-span wow fadeIn" data-wow-delay="0.2s">Sales</span>
+        </a>
+        <a (click)="logout()">
+          <i class="fas fa-sign-out-alt fa-2x"></i>
+          <span class="text-span wow fadeIn" data-wow-delay="0.2s">Log Out</span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+
+  <!-- Page Content  -->
+  <div id="content">
+    <nav class="navbar navbar-light bg-light">
+      <span> Hi! {{user.given_name}} today is {{ today | date: 'short'}}</span>
+    </nav>
+
+    <router-outlet>
+    </router-outlet>
+  </div>
+</div>

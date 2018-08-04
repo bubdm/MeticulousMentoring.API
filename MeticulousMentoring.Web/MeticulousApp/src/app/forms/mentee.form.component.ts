@@ -1,12 +1,15 @@
 import { Component, Inject, NgModule, OnInit } from '@angular/core';
-import { MatDialogRef, MAT_DIALOG_DATA, MatDialogModule } from '@angular/material';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClassificationService } from '../classification/classification.service';
 import { EducationSystemService } from '../educationSystem/educationSystem.service';
 import { MenteeService } from '../mentee/mentee.service';
 import { GuardianService } from '../guardian/guardian.service';
 import { SchoolService } from '../school/school.service';
+import { AdminService } from '../shared/admin.service';
 import { Mentee } from '../interfaces/mentee';
+import { WizardStep } from '../models/WizardStep';
+import { BsModalRef } from "ngx-bootstrap/modal";
+import { UsersService } from '../dashboard/users/users.service';
 
 @Component({
   selector: 'mentee-form',
@@ -18,6 +21,9 @@ export class MenteeFormComponent implements OnInit {
   firstFormGroup: FormGroup;
   secondFormGroup: FormGroup;
   thirdFormGroup: FormGroup;
+  menteeForm1: FormGroup;
+  menteeForm2: FormGroup;
+
   public mentee: Mentee;
   public classifications;
   public educationSystems;
@@ -25,41 +31,45 @@ export class MenteeFormComponent implements OnInit {
   public menteeId: string;
   isChildAddressShared = false;
 
-  constructor(public dialogRef: MatDialogRef<MenteeFormComponent>,
-    @Inject(MAT_DIALOG_DATA) private data: any,
-    private formBuilder: FormBuilder,
+  genders = [{ gender: "M", description: "Male" },
+  { gender: "F", description: "Female" }];
+
+  constructor(private formBuilder: FormBuilder,
     private classificationService: ClassificationService,
     private educationSystemService: EducationSystemService,
     private menteeService: MenteeService,
     private guardianService: GuardianService,
-    private schoolService: SchoolService) {
+    private schoolService: SchoolService,
+    private adminService: AdminService,
+    private bsModalRef: BsModalRef,
+    private usersService: UsersService) {
   }
 
   ngOnInit(): void {
     this.getClassifications();
     this.getEducationSystems();
     this.getSchools();
-    this.firstFormGroup = this.formBuilder.group({
+
+    this.menteeForm1 = this.formBuilder.group({
       first_name: ["", Validators.required],
       last_name: ["", Validators.required],
       address1: ["", Validators.required],
-      address2: [""],
+      address2: [null],
       city: ["", Validators.required],
       zip: ["", Validators.required],
       email: ["", [Validators.required, Validators.email]],
       menteeGender: ["", Validators.required],
-      dob: ["", Validators.required]
-    });
-    this.secondFormGroup = this.formBuilder.group({
+      dob: ["", Validators.required],
       school: ["", Validators.required],
-      classification: ["", Validators.required]
+      classification: ["", Validators.required],
     });
-    this.thirdFormGroup = this.formBuilder.group({
+
+    this.menteeForm2 = this.formBuilder.group({
       guardianFirstName: ["", Validators.required],
       guardianLastName: ["", Validators.required],
       guardianGender: ["", Validators.required],
       guardianAddress1: ["", Validators.required],
-      guardianAddress2: [""],
+      guardianAddress2: [null],
       guardianCity: ["", Validators.required],
       guardianZip: ["", Validators.required],
       guardianEmail: ["", Validators.required]
@@ -67,101 +77,106 @@ export class MenteeFormComponent implements OnInit {
   }
 
   onNoClick(): void {
-    this.dialogRef.close();
   }
 
   public getClassifications() {
     let response = this.classificationService.get_classifications()
       .subscribe(
-      data => {
-        this.classifications = data;
-      },
-      error => console.log(error));
+        data => {
+          this.classifications = data;
+        },
+        error => console.log(error));
   }
 
   public getEducationSystems() {
     let response = this.educationSystemService.get_education_systems()
       .subscribe(
-      data => {
-        this.educationSystems = data;
-      },
-      error => console.log(error));
+        data => {
+          this.educationSystems = data;
+        },
+        error => console.log(error));
   }
 
   public getSchools() {
     let response = this.schoolService.get_schools()
       .subscribe(
-      data => {
-        this.schools = data;
-      },
-      error => console.log(error));
+        data => {
+          this.schools = data;
+        },
+        error => console.log(error));
   }
 
   copyAddress(): void {
     if (this.isChildAddressShared) {
-      this.thirdFormGroup.controls['guardianAddress1'].setValue(this.firstFormGroup.get('address1').value);
-      this.thirdFormGroup.controls['guardianAddress2'].setValue(this.firstFormGroup.get('address2').value);
-      this.thirdFormGroup.controls['guardianCity'].setValue(this.firstFormGroup.get('city').value);
-      this.thirdFormGroup.controls['guardianZip'].setValue(this.firstFormGroup.get('zip').value);
+      this.menteeForm2.controls['guardianAddress1'].setValue(this.menteeForm1.get('address1').value);
+      this.menteeForm2.controls['guardianAddress2'].setValue(this.menteeForm1.get('address2').value);
+      this.menteeForm2.controls['guardianCity'].setValue(this.menteeForm1.get('city').value);
+      this.menteeForm2.controls['guardianZip'].setValue(this.menteeForm1.get('zip').value);
     } else {
-      this.thirdFormGroup.controls['guardianAddress1'].setValue('');
-      this.thirdFormGroup.controls['guardianAddress2'].setValue('');
-      this.thirdFormGroup.controls['guardianCity'].setValue('');
-      this.thirdFormGroup.controls['guardianZip'].setValue('');
+      this.menteeForm2.controls['guardianAddress1'].setValue('');
+      this.menteeForm2.controls['guardianAddress2'].setValue('');
+      this.menteeForm2.controls['guardianCity'].setValue('');
+      this.menteeForm2.controls['guardianZip'].setValue('');
     }
   }
 
   submitMentee(): void {
-    var test = this.firstFormGroup.value;
-    var test2 = this.secondFormGroup.value;
-    var test3 = this.thirdFormGroup.value;
+    var mentee_info = this.menteeForm1.value;
+    var guardian_info = this.menteeForm2.value;
 
     var newMentee = {
-      MenteeFirstName: test.first_name,
-      MenteeLastName: test.last_name,
+      MenteeFirstName: mentee_info.first_name,
+      MenteeLastName: mentee_info.last_name,
       MenteeAddress: {
-        address1: test.address1,
-        address2: test.address2,
-        city: test.city,
-        zip: test.zip,
+        address1: mentee_info.address1,
+        address2: mentee_info.address2,
+        city: mentee_info.city,
+        zip: mentee_info.zip,
       },
-      MenteeDOB: test.dob,
-      MenteeEmail: test.email,
-      MenteeGender: test.menteeGender,
+      MenteeDOB: mentee_info.dob,
+      MenteeEmail: mentee_info.email,
+      MenteeGender: mentee_info.menteeGender,
       MenteeClassification: {
-        id: test2.classification.classificationId,
-        classification_id: test2.classification.classificationClassId,
-        description: test2.classification.classificationDescription
+        id: mentee_info.classification.classificationId,
+        classification_id: mentee_info.classification.classificationClassId,
+        description: mentee_info.classification.classificationDescription
       },
       MenteeSchool: {
-        id: test2.school.schoolId
+        id: mentee_info.school.schoolId
       },
     }
 
     let response = this.menteeService.add_mentee(newMentee)
       .subscribe(
-      data => {
-        this.menteeId = data.menteeId;
+        data => {
+          this.menteeId = data.menteeId;
 
-        var newGuardian = {
-          GuardianFirstName: test3.guardianFirstName,
-          GuardianLastName: test3.guardianLastName,
-          GuardianGender: test3.guardianGender,
-          GuardianAddress: {
-            address1: test3.guardianAddress1,
-            address2: test3.guardianAddress2,
-            city: test3.guardianCity,
-            zip: test3.guardianZip
-          },
-          GuardianEmail: test3.guardianEmail,
-          GuardianChildren: [{
-            id: this.menteeId
-          }]
-        }
+          var newGuardian = {
+            GuardianFirstName: guardian_info.guardianFirstName,
+            GuardianLastName: guardian_info.guardianLastName,
+            GuardianGender: guardian_info.guardianGender,
+            GuardianAddress: {
+              address1: guardian_info.guardianAddress1,
+              address2: guardian_info.guardianAddress2,
+              city: guardian_info.guardianCity,
+              zip: guardian_info.guardianZip
+            },
+            GuardianEmail: guardian_info.guardianEmail,
+            GuardianChildren: [{
+              id: this.menteeId
+            }]
+          }
 
-        this.guardianService.add_guardian(newGuardian)
-          .subscribe(r => { });
-      },
-      error => console.log(error));
+          this.guardianService.add_guardian(newGuardian)
+            .subscribe(r => {
+              this.hide_modal();
+              this.usersService.notify_users_with_roles_changed();
+            });
+        },
+        error => console.log(error));
+  }
+
+  public hide_modal() {
+    this.bsModalRef.hide();
   }
 }

@@ -1,0 +1,28 @@
+.adobe-pdf {
+  color: rgba(255, 0, 0, 1);
+  cursor: pointer;
+}
+
+  .adobe-pdf:before {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+  .adobe-pdf:after {
+    margin-left: 5px;
+    margin-right: 5px;
+  }
+
+.btn-sq-lg {
+  width: 150px !important;
+  height: 150px !important;
+  font-size: 18px;
+  color: #fff;
+  margin: 3px;
+}
+
+.btn-sq {
+  width: 100px !important;
+  height: 100px !important;
+  font-size: 12px;
+}

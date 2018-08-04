@@ -11,16 +11,19 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var accountservice_1 = require("../shared/accountservice");
+var admin_service_1 = require("../shared/admin.service");
 var material_1 = require("@angular/material");
 var UsertableComponent = /** @class */ (function () {
-    function UsertableComponent(accountService) {
+    function UsertableComponent(accountService, adminService) {
         this.accountService = accountService;
+        this.adminService = adminService;
         this.dataSource = new material_1.MatTableDataSource();
         this.displayedColumns = ['id', 'userName'];
+        this.adminService.notify_users_change();
     }
     UsertableComponent.prototype.ngOnInit = function () {
         var _this = this;
-        this.accountService.get_users()
+        this.adminService.users$
             .subscribe(function (data) {
             _this.dataSource.data = data;
         }, function (error) { return console.log(); });
@@ -38,7 +41,7 @@ var UsertableComponent = /** @class */ (function () {
             templateUrl: './usertable.component.html',
             styleUrls: ['./usertable.component.css']
         }),
-        __metadata("design:paramtypes", [accountservice_1.AccountService])
+        __metadata("design:paramtypes", [accountservice_1.AccountService, admin_service_1.AdminService])
     ], UsertableComponent);
     return UsertableComponent;
 }());

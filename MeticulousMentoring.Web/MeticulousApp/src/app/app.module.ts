@@ -6,6 +6,13 @@ import { ChartsModule } from "ng2-charts/ng2-charts";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from "ngx-pipes";
+import { BsDatepickerModule, ModalModule, TooltipModule } from 'ngx-bootstrap';
+import { ArchwizardModule } from 'angular-archwizard';
+import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
+import { NgSelectModule } from '@ng-select/ng-select';
+import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
+import { SelectDropDownModule } from 'ngx-select-dropdown'
+import { AngularMultiSelectModule } from "angular2-multiselect-dropdown/angular2-multiselect-dropdown";
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './app-header.component';
@@ -23,7 +30,6 @@ import { DirectorService } from './director/director.service';
 import { GradingService } from './shared/grading.service';
 import { DashboardComponent } from './dashboard/dashboard.component';
 import { AdminComponent } from './admin/admin.component';
-import { UsertableComponent } from './usertable/usertable.component';
 import { UserchartComponent } from './userchart/userchart.component';
 import { MeticulousChartComponent } from './chart/chart.component';
 import { MenteeFormComponent } from './forms/mentee.form.component';
@@ -31,11 +37,98 @@ import { MenteeProfileComponent } from './mentee/mentee.profile.component';
 import { MentorFormComponent } from './forms/mentor.form.component';
 import { DirectorFormComponent } from './forms/director.form.component';
 import { RoundPipe } from './shared/round.pipe';
+import { AdminService } from './shared/admin.service';
+import { UsersComponent } from './dashboard/users/users.component';
+import { UsersService } from './dashboard/users/users.service';
+import { HomeComponent } from './dashboard/home/home.component';
+import { AdminFormComponent } from './forms/admin-form.component';
 
 import { RouterModule } from "@angular/router";
 import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { AuthGuard } from './shared/auth-guard.service';
 import {
+  MatAutocompleteModule,
+  MatButtonModule,
+  MatButtonToggleModule,
+  MatCardModule,
+  MatCheckboxModule,
+  MatChipsModule,
+  MatDatepickerModule,
+  MatDialogModule,
+  MatExpansionModule,
+  MatGridListModule,
+  MatIconModule,
+  MatInputModule,
+  MatListModule,
+  MatMenuModule,
+  MatNativeDateModule,
+  MatPaginatorModule,
+  MatProgressBarModule,
+  MatProgressSpinnerModule,
+  MatRadioModule,
+  MatRippleModule,
+  MatSelectModule,
+  MatSidenavModule,
+  MatSliderModule,
+  MatSlideToggleModule,
+  MatSnackBarModule,
+  MatSortModule,
+  MatTableModule,
+  MatTabsModule,
+  MatToolbarModule,
+  MatTooltipModule,
+  MatStepperModule
+} from '@angular/material';
+
+import { CdkTableModule } from '@angular/cdk/table';
+import { MentorProfileComponent } from './mentor/mentor.profile.component';
+import { MenteeDialogComponent } from './mentee-dialog/mentee-dialog.component';
+
+export const routes = [
+  { path: "", component: LoginComponent },
+  {
+    path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard],
+    children: [
+      { path: "", component: HomeComponent, canActivate: [AuthGuard] },
+      { path: "users", component: UsersComponent, canActivate: [AuthGuard] }
+    ]
+  }
+];
+
+@NgModule({
+  declarations: [
+    AppComponent,
+    AppHeaderComponent,
+    LoginComponent,
+    DashboardComponent,
+    AdminComponent,
+    UserchartComponent,
+    MeticulousChartComponent,
+    MenteeFormComponent,
+    MenteeProfileComponent,
+    MentorFormComponent,
+    DirectorFormComponent,
+    RoundPipe,
+    MentorProfileComponent,
+    MenteeDialogComponent,
+    UsersComponent,
+    HomeComponent,
+    AdminFormComponent
+
+  ],
+  imports: [
+    BrowserModule,
+    BrowserAnimationsModule,
+    HttpModule,
+    ChartsModule,
+    RouterModule.forRoot(routes,
+      {
+        useHash: true,
+        enableTracing: false
+      }),
+    FormsModule,
+    CdkTableModule,
+    ReactiveFormsModule,
     MatAutocompleteModule,
     MatButtonModule,
     MatButtonToggleModule,
@@ -66,102 +159,39 @@ import {
     MatTabsModule,
     MatToolbarModule,
     MatTooltipModule,
-    MatStepperModule
-} from '@angular/material';
+    MatStepperModule,
+    CdkTableModule,
+    CommonModule,
+    NgPipesModule,
+    HttpClientModule,
+    BsDatepickerModule.forRoot(),
+    ModalModule.forRoot(),
+    TooltipModule.forRoot(),
+    ArchwizardModule,
+    NgMultiSelectDropDownModule.forRoot(),
+    NgSelectModule,
+    MultiselectDropdownModule,
+    SelectDropDownModule,
+    AngularMultiSelectModule
 
-import { CdkTableModule } from '@angular/cdk/table';
-import { MentorProfileComponent } from './mentor/mentor.profile.component';
-import { MenteeDialogComponent } from './mentee-dialog/mentee-dialog.component';
-
-export const routes = [
-    { path: "", component: LoginComponent },
-    { path: "dashboard", component: DashboardComponent, canActivate: [AuthGuard] }
-];
-
-@NgModule({
-    declarations: [
-        AppComponent,
-        AppHeaderComponent,
-        LoginComponent,
-        DashboardComponent,
-        AdminComponent,
-        UsertableComponent,
-        UserchartComponent,
-        MeticulousChartComponent,
-        MenteeFormComponent,
-        MenteeProfileComponent,
-        MentorFormComponent,
-        DirectorFormComponent,
-        RoundPipe,
-        MentorProfileComponent,
-        MenteeDialogComponent
-
-    ],
-    imports: [
-        BrowserModule,
-        BrowserAnimationsModule,
-        HttpModule,
-        ChartsModule,
-        RouterModule.forRoot(routes,
-            {
-                useHash: true,
-                enableTracing: false
-            }),
-        FormsModule,
-        CdkTableModule,
-        ReactiveFormsModule,
-        MatAutocompleteModule,
-        MatButtonModule,
-        MatButtonToggleModule,
-        MatCardModule,
-        MatCheckboxModule,
-        MatChipsModule,
-        MatDatepickerModule,
-        MatDialogModule,
-        MatExpansionModule,
-        MatGridListModule,
-        MatIconModule,
-        MatInputModule,
-        MatListModule,
-        MatMenuModule,
-        MatNativeDateModule,
-        MatPaginatorModule,
-        MatProgressBarModule,
-        MatProgressSpinnerModule,
-        MatRadioModule,
-        MatRippleModule,
-        MatSelectModule,
-        MatSidenavModule,
-        MatSliderModule,
-        MatSlideToggleModule,
-        MatSnackBarModule,
-        MatSortModule,
-        MatTableModule,
-        MatTabsModule,
-        MatToolbarModule,
-        MatTooltipModule,
-        MatStepperModule,
-        CdkTableModule,
-        CommonModule,
-        NgPipesModule,
-        HttpClientModule
-
-    ],
-    exports: [MenteeFormComponent],
-    entryComponents: [MenteeFormComponent, MentorFormComponent, DirectorFormComponent, MenteeDialogComponent],
-    providers: [
-        AccountService,
-        AuthGuard,
-        UserService,
-        ClassificationService,
-        EducationSystemService,
-        MenteeService,
-        GuardianService,
-        SchoolService,
-        MentorService,
-        DirectorService,
-        TimelineService,
-        GradingService],
-    bootstrap: [AppComponent]
+  ],
+  exports: [MenteeFormComponent],
+  entryComponents: [MenteeFormComponent, MentorFormComponent, DirectorFormComponent, MenteeDialogComponent, AdminFormComponent],
+  providers: [
+    AccountService,
+    AuthGuard,
+    UserService,
+    ClassificationService,
+    EducationSystemService,
+    MenteeService,
+    GuardianService,
+    SchoolService,
+    MentorService,
+    DirectorService,
+    TimelineService,
+    GradingService,
+    AdminService,
+    UsersService],
+  bootstrap: [AppComponent]
 })
 export class AppModule { }

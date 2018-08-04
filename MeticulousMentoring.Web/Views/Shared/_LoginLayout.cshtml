@@ -3,10 +3,13 @@
 <head>
     <title>Welcome to </title>
     <link href="~/lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
-    <link href="~/css/light-bootstrap-dashboard.css" rel="stylesheet" />
-    <link href="~/css/font-awesome.min.css" rel="stylesheet" />
+    @*<link href="~/css/light-bootstrap-dashboard.css" rel="stylesheet" />*@
+    @*<link href="~/css/font-awesome.min.css" rel="stylesheet" />*@
     <link href="~/css/site.css" rel="stylesheet" />
     <link href="~/lib/animate.css/animate.min.css" rel="stylesheet" />
+
+    <link href="~/lib/bootstrap-multiselect.css" rel="stylesheet" />
+
     <link href="https://fonts.googleapis.com/css?family=Abel|Barlow+Semi+Condensed:400,400i,500,500i,600,600i,700,700i,800,800i,900,900i|Dancing+Script:400,700|Roboto+Condensed:300,300i,400,400i,700,700i|Roboto:400i,500,500i,700,700i,900,900i" rel="stylesheet">
 </head>
 <body>
@@ -16,12 +19,13 @@
 
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/popper/dist/umd/popper.min.js"></script>
-    <script src="~/meticulousapp/dist/inline.bundle.js"></script>
-    <script src="~/meticulousapp/dist/polyfills.bundle.js"></script>
-    <script src="~/meticulousapp/dist/styles.bundle.js"></script>
-    <script src="~/meticulousapp/dist/vendor.bundle.js"></script>
-    <script src="~/meticulousapp/dist/main.bundle.js"></script>
+    <script src="~/meticulousapp/dist/main.js"></script>
+    <script src="~/meticulousapp/dist/polyfills.js"></script>
+    <script src="~/meticulousapp/dist/runtime.js"></script>
+    <script src="~/meticulousapp/dist/vendor.js"></script>
     <script src="~/lib/wow/dist/wow.min.js"></script>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.13/js/all.js" integrity="sha384-xymdQtn1n3lH2wcu0qhcdaOpQwyoarkgLVxC/wZ5q7h9gHtxICrpcaSUfygqZGOe" crossorigin="anonymous"></script>
+    @*<script src="https://cdnjs.cloudflare.com/ajax/libs/malihu-custom-scrollbar-plugin/3.1.5/jquery.mCustomScrollbar.concat.min.js"></script>*@
     <script>
         new WOW().init();
     </script>
@@ -33,6 +37,14 @@
                 500);
             return false;
         });
+
+        $('#sidebarCollapse').on('click',
+            function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
     </script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.min.js"></script>
 
@@ -41,5 +53,13 @@
     <script src="~/js/plugins/bootstrap-notify.js"></script>
     <script src="~/lib/jquery-validation/dist/jquery.validate.min.js"></script>
     <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.min.js"></script>
+    <script src="~/lib/bootstrap-multiselect.js"></script>
+    <script src="~/js/script.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('#mentee-multi-options').multiselect();
+        });
+    </script>
+    @RenderSection("Scripts", required: false)
 </body>
 </html>

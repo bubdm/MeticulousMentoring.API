@@ -305,7 +305,7 @@ module.exports = ".example-container {\r\n    position: absolute;\r\n    top: 0;
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container container-fluid meticulous-container\">\r\n    <div class=\"row meticulous-row\">\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Mentees</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <p class=\"text-xl-center display-1\">\r\n                        {{total_mentees}}\r\n                    </p>\r\n                    <p class=\"text-xl-center\">\r\n                        <mat-card-subtitle>TOTAL MENTEES</mat-card-subtitle>\r\n                    </p>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Mentors</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <p class=\"text-xl-center display-1\">\r\n                        {{total_mentors}}\r\n                    </p>\r\n                    <p class=\"text-xl-center\">\r\n                        <mat-card-subtitle>TOTAL MENTORS</mat-card-subtitle>\r\n                    </p>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header></mat-card-header>\r\n                <mat-card-footer>\r\n                    <mat-card-content>\r\n                        <meticulous-userchart></meticulous-userchart>\r\n                    </mat-card-content>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n        <div class=\"col\">\r\n            <mat-card class=\"data-card\">\r\n                <mat-card-header></mat-card-header>\r\n                <mat-card-content>\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Mentees Matched</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"((total_mentees - total_unmatched_mentees)/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}%</div>\r\n                    </div>\r\n                    <br />\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_male/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_male)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_male/total_mentees * 100 | round)}}%</div>\r\n                    </div>\r\n                    <br />\r\n                    <div class=\"text-left\"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>\r\n                    <div class=\"progress\">\r\n                        <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_female/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_female)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_female/total_mentees * 100 | round)}}%</div>\r\n                    </div>\r\n                </mat-card-content>\r\n                <mat-card-footer>\r\n                </mat-card-footer>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n    <div class=\"row\">\r\n        <div class=\"col-sm-12\">\r\n            <mat-card class=\"dashboard-card\">\r\n                <mat-card-header>\r\n                    <mat-card-subtitle>Users</mat-card-subtitle>\r\n                </mat-card-header>\r\n                <mat-card-content>\r\n                    <meticulous-usertable></meticulous-usertable>\r\n                </mat-card-content>\r\n            </mat-card>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container container-fluid meticulous-container\">\r\n  <div class=\"row meticulous-row\">\r\n    <div class=\"col\">\r\n      <mat-card class=\"data-card\">\r\n        <mat-card-header>\r\n          <mat-card-subtitle>Mentees</mat-card-subtitle>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n          <p class=\"text-xl-center display-1\">\r\n            {{total_mentees}}\r\n          </p>\r\n          <p class=\"text-xl-center\">\r\n            <mat-card-subtitle>TOTAL MENTEES</mat-card-subtitle>\r\n          </p>\r\n        </mat-card-content>\r\n        <mat-card-footer>\r\n        </mat-card-footer>\r\n      </mat-card>\r\n    </div>\r\n    <div class=\"col\">\r\n      <mat-card class=\"data-card\">\r\n        <mat-card-header>\r\n          <mat-card-subtitle>Mentors</mat-card-subtitle>\r\n        </mat-card-header>\r\n        <mat-card-content>\r\n          <p class=\"text-xl-center display-1\">\r\n            {{total_mentors}}\r\n          </p>\r\n          <p class=\"text-xl-center\">\r\n            <mat-card-subtitle>TOTAL MENTORS</mat-card-subtitle>\r\n          </p>\r\n        </mat-card-content>\r\n        <mat-card-footer>\r\n        </mat-card-footer>\r\n      </mat-card>\r\n    </div>\r\n    <div class=\"col\">\r\n      <mat-card class=\"data-card\">\r\n        <mat-card-header></mat-card-header>\r\n        <mat-card-footer>\r\n          <mat-card-content>\r\n            <meticulous-userchart></meticulous-userchart>\r\n          </mat-card-content>\r\n        </mat-card-footer>\r\n      </mat-card>\r\n    </div>\r\n    <div class=\"col\">\r\n      <mat-card class=\"data-card\">\r\n        <mat-card-header></mat-card-header>\r\n        <mat-card-content>\r\n          <div class=\"text-left\"><mat-card-subtitle>% of Mentees Matched</mat-card-subtitle></div>\r\n          <div class=\"progress\">\r\n            <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"((total_mentees - total_unmatched_mentees)/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{((total_mentees - total_unmatched_mentees)/total_mentees)*100 | round}}%</div>\r\n          </div>\r\n          <br />\r\n          <div class=\"text-left\"><mat-card-subtitle>% of Male Mentees</mat-card-subtitle></div>\r\n          <div class=\"progress\">\r\n            <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_male/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_male)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_male/total_mentees * 100 | round)}}%</div>\r\n          </div>\r\n          <br />\r\n          <div class=\"text-left\"><mat-card-subtitle>% of Female Mentees</mat-card-subtitle></div>\r\n          <div class=\"progress\">\r\n            <div class=\"progress-bar progress-bar-striped progress-bar-animated\" role=\"progressbar\" [style.width]=\"(total_female/total_mentees)*100 + '%'\" attr.aria-valuenow=\"{{((total_mentees - total_female)/total_mentees * 100 | round)}}\" aria-valuemin=\"0\" aria-valuemax=\"100\">{{(total_female/total_mentees * 100 | round)}}%</div>\r\n          </div>\r\n        </mat-card-content>\r\n        <mat-card-footer>\r\n        </mat-card-footer>\r\n      </mat-card>\r\n    </div>\r\n  </div>\r\n  <div class=\"row\">\r\n    <div class=\"col-sm-12\">\r\n      <table class=\"table table-borderless table-sm\" id=\"usersTable\">\r\n        <thead>\r\n          <tr>\r\n            <th>Id</th>\r\n            <th>Name</th>\r\n            <th>Username</th>\r\n            <th>Email</th>\r\n            <th></th>\r\n          </tr>\r\n        </thead>\r\n        <tr *ngFor=\"let user of users\">\r\n          <td>{{user.id}}</td>\r\n          <td>{{user.firstName}} {{user.lastName}}</td>\r\n          <td>{{user.userName}}</td>\r\n          <td>{{user.email}}</td>\r\n          <td><button type=\"button\" class=\"btn btn-primary\">Delete</button></td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -322,9 +322,10 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/accountservice */ "../src/app/shared/accountservice.ts");
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
-/* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
+/* harmony import */ var _shared_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/admin.service */ "../src/app/shared/admin.service.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -340,19 +341,23 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var AdminComponent = /** @class */ (function () {
-    function AdminComponent(userService, auth, router, menteeService, mentorService) {
+    function AdminComponent(userService, auth, router, menteeService, mentorService, adminService) {
         this.userService = userService;
         this.auth = auth;
         this.router = router;
         this.menteeService = menteeService;
         this.mentorService = mentorService;
+        this.adminService = adminService;
         this.total_mentees = 0;
         this.total_unmatched_mentees = 0;
         this.total_mentors = 0;
         this.total_male = 0;
         this.total_female = 0;
         this.math = Math;
+        this.users = new Array();
+        this.adminService.notify_users_change();
     }
     AdminComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -371,6 +376,9 @@ var AdminComponent = /** @class */ (function () {
             .subscribe(function (data) {
             _this.total_unmatched_mentees = data.length;
         });
+        this.adminService.users$.subscribe(function (data) {
+            _this.users = data;
+        });
     };
     AdminComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -380,9 +388,10 @@ var AdminComponent = /** @class */ (function () {
         }),
         __metadata("design:paramtypes", [_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
             _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__["AccountService"],
-            _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"],
-            _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_4__["MenteeService"],
-            _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_5__["MentorService"]])
+            _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
+            _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_5__["MenteeService"],
+            _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_6__["MentorService"],
+            _shared_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"]])
     ], AdminComponent);
     return AdminComponent;
 }());
@@ -525,14 +534,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_grading_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./shared/grading.service */ "../src/app/shared/grading.service.ts");
 /* harmony import */ var _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./dashboard/dashboard.component */ "../src/app/dashboard/dashboard.component.ts");
 /* harmony import */ var _admin_admin_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./admin/admin.component */ "../src/app/admin/admin.component.ts");
-/* harmony import */ var _usertable_usertable_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./usertable/usertable.component */ "../src/app/usertable/usertable.component.ts");
-/* harmony import */ var _userchart_userchart_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./userchart/userchart.component */ "../src/app/userchart/userchart.component.ts");
-/* harmony import */ var _chart_chart_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./chart/chart.component */ "../src/app/chart/chart.component.ts");
-/* harmony import */ var _forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./forms/mentee.form.component */ "../src/app/forms/mentee.form.component.ts");
-/* harmony import */ var _mentee_mentee_profile_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./mentee/mentee.profile.component */ "../src/app/mentee/mentee.profile.component.ts");
-/* harmony import */ var _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./forms/mentor.form.component */ "../src/app/forms/mentor.form.component.ts");
-/* harmony import */ var _forms_director_form_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./forms/director.form.component */ "../src/app/forms/director.form.component.ts");
-/* harmony import */ var _shared_round_pipe__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./shared/round.pipe */ "../src/app/shared/round.pipe.ts");
+/* harmony import */ var _userchart_userchart_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./userchart/userchart.component */ "../src/app/userchart/userchart.component.ts");
+/* harmony import */ var _chart_chart_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./chart/chart.component */ "../src/app/chart/chart.component.ts");
+/* harmony import */ var _forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./forms/mentee.form.component */ "../src/app/forms/mentee.form.component.ts");
+/* harmony import */ var _mentee_mentee_profile_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./mentee/mentee.profile.component */ "../src/app/mentee/mentee.profile.component.ts");
+/* harmony import */ var _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./forms/mentor.form.component */ "../src/app/forms/mentor.form.component.ts");
+/* harmony import */ var _forms_director_form_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./forms/director.form.component */ "../src/app/forms/director.form.component.ts");
+/* harmony import */ var _shared_round_pipe__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./shared/round.pipe */ "../src/app/shared/round.pipe.ts");
+/* harmony import */ var _shared_admin_service__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./shared/admin.service */ "../src/app/shared/admin.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./shared/auth-guard.service */ "../src/app/shared/auth-guard.service.ts");
@@ -600,14 +609,13 @@ var AppModule = /** @class */ (function () {
                 _login_login_component__WEBPACK_IMPORTED_MODULE_10__["LoginComponent"],
                 _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_22__["DashboardComponent"],
                 _admin_admin_component__WEBPACK_IMPORTED_MODULE_23__["AdminComponent"],
-                _usertable_usertable_component__WEBPACK_IMPORTED_MODULE_24__["UsertableComponent"],
-                _userchart_userchart_component__WEBPACK_IMPORTED_MODULE_25__["UserchartComponent"],
-                _chart_chart_component__WEBPACK_IMPORTED_MODULE_26__["MeticulousChartComponent"],
-                _forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_27__["MenteeFormComponent"],
-                _mentee_mentee_profile_component__WEBPACK_IMPORTED_MODULE_28__["MenteeProfileComponent"],
-                _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_29__["MentorFormComponent"],
-                _forms_director_form_component__WEBPACK_IMPORTED_MODULE_30__["DirectorFormComponent"],
-                _shared_round_pipe__WEBPACK_IMPORTED_MODULE_31__["RoundPipe"],
+                _userchart_userchart_component__WEBPACK_IMPORTED_MODULE_24__["UserchartComponent"],
+                _chart_chart_component__WEBPACK_IMPORTED_MODULE_25__["MeticulousChartComponent"],
+                _forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_26__["MenteeFormComponent"],
+                _mentee_mentee_profile_component__WEBPACK_IMPORTED_MODULE_27__["MenteeProfileComponent"],
+                _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_28__["MentorFormComponent"],
+                _forms_director_form_component__WEBPACK_IMPORTED_MODULE_29__["DirectorFormComponent"],
+                _shared_round_pipe__WEBPACK_IMPORTED_MODULE_30__["RoundPipe"],
                 _mentor_mentor_profile_component__WEBPACK_IMPORTED_MODULE_37__["MentorProfileComponent"],
                 _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_38__["MenteeDialogComponent"]
             ],
@@ -659,8 +667,8 @@ var AppModule = /** @class */ (function () {
                 ngx_pipes__WEBPACK_IMPORTED_MODULE_7__["NgPipesModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"]
             ],
-            exports: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_27__["MenteeFormComponent"]],
-            entryComponents: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_27__["MenteeFormComponent"], _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_29__["MentorFormComponent"], _forms_director_form_component__WEBPACK_IMPORTED_MODULE_30__["DirectorFormComponent"], _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_38__["MenteeDialogComponent"]],
+            exports: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_26__["MenteeFormComponent"]],
+            entryComponents: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_26__["MenteeFormComponent"], _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_28__["MentorFormComponent"], _forms_director_form_component__WEBPACK_IMPORTED_MODULE_29__["DirectorFormComponent"], _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_38__["MenteeDialogComponent"]],
             providers: [
                 _shared_accountservice__WEBPACK_IMPORTED_MODULE_11__["AccountService"],
                 _shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_34__["AuthGuard"],
@@ -673,7 +681,8 @@ var AppModule = /** @class */ (function () {
                 _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_17__["MentorService"],
                 _director_director_service__WEBPACK_IMPORTED_MODULE_20__["DirectorService"],
                 _shared_timeline_service__WEBPACK_IMPORTED_MODULE_13__["TimelineService"],
-                _shared_grading_service__WEBPACK_IMPORTED_MODULE_21__["GradingService"]
+                _shared_grading_service__WEBPACK_IMPORTED_MODULE_21__["GradingService"],
+                _shared_admin_service__WEBPACK_IMPORTED_MODULE_31__["AdminService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_8__["AppComponent"]]
         })
@@ -1198,6 +1207,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
 /* harmony import */ var _guardian_guardian_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../guardian/guardian.service */ "../src/app/guardian/guardian.service.ts");
 /* harmony import */ var _school_school_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../school/school.service */ "../src/app/school/school.service.ts");
+/* harmony import */ var _shared_admin_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../shared/admin.service */ "../src/app/shared/admin.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1218,8 +1228,9 @@ var __param = (undefined && undefined.__param) || function (paramIndex, decorato
 
 
 
+
 var MenteeFormComponent = /** @class */ (function () {
-    function MenteeFormComponent(dialogRef, data, formBuilder, classificationService, educationSystemService, menteeService, guardianService, schoolService) {
+    function MenteeFormComponent(dialogRef, data, formBuilder, classificationService, educationSystemService, menteeService, guardianService, schoolService, adminService) {
         this.dialogRef = dialogRef;
         this.data = data;
         this.formBuilder = formBuilder;
@@ -1228,6 +1239,7 @@ var MenteeFormComponent = /** @class */ (function () {
         this.menteeService = menteeService;
         this.guardianService = guardianService;
         this.schoolService = schoolService;
+        this.adminService = adminService;
         this.startDate = new Date(1999, 0, 1);
         this.isChildAddressShared = false;
     }
@@ -1344,7 +1356,9 @@ var MenteeFormComponent = /** @class */ (function () {
                     }]
             };
             _this.guardianService.add_guardian(newGuardian)
-                .subscribe(function (r) { });
+                .subscribe(function (r) {
+                _this.adminService.notify_users_change();
+            });
         }, function (error) { return console.log(error); });
     };
     MenteeFormComponent = __decorate([
@@ -1359,7 +1373,8 @@ var MenteeFormComponent = /** @class */ (function () {
             _educationSystem_educationSystem_service__WEBPACK_IMPORTED_MODULE_4__["EducationSystemService"],
             _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_5__["MenteeService"],
             _guardian_guardian_service__WEBPACK_IMPORTED_MODULE_6__["GuardianService"],
-            _school_school_service__WEBPACK_IMPORTED_MODULE_7__["SchoolService"]])
+            _school_school_service__WEBPACK_IMPORTED_MODULE_7__["SchoolService"],
+            _shared_admin_service__WEBPACK_IMPORTED_MODULE_8__["AdminService"]])
     ], MenteeFormComponent);
     return MenteeFormComponent;
 }());
@@ -2349,6 +2364,55 @@ var AccountService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../src/app/shared/admin.service.ts":
+/*!******************************************!*\
+  !*** ../src/app/shared/admin.service.ts ***!
+  \******************************************/
+/*! exports provided: AdminService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminService", function() { return AdminService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/accountservice */ "../src/app/shared/accountservice.ts");
+/* harmony import */ var rxjs_Subject__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! rxjs/Subject */ "../node_modules/rxjs-compat/_esm5/Subject.js");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+var AdminService = /** @class */ (function () {
+    function AdminService(accountService) {
+        this.accountService = accountService;
+        this.users$ = new rxjs_Subject__WEBPACK_IMPORTED_MODULE_2__["Subject"]();
+        this.get_users();
+    }
+    AdminService.prototype.get_users = function () {
+        var _this = this;
+        this.accountService.get_users().subscribe(function (data) { return _this.users$.next(data); });
+    };
+    AdminService.prototype.notify_users_change = function () {
+        this.get_users();
+    };
+    AdminService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_shared_accountservice__WEBPACK_IMPORTED_MODULE_1__["AccountService"]])
+    ], AdminService);
+    return AdminService;
+}());
+
+
+
+/***/ }),
+
 /***/ "../src/app/shared/auth-guard.service.ts":
 /*!***********************************************!*\
   !*** ../src/app/shared/auth-guard.service.ts ***!
@@ -2678,88 +2742,6 @@ var UserchartComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_mentee_mentee_service__WEBPACK_IMPORTED_MODULE_2__["MenteeService"], _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_3__["MentorService"], _director_director_service__WEBPACK_IMPORTED_MODULE_4__["DirectorService"]])
     ], UserchartComponent);
     return UserchartComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "../src/app/usertable/usertable.component.css":
-/*!****************************************************!*\
-  !*** ../src/app/usertable/usertable.component.css ***!
-  \****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = ""
-
-/***/ }),
-
-/***/ "../src/app/usertable/usertable.component.html":
-/*!*****************************************************!*\
-  !*** ../src/app/usertable/usertable.component.html ***!
-  \*****************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<mat-table [dataSource]=\"dataSource\">\r\n    <ng-container matColumnDef=\"id\">\r\n        <mat-header-cell *matHeaderCellDef>Id</mat-header-cell>\r\n        <mat-cell *matCellDef=\"let row\">{{row.id}}</mat-cell>\r\n    </ng-container>\r\n    <ng-container matColumnDef=\"userName\">\r\n        <mat-header-cell *matHeaderCellDef>User</mat-header-cell>\r\n        <mat-cell *matCellDef=\"let row\">{{row.userName}}</mat-cell>\r\n    </ng-container>\r\n    <mat-header-row *matHeaderRowDef=\"displayedColumns\"></mat-header-row>\r\n    <mat-row *matRowDef=\"let row; columns: displayedColumns\"></mat-row>\r\n</mat-table>\r\n<mat-paginator #paginator [pageSize]=\"5\" [pageSizeOptions]=\"[5, 10, 20]\">\r\n</mat-paginator>"
-
-/***/ }),
-
-/***/ "../src/app/usertable/usertable.component.ts":
-/*!***************************************************!*\
-  !*** ../src/app/usertable/usertable.component.ts ***!
-  \***************************************************/
-/*! exports provided: UsertableComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "UsertableComponent", function() { return UsertableComponent; });
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/accountservice */ "../src/app/shared/accountservice.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
-var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
-    return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (undefined && undefined.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
-
-
-
-var UsertableComponent = /** @class */ (function () {
-    function UsertableComponent(accountService) {
-        this.accountService = accountService;
-        this.dataSource = new _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatTableDataSource"]();
-        this.displayedColumns = ['id', 'userName'];
-    }
-    UsertableComponent.prototype.ngOnInit = function () {
-        var _this = this;
-        this.accountService.get_users()
-            .subscribe(function (data) {
-            _this.dataSource.data = data;
-        }, function (error) { return console.log(); });
-    };
-    UsertableComponent.prototype.ngAfterViewInit = function () {
-        this.dataSource.paginator = this.paginator;
-    };
-    __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])(_angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"]),
-        __metadata("design:type", _angular_material__WEBPACK_IMPORTED_MODULE_2__["MatPaginator"])
-    ], UsertableComponent.prototype, "paginator", void 0);
-    UsertableComponent = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
-            selector: 'meticulous-usertable',
-            template: __webpack_require__(/*! ./usertable.component.html */ "../src/app/usertable/usertable.component.html"),
-            styles: [__webpack_require__(/*! ./usertable.component.css */ "../src/app/usertable/usertable.component.css")]
-        }),
-        __metadata("design:paramtypes", [_shared_accountservice__WEBPACK_IMPORTED_MODULE_1__["AccountService"]])
-    ], UsertableComponent);
-    return UsertableComponent;
 }());
 
 

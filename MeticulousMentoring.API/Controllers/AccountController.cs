@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MeticulousMentoring.API.Data.Repositories;
 
 namespace MeticulousMentoring.API.Controllers
 {
@@ -32,15 +33,17 @@ namespace MeticulousMentoring.API.Controllers
         private readonly IConfiguration config;
 
         private readonly RoleManager<IdentityRole<int>> roleManager;
+        private readonly IAccountRepository _accountRepository;
 
         public AccountController(ILogger<AccountController> logger, SignInManager<MeticulousUser> signInManager, UserManager<MeticulousUser> userManager,
-            IConfiguration config, RoleManager<IdentityRole<int>> roleManager)
+            IConfiguration config, RoleManager<IdentityRole<int>> roleManager, IAccountRepository accountRepository)
         {
             this.logger = logger;
             this.signInManager = signInManager;
             this.userManager = userManager;
             this.config = config;
             this.roleManager = roleManager;
+            _accountRepository = accountRepository;
         }
 
         public IActionResult Login()
@@ -108,7 +111,9 @@ namespace MeticulousMentoring.API.Controllers
                                              new Claim(JwtRegisteredClaimNames.Sub, user.Email),
                                              new Claim(JwtRegisteredClaimNames.Jti, Guid.NewGuid().ToString()),
                                              new Claim(JwtRegisteredClaimNames.UniqueName, user.UserName),
-                                             new Claim(JwtRegisteredClaimNames.Iat, user.Id.ToString())
+                                             new Claim(JwtRegisteredClaimNames.Iat, user.Id.ToString()),
+                                             new Claim(JwtRegisteredClaimNames.GivenName, user.FirstName),
+                                             new Claim(JwtRegisteredClaimNames.FamilyName, user.LastName)
                                          });
 
                         claims.AddRange(await this.userManager.GetClaimsAsync(user));
@@ -158,6 +163,22 @@ namespace MeticulousMentoring.API.Controllers
             using (userManager)
             {
                 return await userManager.Users.ToListAsync();
+            }
+        }
+
+        [HttpGet]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("/api/account/GetUserWithRoles")]
+        public async Task<IActionResult> GetUserWithRoles()
+        {
+            try
+            {
+                return Ok(_accountRepository.GetUsersWithRoles());
+            }
+            catch (Exception e)
+            {
+                logger.LogError($"Failed to get users with roles: {e}");
+                return null;
             }
         }
     }

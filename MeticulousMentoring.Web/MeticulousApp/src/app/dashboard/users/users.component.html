@@ -1,0 +1,54 @@
+<div class="row">
+  <div class="col-md-12" style="display: flex;">
+    <a [routerLink]="['./users']" (click)="openMenteeFormDialog()" class="btn btn-sq-lg btn-primary">
+      <i class="fas fa-graduation-cap fa-5x"></i><br />
+      Add Mentee
+    </a>
+    <a [routerLink]="['./users']" (click)="openMentorFormDialog()" class="btn btn-sq-lg btn-warning">
+      <i class="fas fa-user-graduate fa-5x" style="color: #fff"></i><br />
+      Add Mentor
+    </a>
+    <a [routerLink]="['./users']" (click)="openDirectorFormDialog()" class="btn btn-sq-lg btn-success">
+      <i class="fas fa-chalkboard-teacher fa-5x" style="color: #fff"></i><br />
+      Add Director
+    </a>
+    <a href="#" class="btn btn-sq-lg btn-danger">
+      <i class="fas fa-user-plus fa-5x" style="color: #fff"></i><br />
+      Add Admin
+    </a>
+    <div style="display: flex; justify-content: space-between;">
+      <!--<img height="50" width="50" src='/qftapp/assets/images/adobe-pdf-icon.png' style="cursor: pointer" class="fa-2x" tooltip="Generate PDF" containerClass="customClass" [delay]="500" />
+
+      <img height="60" width="50" src='/qftapp/assets/images/excel-icon.png' style="cursor: pointer;" class="fa-2x" tooltip="Generate Spreadsheet" containerClass="customClass" [delay]="500" />-->
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12">
+    <hr />
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-12 wow fadeInUp" data-wow-delay="0.2s">
+    <table class="table table-borderless table-sm" id="usersTable">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Name</th>
+          <th>Username</th>
+          <th>Email</th>
+          <th>Role</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tr *ngFor="let user of users">
+        <td>{{user.id}}</td>
+        <td>{{user.firstName}} {{user.lastName}}</td>
+        <td>{{user.userName}}</td>
+        <td>{{user.email}}</td>
+        <td>{{user.role}}</td>
+        <td><button type="button" class="btn btn-primary">Delete</button></td>
+      </tr>
+    </table>
+  </div>
+</div>

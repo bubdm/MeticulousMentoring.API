@@ -17,6 +17,8 @@ var material_1 = require("@angular/material");
 var mentee_form_component_1 = require("../forms/mentee.form.component");
 var mentor_form_component_1 = require("../forms/mentor.form.component");
 var director_form_component_1 = require("../forms/director.form.component");
+var $ = require("jquery/dist/jquery.min.js");
+require("../../assets/script.js");
 var DashboardComponent = /** @class */ (function () {
     function DashboardComponent(userService, auth, router, dialog) {
         this.userService = userService;
@@ -25,7 +27,17 @@ var DashboardComponent = /** @class */ (function () {
         this.dialog = dialog;
         this.isExpanded = false;
     }
+    DashboardComponent.prototype.ngAfterViewInit = function () {
+    };
     DashboardComponent.prototype.ngOnInit = function () {
+        $(document).ready(function () {
+            $('#sidebarCollapse').on('click', function () {
+                $('#sidebar').toggleClass('active');
+                $('#content').toggleClass('active');
+                $('.collapse.in').toggleClass('in');
+                $('a[aria-expanded=true]').attr('aria-expanded', 'false');
+            });
+        });
         //this.user = this.userService.get();
         this.user = JSON.parse(localStorage.getItem('user'));
         if (!this.user) {
@@ -44,34 +56,6 @@ var DashboardComponent = /** @class */ (function () {
             .subscribe(function (data) {
             _this.users = new material_1.MatTableDataSource(data);
         }, function (error) { return console.log(error); });
-    };
-    DashboardComponent.prototype.openMenteeFormDialog = function () {
-        var _this = this;
-        var dialogRef = this.dialog.open(mentee_form_component_1.MenteeFormComponent, {
-            width: '800px',
-            height: '780px',
-            data: { mentee: this.mentee }
-        });
-        dialogRef.afterClosed().subscribe(function (result) {
-            _this.mentee = result;
-        });
-    };
-    DashboardComponent.prototype.openMentorFormDialog = function () {
-        var _this = this;
-        var dialogRef = this.dialog.open(mentor_form_component_1.MentorFormComponent, {
-            width: '800px',
-            height: '780px'
-        });
-        dialogRef.afterClosed().subscribe(function (result) {
-            _this.mentor = result;
-        });
-    };
-    DashboardComponent.prototype.openDirectorFormDialog = function () {
-        var diaglogRef = this.dialog.open(director_form_component_1.DirectorFormComponent, {
-            width: '800px',
-            height: '400px'
-        });
-        diaglogRef.afterClosed().subscribe(function (result) { });
     };
     DashboardComponent.prototype.logout = function () {
         this.auth.logout();

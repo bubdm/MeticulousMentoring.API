@@ -95,7 +95,9 @@ namespace MeticulousMentoring.API.Controllers
                         mentor = new MeticulousUser()
                         {
                             UserName = mentorEmail,
-                            Email = mentorEmail
+                            Email = mentorEmail,
+                            FirstName = model.MentorFirstName,
+                            LastName = model.MentorLastName
                         };
 
                         var mentorResult =

@@ -12,22 +12,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var accountservice_1 = require("../shared/accountservice");
 var user_service_1 = require("../shared/user.service");
+var admin_service_1 = require("../shared/admin.service");
 var router_1 = require("@angular/router");
 var mentee_service_1 = require("../mentee/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var AdminComponent = /** @class */ (function () {
-    function AdminComponent(userService, auth, router, menteeService, mentorService) {
+    function AdminComponent(userService, auth, router, menteeService, mentorService, adminService) {
         this.userService = userService;
         this.auth = auth;
         this.router = router;
         this.menteeService = menteeService;
         this.mentorService = mentorService;
+        this.adminService = adminService;
         this.total_mentees = 0;
         this.total_unmatched_mentees = 0;
         this.total_mentors = 0;
         this.total_male = 0;
         this.total_female = 0;
         this.math = Math;
+        this.users = new Array();
+        this.adminService.notify_users_change();
     }
     AdminComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -46,6 +50,9 @@ var AdminComponent = /** @class */ (function () {
             .subscribe(function (data) {
             _this.total_unmatched_mentees = data.length;
         });
+        this.adminService.users$.subscribe(function (data) {
+            _this.users = data;
+        });
     };
     AdminComponent = __decorate([
         core_1.Component({
@@ -57,7 +64,8 @@ var AdminComponent = /** @class */ (function () {
             accountservice_1.AccountService,
             router_1.Router,
             mentee_service_1.MenteeService,
-            mentor_service_1.MentorService])
+            mentor_service_1.MentorService,
+            admin_service_1.AdminService])
     ], AdminComponent);
     return AdminComponent;
 }());

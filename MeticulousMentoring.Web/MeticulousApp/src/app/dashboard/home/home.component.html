@@ -1,0 +1,25 @@
+<div class="row">
+  <div class="col-md-3 wow fadeInRight" data-wow-delay="0.2s" style="padding-left: 80px; padding-right: 80px;">
+    <img height="300" width="300" [src]="defaultImage" />
+  </div>
+  <div class="col-md-9 wow fadeInRight" data-wow-delay="0.4s" style="padding-right: 80px;">
+    <table class="table table-borderless table-sm">
+      <tr class="d-flex">
+        <td><strong>Id:</strong></td>
+        <td>{{user.iat}}</td>
+      </tr>
+      <tr class="d-flex">
+        <td><strong>Name:</strong></td>
+        <td>{{user.given_name}} {{user.family_name}}</td>
+      </tr>
+      <tr class="d-flex">
+        <td><strong>Email:</strong></td>
+        <td>{{user.unique_name}}</td>
+      </tr>
+      <tr class="d-flex">
+        <td><strong>Role:</strong></td>
+        <td>{{user.role}}</td>
+      </tr>
+    </table>
+  </div>
+</div>

@@ -10,15 +10,17 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
+var http_2 = require("@angular/common/http");
 var core_1 = require("@angular/core");
 var angular2_jwt_1 = require("angular2-jwt");
 var operators_1 = require("rxjs/operators");
 var user_service_1 = require("../shared/user.service");
 require("rxjs/add/operator/map");
 var AccountService = /** @class */ (function () {
-    function AccountService(http, userService) {
+    function AccountService(http, userService, httpClient) {
         this.http = http;
         this.userService = userService;
+        this.httpClient = httpClient;
         this.token = "";
         this.jwtHelper = new angular2_jwt_1.JwtHelper();
     }
@@ -47,9 +49,18 @@ var AccountService = /** @class */ (function () {
         })
             .pipe(operators_1.map(function (res) { return res.json(); }));
     };
+    AccountService.prototype.get_users_with_roles = function () {
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/account/GetUserWithRoles", httpOptions);
+    };
     AccountService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService])
+        __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService, http_2.HttpClient])
     ], AccountService);
     return AccountService;
 }());
