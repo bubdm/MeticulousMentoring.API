@@ -17,11 +17,13 @@ import { MatTableDataSource, MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@a
 import { MenteeFormComponent } from '../../forms/mentee.form.component';
 import { MentorFormComponent } from '../../forms/mentor.form.component';
 import { DirectorFormComponent } from '../../forms/director.form.component';
+import { AdminFormComponent } from '../../forms/admin-form.component';
 
 @NgModule({
   imports: [MenteeFormComponent,
     MentorFormComponent,
-    DirectorFormComponent]
+    DirectorFormComponent,
+    AdminFormComponent]
 })
 
 @Component({
@@ -34,6 +36,7 @@ export class UsersComponent implements OnInit {
   public user: User;
   public users: Array<UserView>;
   public bsModalRef: BsModalRef;
+  public user_to_delete_id: number = -1;
 
   mentee: Mentee;
   mentor: Mentor;
@@ -88,5 +91,26 @@ export class UsersComponent implements OnInit {
 
     this.bsModalRef =
       this.modalService.show(DirectorFormComponent, { initialState, animated: false });
+  }
+
+  public openAdminFormDialog() {
+    const initialState = {
+      title: "Admin"
+    }
+
+    this.bsModalRef = this.modalService.show(AdminFormComponent, { initialState, animated: false });
+  }
+
+  open_delete_modal(template: TemplateRef<any>, id: number) {
+    this.user_to_delete_id = id;
+
+    this.bsModalRef = this.modalService.show(template, { class: 'modal-sm', ignoreBackdropClick: true });
+  }
+
+  confirm_user_delete() {
+    this.accountService.deleteUser(this.user_to_delete_id).subscribe(data => {
+      this.bsModalRef.hide();
+      this.usersService.notify_users_with_roles_changed();
+    });
   }
 }

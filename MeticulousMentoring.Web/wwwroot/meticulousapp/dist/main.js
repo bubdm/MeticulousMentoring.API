@@ -705,7 +705,8 @@ var AppModule = /** @class */ (function () {
                 _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["NgSelectModule"],
                 angular_2_dropdown_multiselect__WEBPACK_IMPORTED_MODULE_12__["MultiselectDropdownModule"],
                 ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_13__["SelectDropDownModule"],
-                angular2_multiselect_dropdown_angular2_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_14__["AngularMultiSelectModule"]
+                angular2_multiselect_dropdown_angular2_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_14__["AngularMultiSelectModule"],
+                ngx_bootstrap__WEBPACK_IMPORTED_MODULE_8__["TabsModule"].forRoot()
             ],
             exports: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_33__["MenteeFormComponent"]],
             entryComponents: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_33__["MenteeFormComponent"], _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_35__["MentorFormComponent"], _forms_director_form_component__WEBPACK_IMPORTED_MODULE_36__["DirectorFormComponent"], _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_49__["MenteeDialogComponent"], _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_42__["AdminFormComponent"]],
@@ -1008,7 +1009,7 @@ module.exports = "\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-3 wow fadeInRight\" data-wow-delay=\"0.2s\" style=\"padding-left: 80px; padding-right: 80px;\">\r\n    <img height=\"300\" width=\"300\" [src]=\"defaultImage\" />\r\n  </div>\r\n  <div class=\"col-md-9 wow fadeInRight\" data-wow-delay=\"0.4s\" style=\"padding-right: 80px;\">\r\n    <table class=\"table table-borderless table-sm\">\r\n      <tr class=\"d-flex\">\r\n        <td><strong>Id:</strong></td>\r\n        <td>{{user.iat}}</td>\r\n      </tr>\r\n      <tr class=\"d-flex\">\r\n        <td><strong>Name:</strong></td>\r\n        <td>{{user.given_name}} {{user.family_name}}</td>\r\n      </tr>\r\n      <tr class=\"d-flex\">\r\n        <td><strong>Email:</strong></td>\r\n        <td>{{user.unique_name}}</td>\r\n      </tr>\r\n      <tr class=\"d-flex\">\r\n        <td><strong>Role:</strong></td>\r\n        <td>{{user.role}}</td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div [ngSwitch]=\"role\">\r\n\r\n  <div class=\"row\" *ngSwitchCase=\"'Admin'\">\r\n    <div class=\"col-md-3 wow fadeInRight\" data-wow-delay=\"0.2s\" style=\"padding-left: 80px; padding-right: 80px;\">\r\n      <img height=\"300\" width=\"300\" [src]=\"defaultImage\" />\r\n    </div>\r\n    <div class=\"col-md-9 wow fadeInRight\" data-wow-delay=\"0.4s\" style=\"padding-right: 80px;\">\r\n      <table class=\"table table-borderless table-sm\">\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Id:</strong></td>\r\n          <td>{{user.iat}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Name:</strong></td>\r\n          <td>{{user.given_name}} {{user.family_name}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Email:</strong></td>\r\n          <td>{{user.unique_name}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Role:</strong></td>\r\n          <td>{{user.role}}</td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  <mentee-profile *ngSwitchCase=\"'Mentee'\"></mentee-profile>\r\n  <mentor-profile *ngSwitchCase=\"'Mentor'\"></mentor-profile>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1055,6 +1056,7 @@ var HomeComponent = /** @class */ (function () {
         else {
             this.user = JSON.parse(localStorage.getItem('user'));
         }
+        this.role = this.user.role;
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1091,7 +1093,7 @@ module.exports = ".adobe-pdf {\r\n  color: rgba(255, 0, 0, 1);\r\n  cursor: poin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-12\" style=\"display: flex;\">\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMenteeFormDialog()\" class=\"btn btn-sq-lg btn-primary\">\r\n      <i class=\"fas fa-graduation-cap fa-5x\"></i><br />\r\n      Add Mentee\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMentorFormDialog()\" class=\"btn btn-sq-lg btn-warning\">\r\n      <i class=\"fas fa-user-graduate fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Mentor\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openDirectorFormDialog()\" class=\"btn btn-sq-lg btn-success\">\r\n      <i class=\"fas fa-chalkboard-teacher fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Director\r\n    </a>\r\n    <a href=\"#\" class=\"btn btn-sq-lg btn-danger\">\r\n      <i class=\"fas fa-user-plus fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Admin\r\n    </a>\r\n    <div style=\"display: flex; justify-content: space-between;\">\r\n      <!--<img height=\"50\" width=\"50\" src='/qftapp/assets/images/adobe-pdf-icon.png' style=\"cursor: pointer\" class=\"fa-2x\" tooltip=\"Generate PDF\" containerClass=\"customClass\" [delay]=\"500\" />\r\n\r\n      <img height=\"60\" width=\"50\" src='/qftapp/assets/images/excel-icon.png' style=\"cursor: pointer;\" class=\"fa-2x\" tooltip=\"Generate Spreadsheet\" containerClass=\"customClass\" [delay]=\"500\" />-->\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12\">\r\n    <hr />\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12 wow fadeInUp\" data-wow-delay=\"0.2s\">\r\n    <table class=\"table table-borderless table-sm\" id=\"usersTable\">\r\n      <thead>\r\n        <tr>\r\n          <th>Id</th>\r\n          <th>Name</th>\r\n          <th>Username</th>\r\n          <th>Email</th>\r\n          <th>Role</th>\r\n          <th></th>\r\n        </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let user of users\">\r\n        <td>{{user.id}}</td>\r\n        <td>{{user.firstName}} {{user.lastName}}</td>\r\n        <td>{{user.userName}}</td>\r\n        <td>{{user.email}}</td>\r\n        <td>{{user.role}}</td>\r\n        <td><button type=\"button\" class=\"btn btn-primary\">Delete</button></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-12\" style=\"display: flex;\">\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMenteeFormDialog()\" class=\"btn btn-sq-lg btn-primary\">\r\n      <i class=\"fas fa-graduation-cap fa-5x\"></i><br />\r\n      Add Mentee\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMentorFormDialog()\" class=\"btn btn-sq-lg btn-warning\">\r\n      <i class=\"fas fa-user-graduate fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Mentor\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openDirectorFormDialog()\" class=\"btn btn-sq-lg btn-success\">\r\n      <i class=\"fas fa-chalkboard-teacher fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Director\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openAdminFormDialog()\" class=\"btn btn-sq-lg btn-danger\">\r\n      <i class=\"fas fa-user-plus fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Admin\r\n    </a>\r\n    <div style=\"display: flex; justify-content: space-between;\">\r\n      <!--<img height=\"50\" width=\"50\" src='/qftapp/assets/images/adobe-pdf-icon.png' style=\"cursor: pointer\" class=\"fa-2x\" tooltip=\"Generate PDF\" containerClass=\"customClass\" [delay]=\"500\" />\r\n\r\n      <img height=\"60\" width=\"50\" src='/qftapp/assets/images/excel-icon.png' style=\"cursor: pointer;\" class=\"fa-2x\" tooltip=\"Generate Spreadsheet\" containerClass=\"customClass\" [delay]=\"500\" />-->\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12\">\r\n    <hr />\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12 wow fadeInUp\" data-wow-delay=\"0.2s\">\r\n    <table class=\"table table-borderless table-sm\" id=\"usersTable\">\r\n      <thead>\r\n        <tr>\r\n          <th>Id</th>\r\n          <th>Name</th>\r\n          <th>Username</th>\r\n          <th>Email</th>\r\n          <th>Role</th>\r\n          <th></th>\r\n        </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let user of users\">\r\n        <td>{{user.id}}</td>\r\n        <td>{{user.firstName}} {{user.lastName}}</td>\r\n        <td>{{user.userName}}</td>\r\n        <td>{{user.email}}</td>\r\n        <td>{{user.role}}</td>\r\n        <td><button type=\"button\" (click)=\"open_delete_modal(template, user.id)\" style=\"cursor: pointer;\" class=\"btn btn-primary\">Delete</button></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n<ng-template #template>\r\n  <div class=\"modal-body text-center\">\r\n    <p>Are you sure you want to delete this user?</p>\r\n    <button type=\"button\" class=\"btn btn-success\" style=\"margin: 5px;\" (click)=\"confirm_user_delete()\">Yes</button>\r\n    <button type=\"button\" class=\"btn btn-primary\" style=\"margin: 5px;\" (click)=\"this.bsModalRef.hide()\">No</button>\r\n  </div>\r\n</ng-template>\r\n"
 
 /***/ }),
 
@@ -1115,6 +1117,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../../forms/mentee.form.component */ "../src/app/forms/mentee.form.component.ts");
 /* harmony import */ var _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../forms/mentor.form.component */ "../src/app/forms/mentor.form.component.ts");
 /* harmony import */ var _forms_director_form_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../forms/director.form.component */ "../src/app/forms/director.form.component.ts");
+/* harmony import */ var _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../forms/admin-form.component */ "../src/app/forms/admin-form.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1134,6 +1137,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var UsersComponent = /** @class */ (function () {
     /** users ctor */
     function UsersComponent(usersService, userService, accountService, router, dialog, modalService) {
@@ -1143,6 +1147,7 @@ var UsersComponent = /** @class */ (function () {
         this.router = router;
         this.dialog = dialog;
         this.modalService = modalService;
+        this.user_to_delete_id = -1;
         this.users = new Array();
         this.usersService.notify_users_with_roles_changed();
     }
@@ -1179,11 +1184,29 @@ var UsersComponent = /** @class */ (function () {
         this.bsModalRef =
             this.modalService.show(_forms_director_form_component__WEBPACK_IMPORTED_MODULE_9__["DirectorFormComponent"], { initialState: initialState, animated: false });
     };
+    UsersComponent.prototype.openAdminFormDialog = function () {
+        var initialState = {
+            title: "Admin"
+        };
+        this.bsModalRef = this.modalService.show(_forms_admin_form_component__WEBPACK_IMPORTED_MODULE_10__["AdminFormComponent"], { initialState: initialState, animated: false });
+    };
+    UsersComponent.prototype.open_delete_modal = function (template, id) {
+        this.user_to_delete_id = id;
+        this.bsModalRef = this.modalService.show(template, { class: 'modal-sm', ignoreBackdropClick: true });
+    };
+    UsersComponent.prototype.confirm_user_delete = function () {
+        var _this = this;
+        this.accountService.deleteUser(this.user_to_delete_id).subscribe(function (data) {
+            _this.bsModalRef.hide();
+            _this.usersService.notify_users_with_roles_changed();
+        });
+    };
     UsersComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
             imports: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_7__["MenteeFormComponent"],
                 _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_8__["MentorFormComponent"],
-                _forms_director_form_component__WEBPACK_IMPORTED_MODULE_9__["DirectorFormComponent"]]
+                _forms_director_form_component__WEBPACK_IMPORTED_MODULE_9__["DirectorFormComponent"],
+                _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_10__["AdminFormComponent"]]
         }),
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'users',
@@ -1383,7 +1406,7 @@ module.exports = "\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div style=\"border: 1px solid red\">admin.form Component</div>"
+module.exports = "<div class=\"modal-header\">\r\n  <div class=\"pull-left\">\r\n    <h4 class=\"modal-title pull-left\">REGISTER NEW ADMINISTRATOR</h4>\r\n  </div>\r\n  <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"hide_modal()\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n  <div style=\"clear: both;\"></div>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <form [formGroup]=\"adminForm\">\r\n    <div class=\"form-row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <input class=\"form-control\" placeholder=\"First Name\" formControlName=\"first_name\" required />\r\n      </div>\r\n      <div class=\"form-group col-md-6\">\r\n        <input class=\"form-control\" placeholder=\"Last Name\" formControlName=\"last_name\" required />\r\n      </div>\r\n    </div>\r\n    <div class=\"form-row\">\r\n      <div class=\"form-group col-md-6\">\r\n        <input class=\"form-control\" placeholder=\"Email\" formControlName=\"email\" />\r\n      </div>\r\n    </div>\r\n  </form>\r\n</div>\r\n<div class=\"modal-footer\">\r\n  <button type=\"button\" class=\"btn btn-success\" (click)=\"submitAdmin()\" [disabled]=\"!adminForm.valid\">Submit</button>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1398,6 +1421,11 @@ module.exports = "<div style=\"border: 1px solid red\">admin.form Component</div
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminFormComponent", function() { return AdminFormComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ngx-bootstrap/modal */ "../node_modules/ngx-bootstrap/modal/index.js");
+/* harmony import */ var _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../dashboard/users/users.service */ "../src/app/dashboard/users/users.service.ts");
+/* harmony import */ var _shared_accountservice__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/accountservice */ "../src/app/shared/accountservice.ts");
+/* harmony import */ var _models_adminview__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../models/adminview */ "../src/app/models/adminview.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1408,10 +1436,41 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+
+
+
+
+
 var AdminFormComponent = /** @class */ (function () {
     /** admin.form ctor */
-    function AdminFormComponent() {
+    function AdminFormComponent(formBuilder, accountService, bsModalRef, usersService) {
+        this.formBuilder = formBuilder;
+        this.accountService = accountService;
+        this.bsModalRef = bsModalRef;
+        this.usersService = usersService;
+        this.admin = new _models_adminview__WEBPACK_IMPORTED_MODULE_5__["AdminView"]();
     }
+    AdminFormComponent.prototype.ngOnInit = function () {
+        this.adminForm = this.formBuilder.group({
+            first_name: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            last_name: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required],
+            email: ["", _angular_forms__WEBPACK_IMPORTED_MODULE_1__["Validators"].required]
+        });
+    };
+    AdminFormComponent.prototype.submitAdmin = function () {
+        var _this = this;
+        var adminDto = this.adminForm.value;
+        this.admin.adminFirstName = adminDto.first_name;
+        this.admin.adminLastName = adminDto.last_name;
+        this.admin.adminEmail = adminDto.email;
+        var response = this.accountService.add_admin(this.admin).subscribe(function (data) {
+            _this.hide_modal();
+            _this.usersService.notify_users_with_roles_changed();
+        });
+    };
+    AdminFormComponent.prototype.hide_modal = function () {
+        this.bsModalRef.hide();
+    };
     AdminFormComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'admin-form',
@@ -1420,7 +1479,10 @@ var AdminFormComponent = /** @class */ (function () {
         })
         /** admin.form component*/
         ,
-        __metadata("design:paramtypes", [])
+        __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
+            _shared_accountservice__WEBPACK_IMPORTED_MODULE_4__["AccountService"],
+            ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_2__["BsModalRef"],
+            _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_3__["UsersService"]])
     ], AdminFormComponent);
     return AdminFormComponent;
 }());
@@ -2195,7 +2257,7 @@ module.exports = "body {\r\n}\r\n\r\n.meticulous-container {\r\n    margin: 20px
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid meticulous-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-xl-3\">\r\n            <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\"></div>\r\n        </div>\r\n        <div class=\"col-xl-9\">\r\n\r\n            <div class=\"row first-name\">\r\n                {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n            </div>\r\n            <div class=\"row\">\r\n                Classification: {{mentee.menteeClassification.description}}\r\n            </div>\r\n            <div class=\"row\">\r\n                Birthdate:  {{mentee.menteeDOB | date}}\r\n            </div>\r\n            <div class=\"row\">\r\n                <button type=\"button\" class=\"btn btn-primary\">\r\n                    Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n                </button>\r\n            </div>\r\n\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\">\r\n                <mat-tab-group>\r\n                    <mat-tab label=\"Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-info-circle\"></i>Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Address:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\" style=\"margin-top: 20px; margin-bottom: 20px;\">School Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">School:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    {{mentee.menteeSchool.school_name}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Principal:</div>\r\n                                <div class=\"col-sm-9\">{{mentee.menteeSchool.principal}}</div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Timeline\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-clock-o\"></i>Timeline</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n\r\n                                    <div style=\"display:inline-block;width:100%;overflow-y:auto;\">\r\n                                        <ul class=\"timeline timeline-horizontal\">\r\n                                            <li *ngFor=\"let t of timelineData\" class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge primary\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\"></h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> {{t.timeline_date | date}}</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>{{t.detail}}</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <!--<li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge success\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 2</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge info\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 3</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. Mé faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>-->\r\n                                        </ul>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Guardian Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-shield\"></i>Guardian Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin:0; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Guardian:\r\n                                </div>\r\n                                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                                    {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                                </div>\r\n                            </div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">\r\n                                    Address:\r\n                                </div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                                <div class=\"col-sm-3\">Email:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Mentee Grades\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-graduation-cap\"></i>Grades</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 0; font-style: normal;\">\r\n\r\n                            <table class=\"table table-sm\">\r\n                                <thead class=\"thead-dark\">\r\n                                    <tr>\r\n                                        <th>Subject</th>\r\n                                        <th *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs\">\r\n                                            {{group[0]}}\r\n                                        </th>\r\n                                    </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let subjectGroup of grades | groupBy: ['gradeCourse.course_name'] | pairs\">\r\n                                        <th>{{subjectGroup[0]}}</th>\r\n                                        <td *ngFor=\"let s of subjectGroup[1]\">{{s.gradeValue | round: 2}}</td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n\r\n                            <form [formGroup]=\"myForm\" novalidate class=\"form-inline\">\r\n                                <div formArrayName=\"grades\">\r\n                                    <div *ngFor=\"let grade of myForm.controls.grades.controls; let i=index\" class=\"panel panel-default\">\r\n                                        <div class=\"panel-body\" [formGroupName]=\"i\">\r\n                                            <div class=\"form-row\">\r\n                                                <div class=\"col-xs-3\"></div>\r\n                                                <div class=\"col-xs-3\">\r\n                                                    <select class=\"form-control-sm\" formControlName=\"period\">\r\n                                                        <option [ngValue]=\"-1\" [selected]=\"true\">--- Select Grading Period---</option>\r\n                                                        <option *ngFor=\"let period of gradingPeriods\" [ngValue]=\"period.id\">{{period.description}}</option>\r\n                                                    </select>\r\n                                                </div>\r\n                                                <div class=\"col-xs-3\">\r\n                                                    <select class=\"form-control-sm\" formControlName=\"course\">\r\n                                                        <option [selected]=\"true\">--- Select Course ---</option>\r\n                                                        <option *ngFor=\"let course of courses\" [ngValue]=\"course.id\">{{course.course_name}}</option>\r\n                                                    </select>\r\n                                                </div>\r\n                                                <div class=\"col-xs-2\">\r\n                                                    <input type=\"text\" class=\"form-control-sm\" formControlName=\"value\" placeholder=\"Value\" />\r\n                                                </div>\r\n                                                <div class=\"col-xs-1\">\r\n                                                    <span class=\"fa fa-remove pull-right\" (click)=\"removeGrade(i)\"></span>\r\n                                                </div>\r\n                                            </div>\r\n                                        </div>\r\n                                    </div>\r\n                                </div>\r\n                            </form>\r\n\r\n                            <div style=\"text-align: center; margin: 10px;\">\r\n                                <button class=\"btn btn-primary\" (click)=\"add_blank_grade()\">Add Grade</button>\r\n                                <button [disabled]=\"!myForm.valid\" *ngIf=\"myForm.controls.grades.controls.length > 0\" class=\"btn btn-success\" (click)=\"save_grades(myForm)\">Save Grade(s)</button>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                </mat-tab-group>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-3\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\"></div>\r\n    </div>\r\n    <div class=\"col-xl-9\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeDOB | date}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeClassification.description}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeSchool.school_name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">Address:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Guardian Information\">\r\n            <div style=\"margin:0; font-style: normal;\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Guardian:\r\n                </div>\r\n                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                  {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Address:\r\n                </div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentee Grades\">\r\n            <div style=\"margin: 0; font-style: normal;\">\r\n\r\n              <table class=\"table table-sm\">\r\n                <thead class=\"thead-dark\">\r\n                  <tr>\r\n                    <th>Subject</th>\r\n                    <th *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs\">\r\n                      {{group[0]}}\r\n                    </th>\r\n                  </tr>\r\n                </thead>\r\n                <tbody>\r\n                  <tr *ngFor=\"let subjectGroup of grades | groupBy: ['gradeCourse.course_name'] | pairs\">\r\n                    <th>{{subjectGroup[0]}}</th>\r\n                    <td *ngFor=\"let s of subjectGroup[1]\">{{s.gradeValue | round: 2}}</td>\r\n                  </tr>\r\n                </tbody>\r\n              </table>\r\n\r\n              <form [formGroup]=\"myForm\" novalidate class=\"form-inline\">\r\n                <div formArrayName=\"grades\">\r\n                  <div *ngFor=\"let grade of myForm.controls.grades.controls; let i=index\" class=\"panel panel-default\">\r\n                    <div class=\"panel-body\" [formGroupName]=\"i\">\r\n                      <div class=\"form-row\">\r\n                        <div class=\"col-xs-3\"></div>\r\n                        <div class=\"col-xs-3\">\r\n                          <select class=\"form-control-sm\" formControlName=\"period\">\r\n                            <option [ngValue]=\"-1\" [selected]=\"true\">--- Select Grading Period---</option>\r\n                            <option *ngFor=\"let period of gradingPeriods\" [ngValue]=\"period.id\">{{period.description}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"col-xs-3\">\r\n                          <select class=\"form-control-sm\" formControlName=\"course\">\r\n                            <option [selected]=\"true\">--- Select Course ---</option>\r\n                            <option *ngFor=\"let course of courses\" [ngValue]=\"course.id\">{{course.course_name}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"col-xs-2\">\r\n                          <input type=\"text\" class=\"form-control-sm\" formControlName=\"value\" placeholder=\"Value\" />\r\n                        </div>\r\n                        <div class=\"col-xs-1\">\r\n                          <span class=\"fa fa-remove pull-right\" (click)=\"removeGrade(i)\"></span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </form>\r\n\r\n              <div style=\"text-align: center; margin: 10px;\">\r\n                <button class=\"btn btn-primary\" (click)=\"add_blank_grade()\">Add Grade</button>\r\n                <button [disabled]=\"!myForm.valid\" *ngIf=\"myForm.controls.grades.controls.length > 0\" class=\"btn btn-success\" (click)=\"save_grades(myForm)\">Save Grade(s)</button>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2642,6 +2704,26 @@ var MentorService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../src/app/models/adminview.ts":
+/*!**************************************!*\
+  !*** ../src/app/models/adminview.ts ***!
+  \**************************************/
+/*! exports provided: AdminView */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "AdminView", function() { return AdminView; });
+var AdminView = /** @class */ (function () {
+    function AdminView() {
+    }
+    return AdminView;
+}());
+
+
+
+/***/ }),
+
 /***/ "../src/app/school/school.service.ts":
 /*!*******************************************!*\
   !*** ../src/app/school/school.service.ts ***!
@@ -2766,6 +2848,20 @@ var AccountService = /** @class */ (function () {
             })
         };
         return this.httpClient.get("http://localhost:5005/api/account/GetUserWithRoles", httpOptions);
+    };
+    AccountService.prototype.add_admin = function (admin) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.post("http://localhost:5005/api/account/AddAdmin", admin, httpOptions);
+    };
+    AccountService.prototype.deleteUser = function (id) {
+        return this.http.delete("http://localhost:5005/api/account/deleteUser/" + id, {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        }).pipe();
     };
     AccountService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),

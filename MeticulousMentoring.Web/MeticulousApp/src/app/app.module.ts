@@ -6,7 +6,7 @@ import { ChartsModule } from "ng2-charts/ng2-charts";
 import { CommonModule } from "@angular/common";
 import { HttpClientModule } from '@angular/common/http';
 import { NgPipesModule } from "ngx-pipes";
-import { BsDatepickerModule, ModalModule, TooltipModule } from 'ngx-bootstrap';
+import { BsDatepickerModule, ModalModule, TooltipModule, TabsModule } from 'ngx-bootstrap';
 import { ArchwizardModule } from 'angular-archwizard';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
@@ -172,7 +172,8 @@ export const routes = [
     NgSelectModule,
     MultiselectDropdownModule,
     SelectDropDownModule,
-    AngularMultiSelectModule
+    AngularMultiSelectModule,
+    TabsModule.forRoot()
 
   ],
   exports: [MenteeFormComponent],

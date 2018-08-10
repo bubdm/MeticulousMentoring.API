@@ -6,6 +6,7 @@ import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { UserService } from "../shared/user.service";
 import { UserView } from '../models/userview';
+import { AdminView } from '../models/adminview';
 import 'rxjs/add/operator/map';
 
 @Injectable()
@@ -52,5 +53,23 @@ export class AccountService {
     };
 
     return this.httpClient.get<UserView[]>("http://localhost:5005/api/account/GetUserWithRoles", httpOptions);
+  }
+
+  public add_admin(admin: AdminView) {
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
+      })
+    };
+
+    return this.httpClient.post<AdminView[]>("http://localhost:5005/api/account/AddAdmin", admin, httpOptions);
+  }
+
+  public deleteUser(id: number) {
+    return this.http.delete("http://localhost:5005/api/account/deleteUser/" + id,
+      {
+        headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+      }).pipe();
   }
 }

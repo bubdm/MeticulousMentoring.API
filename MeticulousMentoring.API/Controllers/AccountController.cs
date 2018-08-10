@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MeticulousMentoring.API.Data;
 using MeticulousMentoring.API.Data.Repositories;
 
 namespace MeticulousMentoring.API.Controllers
@@ -34,9 +35,10 @@ namespace MeticulousMentoring.API.Controllers
 
         private readonly RoleManager<IdentityRole<int>> roleManager;
         private readonly IAccountRepository _accountRepository;
+        private readonly MeticulousContext _ctx;
 
         public AccountController(ILogger<AccountController> logger, SignInManager<MeticulousUser> signInManager, UserManager<MeticulousUser> userManager,
-            IConfiguration config, RoleManager<IdentityRole<int>> roleManager, IAccountRepository accountRepository)
+            IConfiguration config, RoleManager<IdentityRole<int>> roleManager, IAccountRepository accountRepository, MeticulousContext ctx)
         {
             this.logger = logger;
             this.signInManager = signInManager;
@@ -44,6 +46,7 @@ namespace MeticulousMentoring.API.Controllers
             this.config = config;
             this.roleManager = roleManager;
             _accountRepository = accountRepository;
+            _ctx = ctx;
         }
 
         public IActionResult Login()
@@ -179,6 +182,83 @@ namespace MeticulousMentoring.API.Controllers
             {
                 logger.LogError($"Failed to get users with roles: {e}");
                 return null;
+            }
+        }
+
+        [HttpPost]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("/api/account/AddAdmin")]
+        public async Task<IActionResult> AddAdmin([FromBody] AdminViewModel model)
+        {
+            try
+            {
+                if (ModelState.IsValid)
+                {
+                    var admin = await userManager.FindByEmailAsync(model.AdminEmail);
+                    if (admin == null)
+                    {
+                        admin = new MeticulousUser()
+                        {
+                            UserName = model.AdminEmail,
+                            Email = model.AdminEmail,
+                            FirstName = model.AdminFirstName,
+                            LastName = model.AdminLastName
+                        };
+
+                        var adminResult = await userManager.CreateAsync(admin,
+                            $"{model.AdminLastName}{DateTime.Now.Year}!");
+
+                        if (adminResult == IdentityResult.Success)
+                        {
+                            await userManager.AddToRoleAsync(admin, "Admin");
+                            return Ok();
+                        }
+                    }
+                }
+                else
+                {
+                    return BadRequest(ModelState);
+                }
+            }
+            catch (Exception e)
+            {
+                this.logger.LogError($"Could not save Admin: {e}");
+            }
+
+            return BadRequest("Failed to save Admin");
+        }
+
+        [HttpDelete]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("/api/account/DeleteUser/{id}")]
+        public async Task<IActionResult> DeleteUser(int id)
+        {
+            if (await _accountRepository.deleteUser(id))
+            {
+                var timelineEntries = _ctx.TimeLine.Where(x => x.user_id == id).ToList();
+                _ctx.TimeLine.RemoveRange(timelineEntries);
+
+                var user = await userManager.FindByIdAsync(id.ToString());
+                if (user != null)
+                {
+                    if (_ctx.SaveChanges() > -1)
+                    {
+                        await userManager.DeleteAsync(user);
+                        return Ok();
+                    }
+                    else
+                    {
+                        return BadRequest("Couldn't delete user");
+                    }
+                }
+                else
+                {
+                    return NotFound("User not found!");
+                }
+            }
+            else
+            {
+                return BadRequest("Could not delete user related data");
             }
         }
     }

@@ -15,7 +15,6 @@ var mentee_service_1 = require("../mentee/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var modal_1 = require("ngx-bootstrap/modal");
 var users_service_1 = require("../dashboard/users/users.service");
-var $ = require("jquery/dist/jquery.min.js");
 require("../../assets/script.js");
 var MentorFormComponent = /** @class */ (function () {
     function MentorFormComponent(formBuilder, menteeService, mentorService, bsModalRef, usersService) {
@@ -24,33 +23,21 @@ var MentorFormComponent = /** @class */ (function () {
         this.mentorService = mentorService;
         this.bsModalRef = bsModalRef;
         this.usersService = usersService;
+        this.mentees = [];
         this.genders = [{ gender: "M", description: "Male" },
             { gender: "F", description: "Female" }];
         // Settings configuration
-        this.mySettings = {
-            enableSearch: true,
-            checkedStyle: 'fontawesome',
-            buttonClasses: 'btn btn-default btn-block',
-            dynamicTitleMaxItems: 3,
-            displayAllSelectedText: true
-        };
-        // Text configuration
-        this.myTexts = {
-            checkAll: 'Select all',
-            uncheckAll: 'Unselect all',
-            checked: 'item selected',
-            checkedPlural: 'items selected',
-            searchPlaceholder: 'Find',
-            searchEmptyResult: 'Nothing found...',
-            searchNoRenderText: 'Type in search box to see results...',
-            defaultTitle: 'Select',
-            allSelected: 'All selected',
-        };
+        this.dropdownSettings = {};
+        this.selectedItems = [];
     }
     MentorFormComponent.prototype.ngOnInit = function () {
-        $(document).ready(function () {
-            $('#mentee-multi-options').multiselect();
-        });
+        this.dropdownSettings = {
+            text: "Select Mentee(s)",
+            selectAllText: "Select All",
+            unSelectAllText: "UnSelect All",
+            primaryKey: "menteeId",
+            labelKey: 'menteeFirstName'
+        };
         this.getAllMentees();
         this.mentorForm = this.formBuilder.group({
             first_name: ["", forms_1.Validators.required],
@@ -89,11 +76,26 @@ var MentorFormComponent = /** @class */ (function () {
         };
         var response = this.mentorService.add_mentor(newMentor)
             .subscribe(function (data) {
+            _this.hide_modal();
             _this.usersService.notify_users_with_roles_changed();
         });
     };
     MentorFormComponent.prototype.hide_modal = function () {
         this.bsModalRef.hide();
+    };
+    MentorFormComponent.prototype.onItemSelect = function (item) {
+        console.log(item);
+        console.log(this.selectedItems);
+    };
+    MentorFormComponent.prototype.OnItemDeSelect = function (item) {
+        console.log(item);
+        console.log(this.selectedItems);
+    };
+    MentorFormComponent.prototype.onSelectAll = function (items) {
+        console.log(items);
+    };
+    MentorFormComponent.prototype.onDeSelectAll = function (items) {
+        console.log(items);
     };
     MentorFormComponent = __decorate([
         core_1.Component({

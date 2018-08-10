@@ -19,6 +19,7 @@ var material_1 = require("@angular/material");
 var mentee_form_component_1 = require("../../forms/mentee.form.component");
 var mentor_form_component_1 = require("../../forms/mentor.form.component");
 var director_form_component_1 = require("../../forms/director.form.component");
+var admin_form_component_1 = require("../../forms/admin-form.component");
 var UsersComponent = /** @class */ (function () {
     /** users ctor */
     function UsersComponent(usersService, userService, accountService, router, dialog, modalService) {
@@ -28,6 +29,7 @@ var UsersComponent = /** @class */ (function () {
         this.router = router;
         this.dialog = dialog;
         this.modalService = modalService;
+        this.user_to_delete_id = -1;
         this.users = new Array();
         this.usersService.notify_users_with_roles_changed();
     }
@@ -58,17 +60,35 @@ var UsersComponent = /** @class */ (function () {
             this.modalService.show(mentor_form_component_1.MentorFormComponent, { initialState: initialState, "class": 'modal-lg', animated: false });
     };
     UsersComponent.prototype.openDirectorFormDialog = function () {
-        var diaglogRef = this.dialog.open(director_form_component_1.DirectorFormComponent, {
-            width: '800px',
-            height: '400px'
+        var initialState = {
+            title: "Director"
+        };
+        this.bsModalRef =
+            this.modalService.show(director_form_component_1.DirectorFormComponent, { initialState: initialState, animated: false });
+    };
+    UsersComponent.prototype.openAdminFormDialog = function () {
+        var initialState = {
+            title: "Admin"
+        };
+        this.bsModalRef = this.modalService.show(admin_form_component_1.AdminFormComponent, { initialState: initialState, animated: false });
+    };
+    UsersComponent.prototype.open_delete_modal = function (template, id) {
+        this.user_to_delete_id = id;
+        this.bsModalRef = this.modalService.show(template, { class: 'modal-sm', ignoreBackdropClick: true });
+    };
+    UsersComponent.prototype.confirm_user_delete = function () {
+        var _this = this;
+        this.accountService.deleteUser(this.user_to_delete_id).subscribe(function (data) {
+            _this.bsModalRef.hide();
+            _this.usersService.notify_users_with_roles_changed();
         });
-        diaglogRef.afterClosed().subscribe(function (result) { });
     };
     UsersComponent = __decorate([
         core_1.NgModule({
             imports: [mentee_form_component_1.MenteeFormComponent,
                 mentor_form_component_1.MentorFormComponent,
-                director_form_component_1.DirectorFormComponent]
+                director_form_component_1.DirectorFormComponent,
+                admin_form_component_1.AdminFormComponent]
         }),
         core_1.Component({
             selector: 'users',

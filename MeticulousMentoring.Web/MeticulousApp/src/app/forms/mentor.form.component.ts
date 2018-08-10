@@ -1,13 +1,10 @@
 import { Component, Inject, NgModule, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ClassificationService } from '../classification/classification.service';
-import { EducationSystemService } from '../educationSystem/educationSystem.service';
 import { MenteeService } from '../mentee/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
 import { Mentee } from '../interfaces/mentee';
 import { BsModalRef } from "ngx-bootstrap/modal";
 import { UsersService } from '../dashboard/users/users.service';
-import { IMultiSelectOption, IMultiSelectSettings, IMultiSelectTexts } from 'angular-2-dropdown-multiselect';
 import * as $ from "jquery/dist/jquery.min.js";
 import "../../assets/script.js";
 

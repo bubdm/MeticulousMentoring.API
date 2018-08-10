@@ -20,6 +20,7 @@ var ng_multiselect_dropdown_1 = require("ng-multiselect-dropdown");
 var ng_select_1 = require("@ng-select/ng-select");
 var angular_2_dropdown_multiselect_1 = require("angular-2-dropdown-multiselect");
 var ngx_select_dropdown_1 = require("ngx-select-dropdown");
+var angular2_multiselect_dropdown_1 = require("angular2-multiselect-dropdown/angular2-multiselect-dropdown");
 var app_component_1 = require("./app.component");
 var app_header_component_1 = require("./app-header.component");
 var login_component_1 = require("./login/login.component");
@@ -47,6 +48,7 @@ var admin_service_1 = require("./shared/admin.service");
 var users_component_1 = require("./dashboard/users/users.component");
 var users_service_1 = require("./dashboard/users/users.service");
 var home_component_1 = require("./dashboard/home/home.component");
+var admin_form_component_1 = require("./forms/admin-form.component");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
 var auth_guard_service_1 = require("./shared/auth-guard.service");
@@ -85,7 +87,8 @@ var AppModule = /** @class */ (function () {
                 mentor_profile_component_1.MentorProfileComponent,
                 mentee_dialog_component_1.MenteeDialogComponent,
                 users_component_1.UsersComponent,
-                home_component_1.HomeComponent
+                home_component_1.HomeComponent,
+                admin_form_component_1.AdminFormComponent
             ],
             imports: [
                 platform_browser_1.BrowserModule,
@@ -141,10 +144,11 @@ var AppModule = /** @class */ (function () {
                 ng_multiselect_dropdown_1.NgMultiSelectDropDownModule.forRoot(),
                 ng_select_1.NgSelectModule,
                 angular_2_dropdown_multiselect_1.MultiselectDropdownModule,
-                ngx_select_dropdown_1.SelectDropDownModule
+                ngx_select_dropdown_1.SelectDropDownModule,
+                angular2_multiselect_dropdown_1.AngularMultiSelectModule
             ],
             exports: [mentee_form_component_1.MenteeFormComponent],
-            entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent, mentee_dialog_component_1.MenteeDialogComponent],
+            entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent, mentee_dialog_component_1.MenteeDialogComponent, admin_form_component_1.AdminFormComponent],
             providers: [
                 accountservice_1.AccountService,
                 auth_guard_service_1.AuthGuard,

@@ -26,5 +26,6 @@ export class HomeComponent implements OnInit {
     } else {
       this.user = JSON.parse(localStorage.getItem('user'));
     }
+    this.role = this.user.role;
   }
 }

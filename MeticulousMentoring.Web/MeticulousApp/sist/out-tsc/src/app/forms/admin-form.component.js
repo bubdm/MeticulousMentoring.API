@@ -11,54 +11,54 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var director_service_1 = require("../director/director.service");
 var modal_1 = require("ngx-bootstrap/modal");
 var users_service_1 = require("../dashboard/users/users.service");
-var DirectorFormComponent = /** @class */ (function () {
-    function DirectorFormComponent(formBuilder, directorService, bsModalRef, userService) {
+var accountservice_1 = require("../shared/accountservice");
+var adminview_1 = require("../models/adminview");
+var AdminFormComponent = /** @class */ (function () {
+    /** admin.form ctor */
+    function AdminFormComponent(formBuilder, accountService, bsModalRef, usersService) {
         this.formBuilder = formBuilder;
-        this.directorService = directorService;
+        this.accountService = accountService;
         this.bsModalRef = bsModalRef;
-        this.userService = userService;
+        this.usersService = usersService;
+        this.admin = new adminview_1.AdminView();
     }
-    DirectorFormComponent.prototype.ngOnInit = function () {
-        this.directorForm = this.formBuilder.group({
+    AdminFormComponent.prototype.ngOnInit = function () {
+        this.adminForm = this.formBuilder.group({
             first_name: ["", forms_1.Validators.required],
             last_name: ["", forms_1.Validators.required],
             email: ["", forms_1.Validators.required]
         });
     };
-    DirectorFormComponent.prototype.onNoClick = function () {
-    };
-    DirectorFormComponent.prototype.submitDirector = function () {
+    AdminFormComponent.prototype.submitAdmin = function () {
         var _this = this;
-        var directorDto = this.directorForm.value;
-        var newDirector = {
-            DirectorFirstName: directorDto.first_name,
-            DirectorLastName: directorDto.last_name,
-            DirectorEmail: directorDto.email
-        };
-        var response = this.directorService.add_director(newDirector)
-            .subscribe(function (data) {
+        var adminDto = this.adminForm.value;
+        this.admin.adminFirstName = adminDto.first_name;
+        this.admin.adminLastName = adminDto.last_name;
+        this.admin.adminEmail = adminDto.email;
+        var response = this.accountService.add_admin(this.admin).subscribe(function (data) {
             _this.hide_modal();
-            _this.userService.notify_users_with_roles_changed();
+            _this.usersService.notify_users_with_roles_changed();
         });
     };
-    DirectorFormComponent.prototype.hide_modal = function () {
+    AdminFormComponent.prototype.hide_modal = function () {
         this.bsModalRef.hide();
     };
-    DirectorFormComponent = __decorate([
+    AdminFormComponent = __decorate([
         core_1.Component({
-            selector: 'director-form',
-            templateUrl: 'director.form.component.html',
-            styleUrls: ['director.form.component.css']
-        }),
+            selector: 'admin-form',
+            templateUrl: './admin-form.component.html',
+            styleUrls: ['./admin-form.component.css']
+        })
+        /** admin.form component*/
+        ,
         __metadata("design:paramtypes", [forms_1.FormBuilder,
-            director_service_1.DirectorService,
+            accountservice_1.AccountService,
             modal_1.BsModalRef,
             users_service_1.UsersService])
-    ], DirectorFormComponent);
-    return DirectorFormComponent;
+    ], AdminFormComponent);
+    return AdminFormComponent;
 }());
-exports.DirectorFormComponent = DirectorFormComponent;
-//# sourceMappingURL=director.form.component.js.map
+exports.AdminFormComponent = AdminFormComponent;
+//# sourceMappingURL=admin-form.component.js.map

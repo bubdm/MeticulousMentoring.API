@@ -1,1 +1,29 @@
-﻿<div style="border: 1px solid red">admin.form Component</div>
+<div class="modal-header">
+  <div class="pull-left">
+    <h4 class="modal-title pull-left">REGISTER NEW ADMINISTRATOR</h4>
+  </div>
+  <button type="button" class="close pull-right" aria-label="Close" (click)="hide_modal()">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  <div style="clear: both;"></div>
+</div>
+<div class="modal-body">
+  <form [formGroup]="adminForm">
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="First Name" formControlName="first_name" required />
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="Last Name" formControlName="last_name" required />
+      </div>
+    </div>
+    <div class="form-row">
+      <div class="form-group col-md-6">
+        <input class="form-control" placeholder="Email" formControlName="email" />
+      </div>
+    </div>
+  </form>
+</div>
+<div class="modal-footer">
+  <button type="button" class="btn btn-success" (click)="submitAdmin()" [disabled]="!adminForm.valid">Submit</button>
+</div>

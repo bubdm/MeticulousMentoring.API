@@ -10,5 +10,7 @@ namespace MeticulousMentoring.API.Data.Repositories
     public interface IAccountRepository
     {
         IEnumerable<UserViewModel> GetUsersWithRoles();
+
+        Task<bool> deleteUser(int id);
     }
 }

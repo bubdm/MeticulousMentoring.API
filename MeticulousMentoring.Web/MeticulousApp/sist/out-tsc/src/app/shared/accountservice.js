@@ -58,6 +58,20 @@ var AccountService = /** @class */ (function () {
         };
         return this.httpClient.get("http://localhost:5005/api/account/GetUserWithRoles", httpOptions);
     };
+    AccountService.prototype.add_admin = function (admin) {
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.post("http://localhost:5005/api/account/AddAdmin", admin, httpOptions);
+    };
+    AccountService.prototype.deleteUser = function (id) {
+        return this.http.delete("http://localhost:5005/api/account/deleteUser/" + id, {
+            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        }).pipe();
+    };
     AccountService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService, http_2.HttpClient])
