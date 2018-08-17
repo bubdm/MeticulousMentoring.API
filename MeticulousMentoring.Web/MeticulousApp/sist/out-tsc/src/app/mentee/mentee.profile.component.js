@@ -17,6 +17,9 @@ var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
 var mentee_service_1 = require("../mentee/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
+var mentee_1 = require("../models/mentee");
+var mentor_1 = require("../models/mentor");
+var guardian_1 = require("../models/guardian");
 require("rxjs/Rx");
 //import * as _ from 'lodash';
 var underscore_1 = require("underscore");
@@ -29,14 +32,14 @@ var MenteeProfileComponent = /** @class */ (function () {
         this.router = router;
         this.gradingService = gradingService;
         this._fb = _fb;
-        this.mentee = {};
-        this.mentor = {};
-        this.guardian = {};
+        this.mentee = new mentee_1.Mentee();
+        this.mentor = new mentor_1.Mentor();
+        this.guardian = new guardian_1.Guardian();
         this.grades = [];
         this.gradeGroup = {};
         this.messages = 1;
-        this.timelineData = {};
-        this.gradingPeriods = [];
+        this.timelineData = [];
+        this.gradingPeriods = new Array();
         this.blankGrades = [];
         this.courses = [];
         this.system_id = 0;
@@ -60,7 +63,7 @@ var MenteeProfileComponent = /** @class */ (function () {
             this.menteeService.get_mentee_by_id(this.menteeId)
                 .subscribe(function (data) {
                 _this.mentee = data;
-                _this.system_id = data.menteeSchool.system.id;
+                _this.system_id = data.menteeSchool.educational_system.id;
                 _this.classification_id = data.menteeClassification.id;
                 _this.gradingService.get_courses_by_systemid(_this.system_id, _this.classification_id)
                     .subscribe(function (data) {

@@ -24,7 +24,7 @@ namespace MeticulousMentoring.API.Data.Repositories
             this.ctx = ctx;
             this.logger = logger;
             _connectionString =
-                "server=DESKTOP-CV71GOA;Initial Catalog=Meticulous;Integrated Security=True;MultipleActiveResultSets=true;";
+                "server=DESKTOP-Q69HGKD;Initial Catalog=Meticulous;Integrated Security=True;MultipleActiveResultSets=true;";
         }
 
         public IEnumerable<Mentee> GetAllMentees()

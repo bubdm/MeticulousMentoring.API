@@ -1,4 +1,4 @@
-﻿export class EducationalSystem {
-    id: number;
-    system: string;
+export class EducationalSystem {
+  id: number;
+  system: string;
 }

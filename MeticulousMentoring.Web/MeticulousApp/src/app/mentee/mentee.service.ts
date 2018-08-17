@@ -34,11 +34,14 @@ export class MenteeService {
   }
 
   public get_mentee_by_id(menteeId) {
-    return this.http.get("http://localhost:5005/api/mentees/" + menteeId,
-      {
-        headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
       })
-      .pipe(map((res: Response) => res.json()));
+    };
+
+    return this.httpClient.get<Mentee>("http://localhost:5005/api/mentees/" + menteeId, httpOptions);
   }
 
   public get_mentor_by_mentee_id(menteeId) {

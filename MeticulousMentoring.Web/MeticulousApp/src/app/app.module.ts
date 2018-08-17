@@ -13,6 +13,7 @@ import { NgSelectModule } from '@ng-select/ng-select';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
 import { SelectDropDownModule } from 'ngx-select-dropdown'
 import { AngularMultiSelectModule } from "angular2-multiselect-dropdown/angular2-multiselect-dropdown";
+import { VerticalTimelineModule } from 'angular-vertical-timeline';
 
 import { AppComponent } from './app.component';
 import { AppHeaderComponent } from './app-header.component';
@@ -173,7 +174,8 @@ export const routes = [
     MultiselectDropdownModule,
     SelectDropDownModule,
     AngularMultiSelectModule,
-    TabsModule.forRoot()
+    TabsModule.forRoot(),
+    VerticalTimelineModule
 
   ],
   exports: [MenteeFormComponent],

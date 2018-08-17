@@ -37,10 +37,18 @@ var MenteeService = /** @class */ (function () {
         }).pipe(operators_1.map(function (res) { return res.json(); }));
     };
     MenteeService.prototype.get_mentee_by_id = function (menteeId) {
-        return this.http.get("http://localhost:5005/api/mentees/" + menteeId, {
-            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(operators_1.map(function (res) { return res.json(); }));
+        //return this.http.get("http://localhost:5005/api/mentees/" + menteeId,
+        //  {
+        //    headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        //  })
+        //  .pipe(map((res: Response) => res.json()));
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/" + menteeId, httpOptions);
     };
     MenteeService.prototype.get_mentor_by_mentee_id = function (menteeId) {
         return this.http.get("http://localhost:5005/api/mentees/GetMentor/" + menteeId, {

@@ -29,6 +29,7 @@ var HomeComponent = /** @class */ (function () {
         else {
             this.user = JSON.parse(localStorage.getItem('user'));
         }
+        this.role = this.user.role;
     };
     HomeComponent = __decorate([
         core_1.Component({

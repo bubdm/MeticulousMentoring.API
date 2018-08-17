@@ -1,11 +1,27 @@
 <div class="container-fluid meticulous-container">
   <div class="row">
-    <div class="col-xl-3">
+    <div class="col-xl-4">
       <div class="row"><img src="http://via.placeholder.com/300X300" class="rounded mx-auto d-block" /></div>
       <hr />
-      <div class="row"></div>
+      <div class="row">
+        <div class="col-xl-12">
+          <section id="timeline">
+            <article *ngFor="let timeline of timelineData">
+              <div class="inner">
+                <span class="date">
+                  <span class="day">{{timeline.timeline_date | date:'dd'}}</span>
+                  <span class="month">{{timeline.timeline_date | date:'MMM'}}</span>
+                  <span class="year">{{timeline.timeline_date | date:'yyyy'}}</span>
+                </span>
+                <h2>{{timeline.detail}}</h2>
+                <p></p>
+              </div>
+            </article>
+          </section>
+        </div>
+      </div>
     </div>
-    <div class="col-xl-9">
+    <div class="col-xl-8">
 
       <div class="row first-name">
         {{mentee.menteeFirstName}} {{mentee.menteeLastName}}
@@ -84,21 +100,16 @@
           <tab heading="Mentee Grades">
             <div style="margin: 0; font-style: normal;">
 
-              <table class="table table-sm">
-                <thead class="thead-dark">
-                  <tr>
-                    <th>Subject</th>
-                    <th *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs">
-                      {{group[0]}}
-                    </th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr *ngFor="let subjectGroup of grades | groupBy: ['gradeCourse.course_name'] | pairs">
-                    <th>{{subjectGroup[0]}}</th>
-                    <td *ngFor="let s of subjectGroup[1]">{{s.gradeValue | round: 2}}</td>
-                  </tr>
-                </tbody>
+              <table class="table table-sm" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs">
+                <tr>
+                  <th rowspan="6">{{group[0]}} </th>
+                  <th>Course</th>
+                  <th>Grade</th>
+                </tr>
+                <tr *ngFor="let subjectGroup of group[1]">
+                  <td>{{subjectGroup.gradeCourse.course_name}}</td>
+                  <td>{{subjectGroup.gradeValue | round: 2}}</td>
+                </tr>
               </table>
 
               <form [formGroup]="myForm" novalidate class="form-inline">

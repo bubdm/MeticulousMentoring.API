@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using MeticulousMentoring.API.Data.Entities;
@@ -27,7 +28,7 @@ namespace MeticulousMentoring.API.Data.Repositories
         public IEnumerable<Course> GetCoursesBySystem(int system_id, int classification_id)
         {
             return _ctx.Courses
-                .Where(c => (c.system.id == system_id) && (c.course_classification.id == classification_id)).ToList();
+                .Where(c => c.system.id == system_id).GroupBy(x => x.course_name).Select(g => g.First()).ToList();
         }
     }
 }

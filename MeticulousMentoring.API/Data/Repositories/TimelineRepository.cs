@@ -24,7 +24,7 @@ namespace MeticulousMentoring.API.Data.Repositories
             try
             {
                 return _ctx.TimeLine.Where(x => x.user_id == user_id)
-                    .OrderBy(d => d.timeline_date);
+                    .OrderByDescending(d => d.timeline_date);
             }
             catch (Exception e)
             {

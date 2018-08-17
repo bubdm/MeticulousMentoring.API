@@ -235,6 +235,10 @@
     <None Include="MeticulousApp\src\app\forms\admin-form.component.spec.ts" />
     <None Include="MeticulousApp\src\app\forms\admin-form.component.ts" />
     <None Include="MeticulousApp\src\app\models\adminview.ts" />
+    <None Include="MeticulousApp\src\app\models\gradingperiod.ts" />
+    <None Include="MeticulousApp\src\app\models\guardian.ts" />
+    <None Include="MeticulousApp\src\app\models\mentor.ts" />
+    <None Include="MeticulousApp\src\app\models\schoolsystem.ts" />
     <None Include="MeticulousApp\src\app\models\WizardStep.ts" />
     <None Include="MeticulousApp\src\app\models\user.ts" />
     <None Include="MeticulousApp\src\app\shared\admin.service.ts" />
