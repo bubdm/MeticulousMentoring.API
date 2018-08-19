@@ -2,7 +2,7 @@ import { Component, Inject, NgModule, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { ClassificationService } from '../classification/classification.service';
 import { EducationSystemService } from '../educationSystem/educationSystem.service';
-import { MenteeService } from '../mentee/mentee.service';
+import { MenteeService } from '../shared/mentee.service';
 import { GuardianService } from '../guardian/guardian.service';
 import { SchoolService } from '../school/school.service';
 import { AdminService } from '../shared/admin.service';

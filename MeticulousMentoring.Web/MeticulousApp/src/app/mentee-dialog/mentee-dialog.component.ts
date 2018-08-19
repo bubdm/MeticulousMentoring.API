@@ -4,7 +4,7 @@ import { UserService } from "../shared/user.service";
 import { Router } from "@angular/router";
 import { IUser } from '../interfaces/iuser';
 import { MatDialogRef, MAT_DIALOG_DATA } from '@angular/material';
-import { MenteeService } from '../mentee/mentee.service';
+import { MenteeService } from '../shared/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
 import { TimelineService } from '../shared/timeline.service';
 import 'rxjs/Rx';
@@ -49,31 +49,31 @@ export class MenteeDialogComponent implements OnInit {
         .subscribe(data => {
           this.mentee = data;
         },
-        error => console.log(error));
+          error => console.log(error));
 
       this.menteeService.get_mentor_by_mentee_id(this.menteeId)
         .subscribe(data => {
           this.mentor = data;
         },
-        error => console.log(error));
+          error => console.log(error));
 
       this.menteeService.get_guardian_by_mentee_id(this.menteeId)
         .subscribe(data => {
           this.guardian = data;
         },
-        error => console.log(error));
+          error => console.log(error));
 
       this.menteeService.get_mentee_grades(this.menteeId)
         .subscribe(data => {
           this.grades = data;
         },
-        error => console.log(error));
+          error => console.log(error));
 
       this.timelineService.get_timeline_data(this.menteeId)
         .subscribe(data => {
           this.timelineData = data;
         },
-        error => console.log(error));
+          error => console.log(error));
     }
   }
 

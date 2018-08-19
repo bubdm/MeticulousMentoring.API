@@ -14,7 +14,7 @@ var accountservice_1 = require("../shared/accountservice");
 var user_service_1 = require("../shared/user.service");
 var admin_service_1 = require("../shared/admin.service");
 var router_1 = require("@angular/router");
-var mentee_service_1 = require("../mentee/mentee.service");
+var mentee_service_1 = require("../shared/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var AdminComponent = /** @class */ (function () {
     function AdminComponent(userService, auth, router, menteeService, mentorService, adminService) {

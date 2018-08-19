@@ -16,7 +16,7 @@ var core_1 = require("@angular/core");
 var user_service_1 = require("../shared/user.service");
 var router_1 = require("@angular/router");
 var material_1 = require("@angular/material");
-var mentee_service_1 = require("../mentee/mentee.service");
+var mentee_service_1 = require("../shared/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var timeline_service_1 = require("../shared/timeline.service");
 require("rxjs/Rx");

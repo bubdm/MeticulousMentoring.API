@@ -234,7 +234,10 @@
     <None Include="MeticulousApp\src\app\forms\admin-form.component.html" />
     <None Include="MeticulousApp\src\app\forms\admin-form.component.spec.ts" />
     <None Include="MeticulousApp\src\app\forms\admin-form.component.ts" />
+    <None Include="MeticulousApp\src\app\mentee\mentee.profile.service.ts" />
     <None Include="MeticulousApp\src\app\models\adminview.ts" />
+    <None Include="MeticulousApp\src\app\models\grade.ts" />
+    <None Include="MeticulousApp\src\app\models\gradecourse.ts" />
     <None Include="MeticulousApp\src\app\models\gradingperiod.ts" />
     <None Include="MeticulousApp\src\app\models\guardian.ts" />
     <None Include="MeticulousApp\src\app\models\mentor.ts" />
@@ -285,7 +288,7 @@
     <None Include="MeticulousApp\src\app\mentee\mentee.profile.component.css" />
     <None Include="MeticulousApp\src\app\mentee\mentee.profile.component.html" />
     <None Include="MeticulousApp\src\app\mentee\mentee.profile.component.ts" />
-    <None Include="MeticulousApp\src\app\mentee\mentee.service.ts" />
+    <None Include="MeticulousApp\src\app\shared\mentee.service.ts" />
     <None Include="MeticulousApp\src\app\mentor\mentor.profile.component.css" />
     <None Include="MeticulousApp\src\app\mentor\mentor.profile.component.html" />
     <None Include="MeticulousApp\src\app\mentor\mentor.profile.component.ts" />

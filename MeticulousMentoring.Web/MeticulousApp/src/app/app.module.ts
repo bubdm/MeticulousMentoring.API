@@ -23,7 +23,7 @@ import { UserService } from './shared/user.service';
 import { TimelineService } from './shared/timeline.service';
 import { ClassificationService } from './classification/classification.service';
 import { EducationSystemService } from './educationSystem/educationSystem.service';
-import { MenteeService } from './mentee/mentee.service';
+import { MenteeService } from './shared/mentee.service';
 import { MentorService } from './mentor/mentor.service';
 import { GuardianService } from './guardian/guardian.service';
 import { SchoolService } from './school/school.service';
@@ -42,6 +42,7 @@ import { AdminService } from './shared/admin.service';
 import { UsersComponent } from './dashboard/users/users.component';
 import { UsersService } from './dashboard/users/users.service';
 import { HomeComponent } from './dashboard/home/home.component';
+import { MenteeProfileService } from './mentee/mentee.profile.service';
 import { AdminFormComponent } from './forms/admin-form.component';
 
 import { RouterModule } from "@angular/router";
@@ -194,7 +195,8 @@ export const routes = [
     TimelineService,
     GradingService,
     AdminService,
-    UsersService],
+    UsersService,
+    MenteeProfileService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -47,7 +47,7 @@
 
       <hr />
       <div class="row">
-        <tabset>
+        <tabset #menteeTabs>
           <tab heading="Contact Information" id="tab1">
             <div style="margin: 15px; font-style: normal;">
               <div class="row" style="margin-bottom: 20px;">Contact Information</div>
@@ -98,54 +98,55 @@
             </div>
           </tab>
           <tab heading="Mentee Grades">
-            <div style="margin: 0; font-style: normal;">
+            <div class="row" style="margin: 0; font-style: normal;">
 
-              <table class="table table-sm" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs">
-                <tr>
-                  <th rowspan="6">{{group[0]}} </th>
-                  <th>Course</th>
-                  <th>Grade</th>
-                </tr>
-                <tr *ngFor="let subjectGroup of group[1]">
-                  <td>{{subjectGroup.gradeCourse.course_name}}</td>
-                  <td>{{subjectGroup.gradeValue | round: 2}}</td>
-                </tr>
-              </table>
-
-              <form [formGroup]="myForm" novalidate class="form-inline">
-                <div formArrayName="grades">
-                  <div *ngFor="let grade of myForm.controls.grades.controls; let i=index" class="panel panel-default">
-                    <div class="panel-body" [formGroupName]="i">
-                      <div class="form-row">
-                        <div class="col-xs-3"></div>
-                        <div class="col-xs-3">
-                          <select class="form-control-sm" formControlName="period">
-                            <option [ngValue]="-1" [selected]="true">--- Select Grading Period---</option>
-                            <option *ngFor="let period of gradingPeriods" [ngValue]="period.id">{{period.description}}</option>
-                          </select>
-                        </div>
-                        <div class="col-xs-3">
-                          <select class="form-control-sm" formControlName="course">
-                            <option [selected]="true">--- Select Course ---</option>
-                            <option *ngFor="let course of courses" [ngValue]="course.id">{{course.course_name}}</option>
-                          </select>
-                        </div>
-                        <div class="col-xs-2">
-                          <input type="text" class="form-control-sm" formControlName="value" placeholder="Value" />
-                        </div>
-                        <div class="col-xs-1">
-                          <span class="fa fa-remove pull-right" (click)="removeGrade(i)"></span>
-                        </div>
+              <div class="col-xs-3" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast">
+                <table class="table table-sm">
+                  <tr>
+                    <th rowspan="6">{{group[0]}} </th>
+                    <th>Course</th>
+                    <th>Grade</th>
+                  </tr>
+                  <tr *ngFor="let subjectGroup of group[1]">
+                    <td>{{subjectGroup.gradeCourse.course_name}}</td>
+                    <td>{{subjectGroup.gradeValue | round: 2}}</td>
+                  </tr>
+                </table>
+                <span *ngIf="isLast">G.P.A: </span>
+              </div>
+            </div>
+            <form [formGroup]="myForm" novalidate class="form-inline">
+              <div formArrayName="grades">
+                <div *ngFor="let grade of myForm.controls.grades.controls; let i=index" class="panel panel-default">
+                  <div class="panel-body" [formGroupName]="i">
+                    <div class="form-row">
+                      <div class="col-xs-3"></div>
+                      <div class="col-xs-3">
+                        <select class="form-control-sm" formControlName="period">
+                          <option [ngValue]="-1" [selected]="true">--- Select Grading Period---</option>
+                          <option *ngFor="let period of gradingPeriods" [ngValue]="period.id">{{period.description}}</option>
+                        </select>
+                      </div>
+                      <div class="col-xs-3">
+                        <select class="form-control-sm" formControlName="course">
+                          <option [selected]="true">--- Select Course ---</option>
+                          <option *ngFor="let course of courses" [ngValue]="course.id">{{course.course_name}}</option>
+                        </select>
+                      </div>
+                      <div class="col-xs-2">
+                        <input type="text" class="form-control-sm" formControlName="value" placeholder="Value" />
+                      </div>
+                      <div class="col-xs-1">
+                        <span class="fa fa-remove pull-right" (click)="removeGrade(i)"></span>
                       </div>
                     </div>
                   </div>
                 </div>
-              </form>
-
-              <div style="text-align: center; margin: 10px;">
-                <button class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
-                <button [disabled]="!myForm.valid" *ngIf="myForm.controls.grades.controls.length > 0" class="btn btn-success" (click)="save_grades(myForm)">Save Grade(s)</button>
               </div>
+            </form>
+            <div *ngIf="grades.length < 20" style="text-align: center; margin: 10px;">
+              <button class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
+              <button [disabled]="!myForm.valid" *ngIf="myForm.controls.grades.controls.length > 0" class="btn btn-success" (click)="save_grades(myForm)">Save Grade(s)</button>
             </div>
           </tab>
         </tabset>

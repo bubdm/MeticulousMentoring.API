@@ -324,7 +324,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
 /* harmony import */ var _shared_admin_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/admin.service */ "../src/app/shared/admin.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
@@ -389,7 +389,7 @@ var AdminComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"],
             _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__["AccountService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_4__["Router"],
-            _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_5__["MenteeService"],
+            _shared_mentee_service__WEBPACK_IMPORTED_MODULE_5__["MenteeService"],
             _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_6__["MentorService"],
             _shared_admin_service__WEBPACK_IMPORTED_MODULE_3__["AdminService"]])
     ], AdminComponent);
@@ -534,7 +534,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_timeline_service__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./shared/timeline.service */ "../src/app/shared/timeline.service.ts");
 /* harmony import */ var _classification_classification_service__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./classification/classification.service */ "../src/app/classification/classification.service.ts");
 /* harmony import */ var _educationSystem_educationSystem_service__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./educationSystem/educationSystem.service */ "../src/app/educationSystem/educationSystem.service.ts");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 /* harmony import */ var _guardian_guardian_service__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./guardian/guardian.service */ "../src/app/guardian/guardian.service.ts");
 /* harmony import */ var _school_school_service__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./school/school.service */ "../src/app/school/school.service.ts");
@@ -553,14 +553,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _dashboard_users_users_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./dashboard/users/users.component */ "../src/app/dashboard/users/users.component.ts");
 /* harmony import */ var _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./dashboard/users/users.service */ "../src/app/dashboard/users/users.service.ts");
 /* harmony import */ var _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! ./dashboard/home/home.component */ "../src/app/dashboard/home/home.component.ts");
-/* harmony import */ var _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./forms/admin-form.component */ "../src/app/forms/admin-form.component.ts");
-/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! ./shared/auth-guard.service */ "../src/app/shared/auth-guard.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _angular_cdk_table__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @angular/cdk/table */ "../node_modules/@angular/cdk/esm5/table.es5.js");
-/* harmony import */ var _mentor_mentor_profile_component__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! ./mentor/mentor.profile.component */ "../src/app/mentor/mentor.profile.component.ts");
-/* harmony import */ var _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./mentee-dialog/mentee-dialog.component */ "../src/app/mentee-dialog/mentee-dialog.component.ts");
+/* harmony import */ var _mentee_mentee_profile_service__WEBPACK_IMPORTED_MODULE_43__ = __webpack_require__(/*! ./mentee/mentee.profile.service */ "../src/app/mentee/mentee.profile.service.ts");
+/* harmony import */ var _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_44__ = __webpack_require__(/*! ./forms/admin-form.component */ "../src/app/forms/admin-form.component.ts");
+/* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_45__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_46__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
+/* harmony import */ var _shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_47__ = __webpack_require__(/*! ./shared/auth-guard.service */ "../src/app/shared/auth-guard.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_48__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _angular_cdk_table__WEBPACK_IMPORTED_MODULE_49__ = __webpack_require__(/*! @angular/cdk/table */ "../node_modules/@angular/cdk/esm5/table.es5.js");
+/* harmony import */ var _mentor_mentor_profile_component__WEBPACK_IMPORTED_MODULE_50__ = __webpack_require__(/*! ./mentor/mentor.profile.component */ "../src/app/mentor/mentor.profile.component.ts");
+/* harmony import */ var _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_51__ = __webpack_require__(/*! ./mentee-dialog/mentee-dialog.component */ "../src/app/mentee-dialog/mentee-dialog.component.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -618,13 +619,14 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 
 
 
+
 var routes = [
     { path: "", component: _login_login_component__WEBPACK_IMPORTED_MODULE_18__["LoginComponent"] },
     {
-        path: "dashboard", component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_30__["DashboardComponent"], canActivate: [_shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_46__["AuthGuard"]],
+        path: "dashboard", component: _dashboard_dashboard_component__WEBPACK_IMPORTED_MODULE_30__["DashboardComponent"], canActivate: [_shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_47__["AuthGuard"]],
         children: [
-            { path: "", component: _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_42__["HomeComponent"], canActivate: [_shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_46__["AuthGuard"]] },
-            { path: "users", component: _dashboard_users_users_component__WEBPACK_IMPORTED_MODULE_40__["UsersComponent"], canActivate: [_shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_46__["AuthGuard"]] }
+            { path: "", component: _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_42__["HomeComponent"], canActivate: [_shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_47__["AuthGuard"]] },
+            { path: "users", component: _dashboard_users_users_component__WEBPACK_IMPORTED_MODULE_40__["UsersComponent"], canActivate: [_shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_47__["AuthGuard"]] }
         ]
     }
 ];
@@ -646,56 +648,56 @@ var AppModule = /** @class */ (function () {
                 _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_36__["MentorFormComponent"],
                 _forms_director_form_component__WEBPACK_IMPORTED_MODULE_37__["DirectorFormComponent"],
                 _shared_round_pipe__WEBPACK_IMPORTED_MODULE_38__["RoundPipe"],
-                _mentor_mentor_profile_component__WEBPACK_IMPORTED_MODULE_49__["MentorProfileComponent"],
-                _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_50__["MenteeDialogComponent"],
+                _mentor_mentor_profile_component__WEBPACK_IMPORTED_MODULE_50__["MentorProfileComponent"],
+                _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_51__["MenteeDialogComponent"],
                 _dashboard_users_users_component__WEBPACK_IMPORTED_MODULE_40__["UsersComponent"],
                 _dashboard_home_home_component__WEBPACK_IMPORTED_MODULE_42__["HomeComponent"],
-                _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_43__["AdminFormComponent"]
+                _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_44__["AdminFormComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_0__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_1__["BrowserAnimationsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_3__["HttpModule"],
                 ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_4__["ChartsModule"],
-                _angular_router__WEBPACK_IMPORTED_MODULE_44__["RouterModule"].forRoot(routes, {
+                _angular_router__WEBPACK_IMPORTED_MODULE_45__["RouterModule"].forRoot(routes, {
                     useHash: true,
                     enableTracing: false
                 }),
-                _angular_forms__WEBPACK_IMPORTED_MODULE_45__["FormsModule"],
-                _angular_cdk_table__WEBPACK_IMPORTED_MODULE_48__["CdkTableModule"],
-                _angular_forms__WEBPACK_IMPORTED_MODULE_45__["ReactiveFormsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatAutocompleteModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatButtonModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatButtonToggleModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatCardModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatCheckboxModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatChipsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatDatepickerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatDialogModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatExpansionModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatGridListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatIconModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatInputModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatListModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatMenuModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatNativeDateModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatPaginatorModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatProgressBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatProgressSpinnerModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatRadioModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatRippleModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatSelectModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatSidenavModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatSliderModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatSlideToggleModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatSnackBarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatSortModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatTableModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatTabsModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatToolbarModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatTooltipModule"],
-                _angular_material__WEBPACK_IMPORTED_MODULE_47__["MatStepperModule"],
-                _angular_cdk_table__WEBPACK_IMPORTED_MODULE_48__["CdkTableModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_46__["FormsModule"],
+                _angular_cdk_table__WEBPACK_IMPORTED_MODULE_49__["CdkTableModule"],
+                _angular_forms__WEBPACK_IMPORTED_MODULE_46__["ReactiveFormsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatAutocompleteModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatButtonModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatButtonToggleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatCardModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatCheckboxModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatChipsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatDatepickerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatDialogModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatExpansionModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatGridListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatIconModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatInputModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatListModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatMenuModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatNativeDateModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatPaginatorModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatProgressBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatProgressSpinnerModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatRadioModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatRippleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatSelectModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatSidenavModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatSliderModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatSlideToggleModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatSnackBarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatSortModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatTableModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatTabsModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatToolbarModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatTooltipModule"],
+                _angular_material__WEBPACK_IMPORTED_MODULE_48__["MatStepperModule"],
+                _angular_cdk_table__WEBPACK_IMPORTED_MODULE_49__["CdkTableModule"],
                 _angular_common__WEBPACK_IMPORTED_MODULE_5__["CommonModule"],
                 ngx_pipes__WEBPACK_IMPORTED_MODULE_7__["NgPipesModule"],
                 _angular_common_http__WEBPACK_IMPORTED_MODULE_6__["HttpClientModule"],
@@ -712,14 +714,14 @@ var AppModule = /** @class */ (function () {
                 angular_vertical_timeline__WEBPACK_IMPORTED_MODULE_15__["VerticalTimelineModule"]
             ],
             exports: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_34__["MenteeFormComponent"]],
-            entryComponents: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_34__["MenteeFormComponent"], _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_36__["MentorFormComponent"], _forms_director_form_component__WEBPACK_IMPORTED_MODULE_37__["DirectorFormComponent"], _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_50__["MenteeDialogComponent"], _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_43__["AdminFormComponent"]],
+            entryComponents: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_34__["MenteeFormComponent"], _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_36__["MentorFormComponent"], _forms_director_form_component__WEBPACK_IMPORTED_MODULE_37__["DirectorFormComponent"], _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_51__["MenteeDialogComponent"], _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_44__["AdminFormComponent"]],
             providers: [
                 _shared_accountservice__WEBPACK_IMPORTED_MODULE_19__["AccountService"],
-                _shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_46__["AuthGuard"],
+                _shared_auth_guard_service__WEBPACK_IMPORTED_MODULE_47__["AuthGuard"],
                 _shared_user_service__WEBPACK_IMPORTED_MODULE_20__["UserService"],
                 _classification_classification_service__WEBPACK_IMPORTED_MODULE_22__["ClassificationService"],
                 _educationSystem_educationSystem_service__WEBPACK_IMPORTED_MODULE_23__["EducationSystemService"],
-                _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_24__["MenteeService"],
+                _shared_mentee_service__WEBPACK_IMPORTED_MODULE_24__["MenteeService"],
                 _guardian_guardian_service__WEBPACK_IMPORTED_MODULE_26__["GuardianService"],
                 _school_school_service__WEBPACK_IMPORTED_MODULE_27__["SchoolService"],
                 _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_25__["MentorService"],
@@ -727,7 +729,8 @@ var AppModule = /** @class */ (function () {
                 _shared_timeline_service__WEBPACK_IMPORTED_MODULE_21__["TimelineService"],
                 _shared_grading_service__WEBPACK_IMPORTED_MODULE_29__["GradingService"],
                 _shared_admin_service__WEBPACK_IMPORTED_MODULE_39__["AdminService"],
-                _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_41__["UsersService"]
+                _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_41__["UsersService"],
+                _mentee_mentee_profile_service__WEBPACK_IMPORTED_MODULE_43__["MenteeProfileService"]
             ],
             bootstrap: [_app_component__WEBPACK_IMPORTED_MODULE_16__["AppComponent"]]
         })
@@ -971,6 +974,8 @@ var DashboardComponent = /** @class */ (function () {
         }, function (error) { return console.log(error); });
     };
     DashboardComponent.prototype.logout = function () {
+        localStorage.removeItem('user');
+        this.userService.delete();
         this.auth.logout();
         this.router.navigate([""]);
     };
@@ -1632,7 +1637,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _classification_classification_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../classification/classification.service */ "../src/app/classification/classification.service.ts");
 /* harmony import */ var _educationSystem_educationSystem_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../educationSystem/educationSystem.service */ "../src/app/educationSystem/educationSystem.service.ts");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _guardian_guardian_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../guardian/guardian.service */ "../src/app/guardian/guardian.service.ts");
 /* harmony import */ var _school_school_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../school/school.service */ "../src/app/school/school.service.ts");
 /* harmony import */ var _shared_admin_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../shared/admin.service */ "../src/app/shared/admin.service.ts");
@@ -1800,7 +1805,7 @@ var MenteeFormComponent = /** @class */ (function () {
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
             _classification_classification_service__WEBPACK_IMPORTED_MODULE_2__["ClassificationService"],
             _educationSystem_educationSystem_service__WEBPACK_IMPORTED_MODULE_3__["EducationSystemService"],
-            _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_4__["MenteeService"],
+            _shared_mentee_service__WEBPACK_IMPORTED_MODULE_4__["MenteeService"],
             _guardian_guardian_service__WEBPACK_IMPORTED_MODULE_5__["GuardianService"],
             _school_school_service__WEBPACK_IMPORTED_MODULE_6__["SchoolService"],
             _shared_admin_service__WEBPACK_IMPORTED_MODULE_7__["AdminService"],
@@ -1848,7 +1853,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MentorFormComponent", function() { return MentorFormComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 /* harmony import */ var ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ngx-bootstrap/modal */ "../node_modules/ngx-bootstrap/modal/index.js");
 /* harmony import */ var _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../dashboard/users/users.service */ "../src/app/dashboard/users/users.service.ts");
@@ -1958,7 +1963,7 @@ var MentorFormComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./mentor.form.component.css */ "../src/app/forms/mentor.form.component.css")]
         }),
         __metadata("design:paramtypes", [_angular_forms__WEBPACK_IMPORTED_MODULE_1__["FormBuilder"],
-            _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_2__["MenteeService"],
+            _shared_mentee_service__WEBPACK_IMPORTED_MODULE_2__["MenteeService"],
             _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_3__["MentorService"],
             ngx_bootstrap_modal__WEBPACK_IMPORTED_MODULE_4__["BsModalRef"],
             _dashboard_users_users_service__WEBPACK_IMPORTED_MODULE_5__["UsersService"]])
@@ -2143,7 +2148,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
 /* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 /* harmony import */ var _shared_timeline_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/timeline.service */ "../src/app/shared/timeline.service.ts");
 /* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
@@ -2229,7 +2234,7 @@ var MenteeDialogComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./mentee-dialog.component.css */ "../src/app/mentee-dialog/mentee-dialog.component.css")]
         }),
         __param(5, Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Inject"])(_angular_material__WEBPACK_IMPORTED_MODULE_3__["MAT_DIALOG_DATA"])),
-        __metadata("design:paramtypes", [_mentee_mentee_service__WEBPACK_IMPORTED_MODULE_4__["MenteeService"],
+        __metadata("design:paramtypes", [_shared_mentee_service__WEBPACK_IMPORTED_MODULE_4__["MenteeService"],
             _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_5__["MentorService"],
             _shared_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"],
             _shared_timeline_service__WEBPACK_IMPORTED_MODULE_6__["TimelineService"],
@@ -2249,7 +2254,7 @@ var MenteeDialogComponent = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "body {\r\n}\r\n\r\n.meticulous-container {\r\n  margin: 20px;\r\n}\r\n\r\n.first-name {\r\n  /*font-family: 'Dancing Script', cursive !important;*/\r\n  font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n  margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n  height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n  height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n  font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n\r\nsection#timeline {\r\n  width: 80%;\r\n  margin: 20px auto;\r\n  position: relative;\r\n}\r\n\r\nsection#timeline:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 0;\r\n    margin: 0 0 0 -1px;\r\n    width: 2px;\r\n    height: 100%;\r\n    background: rgba(0,0,0,0.2);\r\n  }\r\n\r\nsection#timeline article {\r\n    width: 100%;\r\n    margin: 0 0 20px 0;\r\n    position: relative;\r\n  }\r\n\r\nsection#timeline article:after {\r\n      content: '';\r\n      display: block;\r\n      clear: both;\r\n    }\r\n\r\nsection#timeline article div.inner {\r\n      width: 40%;\r\n      float: left;\r\n      margin: 5px 0 0 0;\r\n      border-radius: 6px;\r\n    }\r\n\r\nsection#timeline article div.inner span.date {\r\n        display: block;\r\n        width: 60px;\r\n        height: 50px;\r\n        padding: 5px 0;\r\n        position: absolute;\r\n        top: 0;\r\n        left: 50%;\r\n        margin: 0 0 0 -32px;\r\n        border-radius: 100%;\r\n        font-size: 8px;\r\n        font-weight: 500;\r\n        text-transform: uppercase;\r\n        /*background: #25303B;*/\r\n        background: rgba(255, 255, 255, 1);\r\n        color: rgba(0,0,0,1);\r\n        border: 2px solid rgba(255,255,255,0.2);\r\n        box-shadow: 0 0 0 1px rgba(0,0,0,0.2);\r\n        line-height: 1;\r\n      }\r\n\r\nsection#timeline article div.inner span.date span {\r\n          display: block;\r\n          text-align: center;\r\n        }\r\n\r\nsection#timeline article div.inner span.date span.day {\r\n            font-size: 10px;\r\n          }\r\n\r\nsection#timeline article div.inner span.date span.month {\r\n            font-size: 18px;\r\n          }\r\n\r\nsection#timeline article div.inner span.date span.year {\r\n            font-size: 10px;\r\n          }\r\n\r\nsection#timeline article div.inner h2 {\r\n        padding: 15px;\r\n        margin: 0;\r\n        color: #fff;\r\n        font-size: 20px;\r\n        text-transform: uppercase;\r\n        letter-spacing: -1px;\r\n        border-radius: 6px 6px 0 0;\r\n        position: relative;\r\n      }\r\n\r\nsection#timeline article div.inner h2:after {\r\n          content: '';\r\n          position: absolute;\r\n          top: 20px;\r\n          right: -5px;\r\n          width: 10px;\r\n          height: 10px;\r\n          -webkit-transform: rotate(-45deg);\r\n        }\r\n\r\nsection#timeline article div.inner p {\r\n        padding: 15px;\r\n        margin: 0;\r\n        font-size: 14px;\r\n        background: #fff;\r\n        color: #656565;\r\n        border-radius: 0 0 6px 6px;\r\n      }\r\n\r\nsection#timeline article:nth-child(2n+2) div.inner {\r\n      float: right;\r\n    }\r\n\r\nsection#timeline article:nth-child(2n+2) div.inner h2:after {\r\n        left: -5px;\r\n      }\r\n\r\nsection#timeline article:nth-child(1) div.inner h2 {\r\n      background: #e74c3c;\r\n    }\r\n\r\nsection#timeline article:nth-child(1) div.inner h2:after {\r\n        background: #e74c3c;\r\n      }\r\n\r\nsection#timeline article:nth-child(2) div.inner h2 {\r\n      background: #2ecc71;\r\n    }\r\n\r\nsection#timeline article:nth-child(2) div.inner h2:after {\r\n        background: #2ecc71;\r\n      }\r\n\r\nsection#timeline article:nth-child(3) div.inner h2 {\r\n      background: #e67e22;\r\n    }\r\n\r\nsection#timeline article:nth-child(3) div.inner h2:after {\r\n        background: #e67e22;\r\n      }\r\n\r\nsection#timeline article:nth-child(4) div.inner h2 {\r\n      background: #1abc9c;\r\n    }\r\n\r\nsection#timeline article:nth-child(4) div.inner h2:after {\r\n        background: #1abc9c;\r\n      }\r\n\r\nsection#timeline article:nth-child(5) div.inner h2 {\r\n      background: #9b59b6;\r\n    }\r\n\r\nsection#timeline article:nth-child(5) div.inner h2:after {\r\n        background: #9b59b6;\r\n      }\r\n"
+module.exports = "body {\r\n}\r\n\r\n.meticulous-container {\r\n  margin: 20px;\r\n}\r\n\r\n.first-name {\r\n  /*font-family: 'Dancing Script', cursive !important;*/\r\n  font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n  margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n  height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n  height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n  font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n\r\nsection#timeline {\r\n  width: 80%;\r\n  margin: 20px auto;\r\n  position: relative;\r\n}\r\n\r\nsection#timeline:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 0;\r\n    margin: 0 0 0 -1px;\r\n    width: 2px;\r\n    height: 100%;\r\n    background: rgba(0,0,0,0.2);\r\n  }\r\n\r\nsection#timeline article {\r\n    width: 100%;\r\n    margin: 0 0 20px 0;\r\n    position: relative;\r\n  }\r\n\r\nsection#timeline article:after {\r\n      content: '';\r\n      display: block;\r\n      clear: both;\r\n    }\r\n\r\nsection#timeline article div.inner {\r\n      width: 40%;\r\n      float: left;\r\n      margin: 5px 0 0 0;\r\n      border-radius: 6px;\r\n    }\r\n\r\nsection#timeline article div.inner span.date {\r\n        display: block;\r\n        width: 60px;\r\n        height: 50px;\r\n        padding: 5px 0;\r\n        position: absolute;\r\n        top: 0;\r\n        left: 50%;\r\n        margin: 0 0 0 -32px;\r\n        border-radius: 100%;\r\n        font-size: 8px;\r\n        font-weight: 500;\r\n        text-transform: uppercase;\r\n        /*background: #25303B;*/\r\n        background: rgba(255, 255, 255, 1);\r\n        color: rgba(0,0,0,1);\r\n        border: 2px solid rgba(255,255,255,0.2);\r\n        box-shadow: 0 0 0 1px rgba(0,0,0,0.2);\r\n        line-height: 1;\r\n      }\r\n\r\nsection#timeline article div.inner span.date span {\r\n          display: block;\r\n          text-align: center;\r\n        }\r\n\r\nsection#timeline article div.inner span.date span.day {\r\n            font-size: 10px;\r\n          }\r\n\r\nsection#timeline article div.inner span.date span.month {\r\n            font-size: 18px;\r\n          }\r\n\r\nsection#timeline article div.inner span.date span.year {\r\n            font-size: 10px;\r\n          }\r\n\r\nsection#timeline article div.inner h2 {\r\n        padding: 15px;\r\n        margin: 0;\r\n        color: #fff;\r\n        font-size: 20px;\r\n        text-transform: uppercase;\r\n        letter-spacing: -1px;\r\n        border-radius: 6px 6px 0 0;\r\n        position: relative;\r\n      }\r\n\r\nsection#timeline article div.inner h2:after {\r\n          content: '';\r\n          position: absolute;\r\n          top: 20px;\r\n          right: -5px;\r\n          width: 10px;\r\n          height: 10px;\r\n          -webkit-transform: rotate(-45deg);\r\n        }\r\n\r\nsection#timeline article div.inner p {\r\n        padding: 15px;\r\n        margin: 0;\r\n        font-size: 14px;\r\n        background: #fff;\r\n        color: #656565;\r\n        border-radius: 0 0 6px 6px;\r\n      }\r\n\r\nsection#timeline article:nth-child(2n+2) div.inner {\r\n      float: right;\r\n    }\r\n\r\nsection#timeline article:nth-child(2n+2) div.inner h2:after {\r\n        left: -5px;\r\n      }\r\n\r\nsection#timeline article:nth-child(1) div.inner h2 {\r\n      background: #e74c3c;\r\n    }\r\n\r\nsection#timeline article:nth-child(1) div.inner h2:after {\r\n        background: #e74c3c;\r\n      }\r\n\r\nsection#timeline article:nth-child(2) div.inner h2 {\r\n      background: #2ecc71;\r\n    }\r\n\r\nsection#timeline article:nth-child(2) div.inner h2:after {\r\n        background: #2ecc71;\r\n      }\r\n\r\nsection#timeline article:nth-child(3) div.inner h2 {\r\n      background: #e67e22;\r\n    }\r\n\r\nsection#timeline article:nth-child(3) div.inner h2:after {\r\n        background: #e67e22;\r\n      }\r\n\r\nsection#timeline article:nth-child(4) div.inner h2 {\r\n      background: #1abc9c;\r\n    }\r\n\r\nsection#timeline article:nth-child(4) div.inner h2:after {\r\n        background: #1abc9c;\r\n      }\r\n\r\nsection#timeline article:nth-child(5) div.inner h2 {\r\n      background: #9b59b6;\r\n    }\r\n\r\nsection#timeline article:nth-child(5) div.inner h2:after {\r\n        background: #9b59b6;\r\n      }\r\n\r\nsection#timeline article div.inner h2 {\r\n      background: #777777;\r\n      background: rgba(119, 119, 119, 1);\r\n    }\r\n\r\nsection#timeline article div.inner h2:after {\r\n        background: #777777;\r\n        background: rgba(119, 119, 119, 1);\r\n      }\r\n"
 
 /***/ }),
 
@@ -2260,7 +2265,7 @@ module.exports = "body {\r\n}\r\n\r\n.meticulous-container {\r\n  margin: 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeDOB | date}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeClassification.description}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeSchool.school_name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">Address:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Guardian Information\">\r\n            <div style=\"margin:0; font-style: normal;\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Guardian:\r\n                </div>\r\n                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                  {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Address:\r\n                </div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentee Grades\">\r\n            <div style=\"margin: 0; font-style: normal;\">\r\n\r\n              <table class=\"table table-sm\" *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs\">\r\n                <tr>\r\n                  <th rowspan=\"6\">{{group[0]}} </th>\r\n                  <th>Course</th>\r\n                  <th>Grade</th>\r\n                </tr>\r\n                <tr *ngFor=\"let subjectGroup of group[1]\">\r\n                  <td>{{subjectGroup.gradeCourse.course_name}}</td>\r\n                  <td>{{subjectGroup.gradeValue | round: 2}}</td>\r\n                </tr>\r\n              </table>\r\n\r\n              <form [formGroup]=\"myForm\" novalidate class=\"form-inline\">\r\n                <div formArrayName=\"grades\">\r\n                  <div *ngFor=\"let grade of myForm.controls.grades.controls; let i=index\" class=\"panel panel-default\">\r\n                    <div class=\"panel-body\" [formGroupName]=\"i\">\r\n                      <div class=\"form-row\">\r\n                        <div class=\"col-xs-3\"></div>\r\n                        <div class=\"col-xs-3\">\r\n                          <select class=\"form-control-sm\" formControlName=\"period\">\r\n                            <option [ngValue]=\"-1\" [selected]=\"true\">--- Select Grading Period---</option>\r\n                            <option *ngFor=\"let period of gradingPeriods\" [ngValue]=\"period.id\">{{period.description}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"col-xs-3\">\r\n                          <select class=\"form-control-sm\" formControlName=\"course\">\r\n                            <option [selected]=\"true\">--- Select Course ---</option>\r\n                            <option *ngFor=\"let course of courses\" [ngValue]=\"course.id\">{{course.course_name}}</option>\r\n                          </select>\r\n                        </div>\r\n                        <div class=\"col-xs-2\">\r\n                          <input type=\"text\" class=\"form-control-sm\" formControlName=\"value\" placeholder=\"Value\" />\r\n                        </div>\r\n                        <div class=\"col-xs-1\">\r\n                          <span class=\"fa fa-remove pull-right\" (click)=\"removeGrade(i)\"></span>\r\n                        </div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </form>\r\n\r\n              <div style=\"text-align: center; margin: 10px;\">\r\n                <button class=\"btn btn-primary\" (click)=\"add_blank_grade()\">Add Grade</button>\r\n                <button [disabled]=\"!myForm.valid\" *ngIf=\"myForm.controls.grades.controls.length > 0\" class=\"btn btn-success\" (click)=\"save_grades(myForm)\">Save Grade(s)</button>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeDOB | date}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeClassification.description}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeSchool.school_name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset #menteeTabs>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">Address:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Guardian Information\">\r\n            <div style=\"margin:0; font-style: normal;\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Guardian:\r\n                </div>\r\n                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                  {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Address:\r\n                </div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentee Grades\">\r\n            <div class=\"row\" style=\"margin: 0; font-style: normal;\">\r\n\r\n              <div class=\"col-xs-3\" *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast\">\r\n                <table class=\"table table-sm\">\r\n                  <tr>\r\n                    <th rowspan=\"6\">{{group[0]}} </th>\r\n                    <th>Course</th>\r\n                    <th>Grade</th>\r\n                  </tr>\r\n                  <tr *ngFor=\"let subjectGroup of group[1]\">\r\n                    <td>{{subjectGroup.gradeCourse.course_name}}</td>\r\n                    <td>{{subjectGroup.gradeValue | round: 2}}</td>\r\n                  </tr>\r\n                </table>\r\n                <span *ngIf=\"isLast\">G.P.A: </span>\r\n              </div>\r\n            </div>\r\n            <form [formGroup]=\"myForm\" novalidate class=\"form-inline\">\r\n              <div formArrayName=\"grades\">\r\n                <div *ngFor=\"let grade of myForm.controls.grades.controls; let i=index\" class=\"panel panel-default\">\r\n                  <div class=\"panel-body\" [formGroupName]=\"i\">\r\n                    <div class=\"form-row\">\r\n                      <div class=\"col-xs-3\"></div>\r\n                      <div class=\"col-xs-3\">\r\n                        <select class=\"form-control-sm\" formControlName=\"period\">\r\n                          <option [ngValue]=\"-1\" [selected]=\"true\">--- Select Grading Period---</option>\r\n                          <option *ngFor=\"let period of gradingPeriods\" [ngValue]=\"period.id\">{{period.description}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"col-xs-3\">\r\n                        <select class=\"form-control-sm\" formControlName=\"course\">\r\n                          <option [selected]=\"true\">--- Select Course ---</option>\r\n                          <option *ngFor=\"let course of courses\" [ngValue]=\"course.id\">{{course.course_name}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"col-xs-2\">\r\n                        <input type=\"text\" class=\"form-control-sm\" formControlName=\"value\" placeholder=\"Value\" />\r\n                      </div>\r\n                      <div class=\"col-xs-1\">\r\n                        <span class=\"fa fa-remove pull-right\" (click)=\"removeGrade(i)\"></span>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </form>\r\n            <div *ngIf=\"grades.length < 20\" style=\"text-align: center; margin: 10px;\">\r\n              <button class=\"btn btn-primary\" (click)=\"add_blank_grade()\">Add Grade</button>\r\n              <button [disabled]=\"!myForm.valid\" *ngIf=\"myForm.controls.grades.controls.length > 0\" class=\"btn btn-success\" (click)=\"save_grades(myForm)\">Save Grade(s)</button>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2280,14 +2285,14 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_timeline_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/timeline.service */ "../src/app/shared/timeline.service.ts");
 /* harmony import */ var _angular_forms__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/forms */ "../node_modules/@angular/forms/fesm5/forms.js");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
-/* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
-/* harmony import */ var _models_mentee__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../models/mentee */ "../src/app/models/mentee.ts");
-/* harmony import */ var _models_mentor__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../models/mentor */ "../src/app/models/mentor.ts");
-/* harmony import */ var _models_guardian__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/guardian */ "../src/app/models/guardian.ts");
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
-/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! underscore */ "../node_modules/underscore/underscore.js");
-/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_12___default = /*#__PURE__*/__webpack_require__.n(underscore__WEBPACK_IMPORTED_MODULE_12__);
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
+/* harmony import */ var _mentee_mentee_profile_service__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../mentee/mentee.profile.service */ "../src/app/mentee/mentee.profile.service.ts");
+/* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
+/* harmony import */ var _models_mentee__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../models/mentee */ "../src/app/models/mentee.ts");
+/* harmony import */ var _models_mentor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/mentor */ "../src/app/models/mentor.ts");
+/* harmony import */ var _models_guardian__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/guardian */ "../src/app/models/guardian.ts");
+/* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-bootstrap */ "../node_modules/ngx-bootstrap/index.js");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2309,10 +2314,10 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-//import * as _ from 'lodash';
+
 
 var MenteeProfileComponent = /** @class */ (function () {
-    function MenteeProfileComponent(menteeService, mentorService, userService, timelineService, router, gradingService, _fb) {
+    function MenteeProfileComponent(menteeService, mentorService, userService, timelineService, router, gradingService, _fb, menteeProfileService) {
         this.menteeService = menteeService;
         this.mentorService = mentorService;
         this.userService = userService;
@@ -2320,10 +2325,11 @@ var MenteeProfileComponent = /** @class */ (function () {
         this.router = router;
         this.gradingService = gradingService;
         this._fb = _fb;
-        this.mentee = new _models_mentee__WEBPACK_IMPORTED_MODULE_8__["Mentee"]();
-        this.mentor = new _models_mentor__WEBPACK_IMPORTED_MODULE_9__["Mentor"]();
-        this.guardian = new _models_guardian__WEBPACK_IMPORTED_MODULE_10__["Guardian"]();
-        this.grades = [];
+        this.menteeProfileService = menteeProfileService;
+        this.mentee = new _models_mentee__WEBPACK_IMPORTED_MODULE_9__["Mentee"]();
+        this.mentor = new _models_mentor__WEBPACK_IMPORTED_MODULE_10__["Mentor"]();
+        this.guardian = new _models_guardian__WEBPACK_IMPORTED_MODULE_11__["Guardian"]();
+        this.grades = new Array();
         this.gradeGroup = {};
         this.messages = 1;
         this.timelineData = [];
@@ -2332,6 +2338,7 @@ var MenteeProfileComponent = /** @class */ (function () {
         this.courses = [];
         this.system_id = 0;
         this.classification_id = 0;
+        this.menteeProfileService.notify_change_in_grades();
     }
     MenteeProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2366,11 +2373,15 @@ var MenteeProfileComponent = /** @class */ (function () {
                 .subscribe(function (data) {
                 _this.guardian = data;
             }, function (error) { return console.log(error); });
-            this.menteeService.get_mentee_grades(this.menteeId)
-                .subscribe(function (data) {
+            this.menteeProfileService.notify_change_in_grades();
+            this.menteeProfileService.mentee_grades$.subscribe(function (data) {
                 _this.grades = data;
-                var i = underscore__WEBPACK_IMPORTED_MODULE_12__["_"].groupBy(_this.grades, function (value) { return value.gradePeriod.description; });
             }, function (error) { return console.log(error); });
+            //this.menteeService.get_mentee_grades(this.menteeId)
+            //  .subscribe(data => {
+            //    this.grades = data;
+            //  },
+            //    error => console.log(error));
             this.timelineService.get_timeline_data(this.menteeId)
                 .subscribe(function (data) {
                 _this.timelineData = data;
@@ -2404,12 +2415,20 @@ var MenteeProfileComponent = /** @class */ (function () {
         });
         this.menteeService.add_mentee_grades(new_grades)
             .subscribe(function (r) {
+            var response = r;
+            _this.menteeProfileService.notify_change_in_grades();
+            _this.menteeTabs.tabs[1].active = true;
+            //this.menteeTabs.tabs[3].active = true;
         });
         var control = this.myForm.controls['grades'];
         while (control.length !== 0) {
             this.removeGrade(0);
         }
     };
+    __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('menteeTabs'),
+        __metadata("design:type", ngx_bootstrap__WEBPACK_IMPORTED_MODULE_12__["TabsetComponent"])
+    ], MenteeProfileComponent.prototype, "menteeTabs", void 0);
     MenteeProfileComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: "mentee-profile",
@@ -2417,13 +2436,14 @@ var MenteeProfileComponent = /** @class */ (function () {
             styles: [__webpack_require__(/*! ./mentee.profile.component.css */ "../src/app/mentee/mentee.profile.component.css")],
             changeDetection: _angular_core__WEBPACK_IMPORTED_MODULE_0__["ChangeDetectionStrategy"].OnPush
         }),
-        __metadata("design:paramtypes", [_mentee_mentee_service__WEBPACK_IMPORTED_MODULE_6__["MenteeService"],
-            _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_7__["MentorService"],
+        __metadata("design:paramtypes", [_shared_mentee_service__WEBPACK_IMPORTED_MODULE_6__["MenteeService"],
+            _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_8__["MentorService"],
             _shared_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"],
             _shared_timeline_service__WEBPACK_IMPORTED_MODULE_3__["TimelineService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_5__["Router"],
             _shared_grading_service__WEBPACK_IMPORTED_MODULE_2__["GradingService"],
-            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"]])
+            _angular_forms__WEBPACK_IMPORTED_MODULE_4__["FormBuilder"],
+            _mentee_mentee_profile_service__WEBPACK_IMPORTED_MODULE_7__["MenteeProfileService"]])
     ], MenteeProfileComponent);
     return MenteeProfileComponent;
 }());
@@ -2432,21 +2452,20 @@ var MenteeProfileComponent = /** @class */ (function () {
 
 /***/ }),
 
-/***/ "../src/app/mentee/mentee.service.ts":
-/*!*******************************************!*\
-  !*** ../src/app/mentee/mentee.service.ts ***!
-  \*******************************************/
-/*! exports provided: MenteeService */
+/***/ "../src/app/mentee/mentee.profile.service.ts":
+/*!***************************************************!*\
+  !*** ../src/app/mentee/mentee.profile.service.ts ***!
+  \***************************************************/
+/*! exports provided: MenteeProfileService */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenteeService", function() { return MenteeService; });
-/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/http */ "../node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenteeProfileService", function() { return MenteeProfileService; });
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
+/* harmony import */ var rxjs_Subject__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/Subject */ "../node_modules/rxjs-compat/_esm5/Subject.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2460,66 +2479,26 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
-var MenteeService = /** @class */ (function () {
-    function MenteeService(http, userService, httpClient) {
-        this.http = http;
+var MenteeProfileService = /** @class */ (function () {
+    function MenteeProfileService(menteeService, userService) {
+        this.menteeService = menteeService;
         this.userService = userService;
-        this.httpClient = httpClient;
+        this.mentee_grades$ = new rxjs_Subject__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.get_mentee_grades();
     }
-    MenteeService.prototype.get_mentees = function () {
-        return this.http.get("http://localhost:5005/api/mentees", {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    MenteeProfileService.prototype.get_mentee_grades = function () {
+        var _this = this;
+        this.user = JSON.parse(localStorage.getItem('user'));
+        this.menteeService.get_mentee_grades(parseInt(this.user.iat)).subscribe(function (data) { return _this.mentee_grades$.next(data); });
     };
-    MenteeService.prototype.get_total_mentees = function () {
-        return this.http.get("http://localhost:5005/api/mentees/totalmentees", {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    MenteeProfileService.prototype.notify_change_in_grades = function () {
+        this.get_mentee_grades();
     };
-    MenteeService.prototype.add_mentee = function (mentee) {
-        return this.http.post("http://localhost:5005/api/mentees", mentee, {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
-    };
-    MenteeService.prototype.get_mentee_by_id = function (menteeId) {
-        var httpOptions = {
-            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
-                'Content-Type': 'application/json',
-                'Authorization': "Bearer " + localStorage.getItem('token').toString()
-            })
-        };
-        return this.httpClient.get("http://localhost:5005/api/mentees/" + menteeId, httpOptions);
-    };
-    MenteeService.prototype.get_mentor_by_mentee_id = function (menteeId) {
-        return this.http.get("http://localhost:5005/api/mentees/GetMentor/" + menteeId, {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
-    };
-    MenteeService.prototype.get_guardian_by_mentee_id = function (menteeId) {
-        return this.http.get("http://localhost:5005/api/mentees/GetGuardian/" + menteeId, {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
-    };
-    MenteeService.prototype.get_mentee_grades = function (menteeId) {
-        return this.http.get("http://localhost:5005/api/mentees/MenteeGrades/" + menteeId, {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
-    };
-    MenteeService.prototype.add_mentee_grades = function (grades) {
-        return this.http.post("http://localhost:5005/api/mentees/AddGrades", grades, {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        });
-    };
-    MenteeService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _shared_user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
-    ], MenteeService);
-    return MenteeService;
+    MenteeProfileService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
+        __metadata("design:paramtypes", [_shared_mentee_service__WEBPACK_IMPORTED_MODULE_2__["MenteeService"], _shared_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"]])
+    ], MenteeProfileService);
+    return MenteeProfileService;
 }());
 
 
@@ -2533,7 +2512,7 @@ var MenteeService = /** @class */ (function () {
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = ".meticulous-container {\r\n    margin: 20px;\r\n}\r\n\r\n.first-name {\r\n    /*font-family: 'Dancing Script', cursive !important;*/\r\n    font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n    margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n    height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n    height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n    font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n\r\n.timeline,\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    padding: 20px;\r\n    position: relative;\r\n}\r\n\r\n.timeline:before {\r\n        top: 40px;\r\n        bottom: 0;\r\n        position: absolute;\r\n        content: \" \";\r\n        width: 3px;\r\n        background-color: #eeeeee;\r\n        left: 50%;\r\n        margin-left: -1.5px;\r\n    }\r\n\r\n.timeline::after {\r\n        width: 0px !important;\r\n    }\r\n\r\n.timeline .timeline-item {\r\n        margin-bottom: 20px;\r\n        position: relative;\r\n    }\r\n\r\n.timeline .timeline-item:before,\r\n        .timeline .timeline-item:after {\r\n            content: \"\";\r\n            display: table;\r\n        }\r\n\r\n.timeline .timeline-item:after {\r\n            clear: both;\r\n            width: 0px !important;\r\n        }\r\n\r\n.timeline .timeline-item .timeline-badge {\r\n            color: #fff;\r\n            width: 54px;\r\n            height: 54px;\r\n            line-height: 52px;\r\n            font-size: 22px;\r\n            text-align: center;\r\n            position: absolute;\r\n            top: 18px;\r\n            left: 50%;\r\n            margin-left: -25px;\r\n            background-color: #333;\r\n            border: 3px solid #ffffff;\r\n            z-index: 100;\r\n            border-top-right-radius: 50%;\r\n            border-top-left-radius: 50%;\r\n            border-bottom-right-radius: 50%;\r\n            border-bottom-left-radius: 50%;\r\n        }\r\n\r\n.timeline .timeline-item .timeline-badge i,\r\n            .timeline .timeline-item .timeline-badge .fa,\r\n            .timeline .timeline-item .timeline-badge .glyphicon {\r\n                top: 2px;\r\n                left: 0px;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-badge.primary {\r\n                background-color: #1f9eba;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-badge.info {\r\n                background-color: #5bc0de;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-badge.success {\r\n                background-color: #59ba1f;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-badge.warning {\r\n                background-color: #d1bd10;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-badge.danger {\r\n                background-color: #ba1f1f;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-panel {\r\n            position: relative;\r\n            width: 46%;\r\n            float: left;\r\n            right: 16px;\r\n            border: 1px solid #777;\r\n            background: #ffffff;\r\n            border-radius: 2px;\r\n            padding: 20px;\r\n            box-shadow: 0 1px 6px rgba(0, 0, 0, 0.175);\r\n        }\r\n\r\n.timeline .timeline-item .timeline-panel:before {\r\n                position: absolute;\r\n                top: 26px;\r\n                right: -16px;\r\n                display: inline-block;\r\n                border-top: 16px solid transparent;\r\n                border-left: 16px solid #777;\r\n                border-right: 0 solid #777;\r\n                border-bottom: 16px solid transparent;\r\n                content: \" \";\r\n            }\r\n\r\n.timeline .timeline-item .timeline-panel .timeline-title {\r\n                margin-top: 0;\r\n                color: inherit;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-panel .timeline-body > p,\r\n            .timeline .timeline-item .timeline-panel .timeline-body > ul {\r\n                margin-bottom: 0;\r\n            }\r\n\r\n.timeline .timeline-item .timeline-panel .timeline-body > p + p {\r\n                    margin-top: 5px;\r\n                }\r\n\r\n.timeline .timeline-item:last-child:nth-child(even) {\r\n            float: right;\r\n        }\r\n\r\n.timeline .timeline-item:nth-child(even) .timeline-panel {\r\n            float: right;\r\n            left: 16px;\r\n        }\r\n\r\n.timeline .timeline-item:nth-child(even) .timeline-panel:before {\r\n                border-left-width: 0;\r\n                border-right-width: 14px;\r\n                left: -14px;\r\n                right: auto;\r\n            }\r\n\r\n.timeline-horizontal {\r\n    list-style: none;\r\n    position: relative;\r\n    padding: 20px 0px 20px 0px;\r\n    display: inline-block;\r\n}\r\n\r\n.timeline-horizontal:before {\r\n        height: 3px;\r\n        top: auto;\r\n        bottom: 26px;\r\n        left: 56px;\r\n        right: 0;\r\n        width: 100%;\r\n        margin-bottom: 20px;\r\n    }\r\n\r\n.timeline-horizontal .timeline-item {\r\n        display: table-cell;\r\n        height: 280px;\r\n        width: 20%;\r\n        min-width: 320px;\r\n        float: none !important;\r\n        padding-left: 0px;\r\n        padding-right: 20px;\r\n        margin: 0 auto;\r\n        vertical-align: bottom;\r\n    }\r\n\r\n.timeline-horizontal .timeline-item .timeline-panel {\r\n            top: auto;\r\n            bottom: 64px;\r\n            display: inline-block;\r\n            float: none !important;\r\n            left: 0 !important;\r\n            right: 0 !important;\r\n            width: 100%;\r\n            margin-bottom: 20px;\r\n        }\r\n\r\n.timeline-horizontal .timeline-item .timeline-panel:before {\r\n                top: auto;\r\n                bottom: -16px;\r\n                left: 28px !important;\r\n                right: auto;\r\n                border-right: 16px solid transparent !important;\r\n                border-top: 16px solid #777 !important;\r\n                border-bottom: 0 solid #777 !important;\r\n                border-left: 16px solid transparent !important;\r\n            }\r\n\r\n.timeline-horizontal .timeline-item:before,\r\n        .timeline-horizontal .timeline-item:after {\r\n            display: none;\r\n        }\r\n\r\n.timeline-horizontal .timeline-item .timeline-badge {\r\n            top: auto;\r\n            bottom: 0px;\r\n            left: 43px;\r\n        }"
+module.exports = ".meticulous-container {\r\n  margin: 20px;\r\n}\r\n\r\n.first-name {\r\n  /*font-family: 'Dancing Script', cursive !important;*/\r\n  font-size: xx-large;\r\n}\r\n\r\n.mat-divider {\r\n  margin: 20px;\r\n}\r\n\r\n.mat-tab-profile {\r\n  height: 200px;\r\n}\r\n\r\n.mat-tab-body-content {\r\n  height: 300px !important;\r\n}\r\n\r\n.mat-tab-group {\r\n  font-family: 'Abel', sans-serif !important;\r\n}\r\n\r\n/* Timeline */\r\n\r\nsection#timeline {\r\n  width: 80%;\r\n  margin: 20px auto;\r\n  position: relative;\r\n}\r\n\r\nsection#timeline:before {\r\n    content: '';\r\n    display: block;\r\n    position: absolute;\r\n    left: 50%;\r\n    top: 0;\r\n    margin: 0 0 0 -1px;\r\n    width: 2px;\r\n    height: 100%;\r\n    background: rgba(0,0,0,0.2);\r\n  }\r\n\r\nsection#timeline article {\r\n    width: 100%;\r\n    margin: 0 0 20px 0;\r\n    position: relative;\r\n  }\r\n\r\nsection#timeline article:after {\r\n      content: '';\r\n      display: block;\r\n      clear: both;\r\n    }\r\n\r\nsection#timeline article div.inner {\r\n      width: 40%;\r\n      float: left;\r\n      margin: 5px 0 0 0;\r\n      border-radius: 6px;\r\n    }\r\n\r\nsection#timeline article div.inner span.date {\r\n        display: block;\r\n        width: 60px;\r\n        height: 50px;\r\n        padding: 5px 0;\r\n        position: absolute;\r\n        top: 0;\r\n        left: 50%;\r\n        margin: 0 0 0 -32px;\r\n        border-radius: 100%;\r\n        font-size: 8px;\r\n        font-weight: 500;\r\n        text-transform: uppercase;\r\n        /*background: #25303B;*/\r\n        background: rgba(255, 255, 255, 1);\r\n        color: rgba(0,0,0,1);\r\n        border: 2px solid rgba(255,255,255,0.2);\r\n        box-shadow: 0 0 0 1px rgba(0,0,0,0.2);\r\n        line-height: 1;\r\n      }\r\n\r\nsection#timeline article div.inner span.date span {\r\n          display: block;\r\n          text-align: center;\r\n        }\r\n\r\nsection#timeline article div.inner span.date span.day {\r\n            font-size: 10px;\r\n          }\r\n\r\nsection#timeline article div.inner span.date span.month {\r\n            font-size: 18px;\r\n          }\r\n\r\nsection#timeline article div.inner span.date span.year {\r\n            font-size: 10px;\r\n          }\r\n\r\nsection#timeline article div.inner h2 {\r\n        padding: 15px;\r\n        margin: 0;\r\n        color: #fff;\r\n        font-size: 20px;\r\n        text-transform: uppercase;\r\n        letter-spacing: -1px;\r\n        border-radius: 6px 6px 0 0;\r\n        position: relative;\r\n      }\r\n\r\nsection#timeline article div.inner h2:after {\r\n          content: '';\r\n          position: absolute;\r\n          top: 20px;\r\n          right: -5px;\r\n          width: 10px;\r\n          height: 10px;\r\n          -webkit-transform: rotate(-45deg);\r\n        }\r\n\r\nsection#timeline article div.inner p {\r\n        padding: 15px;\r\n        margin: 0;\r\n        font-size: 14px;\r\n        background: #fff;\r\n        color: #656565;\r\n        border-radius: 0 0 6px 6px;\r\n      }\r\n\r\nsection#timeline article:nth-child(2n+2) div.inner {\r\n      float: right;\r\n    }\r\n\r\nsection#timeline article:nth-child(2n+2) div.inner h2:after {\r\n        left: -5px;\r\n      }\r\n\r\nsection#timeline article:nth-child(1) div.inner h2 {\r\n      background: #e74c3c;\r\n    }\r\n\r\nsection#timeline article:nth-child(1) div.inner h2:after {\r\n        background: #e74c3c;\r\n      }\r\n\r\nsection#timeline article:nth-child(2) div.inner h2 {\r\n      background: #2ecc71;\r\n    }\r\n\r\nsection#timeline article:nth-child(2) div.inner h2:after {\r\n        background: #2ecc71;\r\n      }\r\n\r\nsection#timeline article:nth-child(3) div.inner h2 {\r\n      background: #e67e22;\r\n    }\r\n\r\nsection#timeline article:nth-child(3) div.inner h2:after {\r\n        background: #e67e22;\r\n      }\r\n\r\nsection#timeline article:nth-child(4) div.inner h2 {\r\n      background: #1abc9c;\r\n    }\r\n\r\nsection#timeline article:nth-child(4) div.inner h2:after {\r\n        background: #1abc9c;\r\n      }\r\n\r\nsection#timeline article:nth-child(5) div.inner h2 {\r\n      background: #9b59b6;\r\n    }\r\n\r\nsection#timeline article:nth-child(5) div.inner h2:after {\r\n        background: #9b59b6;\r\n      }\r\n"
 
 /***/ }),
 
@@ -2544,7 +2523,7 @@ module.exports = ".meticulous-container {\r\n    margin: 20px;\r\n}\r\n\r\n.firs
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid meticulous-container\">\r\n    <div class=\"row\">\r\n        <div class=\"col-xl-3\">\r\n            <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\"></div>\r\n        </div>\r\n        <div class=\"col-xl-9\">\r\n\r\n            <div class=\"row first-name\">\r\n                {{mentor.mentorFirstName}} {{mentor.mentorLastName}}\r\n            </div>\r\n\r\n            <div class=\"row\">\r\n                <button type=\"button\" class=\"btn btn-primary\">\r\n                    Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n                </button>\r\n            </div>\r\n\r\n            <mat-divider></mat-divider>\r\n            <div class=\"row\">\r\n                <mat-tab-group>\r\n                    <mat-tab label=\"Info\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-info-circle\"></i>Info</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n                            <div class=\"row\">\r\n                                <div class=\"col-sm-3\">Address:</div>\r\n                                <div class=\"col-sm-9\">\r\n                                    <div class=\"row\">\r\n                                        {{mentor.mentorAddress.address1}}\r\n                                    </div>\r\n                                    <div class=\"row\">\r\n                                        {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Timeline\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-clock-o\"></i>Timeline</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 15px; font-style: normal;\">\r\n                            <div class=\"row\">\r\n                                <div class=\"col-md-12\">\r\n\r\n                                    <div style=\"display:inline-block;width:100%;overflow-y:auto;\">\r\n                                        <ul class=\"timeline timeline-horizontal\">\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge primary\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 1</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge success\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 2</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                            <li class=\"timeline-item\">\r\n                                                <div class=\"timeline-badge info\"><i class=\"glyphicon glyphicon-check\"></i></div>\r\n                                                <div class=\"timeline-panel\">\r\n                                                    <div class=\"timeline-heading\">\r\n                                                        <h4 class=\"timeline-title\">Mussum ipsum cacilds 3</h4>\r\n                                                        <p><small class=\"text-muted\"><i class=\"glyphicon glyphicon-time\"></i> 11 hours ago via Twitter</small></p>\r\n                                                    </div>\r\n                                                    <div class=\"timeline-body\">\r\n                                                        <p>Mussum ipsum cacilds, vidis litro abertis. Consetis adipisci. M� faiz elementum girarzis, nisi eros gostis.</p>\r\n                                                    </div>\r\n                                                </div>\r\n                                            </li>\r\n                                        </ul>\r\n                                    </div>\r\n                                </div>\r\n                            </div>\r\n                        </div>\r\n                    </mat-tab>\r\n                    <mat-tab label=\"Mentees\">\r\n                        <ng-template mat-tab-label>\r\n                            <span><i class=\"fa fa-user\"></i>Mentees</span>\r\n                        </ng-template>\r\n                        <div style=\"margin: 0; font-style: normal;\">\r\n\r\n                            <table class=\"table table-sm\">\r\n                                <thead class=\"thead-dark\">\r\n                                    <tr>\r\n                                        <th>Mentee</th>\r\n                                        <th>Classification</th>\r\n                                    </tr>\r\n                                </thead>\r\n                                <tbody>\r\n                                    <tr *ngFor=\"let mentee of mentor.mentorMentees\">\r\n                                        <td><a (click)=\"openMenteeFormDialog(mentee.menteeId)\">{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>\r\n                                        <td>{{mentee.menteeClassification.description}}</td>\r\n                                    </tr>\r\n                                </tbody>\r\n                            </table>\r\n                        </div>\r\n                    </mat-tab>\r\n                </mat-tab-group>\r\n            </div>\r\n        </div>\r\n    </div>\r\n</div>"
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentor.mentorFirstName}} {{mentor.mentorLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentor.mentorEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <!--<div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>-->\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-4\">Address: </div>\r\n                <div class=\"col-sm-8\">\r\n                  <div class=\"row\">\r\n                    {{mentor.mentorAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentees\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <!--<div class=\"row\" style=\"margin-bottom: 20px;\">Mentees</div>-->\r\n              <div class=\"row\">\r\n                <table class=\"table table-sm\">\r\n                  <tbody>\r\n                    <tr *ngFor=\"let mentee of mentor.mentorMentees\">\r\n                      <td> <a>{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>\r\n                      <td>{{mentee.menteeClassification.description}}</td>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2561,11 +2540,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ../mentee-dialog/mentee-dialog.component */ "../src/app/mentee-dialog/mentee-dialog.component.ts");
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var _shared_timeline_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/timeline.service */ "../src/app/shared/timeline.service.ts");
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _models_mentor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../models/mentor */ "../src/app/models/mentor.ts");
+/* harmony import */ var _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../mentee-dialog/mentee-dialog.component */ "../src/app/mentee-dialog/mentee-dialog.component.ts");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2583,15 +2564,19 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var MentorProfileComponent = /** @class */ (function () {
-    function MentorProfileComponent(menteeService, mentorService, userService, router, dialog) {
+    function MentorProfileComponent(menteeService, mentorService, timelineService, userService, router, dialog) {
         this.menteeService = menteeService;
         this.mentorService = mentorService;
+        this.timelineService = timelineService;
         this.userService = userService;
         this.router = router;
         this.dialog = dialog;
-        this.mentor = {};
+        this.mentor = new _models_mentor__WEBPACK_IMPORTED_MODULE_7__["Mentor"]();
         this.messages = 0;
+        this.timelineData = [];
     }
     MentorProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2606,10 +2591,14 @@ var MentorProfileComponent = /** @class */ (function () {
                 _this.mentor = data;
             }, function (error) { return console.log(error); });
         }
+        this.timelineService.get_timeline_data(this.mentorId)
+            .subscribe(function (data) {
+            _this.timelineData = data;
+        }, function (error) { return console.log(error); });
     };
     MentorProfileComponent.prototype.openMenteeFormDialog = function (mId) {
         var _this = this;
-        var dialogRef = this.dialog.open(_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_6__["MenteeDialogComponent"], {
+        var dialogRef = this.dialog.open(_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_8__["MenteeDialogComponent"], {
             width: '1400px',
             height: '860px',
             data: { menteeId: mId }
@@ -2620,18 +2609,19 @@ var MentorProfileComponent = /** @class */ (function () {
     };
     MentorProfileComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_6__["MenteeDialogComponent"]]
+            imports: [_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_8__["MenteeDialogComponent"]]
         }),
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'mentor-profile',
             template: __webpack_require__(/*! ./mentor.profile.component.html */ "../src/app/mentor/mentor.profile.component.html"),
             styles: [__webpack_require__(/*! ./mentor.profile.component.css */ "../src/app/mentor/mentor.profile.component.css")]
         }),
-        __metadata("design:paramtypes", [_mentee_mentee_service__WEBPACK_IMPORTED_MODULE_3__["MenteeService"],
+        __metadata("design:paramtypes", [_shared_mentee_service__WEBPACK_IMPORTED_MODULE_3__["MenteeService"],
             _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_4__["MentorService"],
+            _shared_timeline_service__WEBPACK_IMPORTED_MODULE_5__["TimelineService"],
             _shared_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_5__["MatDialog"]])
+            _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]])
     ], MentorProfileComponent);
     return MentorProfileComponent;
 }());
@@ -2651,9 +2641,10 @@ var MentorProfileComponent = /** @class */ (function () {
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MentorService", function() { return MentorService; });
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/http */ "../node_modules/@angular/http/fesm5/http.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2667,32 +2658,37 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
 var MentorService = /** @class */ (function () {
-    function MentorService(http, userService) {
+    function MentorService(http, httpClient, userService) {
         this.http = http;
+        this.httpClient = httpClient;
         this.userService = userService;
     }
     MentorService.prototype.get_mentors = function () {
         return this.http.get("http://localhost:5005/api/mentors", {
             headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); }));
     };
     MentorService.prototype.add_mentor = function (mentor) {
         return this.http.post("http://localhost:5005/api/mentors", mentor, {
             headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); }));
     };
     MentorService.prototype.get_mentor_by_id = function (mentorId) {
-        return this.http.get("http://localhost:5005/api/mentors/" + mentorId, {
-            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentors/" + mentorId, httpOptions);
     };
     MentorService = __decorate([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"], _shared_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"]])
     ], MentorService);
     return MentorService;
 }());
@@ -3082,6 +3078,103 @@ var GradingService = /** @class */ (function () {
 
 /***/ }),
 
+/***/ "../src/app/shared/mentee.service.ts":
+/*!*******************************************!*\
+  !*** ../src/app/shared/mentee.service.ts ***!
+  \*******************************************/
+/*! exports provided: MenteeService */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "MenteeService", function() { return MenteeService; });
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/http */ "../node_modules/@angular/http/fesm5/http.js");
+/* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
+/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _user_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./user.service */ "../src/app/shared/user.service.ts");
+var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
+    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
+    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+    return c > 3 && r && Object.defineProperty(target, key, r), r;
+};
+var __metadata = (undefined && undefined.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
+
+
+
+
+
+var MenteeService = /** @class */ (function () {
+    function MenteeService(http, userService, httpClient) {
+        this.http = http;
+        this.userService = userService;
+        this.httpClient = httpClient;
+    }
+    MenteeService.prototype.get_mentees = function () {
+        return this.http.get("http://localhost:5005/api/mentees", {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
+    MenteeService.prototype.get_total_mentees = function () {
+        return this.http.get("http://localhost:5005/api/mentees/totalmentees", {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
+    MenteeService.prototype.add_mentee = function (mentee) {
+        return this.http.post("http://localhost:5005/api/mentees", mentee, {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        }).pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
+    MenteeService.prototype.get_mentee_by_id = function (menteeId) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/" + menteeId, httpOptions);
+    };
+    MenteeService.prototype.get_mentor_by_mentee_id = function (menteeId) {
+        return this.http.get("http://localhost:5005/api/mentees/GetMentor/" + menteeId, {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
+    MenteeService.prototype.get_guardian_by_mentee_id = function (menteeId) {
+        return this.http.get("http://localhost:5005/api/mentees/GetGuardian/" + menteeId, {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        })
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
+    };
+    MenteeService.prototype.get_mentee_grades = function (menteeId) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/MenteeGrades/" + menteeId, httpOptions);
+    };
+    MenteeService.prototype.add_mentee_grades = function (grades) {
+        return this.http.post("http://localhost:5005/api/mentees/AddGrades", grades, {
+            headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
+        });
+    };
+    MenteeService = __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _user_service__WEBPACK_IMPORTED_MODULE_4__["UserService"], _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpClient"]])
+    ], MenteeService);
+    return MenteeService;
+}());
+
+
+
+/***/ }),
+
 /***/ "../src/app/shared/round.pipe.ts":
 /*!***************************************!*\
   !*** ../src/app/shared/round.pipe.ts ***!
@@ -3244,7 +3337,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ng2-charts/ng2-charts */ "../node_modules/ng2-charts/ng2-charts.js");
 /* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var _mentee_mentee_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../mentee/mentee.service */ "../src/app/mentee/mentee.service.ts");
+/* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 /* harmony import */ var _director_director_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../director/director.service */ "../src/app/director/director.service.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
@@ -3306,7 +3399,7 @@ var UserchartComponent = /** @class */ (function () {
             template: __webpack_require__(/*! ./userchart.component.html */ "../src/app/userchart/userchart.component.html"),
             styles: [__webpack_require__(/*! ./userchart.component.css */ "../src/app/userchart/userchart.component.css")]
         }),
-        __metadata("design:paramtypes", [_mentee_mentee_service__WEBPACK_IMPORTED_MODULE_2__["MenteeService"], _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_3__["MentorService"], _director_director_service__WEBPACK_IMPORTED_MODULE_4__["DirectorService"]])
+        __metadata("design:paramtypes", [_shared_mentee_service__WEBPACK_IMPORTED_MODULE_2__["MenteeService"], _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_3__["MentorService"], _director_director_service__WEBPACK_IMPORTED_MODULE_4__["DirectorService"]])
     ], UserchartComponent);
     return UserchartComponent;
 }());

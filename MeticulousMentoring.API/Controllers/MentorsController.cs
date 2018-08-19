@@ -109,14 +109,28 @@ namespace MeticulousMentoring.API.Controllers
                             model.MentorId = mentor.Id;
                             var newMentor = this.mapper.Map<MentorViewModel, Mentor>(model);
 
+                            _ctx.TimeLine.Add(new Timeline
+                            {
+                                user_id = model.MentorId,
+                                detail = "Joined Program",
+                                timeline_date = DateTime.Now
+                            });
+
                             _ctx.Addresses.Add(model.MentorAddress);
                             await _ctx.SaveChangesAsync();
                             newMentor.mentees.Clear();
+
+                            var mentee_names =
+                                model.MentorMentees.Select(x => x.MenteeFirstName + ' ' + x.MenteeLastName);
+
+                            var menteeStrings = string.Join(',', mentee_names);
+
                             foreach (var mentee in model.MentorMentees)
                             {
                                 var menteeToAdd = _ctx.Mentees.Single(x => x.id == mentee.MenteeId);
                                 menteeToAdd.modified_on = DateTime.Now;
                                 newMentor.mentees.Add(menteeToAdd);
+
                                 _ctx.TimeLine.Add(new Timeline
                                 {
                                     user_id = mentee.MenteeId,
@@ -124,6 +138,13 @@ namespace MeticulousMentoring.API.Controllers
                                     timeline_date = DateTime.Now
                                 });
                             }
+
+                            _ctx.TimeLine.Add(new Timeline
+                            {
+                                user_id = model.MentorId,
+                                detail = $"Matched with mentee(s) {menteeStrings}",
+                                timeline_date = DateTime.Now
+                            });
 
                             newMentor.created_on = DateTime.Now;
                             newMentor.modified_on = DateTime.Now;

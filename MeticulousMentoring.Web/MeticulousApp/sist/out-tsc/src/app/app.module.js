@@ -30,7 +30,7 @@ var user_service_1 = require("./shared/user.service");
 var timeline_service_1 = require("./shared/timeline.service");
 var classification_service_1 = require("./classification/classification.service");
 var educationSystem_service_1 = require("./educationSystem/educationSystem.service");
-var mentee_service_1 = require("./mentee/mentee.service");
+var mentee_service_1 = require("./shared/mentee.service");
 var mentor_service_1 = require("./mentor/mentor.service");
 var guardian_service_1 = require("./guardian/guardian.service");
 var school_service_1 = require("./school/school.service");
@@ -49,6 +49,7 @@ var admin_service_1 = require("./shared/admin.service");
 var users_component_1 = require("./dashboard/users/users.component");
 var users_service_1 = require("./dashboard/users/users.service");
 var home_component_1 = require("./dashboard/home/home.component");
+var mentee_profile_service_1 = require("./mentee/mentee.profile.service");
 var admin_form_component_1 = require("./forms/admin-form.component");
 var router_1 = require("@angular/router");
 var forms_1 = require("@angular/forms");
@@ -166,7 +167,8 @@ var AppModule = /** @class */ (function () {
                 timeline_service_1.TimelineService,
                 grading_service_1.GradingService,
                 admin_service_1.AdminService,
-                users_service_1.UsersService
+                users_service_1.UsersService,
+                mentee_profile_service_1.MenteeProfileService
             ],
             bootstrap: [app_component_1.AppComponent]
         })

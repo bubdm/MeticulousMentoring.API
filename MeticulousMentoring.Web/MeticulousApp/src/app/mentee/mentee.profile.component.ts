@@ -1,4 +1,4 @@
-import { Component, OnInit, ChangeDetectionStrategy } from "@angular/core";
+import { Component, OnInit, ChangeDetectionStrategy, ViewChild } from "@angular/core";
 import { AccountService } from "../shared/accountservice";
 import { UserService } from "../shared/user.service";
 import { GradingService } from "../shared/grading.service";
@@ -6,12 +6,15 @@ import { TimelineService } from '../shared/timeline.service';
 import { FormGroup, FormArray, FormBuilder, Validators } from '@angular/forms';
 import { Router } from "@angular/router";
 import { IUser } from '../interfaces/iuser';
-import { MenteeService } from '../mentee/mentee.service';
+import { MenteeService } from '../shared/mentee.service';
+import { MenteeProfileService } from '../mentee/mentee.profile.service';
 import { MentorService } from '../mentor/mentor.service';
 import { Mentee } from '../models/mentee';
 import { Mentor } from '../models/mentor';
 import { Guardian } from '../models/guardian';
 import { GradingPeriod } from '../models/gradingperiod';
+import { Grade } from '../models/grade';
+import { TabsetComponent } from "ngx-bootstrap";
 import 'rxjs/Rx';
 //import * as _ from 'lodash';
 import { _ } from "underscore";
@@ -28,7 +31,7 @@ export class MenteeProfileComponent implements OnInit {
   public menteeId;
   public mentor: Mentor = new Mentor();
   public guardian: Guardian = new Guardian();
-  public grades = [];
+  public grades: Array<Grade> = new Array<Grade>();
   public gradeGroup = {};
   public messages: number = 1;
   public timelineData = [];
@@ -38,6 +41,7 @@ export class MenteeProfileComponent implements OnInit {
   public system_id = 0;
   public classification_id = 0;
   public myForm: FormGroup;
+  @ViewChild('menteeTabs') menteeTabs: TabsetComponent;
 
   constructor(private menteeService: MenteeService,
     private mentorService: MentorService,
@@ -45,7 +49,9 @@ export class MenteeProfileComponent implements OnInit {
     private timelineService: TimelineService,
     private router: Router,
     private gradingService: GradingService,
-    private _fb: FormBuilder) {
+    private _fb: FormBuilder,
+    private menteeProfileService: MenteeProfileService) {
+    this.menteeProfileService.notify_change_in_grades();
   }
 
   ngOnInit(): void {
@@ -88,13 +94,19 @@ export class MenteeProfileComponent implements OnInit {
         },
           error => console.log(error));
 
-      this.menteeService.get_mentee_grades(this.menteeId)
-        .subscribe(data => {
-          this.grades = data;
+      this.menteeProfileService.notify_change_in_grades();
 
-          let i = _.groupBy(this.grades, value => value.gradePeriod.description);
-        },
-          error => console.log(error));
+      this.menteeProfileService.mentee_grades$.subscribe(data => {
+        this.grades = data;
+      },
+        error => console.log(error));
+
+      //this.menteeService.get_mentee_grades(this.menteeId)
+      //  .subscribe(data => {
+      //    this.grades = data;
+
+      //  },
+      //    error => console.log(error));
 
       this.timelineService.get_timeline_data(this.menteeId)
         .subscribe(data => {
@@ -134,6 +146,10 @@ export class MenteeProfileComponent implements OnInit {
 
     this.menteeService.add_mentee_grades(new_grades)
       .subscribe(r => {
+        let response = r;
+        this.menteeProfileService.notify_change_in_grades();
+        this.menteeTabs.tabs[1].active = true;
+        //this.menteeTabs.tabs[3].active = true;
       });
 
     const control = <FormArray>this.myForm.controls['grades'];

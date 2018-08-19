@@ -17,6 +17,7 @@
                 .ForMember(m => m.MentorAddress, mv => mv.MapFrom(m => m.address))
                 .ForMember(m => m.MentorIsActive, mv => mv.MapFrom(m => m.is_active))
                 .ForMember(m => m.MentorMentees, mv => mv.MapFrom(m => m.mentees))
+                .ForMember(m => m.MentorEmail, mv => mv.MapFrom(m => m.email))
                 .ReverseMap();
         }
     }

@@ -10,12 +10,14 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
+var http_2 = require("@angular/common/http");
 var core_1 = require("@angular/core");
 var user_service_1 = require("../shared/user.service");
 var operators_1 = require("rxjs/operators");
 var MentorService = /** @class */ (function () {
-    function MentorService(http, userService) {
+    function MentorService(http, httpClient, userService) {
         this.http = http;
+        this.httpClient = httpClient;
         this.userService = userService;
     }
     MentorService.prototype.get_mentors = function () {
@@ -31,14 +33,17 @@ var MentorService = /** @class */ (function () {
             .pipe(operators_1.map(function (res) { return res.json(); }));
     };
     MentorService.prototype.get_mentor_by_id = function (mentorId) {
-        return this.http.get("http://localhost:5005/api/mentors/" + mentorId, {
-            headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
-        })
-            .pipe(operators_1.map(function (res) { return res.json(); }));
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentors/" + mentorId, httpOptions);
     };
     MentorService = __decorate([
         core_1.Injectable(),
-        __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService])
+        __metadata("design:paramtypes", [http_1.Http, http_2.HttpClient, user_service_1.UserService])
     ], MentorService);
     return MentorService;
 }());

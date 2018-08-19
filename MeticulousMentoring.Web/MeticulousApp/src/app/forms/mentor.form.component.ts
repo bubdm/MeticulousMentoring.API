@@ -1,6 +1,6 @@
 import { Component, Inject, NgModule, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { MenteeService } from '../mentee/mentee.service';
+import { MenteeService } from '../shared/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
 import { Mentee } from '../interfaces/mentee';
 import { BsModalRef } from "ngx-bootstrap/modal";

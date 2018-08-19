@@ -179,3 +179,13 @@ section#timeline {
       section#timeline article:nth-child(5) div.inner h2:after {
         background: #9b59b6;
       }
+
+    section#timeline article div.inner h2 {
+      background: #777777;
+      background: rgba(119, 119, 119, 1);
+    }
+
+      section#timeline article div.inner h2:after {
+        background: #777777;
+        background: rgba(119, 119, 119, 1);
+      }

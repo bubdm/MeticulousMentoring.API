@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var ng2_charts_1 = require("ng2-charts/ng2-charts");
-var mentee_service_1 = require("../mentee/mentee.service");
+var mentee_service_1 = require("../shared/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var director_service_1 = require("../director/director.service");
 var UserchartComponent = /** @class */ (function () {

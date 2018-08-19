@@ -8,5 +8,6 @@ export class Mentor {
   mentorGender: string;
   mentorAddress: Address;
   mentorIsActive: boolean;
+  mentorEmail: string;
   mentorMentees: Array<Mentee>;
 }

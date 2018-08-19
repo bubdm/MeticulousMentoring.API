@@ -75,6 +75,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   }
 
   public logout() {
+    localStorage.removeItem('user');
+    this.userService.delete();
     this.auth.logout();
     this.router.navigate([""]);
   }

@@ -4,7 +4,7 @@ import { UserService } from "../shared/user.service";
 import { AdminService } from '../shared/admin.service';
 import { Router } from "@angular/router";
 import { IUser } from '../interfaces/iuser';
-import { MenteeService } from '../mentee/mentee.service';
+import { MenteeService } from '../shared/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
 import { MatTableDataSource } from '@angular/material';
 import { Mentee } from '../models/mentee';

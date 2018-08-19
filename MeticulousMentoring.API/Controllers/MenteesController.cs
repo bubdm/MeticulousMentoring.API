@@ -244,6 +244,23 @@ namespace MeticulousMentoring.API.Controllers
             try
             {
                 menteeRepository.SaveMenteeGrades(grades);
+
+                var distinct_period_list = grades.Select(x => x.period_id).Distinct();
+                var userId = grades.Select(x => x.mentee_id).FirstOrDefault();
+
+                foreach (var i in distinct_period_list)
+                {
+                    var period = _ctx.GradingPeriods.SingleOrDefault(x => x.id == i);
+
+                    _ctx.TimeLine.Add(new Timeline
+                    {
+                        user_id = userId,
+                        detail = $"Added Grades for {period?.description}",
+                        timeline_date = DateTime.Now
+                    });
+                    _ctx.SaveChanges();
+                }
+
                 return Ok();
             }
             catch (Exception e)

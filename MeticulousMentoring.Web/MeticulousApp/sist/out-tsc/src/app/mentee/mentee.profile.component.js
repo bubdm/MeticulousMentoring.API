@@ -15,16 +15,15 @@ var grading_service_1 = require("../shared/grading.service");
 var timeline_service_1 = require("../shared/timeline.service");
 var forms_1 = require("@angular/forms");
 var router_1 = require("@angular/router");
-var mentee_service_1 = require("../mentee/mentee.service");
+var mentee_service_1 = require("../shared/mentee.service");
+var mentee_profile_service_1 = require("../mentee/mentee.profile.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var mentee_1 = require("../models/mentee");
 var mentor_1 = require("../models/mentor");
 var guardian_1 = require("../models/guardian");
 require("rxjs/Rx");
-//import * as _ from 'lodash';
-var underscore_1 = require("underscore");
 var MenteeProfileComponent = /** @class */ (function () {
-    function MenteeProfileComponent(menteeService, mentorService, userService, timelineService, router, gradingService, _fb) {
+    function MenteeProfileComponent(menteeService, mentorService, userService, timelineService, router, gradingService, _fb, menteeProfileService) {
         this.menteeService = menteeService;
         this.mentorService = mentorService;
         this.userService = userService;
@@ -32,10 +31,11 @@ var MenteeProfileComponent = /** @class */ (function () {
         this.router = router;
         this.gradingService = gradingService;
         this._fb = _fb;
+        this.menteeProfileService = menteeProfileService;
         this.mentee = new mentee_1.Mentee();
         this.mentor = new mentor_1.Mentor();
         this.guardian = new guardian_1.Guardian();
-        this.grades = [];
+        this.grades = new Array();
         this.gradeGroup = {};
         this.messages = 1;
         this.timelineData = [];
@@ -44,6 +44,7 @@ var MenteeProfileComponent = /** @class */ (function () {
         this.courses = [];
         this.system_id = 0;
         this.classification_id = 0;
+        this.menteeProfileService.notify_change_in_grades();
     }
     MenteeProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -63,7 +64,7 @@ var MenteeProfileComponent = /** @class */ (function () {
             this.menteeService.get_mentee_by_id(this.menteeId)
                 .subscribe(function (data) {
                 _this.mentee = data;
-                _this.system_id = data.menteeSchool.educational_system.id;
+                _this.system_id = _this.mentee.menteeSchool.system.id;
                 _this.classification_id = data.menteeClassification.id;
                 _this.gradingService.get_courses_by_systemid(_this.system_id, _this.classification_id)
                     .subscribe(function (data) {
@@ -78,26 +79,14 @@ var MenteeProfileComponent = /** @class */ (function () {
                 .subscribe(function (data) {
                 _this.guardian = data;
             }, function (error) { return console.log(error); });
-            this.menteeService.get_mentee_grades(this.menteeId)
-                .subscribe(function (data) {
+            this.menteeProfileService.mentee_grades$.subscribe(function (data) {
                 _this.grades = data;
-                //TODO Modify underscore js sortby
-                _this.grades = underscore_1._.chain(data)
-                    .groupBy(data, function (value) { return value.gradePeriod.description; })
-                    .map(function (group, key) {
-                    return {
-                        Period: key,
-                        Courses: underscore_1._.chain(group)
-                            .groupBy(data, function (value) { return value.gradeCourse.course_name; })
-                            .map(function (group, key) {
-                            return {
-                                Course: key
-                            };
-                        }).value()
-                    };
-                }).value();
-                //this.grades = _.groupBy(this.grades, value => value.gradePeriod.description);
             }, function (error) { return console.log(error); });
+            //this.menteeService.get_mentee_grades(this.menteeId)
+            //  .subscribe(data => {
+            //    this.grades = data;
+            //  },
+            //    error => console.log(error));
             this.timelineService.get_timeline_data(this.menteeId)
                 .subscribe(function (data) {
                 _this.timelineData = data;
@@ -131,6 +120,7 @@ var MenteeProfileComponent = /** @class */ (function () {
         });
         this.menteeService.add_mentee_grades(new_grades)
             .subscribe(function (r) {
+            _this.menteeProfileService.notify_change_in_grades();
         });
         var control = this.myForm.controls['grades'];
         while (control.length !== 0) {
@@ -150,7 +140,8 @@ var MenteeProfileComponent = /** @class */ (function () {
             timeline_service_1.TimelineService,
             router_1.Router,
             grading_service_1.GradingService,
-            forms_1.FormBuilder])
+            forms_1.FormBuilder,
+            mentee_profile_service_1.MenteeProfileService])
     ], MenteeProfileComponent);
     return MenteeProfileComponent;
 }());

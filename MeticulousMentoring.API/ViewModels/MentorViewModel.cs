@@ -18,6 +18,7 @@ namespace MeticulousMentoring.API.ViewModels
         public string MentorGender { get; set; }
         public Address MentorAddress { get; set; }
         public bool MentorIsActive { get; set; }
+        public string MentorEmail { get; set; }
         public ICollection<MenteeViewModel> MentorMentees { get; set; }
     }
 }

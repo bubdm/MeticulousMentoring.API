@@ -11,7 +11,7 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
 var forms_1 = require("@angular/forms");
-var mentee_service_1 = require("../mentee/mentee.service");
+var mentee_service_1 = require("../shared/mentee.service");
 var mentor_service_1 = require("../mentor/mentor.service");
 var modal_1 = require("ngx-bootstrap/modal");
 var users_service_1 = require("../dashboard/users/users.service");
