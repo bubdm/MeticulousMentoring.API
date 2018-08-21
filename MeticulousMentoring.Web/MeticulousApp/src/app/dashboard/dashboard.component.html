@@ -15,7 +15,7 @@
         </a>
       </li>
       <li>
-        <a [routerLink]="['./users']">
+        <a [routerLink]="['./users']" *ngIf="role === 'Admin' || role === 'Director'">
           <i class="fas fa-users fa-2x"></i>
           <span class="text-span wow fadeIn" data-wow-delay="0.2s">Users</span>
         </a>
@@ -23,10 +23,6 @@
         <a>
           <i class="fas fa-cog fa-2x"></i>
           <span class="text-span wow fadeIn" data-wow-delay="0.2s">Settings</span>
-        </a>
-        <a>
-          <i class="fas fa-dollar-sign fa-2x"></i>
-          <span class="text-span wow fadeIn" data-wow-delay="0.2s">Sales</span>
         </a>
         <a (click)="logout()">
           <i class="fas fa-sign-out-alt fa-2x"></i>

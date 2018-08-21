@@ -146,6 +146,7 @@ namespace MeticulousMentoring.API.Controllers
                                 timeline_date = DateTime.Now
                             });
 
+                            newMentor.email = mentorEmail;
                             newMentor.created_on = DateTime.Now;
                             newMentor.modified_on = DateTime.Now;
                             this.mentorRepository.AddMentor(newMentor);

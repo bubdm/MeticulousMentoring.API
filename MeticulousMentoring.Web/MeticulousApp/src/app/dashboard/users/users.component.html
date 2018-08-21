@@ -8,11 +8,11 @@
       <i class="fas fa-user-graduate fa-5x" style="color: #fff"></i><br />
       Add Mentor
     </a>
-    <a [routerLink]="['./users']" (click)="openDirectorFormDialog()" class="btn btn-sq-lg btn-success">
+    <a [routerLink]="['./users']" *ngIf="role === 'Admin'" (click)="openDirectorFormDialog()" class="btn btn-sq-lg btn-success">
       <i class="fas fa-chalkboard-teacher fa-5x" style="color: #fff"></i><br />
       Add Director
     </a>
-    <a [routerLink]="['./users']" (click)="openAdminFormDialog()" class="btn btn-sq-lg btn-danger">
+    <a [routerLink]="['./users']" *ngIf="role === 'Admin'" (click)="openAdminFormDialog()" class="btn btn-sq-lg btn-danger">
       <i class="fas fa-user-plus fa-5x" style="color: #fff"></i><br />
       Add Admin
     </a>

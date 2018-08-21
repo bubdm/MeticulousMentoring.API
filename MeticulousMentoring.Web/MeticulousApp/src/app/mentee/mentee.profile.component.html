@@ -100,10 +100,10 @@
           <tab heading="Mentee Grades">
             <div class="row" style="margin: 0; font-style: normal;">
 
-              <div class="col-xs-3" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast">
+              <div class="col-xs-1" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast">
                 <table class="table table-sm">
                   <tr>
-                    <th rowspan="6">{{group[0]}} </th>
+                    <th rowspan="6" class="align-middle">{{group[0]}} </th>
                     <th>Course</th>
                     <th>Grade</th>
                   </tr>
@@ -112,7 +112,7 @@
                     <td>{{subjectGroup.gradeValue | round: 2}}</td>
                   </tr>
                 </table>
-                <span *ngIf="isLast">G.P.A: </span>
+                <span class="d-flex justify-content-end" *ngIf="isLast">G.P.A: </span>
               </div>
             </div>
             <form [formGroup]="myForm" novalidate class="form-inline">
@@ -149,6 +149,8 @@
               <button [disabled]="!myForm.valid" *ngIf="myForm.controls.grades.controls.length > 0" class="btn btn-success" (click)="save_grades(myForm)">Save Grade(s)</button>
             </div>
           </tab>
+          <tab heading="Suggested Programs/Events"></tab>
+          <tab heading="Interventions"></tab>
         </tabset>
       </div>
     </div>

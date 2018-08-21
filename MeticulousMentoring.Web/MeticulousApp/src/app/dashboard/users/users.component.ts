@@ -37,6 +37,7 @@ export class UsersComponent implements OnInit {
   public users: Array<UserView>;
   public bsModalRef: BsModalRef;
   public user_to_delete_id: number = -1;
+  public role: string;
 
   mentee: Mentee;
   mentor: Mentor;
@@ -62,8 +63,16 @@ export class UsersComponent implements OnInit {
       this.user = JSON.parse(localStorage.getItem('user'));
     }
 
+    this.role = this.user.role;
+
     this.usersService.users$.subscribe(data => {
       this.users = data;
+      switch (this.role) {
+        case "Director":
+          this.users = data.filter(x => x.role === "Mentor" || x.role === "Mentee");
+          break;
+        default:
+      }
     });
   }
 
