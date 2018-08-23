@@ -101,13 +101,6 @@ export class MenteeProfileComponent implements OnInit {
       },
         error => console.log(error));
 
-      //this.menteeService.get_mentee_grades(this.menteeId)
-      //  .subscribe(data => {
-      //    this.grades = data;
-
-      //  },
-      //    error => console.log(error));
-
       this.timelineService.get_timeline_data(this.menteeId)
         .subscribe(data => {
           this.timelineData = data;

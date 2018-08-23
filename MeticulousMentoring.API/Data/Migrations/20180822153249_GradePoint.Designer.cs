@@ -11,9 +11,10 @@ using System;
 namespace MeticulousMentoring.API.Migrations
 {
     [DbContext(typeof(MeticulousContext))]
-    partial class MeticulousContextModelSnapshot : ModelSnapshot
+    [Migration("20180822153249_GradePoint")]
+    partial class GradePoint
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -74,10 +75,6 @@ namespace MeticulousMentoring.API.Migrations
                     b.Property<string>("course_name");
 
                     b.Property<DateTime?>("created_on");
-
-                    b.Property<bool>("is_advanced_placement");
-
-                    b.Property<bool>("is_honors");
 
                     b.Property<DateTime?>("modified_on");
 

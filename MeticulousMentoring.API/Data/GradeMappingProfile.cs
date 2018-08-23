@@ -15,6 +15,7 @@ namespace MeticulousMentoring.API.Data
                 .ForMember(m => m.GradePeriod, mv => mv.MapFrom(m => m.period))
                 .ForMember(m => m.GradeValue, mv => mv.MapFrom(m => m.grade_value))
                 .ForMember(m => m.SchoolYear, mv => mv.MapFrom(m => m.school_year))
+                .ForMember(m => m.GradePoint, mv => mv.MapFrom(m => m.grade_point))
                 .ReverseMap();
         }
     }

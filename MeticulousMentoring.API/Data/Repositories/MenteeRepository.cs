@@ -149,6 +149,8 @@ namespace MeticulousMentoring.API.Data.Repositories
 
             foreach (var grade in grades)
             {
+                decimal grade_point = getGradePoint(grade);
+
                 param.Add("@course_id", grade.course_id);
                 param.Add("@mentee_id", grade.mentee_id);
                 param.Add("@period_id", grade.period_id);
@@ -156,6 +158,7 @@ namespace MeticulousMentoring.API.Data.Repositories
                 param.Add("@created_on", currentDate);
                 param.Add("@modified_on", currentDate);
                 param.Add("@school_year", grade.school_year);
+                param.Add("@grade_point", grade_point);
 
                 using (IDbConnection dbConnection = _connection)
                 {
@@ -177,6 +180,73 @@ namespace MeticulousMentoring.API.Data.Repositories
             {
                 Console.WriteLine(e);
                 throw;
+            }
+        }
+
+        public decimal getGradePoint(GradesDto grade)
+        {
+            var course = ctx.Courses.Find(grade.course_id);
+            decimal gradePoint = (decimal)0.00;
+
+            if (grade.grade_value >= 90)
+            {
+                gradePoint += (decimal)4.00;
+                if (course.is_honors)
+                {
+                    gradePoint += (decimal)0.50;
+                }
+                else if (course.is_advanced_placement)
+                {
+                    gradePoint += (decimal)1.00;
+                }
+
+                return gradePoint;
+            }
+            else if (grade.grade_value >= 80 && grade.grade_value <= 89)
+            {
+                gradePoint += (decimal)3.00;
+                if (course.is_honors)
+                {
+                    gradePoint += (decimal)0.50;
+                }
+                else if (course.is_advanced_placement)
+                {
+                    gradePoint += (decimal)1.00;
+                }
+
+                return gradePoint;
+            }
+            else if (grade.grade_value >= 70 && grade.grade_value <= 79)
+            {
+                gradePoint += (decimal)2.00;
+                if (course.is_honors)
+                {
+                    gradePoint += (decimal)0.50;
+                }
+                else if (course.is_advanced_placement)
+                {
+                    gradePoint += (decimal)1.00;
+                }
+
+                return gradePoint;
+            }
+            else if (grade.grade_value >= 60 && grade.grade_value <= 69)
+            {
+                gradePoint += (decimal)1.00;
+                if (course.is_honors)
+                {
+                    gradePoint += (decimal)0.50;
+                }
+                else if (course.is_advanced_placement)
+                {
+                    gradePoint += (decimal)1.00;
+                }
+
+                return gradePoint;
+            }
+            else
+            {
+                return (decimal)0.00;
             }
         }
     }

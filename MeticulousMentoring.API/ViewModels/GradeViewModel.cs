@@ -10,5 +10,6 @@ namespace MeticulousMentoring.API.ViewModels
         public GradePeriod GradePeriod { get; set; }
         public decimal GradeValue { get; set; }
         public string SchoolYear { get; set; }
+        public decimal GradePoint { get; set; }
     }
 }

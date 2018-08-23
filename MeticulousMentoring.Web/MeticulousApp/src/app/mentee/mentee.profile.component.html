@@ -115,7 +115,7 @@
                 <span class="d-flex justify-content-end" *ngIf="isLast">G.P.A: </span>
               </div>
             </div>
-            <form [formGroup]="myForm" novalidate class="form-inline">
+            <form [formGroup]="myForm" novalidate class="form-inline justify-content-center">
               <div formArrayName="grades">
                 <div *ngFor="let grade of myForm.controls.grades.controls; let i=index" class="panel panel-default">
                   <div class="panel-body" [formGroupName]="i">
@@ -137,15 +137,15 @@
                         <input type="text" class="form-control-sm" formControlName="value" placeholder="Value" />
                       </div>
                       <div class="col-xs-1">
-                        <span class="fa fa-remove pull-right" (click)="removeGrade(i)"></span>
+                        <div (click)="removeGrade(i)"><i class="fas fa-trash-alt fa-2x pull-right"></i></div>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
             </form>
-            <div *ngIf="grades.length < 20" style="text-align: center; margin: 10px;">
-              <button class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
+            <div *ngIf="grades.length <= 20" style="text-align: center; margin: 10px;">
+              <button *ngIf="myForm.controls.grades.controls.length <= 4" class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
               <button [disabled]="!myForm.valid" *ngIf="myForm.controls.grades.controls.length > 0" class="btn btn-success" (click)="save_grades(myForm)">Save Grade(s)</button>
             </div>
           </tab>

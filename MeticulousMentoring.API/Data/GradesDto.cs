@@ -14,6 +14,7 @@ namespace MeticulousMentoring.API.Data
         public decimal grade_value { get; set; }
         public DateTime? created_on { get; set; }
         public DateTime? modified_on { get; set; }
+        public decimal grade_point { get; set; }
         public string school_year { get; set; }
     }
 }
