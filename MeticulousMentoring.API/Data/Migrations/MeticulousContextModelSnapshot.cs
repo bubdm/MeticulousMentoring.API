@@ -187,6 +187,30 @@ namespace MeticulousMentoring.API.Migrations
                     b.ToTable("GradingPeriods");
                 });
 
+            modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.GradePointAverage", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<int>("classification_id");
+
+                    b.Property<DateTime>("created_on");
+
+                    b.Property<decimal>("gpa");
+
+                    b.Property<int>("mentee_id");
+
+                    b.Property<DateTime>("modified_on");
+
+                    b.Property<int>("period_id");
+
+                    b.Property<string>("school_year");
+
+                    b.HasKey("id");
+
+                    b.ToTable("GradePointAverages");
+                });
+
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Guardian", b =>
                 {
                     b.Property<int>("id")
@@ -213,6 +237,24 @@ namespace MeticulousMentoring.API.Migrations
                     b.HasIndex("addressid");
 
                     b.ToTable("Guardians");
+                });
+
+            modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Image", b =>
+                {
+                    b.Property<int>("id")
+                        .ValueGeneratedOnAdd();
+
+                    b.Property<string>("content_type");
+
+                    b.Property<byte[]>("data");
+
+                    b.Property<string>("filename");
+
+                    b.Property<int>("user_id");
+
+                    b.HasKey("id");
+
+                    b.ToTable("Images");
                 });
 
             modelBuilder.Entity("MeticulousMentoring.API.Data.Entities.Mentee", b =>
@@ -344,6 +386,8 @@ namespace MeticulousMentoring.API.Migrations
 
                     b.Property<string>("UserName")
                         .HasMaxLength(256);
+
+                    b.Property<int>("screen_status");
 
                     b.HasKey("Id");
 

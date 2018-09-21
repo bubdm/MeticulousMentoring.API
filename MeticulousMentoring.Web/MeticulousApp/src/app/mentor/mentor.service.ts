@@ -1,7 +1,6 @@
 import { Http, Response, Headers } from "@angular/http";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
 import { Observable } from "rxjs";
 import { UserService } from "../shared/user.service";
 import { Mentor } from '../models/mentor';

@@ -230,6 +230,7 @@
     <None Include="MeticulousApp\src\app\dashboard\users\users.component.spec.ts" />
     <None Include="MeticulousApp\src\app\dashboard\users\users.component.ts" />
     <None Include="MeticulousApp\src\app\dashboard\users\users.service.ts" />
+    <None Include="MeticulousApp\src\app\enums\screenstatus.ts" />
     <None Include="MeticulousApp\src\app\forms\admin-form.component.css" />
     <None Include="MeticulousApp\src\app\forms\admin-form.component.html" />
     <None Include="MeticulousApp\src\app\forms\admin-form.component.spec.ts" />
@@ -238,10 +239,13 @@
     <None Include="MeticulousApp\src\app\models\adminview.ts" />
     <None Include="MeticulousApp\src\app\models\grade.ts" />
     <None Include="MeticulousApp\src\app\models\gradecourse.ts" />
+    <None Include="MeticulousApp\src\app\models\gradepointaverage.ts" />
     <None Include="MeticulousApp\src\app\models\gradingperiod.ts" />
     <None Include="MeticulousApp\src\app\models\guardian.ts" />
+    <None Include="MeticulousApp\src\app\models\menteeviewmodel.ts" />
     <None Include="MeticulousApp\src\app\models\mentor.ts" />
     <None Include="MeticulousApp\src\app\models\schoolsystem.ts" />
+    <None Include="MeticulousApp\src\app\models\siteaverage.ts" />
     <None Include="MeticulousApp\src\app\models\WizardStep.ts" />
     <None Include="MeticulousApp\src\app\models\user.ts" />
     <None Include="MeticulousApp\src\app\shared\admin.service.ts" />
@@ -310,6 +314,7 @@
     <None Include="MeticulousApp\src\app\userchart\userchart.component.html" />
     <None Include="MeticulousApp\src\app\userchart\userchart.component.ts" />
     <None Include="MeticulousApp\src\assets\.gitkeep" />
+    <None Include="MeticulousApp\src\assets\logo-nav.png" />
     <None Include="MeticulousApp\src\environments\environment.prod.ts" />
     <None Include="MeticulousApp\src\environments\environment.ts" />
     <None Include="MeticulousApp\src\index.html" />

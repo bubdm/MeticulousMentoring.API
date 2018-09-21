@@ -100,7 +100,7 @@
           <tab heading="Mentee Grades">
             <div class="row" style="margin: 0; font-style: normal;">
 
-              <div class="col-xs-1" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast">
+              <div class="col-xs-1" *ngFor="let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast; let odd = odd">
                 <table class="table table-sm">
                   <tr>
                     <th rowspan="6" class="align-middle">{{group[0]}} </th>
@@ -108,25 +108,28 @@
                     <th>Grade</th>
                   </tr>
                   <tr *ngFor="let subjectGroup of group[1]">
-                    <td>{{subjectGroup.gradeCourse.course_name}}</td>
+                    <td style="text-overflow: ellipsis; max-width: 140px; white-space: nowrap; overflow: hidden;">{{subjectGroup.gradeCourse.course_name}}</td>
                     <td>{{subjectGroup.gradeValue | round: 2}}</td>
                   </tr>
                 </table>
-                <span class="d-flex justify-content-end" *ngIf="isLast">G.P.A: </span>
+                <span class="d-flex justify-content-end" *ngIf="odd">G.P.A: {{getPeriodGpa(user.iat, group[1])}}</span>
+              </div>
+            </div>
+            <div class="form-row justify-content-start">
+              <div class="col-xs-3">
+                <select *ngIf="isShown" class="form-control-sm" [(ngModel)]="selectedPeriod" style="margin-bottom: 10px;">
+                  <option [ngValue]="'-1'" [selected]="true">--- Select Grading Period---</option>
+                  <option *ngFor="let period of gradingPeriods" [ngValue]="period.id">{{period.description}}</option>
+                </select>
               </div>
             </div>
             <form [formGroup]="myForm" novalidate class="form-inline justify-content-center">
               <div formArrayName="grades">
-                <div *ngFor="let grade of myForm.controls.grades.controls; let i=index" class="panel panel-default">
+                <div *ngFor="let grade of myForm.controls.grades.controls; let i=index; first as isFirst" class="panel panel-default">
                   <div class="panel-body" [formGroupName]="i">
-                    <div class="form-row">
-                      <div class="col-xs-3"></div>
-                      <div class="col-xs-3">
-                        <select class="form-control-sm" formControlName="period">
-                          <option [ngValue]="-1" [selected]="true">--- Select Grading Period---</option>
-                          <option *ngFor="let period of gradingPeriods" [ngValue]="period.id">{{period.description}}</option>
-                        </select>
-                      </div>
+
+                    <div class="form-row justify-content-end" *ngIf="selectedPeriod != '-1' && selectedPeriod != ''">
+
                       <div class="col-xs-3">
                         <select class="form-control-sm" formControlName="course">
                           <option [selected]="true">--- Select Course ---</option>
@@ -137,7 +140,7 @@
                         <input type="text" class="form-control-sm" formControlName="value" placeholder="Value" />
                       </div>
                       <div class="col-xs-1">
-                        <div (click)="removeGrade(i)"><i class="fas fa-trash-alt fa-2x pull-right"></i></div>
+                        <div (click)="removeGrade(i)"><i class="fas fa-trash pull-right"></i></div>
                       </div>
                     </div>
                   </div>
@@ -145,8 +148,28 @@
               </div>
             </form>
             <div *ngIf="grades.length <= 20" style="text-align: center; margin: 10px;">
-              <button *ngIf="myForm.controls.grades.controls.length <= 4" class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
+              <button *ngIf="myForm.controls.grades.controls.length <= 4 && selectedPeriod !== '-1'" class="btn btn-primary" (click)="add_blank_grade()">Add Grade</button>
+              <button [hidden]="selectedPeriod !== '-1' || allPeriods.length > 3" class="btn btn-default" (click)="isShown = !isShown">Add Grading Period</button>
               <button [disabled]="!myForm.valid" *ngIf="myForm.controls.grades.controls.length > 0" class="btn btn-success" (click)="save_grades(myForm)">Save Grade(s)</button>
+            </div>
+            <div class="row">
+              <div class="col-md-12">
+                <div *ngIf="lineChartData.length > 0" style="display: block;">
+                  <canvas #gpaChart="base-chart" baseChart width="400" height="200"
+                          [datasets]="lineChartData"
+                          [labels]="lineChartLabels"
+                          [options]="lineChartOptions"
+                          [legend]="lineChartLegend"
+                          [colors]="chartColors"
+                          [chartType]="lineChartType"></canvas>
+                </div>
+              </div>
+              <!--<div class="col-md-6">
+                <highcharts-chart [Highcharts]="Highcharts"
+                                  [options]="chartOptions"
+                                  style="width: 100%; height: 400px; display: block;">
+                </highcharts-chart>
+              </div>-->
             </div>
           </tab>
           <tab heading="Suggested Programs/Events"></tab>

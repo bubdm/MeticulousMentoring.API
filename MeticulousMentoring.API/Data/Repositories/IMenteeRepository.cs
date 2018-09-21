@@ -17,10 +17,16 @@ namespace MeticulousMentoring.API.Data.Repositories
 
         bool SaveAll();
 
+        IEnumerable<SiteAverage> GetAllAveragesForUser(int classification_id, string school_year);
+
         IEnumerable<Grade> GetMenteeGrades(int id);
 
         void AddMentee(object model);
 
         void SaveMenteeGrades(IEnumerable<GradesDto> grades);
+
+        IEnumerable<GradePointAverage> GetGradePointAverages(int mentee_id);
+
+        decimal GetGradePointAverage(int mentee_id, int period_id);
     }
 }

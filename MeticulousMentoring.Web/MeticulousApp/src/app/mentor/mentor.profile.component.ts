@@ -5,8 +5,9 @@ import { IUser } from '../interfaces/iuser';
 import { MenteeService } from '../shared/mentee.service';
 import { MentorService } from '../mentor/mentor.service';
 import { TimelineService } from '../shared/timeline.service';
+import { _ } from "underscore";
 import { MatDialog } from '@angular/material';
-import { Mentee } from '../interfaces/mentee';
+import { Mentee } from '../models/mentee';
 import { Mentor } from '../models/mentor';
 import { MenteeDialogComponent } from '../mentee-dialog/mentee-dialog.component';
 import 'rxjs/Rx';
@@ -27,6 +28,7 @@ export class MentorProfileComponent implements OnInit {
   public messages: number = 0;
   public menteeId;
   public timelineData = [];
+  public mentorMentees: Array<Mentee> = new Array<Mentee>();
 
   mentee: Mentee;
 
@@ -47,13 +49,15 @@ export class MentorProfileComponent implements OnInit {
       this.mentorService.get_mentor_by_id(this.mentorId)
         .subscribe(data => {
           this.mentor = data;
+          this.mentorMentees = ((this.mentor.mentorMentees) as any);
+          this.addMenteeCurrentGpa(this.mentorMentees);
         },
           error => console.log(error));
     }
 
     this.timelineService.get_timeline_data(this.mentorId)
       .subscribe(data => {
-        this.timelineData = data;
+        this.timelineData = <any[]>(data);
       },
         error => console.log(error));
   }
@@ -68,6 +72,19 @@ export class MentorProfileComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.mentee = result;
+    });
+  }
+
+  public async addMenteeCurrentGpa(mentees: Array<Mentee>) {
+    mentees.forEach(mentee => {
+      this.menteeService.get_grade_point_averages(mentee.menteeId).subscribe(data => {
+        let gpas = data;
+
+        if (gpas.length > 0) {
+          let sortedGpas = _.sortBy(gpas, 'period_id').reverse();
+          mentee.gpa = sortedGpas[0].gpa;
+        }
+      });
     });
   }
 }

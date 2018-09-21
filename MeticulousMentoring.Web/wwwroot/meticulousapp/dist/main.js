@@ -517,13 +517,13 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_4__);
 /* harmony import */ var _angular_common__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! @angular/common */ "../node_modules/@angular/common/fesm5/common.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
-/* harmony import */ var ngx_pipes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-pipes */ "../node_modules/ngx-pipes/ngx-pipes.es5.js");
+/* harmony import */ var ngx_pipes__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ngx-pipes */ "../node_modules/ngx-pipes/fesm5/ngx-pipes.js");
 /* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ngx-bootstrap */ "../node_modules/ngx-bootstrap/index.js");
 /* harmony import */ var angular_archwizard__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! angular-archwizard */ "../node_modules/angular-archwizard/esm5/angular-archwizard.js");
 /* harmony import */ var ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ng-multiselect-dropdown */ "../node_modules/ng-multiselect-dropdown/fesm5/ng-multiselect-dropdown.js");
 /* harmony import */ var _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! @ng-select/ng-select */ "../node_modules/@ng-select/ng-select/esm5/ng-select.js");
 /* harmony import */ var angular_2_dropdown_multiselect__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! angular-2-dropdown-multiselect */ "../node_modules/angular-2-dropdown-multiselect/esm5/angular-2-dropdown-multiselect.js");
-/* harmony import */ var ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-select-dropdown */ "../node_modules/ngx-select-dropdown/dist/index.js");
+/* harmony import */ var highcharts_angular__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! highcharts-angular */ "../node_modules/highcharts-angular/fesm5/highcharts-angular.js");
 /* harmony import */ var angular2_multiselect_dropdown_angular2_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! angular2-multiselect-dropdown/angular2-multiselect-dropdown */ "../node_modules/angular2-multiselect-dropdown/angular2-multiselect-dropdown.js");
 /* harmony import */ var angular_vertical_timeline__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! angular-vertical-timeline */ "../node_modules/angular-vertical-timeline/dist/index.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./app.component */ "../src/app/app.component.ts");
@@ -708,10 +708,10 @@ var AppModule = /** @class */ (function () {
                 ng_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_10__["NgMultiSelectDropDownModule"].forRoot(),
                 _ng_select_ng_select__WEBPACK_IMPORTED_MODULE_11__["NgSelectModule"],
                 angular_2_dropdown_multiselect__WEBPACK_IMPORTED_MODULE_12__["MultiselectDropdownModule"],
-                ngx_select_dropdown__WEBPACK_IMPORTED_MODULE_13__["SelectDropDownModule"],
                 angular2_multiselect_dropdown_angular2_multiselect_dropdown__WEBPACK_IMPORTED_MODULE_14__["AngularMultiSelectModule"],
                 ngx_bootstrap__WEBPACK_IMPORTED_MODULE_8__["TabsModule"].forRoot(),
-                angular_vertical_timeline__WEBPACK_IMPORTED_MODULE_15__["VerticalTimelineModule"]
+                angular_vertical_timeline__WEBPACK_IMPORTED_MODULE_15__["VerticalTimelineModule"],
+                highcharts_angular__WEBPACK_IMPORTED_MODULE_13__["HighchartsChartModule"]
             ],
             exports: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_34__["MenteeFormComponent"]],
             entryComponents: [_forms_mentee_form_component__WEBPACK_IMPORTED_MODULE_34__["MenteeFormComponent"], _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_36__["MentorFormComponent"], _forms_director_form_component__WEBPACK_IMPORTED_MODULE_37__["DirectorFormComponent"], _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_51__["MenteeDialogComponent"], _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_44__["AdminFormComponent"]],
@@ -820,10 +820,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ClassificationService", function() { return ClassificationService; });
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/http */ "../node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-jwt */ "../node_modules/angular2-jwt/angular2-jwt.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_jwt__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -837,13 +835,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var ClassificationService = /** @class */ (function () {
     function ClassificationService(http, userService) {
         this.http = http;
         this.userService = userService;
         this.token = "";
-        this.jwtHelper = new angular2_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelper"]();
     }
     Object.defineProperty(ClassificationService.prototype, "loginRequired", {
         get: function () {
@@ -852,18 +848,15 @@ var ClassificationService = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    ClassificationService.prototype.loggedIn = function () {
-        return Object(angular2_jwt__WEBPACK_IMPORTED_MODULE_2__["tokenNotExpired"])();
-    };
     ClassificationService.prototype.get_classifications = function () {
         return this.http.get("http://localhost:5005/api/classification", {
             headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     ClassificationService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _shared_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
     ], ClassificationService);
     return ClassificationService;
 }());
@@ -941,6 +934,7 @@ var DashboardComponent = /** @class */ (function () {
         this.auth = auth;
         this.router = router;
         this.dialog = dialog;
+        this.today = Date.now();
         this.isExpanded = false;
     }
     DashboardComponent.prototype.ngAfterViewInit = function () {
@@ -1017,7 +1011,7 @@ module.exports = "\r\n"
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div [ngSwitch]=\"role\">\r\n\r\n  <div class=\"row\" *ngSwitchDefault>\r\n    <div class=\"col-md-3 wow fadeInRight\" data-wow-delay=\"0.2s\" style=\"padding-left: 80px; padding-right: 80px;\">\r\n      <img height=\"300\" width=\"300\" [src]=\"defaultImage\" />\r\n    </div>\r\n    <div class=\"col-md-9 wow fadeInRight\" data-wow-delay=\"0.4s\" style=\"padding-right: 80px;\">\r\n      <table class=\"table table-borderless table-sm\">\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Id:</strong></td>\r\n          <td>{{user.iat}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Name:</strong></td>\r\n          <td>{{user.given_name}} {{user.family_name}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Email:</strong></td>\r\n          <td>{{user.unique_name}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Role:</strong></td>\r\n          <td>{{user.role}}</td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n  </div>\r\n  <mentee-profile *ngSwitchCase=\"'Mentee'\"></mentee-profile>\r\n  <mentor-profile *ngSwitchCase=\"'Mentor'\"></mentor-profile>\r\n</div>\r\n"
+module.exports = "<div [ngSwitch]=\"role\">\r\n\r\n  <div class=\"row\" *ngSwitchDefault>\r\n    <div class=\"col-md-2 wow fadeIn\" data-wow-delay=\"0.2s\" style=\"padding-left: 80px; padding-right: 80px;\">\r\n      <img class=\"rounded-circle img-fluid\" [src]=\"defaultImage\" />\r\n    </div>\r\n    <div class=\"col-md-2 wow fadeIn\" data-wow-delay=\"0.4s\" style=\"padding-right: 80px;\">\r\n      <table class=\"table table-borderless table-sm\">\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Id:</strong></td>\r\n          <td>{{user.iat}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Name:</strong></td>\r\n          <td>{{user.given_name}} {{user.family_name}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Email:</strong></td>\r\n          <td>{{user.unique_name}}</td>\r\n        </tr>\r\n        <tr class=\"d-flex\">\r\n          <td><strong>Role:</strong></td>\r\n          <td>{{user.role}}</td>\r\n        </tr>\r\n      </table>\r\n    </div>\r\n    <div class=\"col-md-4 wow fadeIn\" data-wow-delay=\"0.6s\" style=\"padding-right: 80px;\">\r\n      <div *ngIf=\"role === 'Director'\" class=\"border\" style=\"background-color: rgba(51, 153, 255, .6); padding: 20px; height: 300px;\">\r\n        <div class=\"row\">\r\n          <div class=\"col\" style=\"color: rgba(255, 255, 255, 1);\">\r\n            <span><h1>Mentees</h1></span>\r\n            <hr />\r\n            <div class=\"row\">\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <span>Active</span>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <span>Unmatched</span>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <span>Inactive</span>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"padding: 0px 30px;\">\r\n                <span>Pending</span>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <h1>{{activeMenteesCount}}</h1>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <h1>{{unmatchedActiveMenteesCount}}</h1>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <h1>{{menteesNeedingScreening}}</h1>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"padding: 0px 30px;\">\r\n                <h1>{{menteesPendingScreening}}</h1>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\" style=\"padding: 20px 10px 20px 10px;\">\r\n                <div class=\"d-block w-100\">\r\n                  <div class=\"progress\" style=\"height: 2px; background-color: rgba(0, 0, 0, .1);\">\r\n                    <div class=\"progress-bar bg-light\" role=\"progressbar\" [ngStyle]=\"{'width': menteeMatchedPercentage}\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                  </div>\r\n                </div>\r\n                <span>{{menteeMatchedPercentage}} <span style=\"color: rgba(0,0,0,.7);font-family: 'Roboto Condensed', sans-serif;\">of active Mentees matched</span></span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-md-4 wow fadeIn\" data-wow-delay=\"0.8s\" style=\"padding-right: 80px;\">\r\n      <div *ngIf=\"role === 'Director'\" class=\"border\" style=\"background-color: rgba(128, 100, 200, .6); padding: 20px; height: 300px;\">\r\n        <div class=\"row\">\r\n          <div class=\"col\" style=\"color: rgba(255, 255, 255, 1);\">\r\n            <span><h1>Mentors</h1></span>\r\n            <hr />\r\n            <div class=\"row\">\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <span>Active</span>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <span>Unmatched</span>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <span>Inactive</span>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"padding: 0px 30px;\">\r\n                <span>Pending</span>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <h1>{{activeMentorCount}}</h1>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <h1>{{unmatchedActiveMentorCount}}</h1>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;\">\r\n                <h1>{{mentorsNeedingScreening}}</h1>\r\n              </div>\r\n              <div class=\"col-md-3\" style=\"padding: 0px 30px;\">\r\n                <h1>{{mentorsPendingScreening}}</h1>\r\n              </div>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\" style=\"padding: 20px 10px 20px 10px;\">\r\n                <div class=\"d-block w-100\">\r\n                  <div class=\"progress\" style=\"height: 2px; background-color: rgba(0, 0, 0, .1);\">\r\n                    <div class=\"progress-bar bg-light\" role=\"progressbar\" [ngStyle]=\"{'width': mentorMatchedPercentage}\" aria-valuenow=\"25\" aria-valuemin=\"0\" aria-valuemax=\"100\"></div>\r\n                  </div>\r\n                </div>\r\n                <span>{{mentorMatchedPercentage}} <span style=\"color: rgba(0,0,0,.7);font-family: 'Roboto Condensed', sans-serif;\">of active Mentors matched</span></span>\r\n              </div>\r\n            </div>\r\n          </div>\r\n        </div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n  <mentee-profile *ngSwitchCase=\"'Mentee'\"></mentee-profile>\r\n  <mentor-profile *ngSwitchCase=\"'Mentor'\"></mentor-profile>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1035,6 +1029,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ../../shared/accountservice */ "../src/app/shared/accountservice.ts");
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../shared/user.service */ "../src/app/shared/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
+/* harmony import */ var _users_users_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../users/users.service */ "../src/app/dashboard/users/users.service.ts");
+/* harmony import */ var _enums_screenstatus__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../../enums/screenstatus */ "../src/app/enums/screenstatus.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1048,15 +1044,22 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
 var HomeComponent = /** @class */ (function () {
     /** home ctor */
-    function HomeComponent(userService, accountService, router) {
+    function HomeComponent(usersService, userService, accountService, router) {
+        this.usersService = usersService;
         this.userService = userService;
         this.accountService = accountService;
         this.router = router;
-        this.defaultImage = "https://app.box.com/s/mfy8barqgf1x0bfonbag7sipo87mga64";
+        this.ScreenType = _enums_screenstatus__WEBPACK_IMPORTED_MODULE_5__["ScreenStatus"];
+        this.defaultImage = "https://app.box.com/s/fg3tp6j4iefx9z7j56wi317q80u5hnd4";
+        this.users = new Array();
+        this.usersService.notify_users_with_roles_changed();
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         var newUser = this.userService.get();
         if (newUser) {
             this.user = newUser;
@@ -1065,6 +1068,29 @@ var HomeComponent = /** @class */ (function () {
             this.user = JSON.parse(localStorage.getItem('user'));
         }
         this.role = this.user.role;
+        this.usersService.users$.subscribe(function (data) {
+            _this.activeMenteesCount = data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.Successful; }).length;
+            _this.activeMentorCount =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.Successful; }).length;
+            _this.unmatchedActiveMenteesCount =
+                data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.Successful && x.Mentorid === null; }).length;
+            _this.unmatchedActiveMentorCount =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.Successful && x.mentee_count < 1; })
+                    .length;
+            _this.menteesPendingScreening =
+                data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.Pending; }).length;
+            _this.mentorsPendingScreening =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.Pending; }).length;
+            _this.menteesNeedingScreening =
+                data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.NotStarted; }).length;
+            _this.mentorsNeedingScreening =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.NotStarted; }).length;
+            //get match percentages
+            _this.menteeMatchedPercentage =
+                ((_this.activeMenteesCount - _this.unmatchedActiveMenteesCount) / _this.activeMenteesCount * 100).toString() + "%";
+            _this.mentorMatchedPercentage =
+                ((_this.activeMentorCount - _this.unmatchedActiveMentorCount) / _this.activeMentorCount * 100).toString() + "%";
+        });
     };
     HomeComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -1074,7 +1100,7 @@ var HomeComponent = /** @class */ (function () {
         })
         /** home component*/
         ,
-        __metadata("design:paramtypes", [_shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__["AccountService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
+        __metadata("design:paramtypes", [_users_users_service__WEBPACK_IMPORTED_MODULE_4__["UsersService"], _shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"], _shared_accountservice__WEBPACK_IMPORTED_MODULE_1__["AccountService"], _angular_router__WEBPACK_IMPORTED_MODULE_3__["Router"]])
     ], HomeComponent);
     return HomeComponent;
 }());
@@ -1101,7 +1127,7 @@ module.exports = ".adobe-pdf {\r\n  color: rgba(255, 0, 0, 1);\r\n  cursor: poin
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-12\" style=\"display: flex;\">\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMenteeFormDialog()\" class=\"btn btn-sq-lg btn-primary\">\r\n      <i class=\"fas fa-graduation-cap fa-5x\"></i><br />\r\n      Add Mentee\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMentorFormDialog()\" class=\"btn btn-sq-lg btn-warning\">\r\n      <i class=\"fas fa-user-graduate fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Mentor\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" *ngIf=\"role === 'Admin'\" (click)=\"openDirectorFormDialog()\" class=\"btn btn-sq-lg btn-success\">\r\n      <i class=\"fas fa-chalkboard-teacher fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Director\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" *ngIf=\"role === 'Admin'\" (click)=\"openAdminFormDialog()\" class=\"btn btn-sq-lg btn-danger\">\r\n      <i class=\"fas fa-user-plus fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Admin\r\n    </a>\r\n    <div style=\"display: flex; justify-content: space-between;\">\r\n      <!--<img height=\"50\" width=\"50\" src='/qftapp/assets/images/adobe-pdf-icon.png' style=\"cursor: pointer\" class=\"fa-2x\" tooltip=\"Generate PDF\" containerClass=\"customClass\" [delay]=\"500\" />\r\n\r\n      <img height=\"60\" width=\"50\" src='/qftapp/assets/images/excel-icon.png' style=\"cursor: pointer;\" class=\"fa-2x\" tooltip=\"Generate Spreadsheet\" containerClass=\"customClass\" [delay]=\"500\" />-->\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12\">\r\n    <hr />\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12 wow fadeInUp\" data-wow-delay=\"0.2s\">\r\n    <table class=\"table table-borderless table-sm\" id=\"usersTable\">\r\n      <thead>\r\n        <tr>\r\n          <th>Id</th>\r\n          <th>Name</th>\r\n          <th>Username</th>\r\n          <th>Email</th>\r\n          <th>Role</th>\r\n          <th></th>\r\n        </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let user of users\">\r\n        <td>{{user.id}}</td>\r\n        <td>{{user.firstName}} {{user.lastName}}</td>\r\n        <td>{{user.userName}}</td>\r\n        <td>{{user.email}}</td>\r\n        <td>{{user.role}}</td>\r\n        <td><button type=\"button\" (click)=\"open_delete_modal(template, user.id)\" style=\"cursor: pointer;\" class=\"btn btn-primary\">Delete</button></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n<ng-template #template>\r\n  <div class=\"modal-body text-center\">\r\n    <p>Are you sure you want to delete this user?</p>\r\n    <button type=\"button\" class=\"btn btn-success\" style=\"margin: 5px;\" (click)=\"confirm_user_delete()\">Yes</button>\r\n    <button type=\"button\" class=\"btn btn-primary\" style=\"margin: 5px;\" (click)=\"this.bsModalRef.hide()\">No</button>\r\n  </div>\r\n</ng-template>\r\n"
+module.exports = "<div class=\"row\">\r\n  <div class=\"col-md-12\" style=\"display: flex;\">\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMenteeFormDialog()\" class=\"btn btn-sq-lg btn-primary\">\r\n      <i class=\"fas fa-graduation-cap fa-5x\"></i><br />\r\n      Add Mentee\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" (click)=\"openMentorFormDialog()\" class=\"btn btn-sq-lg btn-warning\">\r\n      <i class=\"fas fa-user-graduate fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Mentor\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" *ngIf=\"role === 'Admin'\" (click)=\"openDirectorFormDialog()\" class=\"btn btn-sq-lg btn-success\">\r\n      <i class=\"fas fa-chalkboard-teacher fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Director\r\n    </a>\r\n    <a [routerLink]=\"['./users']\" *ngIf=\"role === 'Admin'\" (click)=\"openAdminFormDialog()\" class=\"btn btn-sq-lg btn-danger\">\r\n      <i class=\"fas fa-user-plus fa-5x\" style=\"color: #fff\"></i><br />\r\n      Add Admin\r\n    </a>\r\n    <div style=\"display: flex; justify-content: space-between;\">\r\n      <!--<img height=\"50\" width=\"50\" src='/qftapp/assets/images/adobe-pdf-icon.png' style=\"cursor: pointer\" class=\"fa-2x\" tooltip=\"Generate PDF\" containerClass=\"customClass\" [delay]=\"500\" />\r\n\r\n      <img height=\"60\" width=\"50\" src='/qftapp/assets/images/excel-icon.png' style=\"cursor: pointer;\" class=\"fa-2x\" tooltip=\"Generate Spreadsheet\" containerClass=\"customClass\" [delay]=\"500\" />-->\r\n    </div>\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12\">\r\n    <hr />\r\n  </div>\r\n</div>\r\n<div class=\"row\">\r\n  <div class=\"col-md-12 wow fadeIn\" data-wow-delay=\"0.2s\">\r\n    <table class=\"table table-borderless table-sm\" id=\"usersTable\">\r\n      <thead>\r\n        <tr>\r\n          <th>Id</th>\r\n          <th>Name</th>\r\n          <th>Username</th>\r\n          <th>Email</th>\r\n          <th>Role</th>\r\n          <th></th>\r\n        </tr>\r\n      </thead>\r\n      <tr *ngFor=\"let user of users\">\r\n        <td>{{user.id}}</td>\r\n        <td>{{user.firstName}} {{user.lastName}}</td>\r\n        <td>{{user.userName}}</td>\r\n        <td>{{user.email}}</td>\r\n        <td>{{user.role}}</td>\r\n        <td>\r\n          <button type=\"button\" *ngIf=\"user.screen_status === ScreenType.NotStarted\" class=\"btn btn-success btn-sm\" style=\"cursor: pointer;\">Start Screening Process</button>\r\n          <h4 *ngIf=\"user.screen_status === ScreenType.Pending\" class=\"text-warning\">Screening Pending</h4>\r\n          <h4 *ngIf=\"user.screen_status === ScreenType.Failed\" class=\"text-danger\">Screening Failed</h4>\r\n        </td>\r\n        <td><button type=\"button\" (click)=\"open_delete_modal(template, user)\" style=\"cursor: pointer;\" class=\"btn btn-primary\">Delete</button></td>\r\n      </tr>\r\n    </table>\r\n  </div>\r\n</div>\r\n<ng-template #template>\r\n  <div class=\"modal-body text-center\">\r\n    <p>Are you sure you want to delete {{user_to_delete.firstName}} {{user_to_delete.lastName}}?</p>\r\n    <button type=\"button\" class=\"btn btn-success\" style=\"margin: 5px;\" (click)=\"confirm_user_delete()\">Yes</button>\r\n    <button type=\"button\" class=\"btn btn-primary\" style=\"margin: 5px;\" (click)=\"this.bsModalRef.hide()\">No</button>\r\n  </div>\r\n</ng-template>\r\n"
 
 /***/ }),
 
@@ -1126,6 +1152,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _forms_mentor_form_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../../forms/mentor.form.component */ "../src/app/forms/mentor.form.component.ts");
 /* harmony import */ var _forms_director_form_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../../forms/director.form.component */ "../src/app/forms/director.form.component.ts");
 /* harmony import */ var _forms_admin_form_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../../forms/admin-form.component */ "../src/app/forms/admin-form.component.ts");
+/* harmony import */ var _enums_screenstatus__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../../enums/screenstatus */ "../src/app/enums/screenstatus.ts");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1135,6 +1162,7 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+
 
 
 
@@ -1156,6 +1184,7 @@ var UsersComponent = /** @class */ (function () {
         this.dialog = dialog;
         this.modalService = modalService;
         this.user_to_delete_id = -1;
+        this.ScreenType = _enums_screenstatus__WEBPACK_IMPORTED_MODULE_11__["ScreenStatus"];
         this.users = new Array();
         this.usersService.notify_users_with_roles_changed();
     }
@@ -1205,8 +1234,9 @@ var UsersComponent = /** @class */ (function () {
         };
         this.bsModalRef = this.modalService.show(_forms_admin_form_component__WEBPACK_IMPORTED_MODULE_10__["AdminFormComponent"], { initialState: initialState, animated: false });
     };
-    UsersComponent.prototype.open_delete_modal = function (template, id) {
-        this.user_to_delete_id = id;
+    UsersComponent.prototype.open_delete_modal = function (template, user) {
+        this.user_to_delete_id = user.id;
+        this.user_to_delete = user;
         this.bsModalRef = this.modalService.show(template, { class: 'modal-sm', ignoreBackdropClick: true });
     };
     UsersComponent.prototype.confirm_user_delete = function () {
@@ -1351,10 +1381,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "EducationSystemService", function() { return EducationSystemService; });
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/http */ "../node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! angular2-jwt */ "../node_modules/angular2-jwt/angular2-jwt.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(angular2_jwt__WEBPACK_IMPORTED_MODULE_2__);
-/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
-/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -1368,13 +1396,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
-
 var EducationSystemService = /** @class */ (function () {
     function EducationSystemService(http, userService) {
         this.http = http;
         this.userService = userService;
         this.token = "";
-        this.jwtHelper = new angular2_jwt__WEBPACK_IMPORTED_MODULE_2__["JwtHelper"]();
     }
     Object.defineProperty(EducationSystemService.prototype, "loginRequired", {
         get: function () {
@@ -1383,22 +1409,40 @@ var EducationSystemService = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    EducationSystemService.prototype.loggedIn = function () {
-        return Object(angular2_jwt__WEBPACK_IMPORTED_MODULE_2__["tokenNotExpired"])();
-    };
     EducationSystemService.prototype.get_education_systems = function () {
         return this.http.get("http://localhost:5005/api/educationSystem", {
             headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         })
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_4__["map"])(function (res) { return res.json(); }));
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (res) { return res.json(); }));
     };
     EducationSystemService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Injectable"])(),
-        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _shared_user_service__WEBPACK_IMPORTED_MODULE_3__["UserService"]])
+        __metadata("design:paramtypes", [_angular_http__WEBPACK_IMPORTED_MODULE_0__["Http"], _shared_user_service__WEBPACK_IMPORTED_MODULE_2__["UserService"]])
     ], EducationSystemService);
     return EducationSystemService;
 }());
 
+
+
+/***/ }),
+
+/***/ "../src/app/enums/screenstatus.ts":
+/*!****************************************!*\
+  !*** ../src/app/enums/screenstatus.ts ***!
+  \****************************************/
+/*! exports provided: ScreenStatus */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ScreenStatus", function() { return ScreenStatus; });
+var ScreenStatus;
+(function (ScreenStatus) {
+    ScreenStatus[ScreenStatus["NotStarted"] = 0] = "NotStarted";
+    ScreenStatus[ScreenStatus["Pending"] = 1] = "Pending";
+    ScreenStatus[ScreenStatus["Successful"] = 2] = "Successful";
+    ScreenStatus[ScreenStatus["Failed"] = 3] = "Failed";
+})(ScreenStatus || (ScreenStatus = {}));
 
 
 /***/ }),
@@ -1626,7 +1670,7 @@ module.exports = ".mentee-form-container {\r\n  display: flex;\r\n  flex-directi
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"modal-header\">\r\n  <div class=\"pull-left\">\r\n    <h4 class=\"modal-title pull-left\">REGISTER NEW MENTEE</h4>\r\n  </div>\r\n  <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"hide_modal()\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n  <div style=\"clear: both;\">\r\n  </div>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <aw-wizard>\r\n    <aw-wizard-step stepTitle=\"Basic Information\">\r\n      <form [formGroup]=\"menteeForm1\">\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"First Name\" formControlName=\"first_name\" required />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Last Name\" formControlName=\"last_name\" required />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 1\" formControlName=\"address1\" required />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 2\" formControlName=\"address2\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"City\" formControlName=\"city\" required />\r\n          </div>\r\n          <div class=\"form-group col-md-2\">\r\n            <input class=\"form-control\" placeholder=\"Zip\" formControlName=\"zip\" required />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-3\">\r\n            <select class=\"form-control\" formControlName=\"menteeGender\" required>\r\n              <option disabled selected value>--Select Gender--</option>\r\n              <option *ngFor=\"let g of genders\" [ngValue]=\"g.gender\">\r\n                {{g.description}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"Date of Birth (MM/DD/YYYY)\" formControlName=\"dob\" bsDatepicker required>\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Email\" formControlName=\"email\" required />\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-7\">\r\n            <select class=\"form-control\" placeholder=\"School\" formControlName=\"school\" required>\r\n              <option disabled selected value>--Select School--</option>\r\n              <option *ngFor=\"let school of schools\" [ngValue]=\"school\">\r\n                {{school.schoolName}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"form-group col-md-5\">\r\n            <select class=\"form-control\" placeholder=\"Classification\" formControlName=\"classification\" required>\r\n              <option disabled selected value>--Select Classification--</option>\r\n              <option *ngFor=\"let classification of classifications\" [ngValue]=\"classification\">\r\n                {{classification.classificationDescription}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n      </form>\r\n      <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"!menteeForm1.valid\" awNextStep>Go to next step</button>\r\n    </aw-wizard-step>\r\n\r\n    <aw-wizard-step stepTitle=\"Guardian Information\">\r\n      <form [formGroup]=\"menteeForm2\">\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Guardian First Name\" formControlName=\"guardianFirstName\" />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Guardian Last Name\" formControlName=\"guardianLastName\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-3\">\r\n            <select class=\"form-control\" formControlName=\"guardianGender\">\r\n              <option disabled selected value>--Select Gender--</option>\r\n              <option *ngFor=\"let g of genders\" [ngValue]=\"g.gender\">\r\n                {{g.description}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <div class=\"form-check\" style=\"padding-left: 20px;\">\r\n            <input type=\"checkbox\" class=\"form-check-input\" (change)=\"isChildAddressShared = !isChildAddressShared;copyAddress()\" id=\"addressCheck\">\r\n            <label class=\"form-check-label\" for=\"addressCheck\">Check if address is the same as mentee.</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 1\" formControlName=\"guardianAddress1\" />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 2\" formControlName=\"guardianAddress2\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-7\">\r\n            <input class=\"form-control\" placeholder=\"City\" formControlName=\"guardianCity\" />\r\n          </div>\r\n          <div class=\"form-group col-md-2\">\r\n            <input class=\"form-control\" placeholder=\"Zip\" formControlName=\"guardianZip\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <input class=\"form-control\" placeholder=\"Email\" formControlName=\"guardianEmail\" />\r\n        </div>\r\n      </form>\r\n      <div class=\"btn-group\">\r\n        <button type=\"button\" class=\"btn btn-primary\" awPreviousStep>Previous Step</button>\r\n      </div>\r\n      <div class=\"btn-group\" style=\"padding: 5px;\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"submitMentee()\" [disabled]=\"!menteeForm2.valid\">Submit</button>\r\n      </div>\r\n    </aw-wizard-step>\r\n  </aw-wizard>\r\n</div>\r\n<div class=\"modal-footer\">\r\n</div>\r\n"
+module.exports = "<div class=\"modal-header\">\r\n  <div class=\"pull-left\">\r\n    <h4 class=\"modal-title pull-left\">REGISTER NEW MENTEE</h4>\r\n  </div>\r\n  <button type=\"button\" class=\"close pull-right\" aria-label=\"Close\" (click)=\"hide_modal()\">\r\n    <span aria-hidden=\"true\">&times;</span>\r\n  </button>\r\n  <div style=\"clear: both;\">\r\n  </div>\r\n</div>\r\n<div class=\"modal-body\">\r\n  <aw-wizard>\r\n    <aw-wizard-step stepTitle=\"Basic Information\">\r\n      <form [formGroup]=\"menteeForm1\">\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"First Name\" formControlName=\"first_name\" required />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Last Name\" formControlName=\"last_name\" required />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 1\" formControlName=\"address1\" required />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 2\" formControlName=\"address2\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"City\" formControlName=\"city\" required />\r\n          </div>\r\n          <div class=\"form-group col-md-2\">\r\n            <input class=\"form-control\" placeholder=\"Zip\" formControlName=\"zip\" required />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-3\">\r\n            <select class=\"form-control\" formControlName=\"menteeGender\" required>\r\n              <option disabled selected value>--Select Gender--</option>\r\n              <option *ngFor=\"let g of genders\" [ngValue]=\"g.gender\">\r\n                {{g.description}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"form-group col-md-3\">\r\n            <input style=\"display: none;\"\r\n                   type=\"file\" (change)=\"onFileChanged($event)\"\r\n                   accept=\"image/*\"\r\n                   #fileInput>\r\n            <button type=\"button\" class=\"btn btn-social\" (click)=\"fileInput.click()\">Upload Image  --------------></button>\r\n          </div>\r\n          <div class=\"form-group col-md-3\">\r\n            <img height=\"100\" width=\"100\" [src]=\"selectedFile || 'https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1'\" alt=\"......\" />\r\n          </div>\r\n          <div class=\"form-group col-md-3\">\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" type=\"text\" placeholder=\"Date of Birth (MM/DD/YYYY)\" formControlName=\"dob\" bsDatepicker required>\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Email\" formControlName=\"email\" required />\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-7\">\r\n            <select class=\"form-control\" placeholder=\"School\" formControlName=\"school\" required>\r\n              <option disabled selected value>--Select School--</option>\r\n              <option *ngFor=\"let school of schools\" [ngValue]=\"school\">\r\n                {{school.schoolName}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n          <div class=\"form-group col-md-5\">\r\n            <select class=\"form-control\" placeholder=\"Classification\" formControlName=\"classification\" required>\r\n              <option disabled selected value>--Select Classification--</option>\r\n              <option *ngFor=\"let classification of classifications\" [ngValue]=\"classification\">\r\n                {{classification.classificationDescription}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n      </form>\r\n      <button type=\"button\" class=\"btn btn-primary\" [disabled]=\"!menteeForm1.valid\" awNextStep>Go to next step</button>\r\n    </aw-wizard-step>\r\n\r\n    <aw-wizard-step stepTitle=\"Guardian Information\">\r\n      <form [formGroup]=\"menteeForm2\">\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Guardian First Name\" formControlName=\"guardianFirstName\" />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Guardian Last Name\" formControlName=\"guardianLastName\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-3\">\r\n            <select class=\"form-control\" formControlName=\"guardianGender\">\r\n              <option disabled selected value>--Select Gender--</option>\r\n              <option *ngFor=\"let g of genders\" [ngValue]=\"g.gender\">\r\n                {{g.description}}\r\n              </option>\r\n            </select>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-group\">\r\n          <div class=\"form-check\" style=\"padding-left: 20px;\">\r\n            <input type=\"checkbox\" class=\"form-check-input\" (change)=\"isChildAddressShared = !isChildAddressShared;copyAddress()\" id=\"addressCheck\">\r\n            <label class=\"form-check-label\" for=\"addressCheck\">Check if address is the same as mentee.</label>\r\n          </div>\r\n        </div>\r\n\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 1\" formControlName=\"guardianAddress1\" />\r\n          </div>\r\n          <div class=\"form-group col-md-6\">\r\n            <input class=\"form-control\" placeholder=\"Address 2\" formControlName=\"guardianAddress2\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-row\">\r\n          <div class=\"form-group col-md-7\">\r\n            <input class=\"form-control\" placeholder=\"City\" formControlName=\"guardianCity\" />\r\n          </div>\r\n          <div class=\"form-group col-md-2\">\r\n            <input class=\"form-control\" placeholder=\"Zip\" formControlName=\"guardianZip\" />\r\n          </div>\r\n        </div>\r\n        <div class=\"form-group\">\r\n          <input class=\"form-control\" placeholder=\"Email\" formControlName=\"guardianEmail\" />\r\n        </div>\r\n      </form>\r\n      <div class=\"btn-group\">\r\n        <button type=\"button\" class=\"btn btn-primary\" awPreviousStep>Previous Step</button>\r\n      </div>\r\n      <div class=\"btn-group\" style=\"padding: 5px;\">\r\n        <button type=\"button\" class=\"btn btn-success\" (click)=\"submitMentee()\" [disabled]=\"!menteeForm2.valid\">Submit</button>\r\n      </div>\r\n    </aw-wizard-step>\r\n  </aw-wizard>\r\n</div>\r\n<div class=\"modal-footer\">\r\n</div>\r\n"
 
 /***/ }),
 
@@ -1682,6 +1726,7 @@ var MenteeFormComponent = /** @class */ (function () {
         this.usersService = usersService;
         this.startDate = new Date(1999, 0, 1);
         this.isChildAddressShared = false;
+        this.selectedFile = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
         this.genders = [{ gender: "M", description: "Male" },
             { gender: "F", description: "Female" }];
     }
@@ -1774,6 +1819,7 @@ var MenteeFormComponent = /** @class */ (function () {
             MenteeSchool: {
                 id: mentee_info.school.schoolId
             },
+            MenteeImageFile: this.fileConst
         };
         var response = this.menteeService.add_mentee(newMentee)
             .subscribe(function (data) {
@@ -1802,6 +1848,16 @@ var MenteeFormComponent = /** @class */ (function () {
     };
     MenteeFormComponent.prototype.hide_modal = function () {
         this.bsModalRef.hide();
+    };
+    MenteeFormComponent.prototype.onFileChanged = function (event) {
+        var _this = this;
+        if (event.target.files && event.target.files[0]) {
+            var file = event.target.files[0];
+            this.fileConst = event.target.files[0];
+            var reader_1 = new FileReader();
+            reader_1.onload = function (e) { return _this.selectedFile = reader_1.result; };
+            reader_1.readAsDataURL(file);
+        }
     };
     MenteeFormComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2064,8 +2120,7 @@ module.exports = "<router-outlet>\r\n  <div class=\"row\">\r\n    <span class=\"
 __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "LoginComponent", function() { return LoginComponent; });
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! angular2-jwt */ "../node_modules/angular2-jwt/angular2-jwt.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(angular2_jwt__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @auth0/angular-jwt */ "../node_modules/@auth0/angular-jwt/index.js");
 /* harmony import */ var _shared_accountservice__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../shared/accountservice */ "../src/app/shared/accountservice.ts");
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
 /* harmony import */ var _angular_router__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/router */ "../node_modules/@angular/router/fesm5/router.js");
@@ -2079,6 +2134,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 
+//import { JwtHelper } from "angular2-jwt";
 
 
 
@@ -2092,15 +2148,15 @@ var LoginComponent = /** @class */ (function () {
             username: "",
             password: ""
         };
-        this.jwtHelper = new angular2_jwt__WEBPACK_IMPORTED_MODULE_1__["JwtHelper"]();
+        this.jwtHelperService = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_1__["JwtHelperService"]();
     }
     LoginComponent.prototype.onLogin = function () {
         var _this = this;
         var response = this.auth.login(this.creds)
             .subscribe(function (data) {
             localStorage.setItem('token', data.token);
-            _this.userService.set(_this.jwtHelper.decodeToken(data.token));
-            localStorage.setItem('user', JSON.stringify(_this.jwtHelper.decodeToken(data.token)));
+            _this.userService.set(_this.jwtHelperService.decodeToken(data.token));
+            localStorage.setItem('user', JSON.stringify(_this.jwtHelperService.decodeToken(data.token)));
             _this.router.navigate(["dashboard"]);
         }, function (error) { return console.log(error); });
     };
@@ -2272,7 +2328,7 @@ module.exports = "body {\r\n}\r\n\r\n.meticulous-container {\r\n  margin: 20px;\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeDOB | date}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeClassification.description}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeSchool.school_name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset #menteeTabs>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">Address:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Guardian Information\">\r\n            <div style=\"margin:0; font-style: normal;\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Guardian:\r\n                </div>\r\n                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                  {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Address:\r\n                </div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentee Grades\">\r\n            <div class=\"row\" style=\"margin: 0; font-style: normal;\">\r\n\r\n              <div class=\"col-xs-1\" *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast\">\r\n                <table class=\"table table-sm\">\r\n                  <tr>\r\n                    <th rowspan=\"6\" class=\"align-middle\">{{group[0]}} </th>\r\n                    <th>Course</th>\r\n                    <th>Grade</th>\r\n                  </tr>\r\n                  <tr *ngFor=\"let subjectGroup of group[1]\">\r\n                    <td>{{subjectGroup.gradeCourse.course_name}}</td>\r\n                    <td>{{subjectGroup.gradeValue | round: 2}}</td>\r\n                  </tr>\r\n                </table>\r\n                <span class=\"d-flex justify-content-end\" *ngIf=\"isLast\">G.P.A: </span>\r\n              </div>\r\n            </div>\r\n            <form [formGroup]=\"myForm\" novalidate class=\"form-inline justify-content-center\">\r\n              <div formArrayName=\"grades\">\r\n                <div *ngFor=\"let grade of myForm.controls.grades.controls; let i=index\" class=\"panel panel-default\">\r\n                  <div class=\"panel-body\" [formGroupName]=\"i\">\r\n                    <div class=\"form-row\">\r\n                      <div class=\"col-xs-3\"></div>\r\n                      <div class=\"col-xs-3\">\r\n                        <select class=\"form-control-sm\" formControlName=\"period\">\r\n                          <option [ngValue]=\"-1\" [selected]=\"true\">--- Select Grading Period---</option>\r\n                          <option *ngFor=\"let period of gradingPeriods\" [ngValue]=\"period.id\">{{period.description}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"col-xs-3\">\r\n                        <select class=\"form-control-sm\" formControlName=\"course\">\r\n                          <option [selected]=\"true\">--- Select Course ---</option>\r\n                          <option *ngFor=\"let course of courses\" [ngValue]=\"course.id\">{{course.course_name}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"col-xs-2\">\r\n                        <input type=\"text\" class=\"form-control-sm\" formControlName=\"value\" placeholder=\"Value\" />\r\n                      </div>\r\n                      <div class=\"col-xs-1\">\r\n                        <div (click)=\"removeGrade(i)\"><i class=\"fas fa-trash-alt fa-2x pull-right\"></i></div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </form>\r\n            <div *ngIf=\"grades.length <= 20\" style=\"text-align: center; margin: 10px;\">\r\n              <button *ngIf=\"myForm.controls.grades.controls.length <= 4\" class=\"btn btn-primary\" (click)=\"add_blank_grade()\">Add Grade</button>\r\n              <button [disabled]=\"!myForm.valid\" *ngIf=\"myForm.controls.grades.controls.length > 0\" class=\"btn btn-success\" (click)=\"save_grades(myForm)\">Save Grade(s)</button>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Suggested Programs/Events\"></tab>\r\n          <tab heading=\"Interventions\"></tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentee.menteeFirstName}} {{mentee.menteeLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeDOB | date}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeClassification.description}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeSchool.school_name}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentee.menteeEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset #menteeTabs>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">Address:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentee.menteeAddress.city}} {{mentee.menteeAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{mentee.menteeEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Guardian Information\">\r\n            <div style=\"margin:0; font-style: normal;\">\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Guardian:\r\n                </div>\r\n                <div class=\"col-sm-9\" style=\"padding-left: 0px;\">\r\n                  {{guardian.guardianFirstName}} {{guardian.guardianLastName}}\r\n                </div>\r\n              </div>\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-3\">\r\n                  Address:\r\n                </div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{guardian.guardianAddress.city}} {{guardian.guardianAddress.zip}}\r\n                  </div>\r\n                </div>\r\n                <div class=\"col-sm-3\">Email:</div>\r\n                <div class=\"col-sm-9\">\r\n                  <div class=\"row\"> {{guardian.guardianEmail}}</div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentee Grades\">\r\n            <div class=\"row\" style=\"margin: 0; font-style: normal;\">\r\n\r\n              <div class=\"col-xs-1\" *ngFor=\"let group of grades | groupBy: ['gradePeriod.description'] | pairs; last as isLast; let odd = odd\">\r\n                <table class=\"table table-sm\">\r\n                  <tr>\r\n                    <th rowspan=\"6\" class=\"align-middle\">{{group[0]}} </th>\r\n                    <th>Course</th>\r\n                    <th>Grade</th>\r\n                  </tr>\r\n                  <tr *ngFor=\"let subjectGroup of group[1]\">\r\n                    <td style=\"text-overflow: ellipsis; max-width: 140px; white-space: nowrap; overflow: hidden;\">{{subjectGroup.gradeCourse.course_name}}</td>\r\n                    <td>{{subjectGroup.gradeValue | round: 2}}</td>\r\n                  </tr>\r\n                </table>\r\n                <span class=\"d-flex justify-content-end\" *ngIf=\"odd\">G.P.A: {{getPeriodGpa(user.iat, group[1])}}</span>\r\n              </div>\r\n            </div>\r\n            <div class=\"form-row justify-content-start\">\r\n              <div class=\"col-xs-3\">\r\n                <select *ngIf=\"isShown\" class=\"form-control-sm\" [(ngModel)]=\"selectedPeriod\" style=\"margin-bottom: 10px;\">\r\n                  <option [ngValue]=\"'-1'\" [selected]=\"true\">--- Select Grading Period---</option>\r\n                  <option *ngFor=\"let period of gradingPeriods\" [ngValue]=\"period.id\">{{period.description}}</option>\r\n                </select>\r\n              </div>\r\n            </div>\r\n            <form [formGroup]=\"myForm\" novalidate class=\"form-inline justify-content-center\">\r\n              <div formArrayName=\"grades\">\r\n                <div *ngFor=\"let grade of myForm.controls.grades.controls; let i=index; first as isFirst\" class=\"panel panel-default\">\r\n                  <div class=\"panel-body\" [formGroupName]=\"i\">\r\n\r\n                    <div class=\"form-row justify-content-end\" *ngIf=\"selectedPeriod != '-1' && selectedPeriod != ''\">\r\n\r\n                      <div class=\"col-xs-3\">\r\n                        <select class=\"form-control-sm\" formControlName=\"course\">\r\n                          <option [selected]=\"true\">--- Select Course ---</option>\r\n                          <option *ngFor=\"let course of courses\" [ngValue]=\"course.id\">{{course.course_name}}</option>\r\n                        </select>\r\n                      </div>\r\n                      <div class=\"col-xs-2\">\r\n                        <input type=\"text\" class=\"form-control-sm\" formControlName=\"value\" placeholder=\"Value\" />\r\n                      </div>\r\n                      <div class=\"col-xs-1\">\r\n                        <div (click)=\"removeGrade(i)\"><i class=\"fas fa-trash pull-right\"></i></div>\r\n                      </div>\r\n                    </div>\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </form>\r\n            <div *ngIf=\"grades.length <= 20\" style=\"text-align: center; margin: 10px;\">\r\n              <button *ngIf=\"myForm.controls.grades.controls.length <= 4 && selectedPeriod !== '-1'\" class=\"btn btn-primary\" (click)=\"add_blank_grade()\">Add Grade</button>\r\n              <button [hidden]=\"selectedPeriod !== '-1' || allPeriods.length > 3\" class=\"btn btn-default\" (click)=\"isShown = !isShown\">Add Grading Period</button>\r\n              <button [disabled]=\"!myForm.valid\" *ngIf=\"myForm.controls.grades.controls.length > 0\" class=\"btn btn-success\" (click)=\"save_grades(myForm)\">Save Grade(s)</button>\r\n            </div>\r\n            <div class=\"row\">\r\n              <div class=\"col-md-12\">\r\n                <div *ngIf=\"lineChartData.length > 0\" style=\"display: block;\">\r\n                  <canvas #gpaChart=\"base-chart\" baseChart width=\"400\" height=\"200\"\r\n                          [datasets]=\"lineChartData\"\r\n                          [labels]=\"lineChartLabels\"\r\n                          [options]=\"lineChartOptions\"\r\n                          [legend]=\"lineChartLegend\"\r\n                          [colors]=\"chartColors\"\r\n                          [chartType]=\"lineChartType\"></canvas>\r\n                </div>\r\n              </div>\r\n              <!--<div class=\"col-md-6\">\r\n                <highcharts-chart [Highcharts]=\"Highcharts\"\r\n                                  [options]=\"chartOptions\"\r\n                                  style=\"width: 100%; height: 400px; display: block;\">\r\n                </highcharts-chart>\r\n              </div>-->\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Suggested Programs/Events\"></tab>\r\n          <tab heading=\"Interventions\"></tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2298,8 +2354,15 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _models_mentee__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../models/mentee */ "../src/app/models/mentee.ts");
 /* harmony import */ var _models_mentor__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ../models/mentor */ "../src/app/models/mentor.ts");
 /* harmony import */ var _models_guardian__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ../models/guardian */ "../src/app/models/guardian.ts");
-/* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ngx-bootstrap */ "../node_modules/ngx-bootstrap/index.js");
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var _models_gradepointaverage__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ../models/gradepointaverage */ "../src/app/models/gradepointaverage.ts");
+/* harmony import */ var ngx_bootstrap__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ngx-bootstrap */ "../node_modules/ngx-bootstrap/index.js");
+/* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ng2-charts/ng2-charts */ "../node_modules/ng2-charts/ng2-charts.js");
+/* harmony import */ var ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_14___default = /*#__PURE__*/__webpack_require__.n(ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_14__);
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! highcharts */ "../node_modules/highcharts/highcharts.js");
+/* harmony import */ var highcharts__WEBPACK_IMPORTED_MODULE_15___default = /*#__PURE__*/__webpack_require__.n(highcharts__WEBPACK_IMPORTED_MODULE_15__);
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! underscore */ "../node_modules/underscore/underscore.js");
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_17___default = /*#__PURE__*/__webpack_require__.n(underscore__WEBPACK_IMPORTED_MODULE_17__);
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2309,6 +2372,41 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -2322,6 +2420,11 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+
+
+
+
+//import * as _ from 'lodash';
 
 var MenteeProfileComponent = /** @class */ (function () {
     function MenteeProfileComponent(menteeService, mentorService, userService, timelineService, router, gradingService, _fb, menteeProfileService) {
@@ -2334,17 +2437,69 @@ var MenteeProfileComponent = /** @class */ (function () {
         this._fb = _fb;
         this.menteeProfileService = menteeProfileService;
         this.mentee = new _models_mentee__WEBPACK_IMPORTED_MODULE_9__["Mentee"]();
+        this.Highcharts = highcharts__WEBPACK_IMPORTED_MODULE_15__;
+        this.chartOptions = {
+            series: [
+                {
+                    data: [1, 2, 3, 4, 5, 6]
+                }
+            ]
+        };
         this.mentor = new _models_mentor__WEBPACK_IMPORTED_MODULE_10__["Mentor"]();
         this.guardian = new _models_guardian__WEBPACK_IMPORTED_MODULE_11__["Guardian"]();
         this.grades = new Array();
+        this.gpas = new Array();
         this.gradeGroup = {};
         this.messages = 1;
         this.timelineData = [];
         this.gradingPeriods = new Array();
+        this.allPeriods = [];
+        this.allSiteAverages = [];
+        this.lineChartData = new Array();
+        this.lineChartLabels = new Array();
+        this.lineChartOptions = { responsive: true };
+        this.lineChartLegend = true;
+        this.lineChartType = 'line';
+        this.chartColors = [
+            {
+                backgroundColor: 'rgba(225,10,24,0.2)',
+                borderColor: 'rgba(225,10,24,0.2)',
+                pointBackgroundColor: 'rgba(225,10,24,0.2)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(225,10,24,0.2)'
+            },
+            {
+                backgroundColor: 'rgba(225,10,24,0.2)',
+                borderColor: 'rgba(225,10,24,0.2)',
+                pointBackgroundColor: 'rgba(225,10,24,0.2)',
+                pointBorderColor: '#fff',
+                pointHoverBackgroundColor: '#fff',
+                pointHoverBorderColor: 'rgba(225,10,24,0.2)'
+            }
+        ];
+        //ngx
+        this.view = [700, 400];
+        this.multi = [];
+        this.showXAxis = true;
+        this.showYAxis = true;
+        this.gradient = false;
+        this.showLegend = false;
+        this.showXAxisLabel = true;
+        this.xAxisLabel = 'Subject';
+        this.showYAxisLabel = true;
+        this.yAxisLabel = 'GPA';
+        this.colorScheme = {
+            domain: ['#5AA454', '#A10A28', '#C7B42C', '#AAAAAA']
+        };
+        this.autoScale = true;
         this.blankGrades = [];
         this.courses = [];
+        this.labels = [];
         this.system_id = 0;
         this.classification_id = 0;
+        this.isShown = false;
+        this.selectedPeriod = '-1';
         this.menteeProfileService.notify_change_in_grades();
     }
     MenteeProfileComponent.prototype.ngOnInit = function () {
@@ -2358,20 +2513,8 @@ var MenteeProfileComponent = /** @class */ (function () {
         }
         else {
             this.menteeId = this.user.iat;
-            this.gradingService.get_grading_periods()
-                .subscribe(function (data) {
-                _this.gradingPeriods = data;
-            });
-            this.menteeService.get_mentee_by_id(this.menteeId)
-                .subscribe(function (data) {
-                _this.mentee = data;
-                _this.system_id = _this.mentee.menteeSchool.system.id;
-                _this.classification_id = data.menteeClassification.id;
-                _this.gradingService.get_courses_by_systemid(_this.system_id, _this.classification_id)
-                    .subscribe(function (data) {
-                    _this.courses = data;
-                });
-            }, function (error) { return console.log(error); });
+            this.addGpas();
+            this.getMentee(this.menteeId);
             this.menteeService.get_mentor_by_mentee_id(this.menteeId)
                 .subscribe(function (data) {
                 _this.mentor = data;
@@ -2380,10 +2523,11 @@ var MenteeProfileComponent = /** @class */ (function () {
                 .subscribe(function (data) {
                 _this.guardian = data;
             }, function (error) { return console.log(error); });
-            this.menteeProfileService.notify_change_in_grades();
             this.menteeProfileService.mentee_grades$.subscribe(function (data) {
                 _this.grades = data;
+                _this.getMenteeGrades();
             }, function (error) { return console.log(error); });
+            this.menteeProfileService.notify_change_in_grades();
             this.timelineService.get_timeline_data(this.menteeId)
                 .subscribe(function (data) {
                 _this.timelineData = data;
@@ -2393,7 +2537,7 @@ var MenteeProfileComponent = /** @class */ (function () {
     MenteeProfileComponent.prototype.add_blank_grade = function () {
         var control = this.myForm.controls['grades'];
         control.push(this._fb.group({
-            period: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
+            period: [''],
             course: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required],
             value: ['', _angular_forms__WEBPACK_IMPORTED_MODULE_4__["Validators"].required]
         }));
@@ -2401,6 +2545,145 @@ var MenteeProfileComponent = /** @class */ (function () {
     MenteeProfileComponent.prototype.removeGrade = function (i) {
         var control = this.myForm.controls['grades'];
         control.removeAt(i);
+    };
+    MenteeProfileComponent.prototype.getPeriodGpa = function (id, period) {
+        var _this = this;
+        var period_id = period[0].gradePeriod.id;
+        var userGpa = new _models_gradepointaverage__WEBPACK_IMPORTED_MODULE_12__["GradePointAverage"]();
+        userGpa = this.gpas.filter(function (x) { return x.mentee_id === parseInt(_this.menteeId) && x.period_id === period_id; })[0];
+        return userGpa.gpa;
+    };
+    MenteeProfileComponent.prototype.getMentee = function (menteeId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.menteeService.get_mentee_by_id(menteeId)
+                            .subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                            var _this = this;
+                            return __generator(this, function (_a) {
+                                this.mentee = data;
+                                this.system_id = this.mentee.menteeSchool.system.id;
+                                this.classification_id = data.menteeClassification.id;
+                                this.addSiteAverages(this.classification_id);
+                                this.gradingService.get_courses_by_systemid(this.system_id, this.classification_id)
+                                    .subscribe(function (data) {
+                                    _this.courses = data;
+                                });
+                                return [2 /*return*/];
+                            });
+                        }); }, function (error) { return console.log(error); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MenteeProfileComponent.prototype.addSiteAverages = function (classificationId) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.menteeService.get_all_averages_for_user(classificationId)
+                            .subscribe(function (data) {
+                            _this.allSiteAverages = data;
+                            var aData = [];
+                            var tData = [];
+                            for (var i = 0; i < _this.allSiteAverages.length; i++) {
+                                aData.push(_this.allSiteAverages[i].gpa);
+                            }
+                            _this.lineChartData.push({
+                                data: aData, label: "Site Avg", backgroundColor: 'rgba(66,158,206,0.2)',
+                                fill: false,
+                                borderColor: 'rgba(66,158,206,0.2)',
+                                pointBackgroundColor: 'rgba(66,158,206,0.2)',
+                                pointBorderColor: '#fff',
+                                pointHoverBackgroundColor: '#fff',
+                                pointHoverBorderColor: 'rgba(66,158,206,0.2)'
+                            });
+                            tData = _this.lineChartData;
+                            _this.chart.chart.config.data.colors = _this.chartColors;
+                            _this.chart.chart.config.data.datasets = tData;
+                            _this.chart.chart.update();
+                        })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MenteeProfileComponent.prototype.addGpas = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0: return [4 /*yield*/, this.menteeProfileService.mentee_gpas$.subscribe(function (data) { return __awaiter(_this, void 0, void 0, function () {
+                            var gData, series, i;
+                            return __generator(this, function (_a) {
+                                this.gpas = data;
+                                gData = [];
+                                series = [];
+                                for (i = 0; i < this.gpas.length; i++) {
+                                    gData.push(this.gpas[i].gpa);
+                                }
+                                this.multi.push({ name: this.user.given_name, series: series });
+                                this.lineChartData.push({
+                                    data: gData, label: this.user.given_name, backgroundColor: 'rgba(128,170,0,0.2)',
+                                    fill: false,
+                                    borderColor: 'rgba(128,170,0,0.2)',
+                                    pointBackgroundColor: 'rgba(128,170,0,0.2)',
+                                    pointBorderColor: '#fff',
+                                    pointHoverBackgroundColor: '#fff',
+                                    pointHoverBorderColor: 'rgba(128,170,0,0.2)'
+                                });
+                                return [2 /*return*/];
+                            });
+                        }); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MenteeProfileComponent.prototype.getMenteeGrades = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var previousId, nPeriods, i, k;
+            var _this = this;
+            return __generator(this, function (_a) {
+                if (this.allPeriods.length < 1) {
+                    previousId = 0;
+                    nPeriods = underscore__WEBPACK_IMPORTED_MODULE_17__["_"].pluck(this.grades, 'gradePeriod');
+                    for (i = 0; i < nPeriods.length; i++) {
+                        if (nPeriods[i].id !== previousId) {
+                            this.allPeriods.push({
+                                id: nPeriods[i].id,
+                                period: nPeriods[i].period,
+                                description: nPeriods[i].description
+                            });
+                        }
+                        previousId = nPeriods[i].id;
+                    }
+                    for (k = 0; k < this.allPeriods.length; k++) {
+                        this.labels.push(this.allPeriods[k].description);
+                    }
+                    this.lineChartLabels = this.labels;
+                    this.gradingService.get_grading_periods()
+                        .subscribe(function (data) {
+                        var aPeriods = _this.allPeriods;
+                        for (var j = 0; j < data.length; j++) {
+                            var gp = !underscore__WEBPACK_IMPORTED_MODULE_17__["_"].findWhere(_this.allPeriods, { id: data[j].id });
+                            if (gp && _this.gradingPeriods.length < 4) {
+                                _this.gradingPeriods.push(data[j]);
+                            }
+                        }
+                    });
+                }
+                return [2 /*return*/];
+            });
+        });
     };
     MenteeProfileComponent.prototype.save_grades = function (form) {
         var _this = this;
@@ -2411,7 +2694,7 @@ var MenteeProfileComponent = /** @class */ (function () {
                 course_id: grade.course,
                 mentee_id: _this.menteeId,
                 grade_value: grade.value,
-                period_id: grade.period,
+                period_id: _this.selectedPeriod,
                 school_year: '2017-2018'
             });
         });
@@ -2428,8 +2711,12 @@ var MenteeProfileComponent = /** @class */ (function () {
         }
     };
     __decorate([
+        Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('gpaChart'),
+        __metadata("design:type", ng2_charts_ng2_charts__WEBPACK_IMPORTED_MODULE_14__["BaseChartDirective"])
+    ], MenteeProfileComponent.prototype, "chart", void 0);
+    __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["ViewChild"])('menteeTabs'),
-        __metadata("design:type", ngx_bootstrap__WEBPACK_IMPORTED_MODULE_12__["TabsetComponent"])
+        __metadata("design:type", ngx_bootstrap__WEBPACK_IMPORTED_MODULE_13__["TabsetComponent"])
     ], MenteeProfileComponent.prototype, "menteeTabs", void 0);
     MenteeProfileComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
@@ -2477,6 +2764,41 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
 
 
 
@@ -2486,15 +2808,44 @@ var MenteeProfileService = /** @class */ (function () {
         this.menteeService = menteeService;
         this.userService = userService;
         this.mentee_grades$ = new rxjs_Subject__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
+        this.mentee_gpas$ = new rxjs_Subject__WEBPACK_IMPORTED_MODULE_3__["Subject"]();
         this.get_mentee_grades();
+        this.get_mentee_gpas();
     }
     MenteeProfileService.prototype.get_mentee_grades = function () {
-        var _this = this;
-        this.user = JSON.parse(localStorage.getItem('user'));
-        this.menteeService.get_mentee_grades(parseInt(this.user.iat)).subscribe(function (data) { return _this.mentee_grades$.next(data); });
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.user = JSON.parse(localStorage.getItem('user'));
+                        return [4 /*yield*/, this.menteeService.get_mentee_grades(parseInt(this.user.iat)).subscribe(function (data) { return _this.mentee_grades$.next(data); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
+    };
+    MenteeProfileService.prototype.get_mentee_gpas = function () {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        this.user = JSON.parse(localStorage.getItem('user'));
+                        return [4 /*yield*/, this.menteeService.get_grade_point_averages(parseInt(this.user.iat))
+                                .subscribe(function (data) { return _this.mentee_gpas$.next(data); })];
+                    case 1:
+                        _a.sent();
+                        return [2 /*return*/];
+                }
+            });
+        });
     };
     MenteeProfileService.prototype.notify_change_in_grades = function () {
         this.get_mentee_grades();
+        //this.get_mentee_gpas();
     };
     MenteeProfileService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Injectable"])(),
@@ -2525,7 +2876,7 @@ module.exports = ".meticulous-container {\r\n  margin: 20px;\r\n}\r\n\r\n.first-
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentor.mentorFirstName}} {{mentor.mentorLastName}}\r\n      </div>\r\n      <div class=\"row\">\r\n        {{mentor.mentorEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <!--<div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>-->\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-4\">Address: </div>\r\n                <div class=\"col-sm-8\">\r\n                  <div class=\"row\">\r\n                    {{mentor.mentorAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentees\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <!--<div class=\"row\" style=\"margin-bottom: 20px;\">Mentees</div>-->\r\n              <div class=\"row\">\r\n                <table class=\"table table-sm\">\r\n                  <tbody>\r\n                    <tr *ngFor=\"let mentee of mentor.mentorMentees\">\r\n                      <td> <a>{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>\r\n                      <td>{{mentee.menteeClassification.description}}</td>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
+module.exports = "<div class=\"container-fluid meticulous-container\">\r\n  <div class=\"row\">\r\n    <div class=\"col-xl-4\">\r\n      <div class=\"row\"><img src=\"http://via.placeholder.com/300X300\" class=\"rounded mx-auto d-block\" /></div>\r\n      <hr />\r\n      <div class=\"row\">\r\n        <div class=\"col-xl-12\">\r\n          <section id=\"timeline\">\r\n            <article *ngFor=\"let timeline of timelineData\">\r\n              <div class=\"inner\">\r\n                <span class=\"date\">\r\n                  <span class=\"day\">{{timeline.timeline_date | date:'dd'}}</span>\r\n                  <span class=\"month\">{{timeline.timeline_date | date:'MMM'}}</span>\r\n                  <span class=\"year\">{{timeline.timeline_date | date:'yyyy'}}</span>\r\n                </span>\r\n                <h2>{{timeline.detail}}</h2>\r\n                <p></p>\r\n              </div>\r\n            </article>\r\n          </section>\r\n        </div>\r\n      </div>\r\n    </div>\r\n    <div class=\"col-xl-8\">\r\n\r\n      <div class=\"row first-name\">\r\n        {{mentor.mentorFirstName}} {{mentor.mentorLastName}}\r\n      </div>\r\n      <div class=\"row\">Mentor</div>\r\n      <div class=\"row\">\r\n        {{mentor.mentorEmail}}\r\n      </div>\r\n\r\n      <div class=\"row\">\r\n        <button type=\"button\" class=\"btn btn-primary\">\r\n          Messages <span *ngIf=\"messages > 0\" class=\"badge badge-light\">{{messages}}</span>\r\n        </button>\r\n      </div>\r\n\r\n      <hr />\r\n      <div class=\"row\">\r\n        <tabset>\r\n          <tab heading=\"Contact Information\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <!--<div class=\"row\" style=\"margin-bottom: 20px;\">Contact Information</div>-->\r\n              <div class=\"row\">\r\n                <div class=\"col-sm-4\">Address: </div>\r\n                <div class=\"col-sm-8\">\r\n                  <div class=\"row\">\r\n                    {{mentor.mentorAddress.address1}}\r\n                  </div>\r\n                  <div class=\"row\">\r\n                    {{mentor.mentorAddress.city}} {{mentor.mentorAddress.zip}}\r\n                  </div>\r\n                </div>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n          <tab heading=\"Mentees\" id=\"tab1\">\r\n            <div style=\"margin: 15px; font-style: normal;\">\r\n              <!--<div class=\"row\" style=\"margin-bottom: 20px;\">Mentees</div>-->\r\n              <div class=\"row\">\r\n                <table class=\"table table-sm\">\r\n                  <tbody>\r\n                    <tr *ngFor=\"let mentee of mentorMentees\">\r\n                      <td> <a>{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>\r\n                      <td>{{mentee.menteeClassification.description}}</td>\r\n                      <td>{{mentee.gpa}}</td>\r\n                    </tr>\r\n                  </tbody>\r\n                </table>\r\n              </div>\r\n            </div>\r\n          </tab>\r\n        </tabset>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</div>\r\n"
 
 /***/ }),
 
@@ -2545,10 +2896,12 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _shared_mentee_service__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ../shared/mentee.service */ "../src/app/shared/mentee.service.ts");
 /* harmony import */ var _mentor_mentor_service__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ../mentor/mentor.service */ "../src/app/mentor/mentor.service.ts");
 /* harmony import */ var _shared_timeline_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/timeline.service */ "../src/app/shared/timeline.service.ts");
-/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
-/* harmony import */ var _models_mentor__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ../models/mentor */ "../src/app/models/mentor.ts");
-/* harmony import */ var _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../mentee-dialog/mentee-dialog.component */ "../src/app/mentee-dialog/mentee-dialog.component.ts");
-/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! underscore */ "../node_modules/underscore/underscore.js");
+/* harmony import */ var underscore__WEBPACK_IMPORTED_MODULE_6___default = /*#__PURE__*/__webpack_require__.n(underscore__WEBPACK_IMPORTED_MODULE_6__);
+/* harmony import */ var _angular_material__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! @angular/material */ "../node_modules/@angular/material/esm5/material.es5.js");
+/* harmony import */ var _models_mentor__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ../models/mentor */ "../src/app/models/mentor.ts");
+/* harmony import */ var _mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ../mentee-dialog/mentee-dialog.component */ "../src/app/mentee-dialog/mentee-dialog.component.ts");
+/* harmony import */ var rxjs_Rx__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! rxjs/Rx */ "../node_modules/rxjs-compat/_esm5/Rx.js");
 var __decorate = (undefined && undefined.__decorate) || function (decorators, target, key, desc) {
     var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
     if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
@@ -2558,6 +2911,42 @@ var __decorate = (undefined && undefined.__decorate) || function (decorators, ta
 var __metadata = (undefined && undefined.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : new P(function (resolve) { resolve(result.value); }).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
 
 
 
@@ -2576,9 +2965,10 @@ var MentorProfileComponent = /** @class */ (function () {
         this.userService = userService;
         this.router = router;
         this.dialog = dialog;
-        this.mentor = new _models_mentor__WEBPACK_IMPORTED_MODULE_7__["Mentor"]();
+        this.mentor = new _models_mentor__WEBPACK_IMPORTED_MODULE_8__["Mentor"]();
         this.messages = 0;
         this.timelineData = [];
+        this.mentorMentees = new Array();
     }
     MentorProfileComponent.prototype.ngOnInit = function () {
         var _this = this;
@@ -2591,16 +2981,18 @@ var MentorProfileComponent = /** @class */ (function () {
             this.mentorService.get_mentor_by_id(this.mentorId)
                 .subscribe(function (data) {
                 _this.mentor = data;
+                _this.mentorMentees = (_this.mentor.mentorMentees);
+                _this.addMenteeCurrentGpa(_this.mentorMentees);
             }, function (error) { return console.log(error); });
         }
         this.timelineService.get_timeline_data(this.mentorId)
             .subscribe(function (data) {
-            _this.timelineData = data;
+            _this.timelineData = (data);
         }, function (error) { return console.log(error); });
     };
     MentorProfileComponent.prototype.openMenteeFormDialog = function (mId) {
         var _this = this;
-        var dialogRef = this.dialog.open(_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_8__["MenteeDialogComponent"], {
+        var dialogRef = this.dialog.open(_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_9__["MenteeDialogComponent"], {
             width: '1400px',
             height: '860px',
             data: { menteeId: mId }
@@ -2609,9 +3001,26 @@ var MentorProfileComponent = /** @class */ (function () {
             _this.mentee = result;
         });
     };
+    MentorProfileComponent.prototype.addMenteeCurrentGpa = function (mentees) {
+        return __awaiter(this, void 0, void 0, function () {
+            var _this = this;
+            return __generator(this, function (_a) {
+                mentees.forEach(function (mentee) {
+                    _this.menteeService.get_grade_point_averages(mentee.menteeId).subscribe(function (data) {
+                        var gpas = data;
+                        if (gpas.length > 0) {
+                            var sortedGpas = underscore__WEBPACK_IMPORTED_MODULE_6__["_"].sortBy(gpas, 'period_id').reverse();
+                            mentee.gpa = sortedGpas[0].gpa;
+                        }
+                    });
+                });
+                return [2 /*return*/];
+            });
+        });
+    };
     MentorProfileComponent = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["NgModule"])({
-            imports: [_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_8__["MenteeDialogComponent"]]
+            imports: [_mentee_dialog_mentee_dialog_component__WEBPACK_IMPORTED_MODULE_9__["MenteeDialogComponent"]]
         }),
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_0__["Component"])({
             selector: 'mentor-profile',
@@ -2623,7 +3032,7 @@ var MentorProfileComponent = /** @class */ (function () {
             _shared_timeline_service__WEBPACK_IMPORTED_MODULE_5__["TimelineService"],
             _shared_user_service__WEBPACK_IMPORTED_MODULE_1__["UserService"],
             _angular_router__WEBPACK_IMPORTED_MODULE_2__["Router"],
-            _angular_material__WEBPACK_IMPORTED_MODULE_6__["MatDialog"]])
+            _angular_material__WEBPACK_IMPORTED_MODULE_7__["MatDialog"]])
     ], MentorProfileComponent);
     return MentorProfileComponent;
 }());
@@ -2713,6 +3122,26 @@ var AdminView = /** @class */ (function () {
     function AdminView() {
     }
     return AdminView;
+}());
+
+
+
+/***/ }),
+
+/***/ "../src/app/models/gradepointaverage.ts":
+/*!**********************************************!*\
+  !*** ../src/app/models/gradepointaverage.ts ***!
+  \**********************************************/
+/*! exports provided: GradePointAverage */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "GradePointAverage", function() { return GradePointAverage; });
+var GradePointAverage = /** @class */ (function () {
+    function GradePointAverage() {
+    }
+    return GradePointAverage;
 }());
 
 
@@ -2841,8 +3270,7 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @angular/http */ "../node_modules/@angular/http/fesm5/http.js");
 /* harmony import */ var _angular_common_http__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/common/http */ "../node_modules/@angular/common/fesm5/http.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @angular/core */ "../node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! angular2-jwt */ "../node_modules/angular2-jwt/angular2-jwt.js");
-/* harmony import */ var angular2_jwt__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(angular2_jwt__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @auth0/angular-jwt */ "../node_modules/@auth0/angular-jwt/index.js");
 /* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! rxjs/operators */ "../node_modules/rxjs/_esm5/operators/index.js");
 /* harmony import */ var _shared_user_service__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ../shared/user.service */ "../src/app/shared/user.service.ts");
 /* harmony import */ var rxjs_add_operator_map__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! rxjs/add/operator/map */ "../node_modules/rxjs-compat/_esm5/add/operator/map.js");
@@ -2858,6 +3286,7 @@ var __metadata = (undefined && undefined.__metadata) || function (k, v) {
 
 
 
+//import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
 
 
 
@@ -2868,7 +3297,7 @@ var AccountService = /** @class */ (function () {
         this.userService = userService;
         this.httpClient = httpClient;
         this.token = "";
-        this.jwtHelper = new angular2_jwt__WEBPACK_IMPORTED_MODULE_3__["JwtHelper"]();
+        this.jwtHelper = new _auth0_angular_jwt__WEBPACK_IMPORTED_MODULE_3__["JwtHelperService"]();
     }
     Object.defineProperty(AccountService.prototype, "loginRequired", {
         get: function () {
@@ -2878,7 +3307,8 @@ var AccountService = /** @class */ (function () {
         configurable: true
     });
     AccountService.prototype.loggedIn = function () {
-        return Object(angular2_jwt__WEBPACK_IMPORTED_MODULE_3__["tokenNotExpired"])();
+        var token = localStorage.getItem('token');
+        return this.jwtHelper.isTokenExpired(token);
     };
     AccountService.prototype.login = function (creds) {
         return this.http.post("http://localhost:5005/api/account/createtoken", creds)
@@ -3009,7 +3439,7 @@ var AuthGuard = /** @class */ (function () {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function () {
-        if (this.auth.loggedIn()) {
+        if (!this.auth.loggedIn()) {
             return true;
         }
         else {
@@ -3165,6 +3595,33 @@ var MenteeService = /** @class */ (function () {
         return this.http.post("http://localhost:5005/api/mentees/AddGrades", grades, {
             headers: new _angular_http__WEBPACK_IMPORTED_MODULE_0__["Headers"]({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         });
+    };
+    MenteeService.prototype.get_grade_point_average = function (id, period) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/GradePointAverage/" + id + "/" + period, httpOptions);
+    };
+    MenteeService.prototype.get_grade_point_averages = function (id) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/GradePointAverages/" + id, httpOptions);
+    };
+    MenteeService.prototype.get_all_averages_for_user = function (classificationId) {
+        var httpOptions = {
+            headers: new _angular_common_http__WEBPACK_IMPORTED_MODULE_1__["HttpHeaders"]({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/GetAllAveragesForUser/" + classificationId, httpOptions);
     };
     MenteeService = __decorate([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_2__["Injectable"])(),

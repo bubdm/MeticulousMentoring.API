@@ -71,6 +71,33 @@ var MenteeService = /** @class */ (function () {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         });
     };
+    MenteeService.prototype.get_grade_point_average = function (id, period) {
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/GradePointAverage/" + id + "/" + period, httpOptions);
+    };
+    MenteeService.prototype.get_grade_point_averages = function (id) {
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/GradePointAverages/" + id, httpOptions);
+    };
+    MenteeService.prototype.get_all_averages_for_user = function (classificationId) {
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.get("http://localhost:5005/api/mentees/GetAllAveragesForUser/" + classificationId, httpOptions);
+    };
     MenteeService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService, http_2.HttpClient])

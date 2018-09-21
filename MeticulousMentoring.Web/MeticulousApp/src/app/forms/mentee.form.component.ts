@@ -30,6 +30,8 @@ export class MenteeFormComponent implements OnInit {
   public schools;
   public menteeId: string;
   isChildAddressShared = false;
+  public selectedFile: string = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
+  public fileConst: File;
 
   genders = [{ gender: "M", description: "Male" },
   { gender: "F", description: "Female" }];
@@ -144,6 +146,7 @@ export class MenteeFormComponent implements OnInit {
       MenteeSchool: {
         id: mentee_info.school.schoolId
       },
+      MenteeImageFile: this.fileConst
     }
 
     let response = this.menteeService.add_mentee(newMentee)
@@ -178,5 +181,16 @@ export class MenteeFormComponent implements OnInit {
 
   public hide_modal() {
     this.bsModalRef.hide();
+  }
+
+  onFileChanged(event) {
+    if (event.target.files && event.target.files[0]) {
+      const file = event.target.files[0];
+      this.fileConst = event.target.files[0];
+      const reader = new FileReader();
+      reader.onload = e => this.selectedFile = reader.result;
+
+      reader.readAsDataURL(file);
+    }
   }
 }

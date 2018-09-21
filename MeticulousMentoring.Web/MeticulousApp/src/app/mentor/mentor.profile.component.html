@@ -26,6 +26,7 @@
       <div class="row first-name">
         {{mentor.mentorFirstName}} {{mentor.mentorLastName}}
       </div>
+      <div class="row">Mentor</div>
       <div class="row">
         {{mentor.mentorEmail}}
       </div>
@@ -61,9 +62,10 @@
               <div class="row">
                 <table class="table table-sm">
                   <tbody>
-                    <tr *ngFor="let mentee of mentor.mentorMentees">
+                    <tr *ngFor="let mentee of mentorMentees">
                       <td> <a>{{mentee.menteeFirstName}} {{mentee.menteeLastName}}</a></td>
                       <td>{{mentee.menteeClassification.description}}</td>
+                      <td>{{mentee.gpa}}</td>
                     </tr>
                   </tbody>
                 </table>

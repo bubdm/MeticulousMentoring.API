@@ -1,6 +1,6 @@
 import { Http, Response, Headers } from "@angular/http";
 import { Injectable } from "@angular/core";
-import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
+
 import { Observable } from "rxjs";
 import { UserService } from "../shared/user.service";
 import { map } from 'rxjs/operators';
@@ -11,14 +11,9 @@ export class ClassificationService {
 
   private token: string = "";
   private tokenExpiration: Date;
-  private jwtHelper: JwtHelper = new JwtHelper();
 
   public get loginRequired(): boolean {
     return this.token.length === 0 || this.tokenExpiration > new Date();
-  }
-
-  public loggedIn() {
-    return tokenNotExpired();
   }
 
   public get_classifications() {

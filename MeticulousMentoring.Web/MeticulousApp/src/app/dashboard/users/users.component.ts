@@ -18,6 +18,7 @@ import { MenteeFormComponent } from '../../forms/mentee.form.component';
 import { MentorFormComponent } from '../../forms/mentor.form.component';
 import { DirectorFormComponent } from '../../forms/director.form.component';
 import { AdminFormComponent } from '../../forms/admin-form.component';
+import { ScreenStatus } from '../../enums/screenstatus';
 
 @NgModule({
   imports: [MenteeFormComponent,
@@ -38,6 +39,9 @@ export class UsersComponent implements OnInit {
   public bsModalRef: BsModalRef;
   public user_to_delete_id: number = -1;
   public role: string;
+  public user_to_delete: any;
+
+  ScreenType: any = ScreenStatus;
 
   mentee: Mentee;
   mentor: Mentor;
@@ -110,8 +114,9 @@ export class UsersComponent implements OnInit {
     this.bsModalRef = this.modalService.show(AdminFormComponent, { initialState, animated: false });
   }
 
-  open_delete_modal(template: TemplateRef<any>, id: number) {
-    this.user_to_delete_id = id;
+  open_delete_modal(template: TemplateRef<any>, user: any) {
+    this.user_to_delete_id = user.id;
+    this.user_to_delete = user;
 
     this.bsModalRef = this.modalService.show(template, { class: 'modal-sm', ignoreBackdropClick: true });
   }

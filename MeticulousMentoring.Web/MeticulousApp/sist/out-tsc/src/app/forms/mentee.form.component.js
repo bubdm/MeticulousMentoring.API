@@ -124,6 +124,7 @@ var MenteeFormComponent = /** @class */ (function () {
             MenteeSchool: {
                 id: mentee_info.school.schoolId
             },
+            MenteeImageFile: this.fileConst
         };
         var response = this.menteeService.add_mentee(newMentee)
             .subscribe(function (data) {
@@ -152,6 +153,16 @@ var MenteeFormComponent = /** @class */ (function () {
     };
     MenteeFormComponent.prototype.hide_modal = function () {
         this.bsModalRef.hide();
+    };
+    MenteeFormComponent.prototype.onFileChanged = function (event) {
+        var _this = this;
+        if (event.target.files && event.target.files[0]) {
+            var file = event.target.files[0];
+            this.fileConst = event.target.files[0];
+            var reader_1 = new FileReader();
+            reader_1.onload = function (e) { return _this.selectedFile = reader_1.result; };
+            reader_1.readAsDataURL(file);
+        }
     };
     MenteeFormComponent = __decorate([
         core_1.Component({

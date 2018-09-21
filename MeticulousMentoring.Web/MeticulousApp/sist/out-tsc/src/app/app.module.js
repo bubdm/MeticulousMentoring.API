@@ -19,7 +19,7 @@ var angular_archwizard_1 = require("angular-archwizard");
 var ng_multiselect_dropdown_1 = require("ng-multiselect-dropdown");
 var ng_select_1 = require("@ng-select/ng-select");
 var angular_2_dropdown_multiselect_1 = require("angular-2-dropdown-multiselect");
-var ngx_select_dropdown_1 = require("ngx-select-dropdown");
+var highcharts_angular_1 = require("highcharts-angular");
 var angular2_multiselect_dropdown_1 = require("angular2-multiselect-dropdown/angular2-multiselect-dropdown");
 var angular_vertical_timeline_1 = require("angular-vertical-timeline");
 var app_component_1 = require("./app.component");
@@ -146,10 +146,10 @@ var AppModule = /** @class */ (function () {
                 ng_multiselect_dropdown_1.NgMultiSelectDropDownModule.forRoot(),
                 ng_select_1.NgSelectModule,
                 angular_2_dropdown_multiselect_1.MultiselectDropdownModule,
-                ngx_select_dropdown_1.SelectDropDownModule,
                 angular2_multiselect_dropdown_1.AngularMultiSelectModule,
                 ngx_bootstrap_1.TabsModule.forRoot(),
-                angular_vertical_timeline_1.VerticalTimelineModule
+                angular_vertical_timeline_1.VerticalTimelineModule,
+                highcharts_angular_1.HighchartsChartModule
             ],
             exports: [mentee_form_component_1.MenteeFormComponent],
             entryComponents: [mentee_form_component_1.MenteeFormComponent, mentor_form_component_1.MentorFormComponent, director_form_component_1.DirectorFormComponent, mentee_dialog_component_1.MenteeDialogComponent, admin_form_component_1.AdminFormComponent],

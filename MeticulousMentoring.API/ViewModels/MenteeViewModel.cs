@@ -1,4 +1,5 @@
 ﻿using System;
+using System.IO;
 
 namespace MeticulousMentoring.API.ViewModels
 {
@@ -28,5 +29,6 @@ namespace MeticulousMentoring.API.ViewModels
         public string MenteeEmail { get; set; }
 
         public bool MenteeIsActive { get; set; }
+        public FileStream MenteeImageFile { get; set; }
     }
 }

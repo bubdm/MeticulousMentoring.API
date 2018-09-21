@@ -1,7 +1,8 @@
 import { Http, Response, Headers } from "@angular/http";
 import { HttpHeaders, HttpClient, HttpParams } from '@angular/common/http';
 import { Injectable } from "@angular/core";
-import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
+//import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
+import { JwtHelperService } from "@auth0/angular-jwt";
 import { Observable } from "rxjs";
 import { map } from "rxjs/operators";
 import { UserService } from "../shared/user.service";
@@ -15,14 +16,15 @@ export class AccountService {
 
   private token: string = "";
   private tokenExpiration: Date;
-  private jwtHelper: JwtHelper = new JwtHelper();
+  private jwtHelper: JwtHelperService = new JwtHelperService();
 
   public get loginRequired(): boolean {
     return this.token.length === 0 || this.tokenExpiration > new Date();
   }
 
   public loggedIn() {
-    return tokenNotExpired();
+    var token = localStorage.getItem('token');
+    return this.jwtHelper.isTokenExpired(token);
   }
 
   public login(creds) {

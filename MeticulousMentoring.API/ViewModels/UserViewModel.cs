@@ -10,5 +10,8 @@
         public string email { get; set; }
 
         public string role { get; set; }
+        public int screen_status { get; set; }
+        public int Mentorid { get; set; }
+        public int mentee_count { get; set; }
     }
 }

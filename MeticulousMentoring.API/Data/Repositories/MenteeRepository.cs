@@ -4,6 +4,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using Dapper;
+using Microsoft.Extensions.Configuration;
 
 namespace MeticulousMentoring.API.Data.Repositories
 {
@@ -15,16 +16,15 @@ namespace MeticulousMentoring.API.Data.Repositories
     public class MenteeRepository : IMenteeRepository
     {
         private readonly MeticulousContext ctx;
-        private readonly string _connectionString;
-        private readonly ILogger<MenteeRepository> logger;
-        private IDbConnection _connection { get { return new SqlConnection(_connectionString); } }
 
-        public MenteeRepository(MeticulousContext ctx, ILogger<MenteeRepository> logger)
+        private readonly ILogger<MenteeRepository> logger;
+        private readonly IConfiguration _config;
+
+        public MenteeRepository(MeticulousContext ctx, ILogger<MenteeRepository> logger, IConfiguration config)
         {
             this.ctx = ctx;
             this.logger = logger;
-            _connectionString =
-                "server=DESKTOP-Q69HGKD;Initial Catalog=Meticulous;Integrated Security=True;MultipleActiveResultSets=true;";
+            _config = config;
         }
 
         public IEnumerable<Mentee> GetAllMentees()
@@ -137,6 +137,30 @@ namespace MeticulousMentoring.API.Data.Repositories
             return this.ctx.SaveChanges() > 0;
         }
 
+        public IEnumerable<SiteAverage> GetAllAveragesForUser(int classification_id, string school_year)
+        {
+            try
+            {
+                var sqlConnection = new SqlConnection(_config.GetConnectionString("MeticulousConnectionString"));
+                using (IDbConnection dbConnection = sqlConnection)
+                {
+                    dbConnection.Open();
+                    return dbConnection.Query<SiteAverage>(
+                        $"SELECT SUM(gpa)/COUNT(gpa) AS gpa, gpa.period_id, gpa.school_year " +
+                        $"FROM dbo.GradePointAverages gpa " +
+                        $"WHERE gpa.classification_id = {classification_id} " +
+                        $"AND gpa.school_year = '{school_year}' " +
+                        "GROUP BY gpa.period_id, gpa.school_year " +
+                        "ORDER BY gpa.period_id");
+                }
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
+            }
+        }
+
         public void AddMentee(object model)
         {
             this.ctx.Add(model);
@@ -160,11 +184,26 @@ namespace MeticulousMentoring.API.Data.Repositories
                 param.Add("@school_year", grade.school_year);
                 param.Add("@grade_point", grade_point);
 
-                using (IDbConnection dbConnection = _connection)
+                var sqlConnection = new SqlConnection(_config.GetConnectionString("MeticulousConnectionString"));
+
+                using (IDbConnection dbConnection = sqlConnection)
                 {
                     dbConnection.Execute("dbo.AddMenteeGrade", param, commandType: CommandType.StoredProcedure);
                 }
             }
+
+            saveGradePointAverage(grades);
+        }
+
+        public IEnumerable<GradePointAverage> GetGradePointAverages(int mentee_id)
+        {
+            return ctx.GradePointAverages.Where(x => x.mentee_id == mentee_id);
+        }
+
+        public decimal GetGradePointAverage(int mentee_id, int period_id)
+        {
+            return ctx.GradePointAverages.Where(x => x.mentee_id == mentee_id && x.period_id == period_id)
+                .Select(y => y.gpa).FirstOrDefault();
         }
 
         public IEnumerable<Grade> GetMenteeGrades(int id)
@@ -181,6 +220,35 @@ namespace MeticulousMentoring.API.Data.Repositories
                 Console.WriteLine(e);
                 throw;
             }
+        }
+
+        public void saveGradePointAverage(IEnumerable<GradesDto> grades)
+        {
+            var menteeId = grades.Select(x => x.mentee_id).FirstOrDefault();
+            var periodId = grades.Select(x => x.period_id).FirstOrDefault();
+            var schoolYear = grades.Select(x => x.school_year).FirstOrDefault();
+            var classificationId = ctx.Mentees.Where(x => x.id == menteeId).Select(y => y.classification.id).FirstOrDefault();
+            var gradepointSum = (decimal)0.00;
+
+            var updatedGrades = ctx.Grades.Where(x => x.mentee_id == menteeId && x.period.id == periodId);
+
+            foreach (var grade in updatedGrades)
+            {
+                gradepointSum += grade.grade_point;
+            }
+
+            var gpa = gradepointSum / (decimal)grades.Count();
+
+            ctx.GradePointAverages.Add(new GradePointAverage
+            {
+                mentee_id = menteeId,
+                period_id = periodId,
+                school_year = schoolYear,
+                gpa = gpa,
+                classification_id = classificationId,
+                created_on = DateTime.Now,
+                modified_on = DateTime.Now,
+            });
         }
 
         public decimal getGradePoint(GradesDto grade)

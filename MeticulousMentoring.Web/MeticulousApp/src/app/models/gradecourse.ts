@@ -6,6 +6,6 @@ export class GradeCourse {
   course_classification: Classification;
   system: EducationalSystem;
   course_name: string;
-  created_on: DateTimeFormat;
-  modified_on: DateTimeFormat;
+  created_on: any;
+  modified_on: any;
 }

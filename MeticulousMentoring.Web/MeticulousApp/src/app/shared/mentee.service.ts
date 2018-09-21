@@ -1,11 +1,13 @@
 import { Http, Response, Headers } from "@angular/http";
 import { HttpClient, HttpHeaders, HttpParams } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
+
 import { map } from 'rxjs/operators';
 import { UserService } from "./user.service";
 import { Mentee } from '../models/mentee';
 import { Grade } from '../models/grade';
+import { GradePointAverage } from '../models/gradepointaverage';
+import { SiteAverage } from '../models/siteaverage';
 
 @Injectable()
 export class MenteeService {
@@ -78,5 +80,42 @@ export class MenteeService {
       {
         headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
       });
+  }
+
+  public get_grade_point_average(id: number, period: number) {
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
+      })
+    };
+
+    return this.httpClient.get<number>("http://localhost:5005/api/mentees/GradePointAverage/" + id + "/" + period,
+      httpOptions);
+  }
+
+  public get_grade_point_averages(id: number) {
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
+      })
+    };
+
+    return this.httpClient.get<GradePointAverage[]>("http://localhost:5005/api/mentees/GradePointAverages/" + id,
+      httpOptions);
+  }
+
+  public get_all_averages_for_user(classificationId: number) {
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
+      })
+    };
+
+    return this.httpClient.get<SiteAverage[]>(
+      "http://localhost:5005/api/mentees/GetAllAveragesForUser/" + classificationId,
+      httpOptions);
   }
 }

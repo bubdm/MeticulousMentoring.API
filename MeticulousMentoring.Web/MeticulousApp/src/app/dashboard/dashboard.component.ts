@@ -31,6 +31,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   public user: IUser;
   public users;
   public role: string;
+  public today: number = Date.now();
 
   isExpanded = false;
   mentee: Mentee;

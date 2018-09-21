@@ -25,6 +25,7 @@ var DashboardComponent = /** @class */ (function () {
         this.auth = auth;
         this.router = router;
         this.dialog = dialog;
+        this.today = Date.now();
         this.isExpanded = false;
     }
     DashboardComponent.prototype.ngAfterViewInit = function () {
@@ -58,6 +59,8 @@ var DashboardComponent = /** @class */ (function () {
         }, function (error) { return console.log(error); });
     };
     DashboardComponent.prototype.logout = function () {
+        localStorage.removeItem('user');
+        this.userService.delete();
         this.auth.logout();
         this.router.navigate([""]);
     };

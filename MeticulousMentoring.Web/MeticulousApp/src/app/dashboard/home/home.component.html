@@ -1,10 +1,10 @@
 <div [ngSwitch]="role">
 
   <div class="row" *ngSwitchDefault>
-    <div class="col-md-3 wow fadeInRight" data-wow-delay="0.2s" style="padding-left: 80px; padding-right: 80px;">
-      <img height="300" width="300" [src]="defaultImage" />
+    <div class="col-md-2 wow fadeIn" data-wow-delay="0.2s" style="padding-left: 80px; padding-right: 80px;">
+      <img class="rounded-circle img-fluid" [src]="defaultImage" />
     </div>
-    <div class="col-md-9 wow fadeInRight" data-wow-delay="0.4s" style="padding-right: 80px;">
+    <div class="col-md-2 wow fadeIn" data-wow-delay="0.4s" style="padding-right: 80px;">
       <table class="table table-borderless table-sm">
         <tr class="d-flex">
           <td><strong>Id:</strong></td>
@@ -23,6 +23,102 @@
           <td>{{user.role}}</td>
         </tr>
       </table>
+    </div>
+    <div class="col-md-4 wow fadeIn" data-wow-delay="0.6s" style="padding-right: 80px;">
+      <div *ngIf="role === 'Director'" class="border" style="background-color: rgba(51, 153, 255, .6); padding: 20px; height: 300px;">
+        <div class="row">
+          <div class="col" style="color: rgba(255, 255, 255, 1);">
+            <span><h1>Mentees</h1></span>
+            <hr />
+            <div class="row">
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <span>Active</span>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <span>Unmatched</span>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <span>Inactive</span>
+              </div>
+              <div class="col-md-3" style="padding: 0px 30px;">
+                <span>Pending</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <h1>{{activeMenteesCount}}</h1>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <h1>{{unmatchedActiveMenteesCount}}</h1>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <h1>{{menteesNeedingScreening}}</h1>
+              </div>
+              <div class="col-md-3" style="padding: 0px 30px;">
+                <h1>{{menteesPendingScreening}}</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="padding: 20px 10px 20px 10px;">
+                <div class="d-block w-100">
+                  <div class="progress" style="height: 2px; background-color: rgba(0, 0, 0, .1);">
+                    <div class="progress-bar bg-light" role="progressbar" [ngStyle]="{'width': menteeMatchedPercentage}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <span>{{menteeMatchedPercentage}} <span style="color: rgba(0,0,0,.7);font-family: 'Roboto Condensed', sans-serif;">of active Mentees matched</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-4 wow fadeIn" data-wow-delay="0.8s" style="padding-right: 80px;">
+      <div *ngIf="role === 'Director'" class="border" style="background-color: rgba(128, 100, 200, .6); padding: 20px; height: 300px;">
+        <div class="row">
+          <div class="col" style="color: rgba(255, 255, 255, 1);">
+            <span><h1>Mentors</h1></span>
+            <hr />
+            <div class="row">
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <span>Active</span>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <span>Unmatched</span>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <span>Inactive</span>
+              </div>
+              <div class="col-md-3" style="padding: 0px 30px;">
+                <span>Pending</span>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <h1>{{activeMentorCount}}</h1>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <h1>{{unmatchedActiveMentorCount}}</h1>
+              </div>
+              <div class="col-md-3" style="border-right: rgba(0,0,0,.1) solid 1px; padding: 0px 30px;">
+                <h1>{{mentorsNeedingScreening}}</h1>
+              </div>
+              <div class="col-md-3" style="padding: 0px 30px;">
+                <h1>{{mentorsPendingScreening}}</h1>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-12" style="padding: 20px 10px 20px 10px;">
+                <div class="d-block w-100">
+                  <div class="progress" style="height: 2px; background-color: rgba(0, 0, 0, .1);">
+                    <div class="progress-bar bg-light" role="progressbar" [ngStyle]="{'width': mentorMatchedPercentage}" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                  </div>
+                </div>
+                <span>{{mentorMatchedPercentage}} <span style="color: rgba(0,0,0,.7);font-family: 'Roboto Condensed', sans-serif;">of active Mentors matched</span></span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
   <mentee-profile *ngSwitchCase="'Mentee'"></mentee-profile>

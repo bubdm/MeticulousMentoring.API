@@ -12,7 +12,8 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
 var http_2 = require("@angular/common/http");
 var core_1 = require("@angular/core");
-var angular2_jwt_1 = require("angular2-jwt");
+//import { AuthHttp, AuthConfig, tokenNotExpired, JwtHelper } from "angular2-jwt";
+var angular_jwt_1 = require("@auth0/angular-jwt");
 var operators_1 = require("rxjs/operators");
 var user_service_1 = require("../shared/user.service");
 require("rxjs/add/operator/map");
@@ -22,7 +23,7 @@ var AccountService = /** @class */ (function () {
         this.userService = userService;
         this.httpClient = httpClient;
         this.token = "";
-        this.jwtHelper = new angular2_jwt_1.JwtHelper();
+        this.jwtHelper = new angular_jwt_1.JwtHelperService();
     }
     Object.defineProperty(AccountService.prototype, "loginRequired", {
         get: function () {
@@ -32,7 +33,8 @@ var AccountService = /** @class */ (function () {
         configurable: true
     });
     AccountService.prototype.loggedIn = function () {
-        return angular2_jwt_1.tokenNotExpired();
+        var token = localStorage.getItem('token');
+        return this.jwtHelper.isTokenExpired(token);
     };
     AccountService.prototype.login = function (creds) {
         return this.http.post("http://localhost:5005/api/account/createtoken", creds)

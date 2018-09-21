@@ -11,7 +11,8 @@ import { ArchwizardModule } from 'angular-archwizard';
 import { NgMultiSelectDropDownModule } from 'ng-multiselect-dropdown';
 import { NgSelectModule } from '@ng-select/ng-select';
 import { MultiselectDropdownModule } from 'angular-2-dropdown-multiselect';
-import { SelectDropDownModule } from 'ngx-select-dropdown'
+import { HighchartsChartModule } from "highcharts-angular";
+
 import { AngularMultiSelectModule } from "angular2-multiselect-dropdown/angular2-multiselect-dropdown";
 import { VerticalTimelineModule } from 'angular-vertical-timeline';
 
@@ -173,10 +174,10 @@ export const routes = [
     NgMultiSelectDropDownModule.forRoot(),
     NgSelectModule,
     MultiselectDropdownModule,
-    SelectDropDownModule,
     AngularMultiSelectModule,
     TabsModule.forRoot(),
-    VerticalTimelineModule
+    VerticalTimelineModule,
+    HighchartsChartModule
 
   ],
   exports: [MenteeFormComponent],

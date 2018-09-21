@@ -20,6 +20,7 @@ var mentee_form_component_1 = require("../../forms/mentee.form.component");
 var mentor_form_component_1 = require("../../forms/mentor.form.component");
 var director_form_component_1 = require("../../forms/director.form.component");
 var admin_form_component_1 = require("../../forms/admin-form.component");
+var screenstatus_1 = require("../../enums/screenstatus");
 var UsersComponent = /** @class */ (function () {
     /** users ctor */
     function UsersComponent(usersService, userService, accountService, router, dialog, modalService) {
@@ -30,6 +31,7 @@ var UsersComponent = /** @class */ (function () {
         this.dialog = dialog;
         this.modalService = modalService;
         this.user_to_delete_id = -1;
+        this.ScreenType = screenstatus_1.ScreenStatus;
         this.users = new Array();
         this.usersService.notify_users_with_roles_changed();
     }
@@ -42,8 +44,15 @@ var UsersComponent = /** @class */ (function () {
         else {
             this.user = JSON.parse(localStorage.getItem('user'));
         }
+        this.role = this.user.role;
         this.usersService.users$.subscribe(function (data) {
             _this.users = data;
+            switch (_this.role) {
+                case "Director":
+                    _this.users = data.filter(function (x) { return x.role === "Mentor" || x.role === "Mentee"; });
+                    break;
+                default:
+            }
         });
     };
     UsersComponent.prototype.openMenteeFormDialog = function () {
@@ -72,8 +81,9 @@ var UsersComponent = /** @class */ (function () {
         };
         this.bsModalRef = this.modalService.show(admin_form_component_1.AdminFormComponent, { initialState: initialState, animated: false });
     };
-    UsersComponent.prototype.open_delete_modal = function (template, id) {
-        this.user_to_delete_id = id;
+    UsersComponent.prototype.open_delete_modal = function (template, user) {
+        this.user_to_delete_id = user.id;
+        this.user_to_delete = user;
         this.bsModalRef = this.modalService.show(template, { class: 'modal-sm', ignoreBackdropClick: true });
     };
     UsersComponent.prototype.confirm_user_delete = function () {

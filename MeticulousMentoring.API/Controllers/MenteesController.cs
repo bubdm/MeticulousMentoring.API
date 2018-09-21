@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 
@@ -163,6 +164,18 @@ namespace MeticulousMentoring.API.Controllers
                             newMentee.school = mSchool;
                             newMentee.created_on = DateTime.Now;
                             newMentee.modified_on = DateTime.Now;
+                            using (BinaryReader br = new BinaryReader(model.MenteeImageFile))
+                            {
+                                var bytes = br.ReadBytes((int)model.MenteeImageFile.Length);
+                                _ctx.Images.Add(new Image
+                                {
+                                    user_id = model.MenteeId,
+                                    filename = model.MenteeImageFile.Name,
+                                    content_type = Path.GetExtension(model.MenteeImageFile.Name),
+                                    data = bytes
+                                });
+                            }
+
                             this.menteeRepository.AddMentee(newMentee);
                             if (this.menteeRepository.SaveAll())
                             {
@@ -282,6 +295,51 @@ namespace MeticulousMentoring.API.Controllers
             {
                 this.logger.LogError($"Failed to get mentees: {e}");
                 return Json("Bad request");
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/mentees/GradePointAverages/{id}")]
+        public async Task<IActionResult> GradePointAverages(int id)
+        {
+            try
+            {
+                return this.Ok(this.menteeRepository.GetGradePointAverages(id));
+            }
+            catch (Exception e)
+            {
+                this.logger.LogError($"Failed to get grade point averages for mentee: {e}");
+                return Json("Bad Request");
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/mentees/GradePointAverage/{id}/{period}")]
+        public async Task<IActionResult> GradePointAverage(int id, int period)
+        {
+            try
+            {
+                return this.Ok(this.menteeRepository.GetGradePointAverage(id, period));
+            }
+            catch (Exception e)
+            {
+                this.logger.LogError($"Failed to get gpa: {e}");
+                return Json("Bad Request");
+            }
+        }
+
+        [HttpGet]
+        [Route("/api/mentees/GetAllAveragesForUser/{classificationId}")]
+        public async Task<IActionResult> GetAllAveragesForUser(int classificationId)
+        {
+            try
+            {
+                return this.Ok(this.menteeRepository.GetAllAveragesForUser(classificationId, "2017-2018"));
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e);
+                throw;
             }
         }
 

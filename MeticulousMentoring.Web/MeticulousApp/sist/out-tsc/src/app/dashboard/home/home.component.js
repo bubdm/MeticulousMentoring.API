@@ -13,15 +13,22 @@ var core_1 = require("@angular/core");
 var accountservice_1 = require("../../shared/accountservice");
 var user_service_1 = require("../../shared/user.service");
 var router_1 = require("@angular/router");
+var users_service_1 = require("../users/users.service");
+var screenstatus_1 = require("../../enums/screenstatus");
 var HomeComponent = /** @class */ (function () {
     /** home ctor */
-    function HomeComponent(userService, accountService, router) {
+    function HomeComponent(usersService, userService, accountService, router) {
+        this.usersService = usersService;
         this.userService = userService;
         this.accountService = accountService;
         this.router = router;
-        this.defaultImage = "https://app.box.com/s/mfy8barqgf1x0bfonbag7sipo87mga64";
+        this.ScreenType = screenstatus_1.ScreenStatus;
+        this.defaultImage = "https://app.box.com/s/fg3tp6j4iefx9z7j56wi317q80u5hnd4";
+        this.users = new Array();
+        this.usersService.notify_users_with_roles_changed();
     }
     HomeComponent.prototype.ngOnInit = function () {
+        var _this = this;
         var newUser = this.userService.get();
         if (newUser) {
             this.user = newUser;
@@ -30,6 +37,29 @@ var HomeComponent = /** @class */ (function () {
             this.user = JSON.parse(localStorage.getItem('user'));
         }
         this.role = this.user.role;
+        this.usersService.users$.subscribe(function (data) {
+            _this.activeMenteesCount = data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.Successful; }).length;
+            _this.activeMentorCount =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.Successful; }).length;
+            _this.unmatchedActiveMenteesCount =
+                data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.Successful && x.Mentorid === null; }).length;
+            _this.unmatchedActiveMentorCount =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.Successful && x.mentee_count < 1; })
+                    .length;
+            _this.menteesPendingScreening =
+                data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.Pending; }).length;
+            _this.mentorsPendingScreening =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.Pending; }).length;
+            _this.menteesNeedingScreening =
+                data.filter(function (x) { return x.role === "Mentee" && x.screen_status === _this.ScreenType.NotStarted; }).length;
+            _this.mentorsNeedingScreening =
+                data.filter(function (x) { return x.role === "Mentor" && x.screen_status === _this.ScreenType.NotStarted; }).length;
+            //get match percentages
+            _this.menteeMatchedPercentage =
+                ((_this.activeMenteesCount - _this.unmatchedActiveMenteesCount) / _this.activeMenteesCount * 100).toString() + "%";
+            _this.mentorMatchedPercentage =
+                ((_this.activeMentorCount - _this.unmatchedActiveMentorCount) / _this.activeMentorCount * 100).toString() + "%";
+        });
     };
     HomeComponent = __decorate([
         core_1.Component({
@@ -39,7 +69,7 @@ var HomeComponent = /** @class */ (function () {
         })
         /** home component*/
         ,
-        __metadata("design:paramtypes", [user_service_1.UserService, accountservice_1.AccountService, router_1.Router])
+        __metadata("design:paramtypes", [users_service_1.UsersService, user_service_1.UserService, accountservice_1.AccountService, router_1.Router])
     ], HomeComponent);
     return HomeComponent;
 }());

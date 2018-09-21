@@ -18,7 +18,7 @@ var AuthGuard = /** @class */ (function () {
         this.router = router;
     }
     AuthGuard.prototype.canActivate = function () {
-        if (this.auth.loggedIn()) {
+        if (!this.auth.loggedIn()) {
             return true;
         }
         else {

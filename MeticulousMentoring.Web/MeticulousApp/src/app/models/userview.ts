@@ -5,4 +5,7 @@ export class UserView {
   userName: string;
   email: string;
   role: string;
+  screen_status: number;
+  Mentorid: number;
+  mentee_count: number;
 }

@@ -10,7 +10,8 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 var core_1 = require("@angular/core");
-var angular2_jwt_1 = require("angular2-jwt");
+//import { JwtHelper } from "angular2-jwt";
+var angular_jwt_1 = require("@auth0/angular-jwt");
 var accountservice_1 = require("../shared/accountservice");
 var user_service_1 = require("../shared/user.service");
 var router_1 = require("@angular/router");
@@ -23,15 +24,15 @@ var LoginComponent = /** @class */ (function () {
             username: "",
             password: ""
         };
-        this.jwtHelper = new angular2_jwt_1.JwtHelper();
+        this.jwtHelperService = new angular_jwt_1.JwtHelperService();
     }
     LoginComponent.prototype.onLogin = function () {
         var _this = this;
         var response = this.auth.login(this.creds)
             .subscribe(function (data) {
             localStorage.setItem('token', data.token);
-            _this.userService.set(_this.jwtHelper.decodeToken(data.token));
-            localStorage.setItem('user', JSON.stringify(_this.jwtHelper.decodeToken(data.token)));
+            _this.userService.set(_this.jwtHelperService.decodeToken(data.token));
+            localStorage.setItem('user', JSON.stringify(_this.jwtHelperService.decodeToken(data.token)));
             _this.router.navigate(["dashboard"]);
         }, function (error) { return console.log(error); });
     };

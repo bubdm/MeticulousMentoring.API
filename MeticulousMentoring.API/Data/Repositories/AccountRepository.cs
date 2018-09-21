@@ -41,7 +41,7 @@ namespace MeticulousMentoring.API.Data.Repositories
                 {
                     dbConnection.Open();
                     var results = dbConnection.Query<UserViewModel>(
-                        "Select Distinct u.Id as \'id\', u.FirstName as \'firstName\', u.LastName as \'lastName\',\r\nu.UserName as \'userName\', u.Email as \'email\', r.name as \'role\' from dbo.Users u \r\ninner join dbo.UserRoles ur \r\non u.Id = ur.UserId\r\ninner join dbo.Roles r\r\non ur.RoleId = r.Id\r\n"
+                        "Select Distinct u.Id as \'id\', u.FirstName as \'firstName\', u.LastName as \'lastName\',\r\nu.UserName as \'userName\', u.Email as \'email\', r.name as \'role\', u.screen_status as \'screen_status\', m.Mentorid, (SELECT count(*) FROM dbo.Mentees m3 WHERE m3.Mentorid = m2.id) AS \'mentee_count\'  from dbo.Users u \r\ninner join dbo.UserRoles ur \r\non u.Id = ur.UserId\r\ninner join dbo.Roles r\r\non ur.RoleId = r.Id\r\nleft join dbo.Mentees m\r\non u.Id = m.id\r\nleft join dbo.Mentors m2\r\non u.Id = m2.id;"
                         );
 
                     return results;

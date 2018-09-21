@@ -47,6 +47,8 @@
         public DbSet<Timeline> TimeLine { get; set; }
         public DbSet<MentorProgram> Programs { get; set; }
         public DbSet<Event> Events { get; set; }
+        public DbSet<GradePointAverage> GradePointAverages { get; set; }
+        public DbSet<Image> Images { get; set; }
     }
 
     public static class StringExtensions

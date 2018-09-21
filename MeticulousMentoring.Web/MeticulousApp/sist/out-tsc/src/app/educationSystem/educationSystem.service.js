@@ -11,7 +11,6 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 Object.defineProperty(exports, "__esModule", { value: true });
 var http_1 = require("@angular/http");
 var core_1 = require("@angular/core");
-var angular2_jwt_1 = require("angular2-jwt");
 var user_service_1 = require("../shared/user.service");
 var operators_1 = require("rxjs/operators");
 var EducationSystemService = /** @class */ (function () {
@@ -19,7 +18,6 @@ var EducationSystemService = /** @class */ (function () {
         this.http = http;
         this.userService = userService;
         this.token = "";
-        this.jwtHelper = new angular2_jwt_1.JwtHelper();
     }
     Object.defineProperty(EducationSystemService.prototype, "loginRequired", {
         get: function () {
@@ -28,9 +26,6 @@ var EducationSystemService = /** @class */ (function () {
         enumerable: true,
         configurable: true
     });
-    EducationSystemService.prototype.loggedIn = function () {
-        return angular2_jwt_1.tokenNotExpired();
-    };
     EducationSystemService.prototype.get_education_systems = function () {
         return this.http.get("http://localhost:5005/api/educationSystem", {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
