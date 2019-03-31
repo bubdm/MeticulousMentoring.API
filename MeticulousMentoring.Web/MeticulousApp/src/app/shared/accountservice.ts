@@ -74,4 +74,15 @@ export class AccountService {
         headers: new Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
       }).pipe();
   }
+
+  public upload_image(id: number, form: FormData) {
+    var httpOptions = {
+      headers: new HttpHeaders({
+        'Content-Type': 'application/json',
+        'Authorization': "Bearer " + localStorage.getItem('token').toString()
+      })
+    };
+
+    return this.httpClient.post<any>("http://localhost:5005/api/account/UploadImage/" + id, form, httpOptions);
+  }
 }

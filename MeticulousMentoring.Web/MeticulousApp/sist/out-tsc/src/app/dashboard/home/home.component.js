@@ -23,7 +23,7 @@ var HomeComponent = /** @class */ (function () {
         this.accountService = accountService;
         this.router = router;
         this.ScreenType = screenstatus_1.ScreenStatus;
-        this.defaultImage = "https://app.box.com/s/fg3tp6j4iefx9z7j56wi317q80u5hnd4";
+        this.defaultImage = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
         this.users = new Array();
         this.usersService.notify_users_with_roles_changed();
     }

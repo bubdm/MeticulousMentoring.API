@@ -17,10 +17,11 @@ var mentee_service_1 = require("../shared/mentee.service");
 var guardian_service_1 = require("../guardian/guardian.service");
 var school_service_1 = require("../school/school.service");
 var admin_service_1 = require("../shared/admin.service");
+var accountservice_1 = require("../shared/accountservice");
 var modal_1 = require("ngx-bootstrap/modal");
 var users_service_1 = require("../dashboard/users/users.service");
 var MenteeFormComponent = /** @class */ (function () {
-    function MenteeFormComponent(formBuilder, classificationService, educationSystemService, menteeService, guardianService, schoolService, adminService, bsModalRef, usersService) {
+    function MenteeFormComponent(formBuilder, classificationService, educationSystemService, menteeService, guardianService, schoolService, adminService, bsModalRef, usersService, accountService) {
         this.formBuilder = formBuilder;
         this.classificationService = classificationService;
         this.educationSystemService = educationSystemService;
@@ -30,8 +31,10 @@ var MenteeFormComponent = /** @class */ (function () {
         this.adminService = adminService;
         this.bsModalRef = bsModalRef;
         this.usersService = usersService;
+        this.accountService = accountService;
         this.startDate = new Date(1999, 0, 1);
         this.isChildAddressShared = false;
+        this.selectedFile = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
         this.genders = [{ gender: "M", description: "Male" },
             { gender: "F", description: "Female" }];
     }
@@ -129,6 +132,7 @@ var MenteeFormComponent = /** @class */ (function () {
         var response = this.menteeService.add_mentee(newMentee)
             .subscribe(function (data) {
             _this.menteeId = data.menteeId;
+            _this.upload(parseInt(_this.menteeId));
             var newGuardian = {
                 GuardianFirstName: guardian_info.guardianFirstName,
                 GuardianLastName: guardian_info.guardianLastName,
@@ -158,11 +162,18 @@ var MenteeFormComponent = /** @class */ (function () {
         var _this = this;
         if (event.target.files && event.target.files[0]) {
             var file = event.target.files[0];
+            this.file = event.target.files[0];
             this.fileConst = event.target.files[0];
             var reader_1 = new FileReader();
             reader_1.onload = function (e) { return _this.selectedFile = reader_1.result; };
             reader_1.readAsDataURL(file);
         }
+    };
+    MenteeFormComponent.prototype.upload = function (menteeId) {
+        var formData = new FormData();
+        formData.append(this.fileName, this.file);
+        this.accountService.upload_image(menteeId, formData).subscribe(function (data) {
+        });
     };
     MenteeFormComponent = __decorate([
         core_1.Component({
@@ -178,7 +189,8 @@ var MenteeFormComponent = /** @class */ (function () {
             school_service_1.SchoolService,
             admin_service_1.AdminService,
             modal_1.BsModalRef,
-            users_service_1.UsersService])
+            users_service_1.UsersService,
+            accountservice_1.AccountService])
     ], MenteeFormComponent);
     return MenteeFormComponent;
 }());

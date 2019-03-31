@@ -74,6 +74,15 @@ var AccountService = /** @class */ (function () {
             headers: new http_1.Headers({ "Authorization": "Bearer " + localStorage.getItem('token').toString() })
         }).pipe();
     };
+    AccountService.prototype.upload_image = function (id, form) {
+        var httpOptions = {
+            headers: new http_2.HttpHeaders({
+                'Content-Type': 'application/json',
+                'Authorization': "Bearer " + localStorage.getItem('token').toString()
+            })
+        };
+        return this.httpClient.post("http://localhost:5005/api/account/UploadImage/" + id, form, httpOptions);
+    };
     AccountService = __decorate([
         core_1.Injectable(),
         __metadata("design:paramtypes", [http_1.Http, user_service_1.UserService, http_2.HttpClient])

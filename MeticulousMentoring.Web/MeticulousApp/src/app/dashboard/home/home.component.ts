@@ -31,7 +31,7 @@ export class HomeComponent implements OnInit {
 
   /** home ctor */
   constructor(private usersService: UsersService, private userService: UserService, private accountService: AccountService, private router: Router) {
-    this.defaultImage = "https://app.box.com/s/fg3tp6j4iefx9z7j56wi317q80u5hnd4";
+    this.defaultImage = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
     this.users = new Array<UserView>();
     this.usersService.notify_users_with_roles_changed();
   }

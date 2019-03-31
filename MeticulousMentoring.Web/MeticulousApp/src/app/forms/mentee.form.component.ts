@@ -6,6 +6,7 @@ import { MenteeService } from '../shared/mentee.service';
 import { GuardianService } from '../guardian/guardian.service';
 import { SchoolService } from '../school/school.service';
 import { AdminService } from '../shared/admin.service';
+import { AccountService } from '../shared/accountservice';
 import { Mentee } from '../interfaces/mentee';
 import { WizardStep } from '../models/WizardStep';
 import { BsModalRef } from "ngx-bootstrap/modal";
@@ -30,8 +31,10 @@ export class MenteeFormComponent implements OnInit {
   public schools;
   public menteeId: string;
   isChildAddressShared = false;
-  public selectedFile: string = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
+  public selectedFile: string | ArrayBuffer = "https://www.dropbox.com/s/m7lteis9sb5djcb/DefaultImg.png?raw=1";
   public fileConst: File;
+  public fileName: string;
+  public file: File;
 
   genders = [{ gender: "M", description: "Male" },
   { gender: "F", description: "Female" }];
@@ -44,7 +47,8 @@ export class MenteeFormComponent implements OnInit {
     private schoolService: SchoolService,
     private adminService: AdminService,
     private bsModalRef: BsModalRef,
-    private usersService: UsersService) {
+    private usersService: UsersService,
+    private accountService: AccountService) {
   }
 
   ngOnInit(): void {
@@ -153,6 +157,7 @@ export class MenteeFormComponent implements OnInit {
       .subscribe(
         data => {
           this.menteeId = data.menteeId;
+          this.upload(parseInt(this.menteeId));
 
           var newGuardian = {
             GuardianFirstName: guardian_info.guardianFirstName,
@@ -186,11 +191,20 @@ export class MenteeFormComponent implements OnInit {
   onFileChanged(event) {
     if (event.target.files && event.target.files[0]) {
       const file = event.target.files[0];
+      this.file = event.target.files[0];
       this.fileConst = event.target.files[0];
       const reader = new FileReader();
       reader.onload = e => this.selectedFile = reader.result;
 
       reader.readAsDataURL(file);
     }
+  }
+
+  upload(menteeId: number) {
+    const formData = new FormData();
+
+    formData.append(this.fileName, this.file);
+    this.accountService.upload_image(menteeId, formData).subscribe(data => {
+    });
   }
 }

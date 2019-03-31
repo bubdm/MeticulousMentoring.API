@@ -8,6 +8,10 @@ using System.Text;
 using System.Threading.Tasks;
 using MeticulousMentoring.API.Data;
 using MeticulousMentoring.API.Data.Repositories;
+using System.IO;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.Net.Http.Headers;
+using ContentDispositionHeaderValue = System.Net.Http.Headers.ContentDispositionHeaderValue;
 
 namespace MeticulousMentoring.API.Controllers
 {
@@ -36,9 +40,10 @@ namespace MeticulousMentoring.API.Controllers
         private readonly RoleManager<IdentityRole<int>> roleManager;
         private readonly IAccountRepository _accountRepository;
         private readonly MeticulousContext _ctx;
+        private readonly IHostingEnvironment hostingEnvironment;
 
         public AccountController(ILogger<AccountController> logger, SignInManager<MeticulousUser> signInManager, UserManager<MeticulousUser> userManager,
-            IConfiguration config, RoleManager<IdentityRole<int>> roleManager, IAccountRepository accountRepository, MeticulousContext ctx)
+            IConfiguration config, RoleManager<IdentityRole<int>> roleManager, IAccountRepository accountRepository, MeticulousContext ctx, IHostingEnvironment hostingEnvironment)
         {
             this.logger = logger;
             this.signInManager = signInManager;
@@ -47,6 +52,7 @@ namespace MeticulousMentoring.API.Controllers
             this.roleManager = roleManager;
             _accountRepository = accountRepository;
             _ctx = ctx;
+            this.hostingEnvironment = hostingEnvironment;
         }
 
         public IActionResult Login()
@@ -259,6 +265,47 @@ namespace MeticulousMentoring.API.Controllers
             else
             {
                 return BadRequest("Could not delete user related data");
+            }
+        }
+
+        [HttpPost, DisableRequestSizeLimit]
+        [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+        [Route("/api/account/UploadImage/{id}")]
+        public ActionResult UploadImage(int id)
+        {
+            try
+            {
+                var file = Request.Form.Files[0];
+                string folderName = "Uploads";
+                string webRootPath = this.hostingEnvironment.WebRootPath;
+                string newPath = Path.Combine(webRootPath, folderName);
+                if (!Directory.Exists(newPath))
+                {
+                    Directory.CreateDirectory(newPath);
+                }
+
+                if (file.Length > 0)
+                {
+                    string fileName = ContentDispositionHeaderValue.Parse(file.ContentDisposition).FileName.Trim('"');
+                    string fullPath = Path.Combine(newPath, fileName);
+                    using (var stream = new FileStream(fullPath, FileMode.Create))
+                    {
+                        file.CopyTo(stream);
+                    }
+
+                    _ctx.Images.Add(new Image
+                    {
+                        user_id = id,
+                        content_type = System.IO.Path.GetExtension(fileName).Substring(1),
+                        filename = fileName
+                    });
+                }
+
+                return Json("Upload Successful");
+            }
+            catch (Exception e)
+            {
+                return Json("Upload Failed: " + e.Message);
             }
         }
     }
